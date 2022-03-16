@@ -1,0 +1,23 @@
+[
+  {
+    "avatar": "https://www.feico.cn/medias/avatar.jpg",
+    "name": "feico",
+    "introduction": "日益努力，而后风生水起，众生皆苦，我也必定不会认输",
+    "url": "https://www.feico.cn/about/",
+    "title": "前去学习"
+  },
+  {
+    "avatar": "https://avatars.githubusercontent.com/u/18049290?v=4",
+    "name": "木易杨",
+    "introduction": "公众号「高级前端进阶」作者，每天搞定一道前端大厂面试题，祝大家天天进步，一年后会看到不一样的自己",
+    "url": "https://github.com/Advanced-Frontend/Daily-Interview-Question",
+    "title": "前去学习"
+  },
+  {
+    "avatar": "https://avatars.githubusercontent.com/u/12479470?v=4",
+    "name": "azl397985856",
+    "introduction": "我们的 slogan 是： 只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。",
+    "url": "https://github.com/azl397985856/leetcode",
+    "title": "前去学习"
+  }
+]

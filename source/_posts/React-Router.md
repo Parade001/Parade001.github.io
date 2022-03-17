@@ -1,13 +1,12 @@
 ---
-title: React Router
-categories: React
+title: React-Router
 abbrlink: 36407
 date: 2020-02-17 17:38:33
 tags: React-Router
 keywords:
 description:
 categories: React
-summary:  
+summary:  React Router 不仅仅是将 url 与函数或组件匹配：它是关于构建一个映射到 URL 的完整用户界面，因此它可能包含比你习惯的更多的概
 ---
 
 React路由拥有简单的API和强大的动态路由匹配,以及简历正确的过度处理.

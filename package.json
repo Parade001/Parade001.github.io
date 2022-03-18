@@ -12,6 +12,7 @@
     "version": "5.4.0"
   },
   "dependencies": {
+    "gitalk": "^1.7.2",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-htmlclean": "^2.7.22",

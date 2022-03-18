@@ -160,7 +160,7 @@ JS采用事件循环[Event LOOP](https://en.jinzhao.wiki/wiki/Event_loop)的机�
 
   #### **创建方式:**
 
-  **Macrotask**宏任务:
+  #### **Macrotask**宏任务:
 
   - setTimeout
   - setInterval
@@ -171,7 +171,7 @@ JS采用事件循环[Event LOOP](https://en.jinzhao.wiki/wiki/Event_loop)的机�
   - script(整体代码块)
   - postMessage
 
-  **Microtask**微任务:
+  #### **Microtask**微任务:
 
   - Promise.[ then/catch/finally ]
   - process.nextTick（Node环境）
@@ -180,7 +180,7 @@ JS采用事件循环[Event LOOP](https://en.jinzhao.wiki/wiki/Event_loop)的机�
   - queueMicrotask
   - requestAnimationFrame(有争议)
 
-## [总结](https://zh.javascript.info/event-loop#zong-jie)
+### [总结](https://zh.javascript.info/event-loop#zong-jie)
 
 更详细的事件循环算法（尽管与 [规范](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model) 相比仍然是简化过的）：
 

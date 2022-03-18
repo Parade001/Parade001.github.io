@@ -3,8 +3,8 @@ layout: post
 title: Redux 缺点
 abbrlink: 17051
 date:  2021-02-08 01:16:56
-tags:
-categories:
+tags: Redux
+categories: Redux
 summary: 我们知道redux是吸取Flux设计思想而来的,Reudx名字由来便是reducer+fluex
 ---
 

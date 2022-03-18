@@ -3,7 +3,7 @@ layout: post
 title: git 生成文件目录树
 abbrlink: 8570
 date: 2021-02-1 22:44:19
-tags:
+tags: git tree
 categories: git
 summary:  最近发现有个 tree 工具很好用,用来查看项目结构等等场景很适合
 ---

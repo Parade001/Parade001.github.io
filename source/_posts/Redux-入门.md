@@ -59,9 +59,9 @@ createStore是Redux中最核心的API:
 
 ------
 
-#### 1.视图层 view 通过store对象里的dispactch方法派发给action对象
+#### 1.视图层 view 通过store对象里的dispactch方法派发给action对象执行特定的修改State的操纵
 
-#### action返回状态和给store再传递给reducer
+#### action返回状态给store再传递给reducer
 
 **更新状态的唯一方法是调用store.dispatch()并传入一个动作对象**
 
@@ -87,7 +87,29 @@ state树发生变化后.store会调用监听函数render 更新UI
 
 action 对象中必须拥有 type 字段，redux主要是根据该字段选择对应的 reducer 进行处理
 
+<hr>
+
+### 要点
+
 reducer 处理函数必须 [纯函数](https://link.juejin.cn/?target=https://zh.wikipedia.org/wiki/%25E7%25BA%25AF%25E5%2587%25BD%25E6%2595%25B0)， reducer 接收相应的`state`，经过处理后返回新的`state`。不允许返回`undefined`或者`null`
+
+数组中有一个reduce方法，其作用就是遍历数组，**将上一次迭代的结果**和**数组中的元素**作为参数传入，**返回一个新的结果**，并且**将这个新的结果作为作为参数和数组的下一个元素进行下一次迭代**。
+
+我们可以把**进行reduce操作的函数叫做reducer**。
+
+只不过，**redux迭代的是一次又一次的action，每次action执行完成后都会返回一个新的状态，并且将这个新的状态和下一次action用于下一次迭代**。
+
+- reducer 第一次被调用的时候，state 的值是 undefined,可以用es6的默认参数的方式解决。
+
+- reducer 需要在 action 传入之前提供一个默认的 state 来处理这种情况。
+
+- reducer 需要当前的 state 和 dispatch 的 action 来决定需要做什么事。
+
+- 假设需要更改数据，应该用更新后的数据创建新的对象或数组并返回它们，及所谓的`纯函数`，不对传入的state做任何修改。
+
+- 如果没有什么更改，应该返回当前存在的 state 本身。
+
+  
 
 当需要触发行为变更相关的状态树信息时，必须调用`dispatch`方法触发更新操作
 
@@ -97,5 +119,12 @@ reducer 处理函数必须 [纯函数](https://link.juejin.cn/?target=https://zh
 
 
 
+<hr>
 
+### 参考
 
+[**Redux 中文官网**](http://cn.redux.js.org/)
+
+[从零实现redux和react-redux](https://segmentfault.com/a/1190000022200527)
+
+[Reducer函数](https://www.jianshu.com/p/69c36de6dba7)

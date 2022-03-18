@@ -44,7 +44,7 @@ cover: true
 
 ## webpack 构建流程分析
 
-![img](89747816-fe344280-daf2-11ea-820a-6a1a99e34f14.png)
+![img](blogimgs%2F89747816-fe344280-daf2-11ea-820a-6a1a99e34f14.png)
 
 ## webpack 构建流程
 
@@ -165,7 +165,9 @@ Babel 提供了@babel/traverse(遍历)方法维护这 AST 树的整体状态,我
 
 webpack默认入口和出口是什么?
 
-<details style="box-sizing: inherit; display: block; color: rgb(52, 73, 94); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary style="box-sizing: inherit; display: list-item;">答案</summary><ul style="box-sizing: inherit; padding-left: 2em !important; list-style-type: none; display: block; word-spacing: 0.05rem;"><li style="box-sizing: inherit; list-style-type: disc; display: list-item; line-height: 1.8rem; font-size: 1rem;"></li><li style="box-sizing: inherit; list-style-type: disc; display: list-item; line-height: 1.8rem; font-size: 1rem;"></li></ul></details>
+默认入口: src/index.js
+
+默认出口: dist/main.js
 
 ------
 

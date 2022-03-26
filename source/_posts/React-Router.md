@@ -61,15 +61,21 @@ HashRouter:
 
 BrowserRouter:
 
-Readirect,必须放switch,不然from 会失效,switch性能高,匹配到第一个route需求
+Readirect,必须放switch里,不然from 会失效,switch性能高,匹配到第一个route需求
 
 <hr>
 
 #### Router 详细说明
 
 - 常用有两种 Router：`HashRouter` 和 `BrowserRouter`，用来包**裹整个应用**，一个 React 应用只需要使用一次。
-- HashRouter：使用 URL 的哈希值实现（`http://localhost:3000/#/first`），是通过监听 window 的 `hashchange` 事件来实现的。
-- BrowserRouter：使用 H5 的 history API 实现（`http://localhost:3000/first`），是通过监听 window 的 `popstate` 事件来实现的。
+
+- HashRouter：使用 URL 的哈希值实现（`http://localhost:3000/#/first`）
+
+  是通过监听 window 的 `hashchange` 事件来实现的。
+
+- BrowserRouter：使用 H5 的 history API 实现（`http://localhost:3000/first`）
+
+  是通过监听 window 的 `popstate` 事件来实现的。
 
 <hr>
 
@@ -116,7 +122,7 @@ import {HashRouter,Route,Link} from 'react-router-dom'
 
 <hr>
 
-#### Link 与 NavLink
+#### Link 与 NavLink区别
 
 - `Link` 组件最终会渲染成 a 标签，用于指定路由导航。
 

@@ -4,7 +4,7 @@ title: React-router原理
 abbrlink: 499
 date: 2021-03-05 01:16:02
 tags:
-summary: React Router 不仅仅是将 url 与函数或组件匹配：它是关于构建一个映射到 URL 的完整用户界面，因此它可能包含比你习惯的更多的概
+summary: 本篇将详细介绍React Router 常用的API
 categories: React
 cover: true
 ---
@@ -46,11 +46,8 @@ cover: true
 
 使用两者作为最顶层组件包裹其他组件
 
-
-
 ```jsx
 import { BrowserRouter as Router } from "react-router-dom";
-
 export default function App() {
   return (
     <Router>
@@ -82,8 +79,6 @@ export default function App() {
 - component 属性：设置匹配到路径后，渲染的组件
 - render 属性：设置匹配到路径后，渲染的内容
 - exact 属性：开启精准匹配，只有精准匹配到完全一致的路径，才会渲染对应的组件
-
-
 
 ```jsx
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -123,8 +118,6 @@ export default function App() {
 
 如下：
 
-
-
 ```js
 <NavLink to="/" exact activeStyle={{color: "red"}}>首页</NavLink>
 <NavLink to="/about" activeStyle={{color: "red"}}>关于</NavLink>
@@ -134,8 +127,6 @@ export default function App() {
 如果需要实现`js`实现页面的跳转，那么可以通过下面的形式：
 
 通过`Route`作为顶层组件包裹其他组件后,页面组件就可以接收到一些路由相关的东西，比如`props.history`
-
-
 
 ```jsx
 const Contact = ({ history }) => (
@@ -156,10 +147,6 @@ props`中接收到的`history`对象具有一些方便的方法，如`goBack`，
 ### [redirect](https://vue3js.cn/interview/React/React%20Router.html#redirect)
 
 用于路由的重定向，当这个组件出现时，就会执行跳转到对应的`to`路径中，如下例子：
-
-
-
-
 
 ```js
 const About = ({
@@ -183,8 +170,6 @@ const About = ({
 `swich`组件的作用适用于当匹配到第一个组件的时候，后面的组件就不应该继续匹配
 
 如下例子：
-
-
 
 ```jsx
 <Switch>
@@ -222,9 +207,9 @@ const Contact = () => {
 };
 ```
 
-### seParams
+### useParams
 
-
+useParams 动态参数列表的引用对象，用于获取`<Route>`中的 match.params (动态参数)
 
 ```jsx
 const About = () => {
@@ -243,8 +228,6 @@ const About = () => {
 ### [useLocation](https://vue3js.cn/interview/React/React%20Router.html#uselocation)
 
 `useLocation` 会返回当前 `URL`的 `location`对象
-
-
 
 ```jsx
 import { useLocation } from "react-router-dom";
@@ -274,8 +257,6 @@ const Contact = () => {
 动态路由的概念指的是路由中的路径并不会固定
 
 例如将`path`在`Route`匹配时写成`/detail/:id`，那么 `/detail/abc`、`/detail/123`都可以匹配到该`Route`
-
-
 
 ```jsx
 <NavLink to="/detail/abc123">详情</NavLink>
@@ -319,8 +300,6 @@ console.log(props.location.search)
 
 传递方式如下：
 
-
-
 ```jsx
 <NavLink to={{
     pathname: "/detail2", 
@@ -334,13 +313,11 @@ console.log(props.location.search)
 
 获取参数的形式如下：
 
-
-
 ```js
 console.log(props.location)
 ```
 
-
+<hr>
 
 ## [参考文献](https://vue3js.cn/interview/React/React%20Router.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE)
 

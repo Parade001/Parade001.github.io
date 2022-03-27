@@ -2,7 +2,7 @@
 layout: post
 title: 浏览器下 JS 引擎的事件循环机制
 abbrlink: 43258
-date: 2022-03-25 21:58:37
+date: 2021-03-25 21:58:37
 tags: Event Loop
 categories: JavaScript
 summary: node.js 和传统浏览器环境下相似的事件循环,但是也有很多不同,应该分开,单独进行解析

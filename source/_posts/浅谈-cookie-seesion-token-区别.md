@@ -1,11 +1,12 @@
 ---
 layout: post
-title: 浅谈 cookie seesion token 区别
+title: 浅谈 Cookie Session Token 区别
 summary: 本文将具体介绍 cookie,session,token,JWT
 abbrlink: 5453
 date: 2022-03-27 10:33:12
 tags: HTTP cookies
 categories: OSI
+cover: true
 ---
 
 ### cookie:

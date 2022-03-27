@@ -45,6 +45,16 @@ description:
 
 
 
+# XHR的readyState码
+
+
+
+<img src='https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Freadystatecode.png' alt='readystate'>
+
+
+
+<img src='https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Freadystate2.png' alt >
+
 <hr>
 
 # JSON

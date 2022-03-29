@@ -7,12 +7,13 @@ abbrlink: 5703
 date: 2019-06-07 10:49:13
 keywords:
 description:
+前言
 ---
 
-> Ajax是Asynchronous JavaScript and XML 的缩写.
+### 前言
 
-> 
->
+Ajax是Asynchronous JavaScript and XML 的缩写
+
 > *超文本传输协议(hyper transfer protocol,HTTP)规定Web浏览器如何从Web服务器获取文档和向Web服务器提交表达内容,以及Web服务器如何响应这些请求和提交.通常,HTTP并不在脚本的控制下,知识当用户点击链接、提交表达和输入url时发生.*
 >
 > *但是,用JS代码操纵http是可行的*
@@ -23,21 +24,25 @@ description:
 >
 > *通常,基于script标签的Ajax传输协议时,服务器响应采用JSON编码的数据结构.*
 >
-> *当执行脚本时,JS解析器能自动将其解码.由于它使用JSON数据格式,因此这种Ajax传输协议也叫"JSONP"*
+> *当执行脚本时,JS解析器能自动将其解码.**由于它使用JSON数据格式,因此这种Ajax传输协议也叫"JSONP"***
 >
-> ​															---引用JavaScript 第六版
+> ​																						   JavaScript权威指南 第六版
 
-一个HTTP请求由4部分组成：
-*·HTTP请求方法或“动作”（verb）*
+### HTTP请求由4部分组成：
 
-*·正在请求的URL*
-*·一个可选的请求头集合，其中可能包括身份验证信息*
-*·一个可选的请求主体*
+- HTTP请求方法或“动作”（verb)
 
-服务器返回的HTTP响应包含3部分：
-*·一个数字和文字组成的状态码，用来显示请求的成功和失败*
-*·一个响应头集合*
-*·响应主体*
+- 正在请求的URL
+- 一个可选的请求头集合，其中可能包括身份验证信息
+- 一个可选的请求主体
+
+### **服务器返回的HTTP响应包含3部分：**
+
+- 一个数字和文字组成的状态码，用来显示请求的成功和失败
+- 一个响应头集合
+- 响应主体
+
+<p align='right'>	JavaScript权威指南 第六版</p>
 
 
 
@@ -45,21 +50,21 @@ description:
 
 
 
-# XHR的readyState码
+### XHR的readyState码
+
+<img src='https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/readystatecode.png'>
 
 
 
-<img src='https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Freadystatecode.png' alt='readystate'>
+<img src='https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/readystate2.png'>
 
-
-
-<img src='https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Freadystate2.png' alt >
+<img src='https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Freadystate2.png' alt='' >
 
 <hr>
 
 # JSON
 
-
+JSON 是JS子集.[请参考](https://www.json.org/json-en.html)
 
 XMLHttpRequest()不是协议级的HTTP API而是浏览器级的API。
 

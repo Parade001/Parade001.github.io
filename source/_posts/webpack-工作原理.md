@@ -44,7 +44,7 @@ cover: true
 
 ## webpack 构建流程分析
 
-![img](blogimgs%2F89747816-fe344280-daf2-11ea-820a-6a1a99e34f14.png)
+<img src='https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/89747816-fe344280-daf2-11ea-820a-6a1a99e34f14.png'>
 
 ## webpack 构建流程
 

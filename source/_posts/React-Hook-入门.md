@@ -127,9 +127,9 @@ Effect Hook可以让你在函数组件中执行副作用操作
 
 ------
 
-### 提示: 通过跳过 Effect 进行性能优化
+#### 提示: 通过跳过 Effect 进行性能优化
 
-在某些情况下，每次渲染后都执行清理或者执行 effect 可能会导致性能问题。在 class 组件中，我们可以通过在 `componentDidUpdate` 中添加对 `prevProps` 或 `prevState` 的比较逻辑解决：
+在某些情况下，每次渲染后都执行清理或者执行 effect 可能会导致性能问题。在 class 组件中，我们可以通过在 `componentDidUpdate` 中添加对 `prevProps` 或 `prevState`  的比较逻辑解决：
 
 ```javascript
 componentDidUpdate(prevProps, prevState) {
@@ -182,7 +182,9 @@ useEffect(() => {
 >
 > 如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组（`[]`）作为第二个参数。
 >
-> 这就告诉 React 你的 effect 不依赖于 props 或 state 中的任何值，所以它永远都不需要重复执行。这并不属于特殊情况 —— 它依然遵循依赖数组的工作方式。
+> 这就告诉 React 你的 effect 不依赖于 props 或 state 中的任何值，所以它永远都不需要重复执行。
+>
+> 这并不属于特殊情况 —— 它依然遵循依赖数组的工作方式。
 >
 > 如果你传入了一个空数组（`[]`），effect 内部的 props 和 state 就会一直拥有其初始值。
 >
@@ -196,8 +198,30 @@ effect 的清除机制可以避免 `componentDidUpdate` 和 `componentWillUnmoun
 
 我们还看到了我们如何根据 effect 的功能分隔他们，这是在 class 中无法做到的。
 
-此时你可能会好奇 Hook 是如何工作的。在两次渲染间，React如何知道哪个 `useState` 调用对应于哪个 state 变量？
+#### **模拟componentWillUnmount**
 
-React 又是如何匹配前后两次渲染中的每一个 effect 的？
+```javascript
+useEffect(()=>{
+    const timer = setTimeout(()=>{
+        ....
+    },2000)
+    return()=>{
+	cosole.log('组件死了')
+	}
+})
 
-**在下一章节中我们会学习使用 [Hook](https://zh-hans.reactjs.org/docs/hooks-rules.html)的规则 —— 这对 Hook 的工作至关重要。**
+```
+
+> useEffect 函数返回的函数可以表示组件死亡 
+
+<hr>
+
+总结useEffect:
+
+- 不传参: 模拟 componentDidMount 或者componentDidUpdate
+
+执行时机:初始化和数据变化的时候执行
+
+- 传空数组: 
+
+表示只有在组件第一次渲染后执行，一般会进行**事件绑定**、**发送请求**等。

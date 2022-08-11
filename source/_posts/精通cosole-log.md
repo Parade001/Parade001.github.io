@@ -2,7 +2,7 @@
 layout: post
 title: 精通cosole.log
 abbrlink: 16920
-date: 2022-05-10 21:26:53
+date: 2022-05-06 21:26:53
 tags:
 categories: tips
 summary: 通过本篇文件来全面认识下console.log

@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Stack
-subtitle: '认识的人越多，越喜欢狗'
+title: '熊言熊语'
+subtitle: '人生的真谛需要用自己一生去领悟'
 description: '熊腾的在线记事本'
 keywords: '熊腾的在线记事本'
 author: xt_xiong
 language: en
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -38,6 +38,12 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - "HTML/**"
+
+
+
+aplayer:
+  meting: true
 
 # Writing
 new_post_name: :title.md # File name of new posts

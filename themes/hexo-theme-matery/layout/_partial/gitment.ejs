@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: 熊大写的
+ * @version: 1.0.0
+ * @Author: xt_xiong
+ * @Date: 2022-01-17 14:24:31
+ * @LastEditors: xt_xiong
+ * @LastEditTime: 2022-03-17 15:45:26
+-->
+<link
+  rel="stylesheet"
+  href="<%- theme.jsDelivr.url %><%- url_for('/libs/gitment/gitment-default.css') %>"
+/>
+<link
+  rel="stylesheet"
+  href="<%- theme.jsDelivr.url %><%- url_for('/css/gitment.css') %>"
+/>
+
+<div class="gitment-card card" data-aos="fade-up">
+  <div
+    class="comment_headling"
+    style="
+      font-size: 20px;
+      font-weight: 700;
+      position: relative;
+      padding-left: 20px;
+      top: 15px;
+      padding-bottom: 5px;
+    "
+  >
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="<%- theme.jsDelivr.url %><%- url_for('/libs/gitment/gitment.js') %>"></script>
+<script>
+  var gitment = new Gitment({
+    id: 'location.pathname',
+    owner: 'Parade001',
+    repo: 'Parade001.github.io',
+    oauth: {
+      client_id: '7a1c0b41dffd88b57d6d',
+      client_secret: '5aef2e7af821c8ecdf19628c5f99ed0d6ace7c08',
+    },
+  })
+
+  gitment.render('gitment-content')
+</script>

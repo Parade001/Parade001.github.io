@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -321,7 +321,7 @@
 			关于
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul  >
               
                 <li>
 
@@ -346,7 +346,7 @@
 			Demo
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul  >
               
                 <li>
 
@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tva1.sinaimg.cn/large/006aANDQly1gya2k9d1rej31z41407wh.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://source.unsplash.com/random')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -727,6 +727,11 @@
         <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
         
 
         <div class="card-content article-card-content">
@@ -1036,6 +1041,49 @@
     </div>
 
     
+        <link
+  rel="stylesheet"
+  href="/libs/gitalk/gitalk.css"
+/>
+<link
+  rel="stylesheet"
+  href="/css/my-gitalk.css"
+/>
+
+<div class="card gitalk-card" data-aos="fade-up">
+  <div
+    class="comment_headling"
+    style="
+      font-size: 20px;
+      font-weight: 700;
+      position: relative;
+      padding-left: 20px;
+      top: 15px;
+      padding-bottom: 5px;
+    "
+  >
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+  let gitalk = new Gitalk({
+      clientID: '08cb8efd61d2c27103a2',
+      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
+      repo: 'Parade001.github.io',
+      owner: 'Parade001',
+      admin: "Parade001",
+      id: '2019-05-03T12-39-10',
+      distractionFreeMode: false  // Facebook-like distraction free mode
+  });
+
+  gitalk.render('gitalk-container');
+</script>
+
+    
 
     
 
@@ -1062,7 +1110,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://tva4.sinaimg.cn/large/9bd9b167gy1fwri874ygcj21hc0u0ncj.jpg" class="responsive-img" alt="DOM入门">
+                        <img src="https://img.btstu.cn/api/images/5a040eb30c055.jpg" class="responsive-img" alt="DOM入门">
                         
                         <span class="card-title">DOM入门</span>
                     </div>
@@ -1111,7 +1159,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://tva4.sinaimg.cn/large/005BYqpggy1fwre79402hj31hc0u07i4.jpg" class="responsive-img" alt="JQuery事件委托及排他运用">
+                        <img src="https://api.isoyu.com/mm_images.php" class="responsive-img" alt="JQuery事件委托及排他运用">
                         
                         <span class="card-title">JQuery事件委托及排他运用</span>
                     </div>
@@ -1332,9 +1380,9 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2017-2022</span>
+                <span id="year">2018-2025</span>
             
-            <span id="year">2017</span>
+            <span id="year">2018</span>
             <a href="/about" target="_blank">xt_xiong</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>

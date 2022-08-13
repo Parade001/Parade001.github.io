@@ -1,0 +1,785 @@
+# main menu navigation url and icon
+# 配置菜单导航的名称、路径和图标icon.
+menu:
+  首页:
+    url: /
+    icon: fas fa-home
+  标签:
+    url: /tags
+    icon: fas fa-tags
+  分类:
+    url: /categories
+    icon: fas fa-bookmark
+  归档:
+    url: /archives
+    icon: fas fa-inbox
+  关于:
+    url: /about
+    icon: fa fa-user-secret
+    children:
+      - name : 相册
+        icon: fa fa-image
+        url: /HTML/multiverse/index.html
+  Demo:
+    url: /
+    icon: fa fa-tv
+    children:
+      - name : 抓住小猫
+        url: /HTML/Meow.html
+        icon: fa fa-puzzle-piece
+      - name : 放烟花
+        url: /HTML/Fireworks.html
+        icon: fa fa-puzzle-piece
+      - name : 打飞机
+        url: /HTML/shotairplane.html
+        icon: fa fa-puzzle-piece
+      - name : 切水果
+        url: /HTML/cutfruits.html
+        icon: fa fa-puzzle-piece
+      - name : 躲子弹
+        url: /HTML/dodgebullets.html
+        icon: fa fa-puzzle-piece
+      - name : 吃豆人
+        url: /HTML/pacman.html
+        icon: fa fa-puzzle-piece
+      - name : 打网球
+        url: /HTML/tennis.html
+        icon: fa fa-puzzle-piece
+      - name : 搭桥
+        url: /HTML/buildbridge.html
+        icon: fa fa-puzzle-piece
+  我的歌单:
+    url: /music
+    icon: fas fa-music
+  友情链接:
+    url: /friends
+    icon: fa fa-asl-interpreting
+  # 二级菜单写法如下
+  #Medias:
+  #  icon: fas fa-list
+  #  children:
+  #    - name: Musics
+  #      url: /musics
+  #      icon: fas fa-music
+  #    - name: Movies
+  #      url: /movies
+  #      icon: fas fa-film
+  #    - name: Books
+  #      url: /books
+  #      icon: fas fa-book
+  #    - name: Galleries
+  #      url: /galleries
+  #      icon: fas fa-image
+
+# Website start time.
+# 站点运行开始时间.
+
+time:
+  enable: false
+  year: 2017 # 年份
+  month: 05 # 月份
+  date: 12 # 日期
+  hour: 00 # 小时
+  minute: 00 # 分钟
+  second: 00 # 秒
+
+# Index cover carousel configuration.
+# 首页封面轮播图的相关配置.
+cover:
+  showPrevNext: true # 是否显示左右切换按钮. Whether to display the left and right toggle buttons.
+  showIndicators: true # 是否显示指示器. # Whether to display the indicators
+  autoLoop: true # 是否自动轮播. Whether it is automatically rotated.
+  duration: 120 # 切换延迟时间. Switching delay time.
+  intervalTime: 5000 # 自动切换下一张的间隔时间. Automatically switch the interval of the next one.
+  useConfig: false # 是否使用配置文件, 在 _data/covers.json 下配置推荐文章, false则使用主题在文章中的配置 cover coverImg
+  # useConfig 使用方式: 将主题 hexo-theme-matery/source/_data/covers.json 移动到 my-blog/source/_data/下修改配置即可
+
+# index page dream text,
+# 配置首页显示"梦想"的语句.
+dream:
+  enable: true
+  showTitle: true
+  title: Hope is good thing,maybe the best of things.And no good thing ever dies.
+  text: -The Shawshank Redemption
+
+# Whether to display the musics.
+# 是否在首页显示音乐.
+music:
+  enable: true
+  title: #非吸底模式有效
+    enable: true
+    show: 听听音乐
+  autoHide: true # hide automaticaly
+  server: tencent #require	music platform: netease, tencent, kugou, xiami, baidu
+  type: playlist #require song, playlist, album, search, artist
+  id: 938208922 #require	song id / playlist id / album id / search keyword
+  fixed: true # 开启吸底模式
+  autoplay: false # 是否自动播放
+  theme: '#42b983'
+  loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'random' # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto'  # 预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.5 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  listFolded: false # 列表默认折叠
+  hideLrc: false # 隐藏歌词
+
+pjax: true #
+
+# Whether to display the videos.
+# 是否在首页显示视频.
+video:
+  enable: false
+  showTitle: false
+  title: viva la vida
+  url: https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/Hexo_js%E6%96%87%E4%BB%B6/%E3%80%904K60FPS%E3%80%91%E9%85%B7%E7%8E%A9Coldplay%E3%80%8AViva%20La%20Vida%E3%80%8B%E4%B8%87%E4%BA%BA%E5%A4%A7%E5%90%88%E5%94%B1%E7%8E%B0%E5%9C%BA%EF%BC%81%E7%94%9F%E5%91%BD%E4%B8%87%E5%B2%81%EF%BC%81.mp4
+  pic:
+  thumbnails:
+  height: # 如：400
+  autoplay: false # 是否自动播放
+  theme: '#42b983'
+  loop: false # 是否循环播放
+  preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.7
+
+# Whether to display the title of the recommended posts
+# 是否显示推荐文章的标题
+recommend:
+  enable: true
+  showTitle: true
+  useConfig: false # 是否使用配置文件, 在 _data/recommends.json 下配置推荐文章, false则会走主题配置的 top 属性
+  # useConfig 使用方式: 将主题 hexo-theme-matery/source/_data/recommends.json 移动到 my-blog/source/_data/下修改配置即可
+
+# Configure website favicon and LOGO
+# 配置网站favicon和网站LOGO
+favicon: /favicon.png
+logo: /medias/logo.png
+
+# Inject the css and script (aplayer/meting)
+aplayerInject:
+  enable: true
+  per_page: true
+
+inject:
+  head:
+  bottom:
+    - <div class="aplayer" data-id="942360548" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div>
+    - <script src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/Hexo_js%E6%96%87%E4%BB%B6/jquery.pjax.min.js"></script>
+
+# The configuration of the second button in the home banner,
+# including the display name of the button, the font awesome icon, and the hyperlink to the button.
+# 首页 banner 中的第二个按钮的配置，包括按钮的显示名称、font awesome图标和按钮的超链接.
+indexbtn:
+  enable: true
+  name: Github
+  icon: fab fa-github-alt
+  url: https://github.com/blinkfox/hexo-theme-matery
+
+# The configurations of the second line of home banner
+# icon/button will not show up if you leave the corresponding socialLink empty
+# 首页 banner 中的第二行个人信息配置，留空即不启用
+socialLink:
+  github: #
+  email: xiongteng.red@gmail.com
+  facebook: # https://www.facebook.com/xxx
+  twitter: # https://twitter.com/xxx
+  qq: 965202772
+  weibo: https://weibo.com/
+  instagram: https://instagram.com/xiongteng.cc?r=nametag
+  bilibili: https://b23.tv/WNuyUW1
+  steam: https://steamcommunity.com/id/xiongteng/
+  xbox: https://'暂未入坑'
+  switch: https://'SW-6512-6988-8778'
+  zhihu: https://www.zhihu.com/people/hurricane.net
+  weChat: https://'15623449201'
+  rss: true # true、false
+
+# Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
+# You can add `toc: false` to the Front-matter of a post to turn off the TOC.
+# 是否激活文章 TOC 功能，并配置TOC支持选中哪些标题类型，这是全局配置。
+# 可以在某篇文章的 Front-matter 中再加上`toc: false`，使该篇文章关闭TOC目录功能
+toc:
+  enable: true
+  heading: h2, h3, h4
+  collapseDepth: 0 # 目录默认展开层级
+  showToggleBtn: true # 是否显示切换TOC目录展开收缩的按钮
+
+# 代码块相关
+code:
+  lang: true # 代码块是否显示名称
+  copy: true # 代码块是否可复制
+  shrink: true # 代码块是否可以收缩
+  break: false # 代码是否折行
+
+# 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
+reward:
+  enable: true
+  title: 你的赏识是我前进的动力
+  wechat: /medias/reward/wechat.png
+  alipay: /medias/reward/alipay.jpg
+
+# Whether to activate the copyright information of the blog and author when copying the post content.
+# minCharNumber: Approve copyright information by copying at least how many characters.
+# 是否激活复制文章时追加博客和作者的版权信息.
+copyright:
+  enable: false
+  minCharNumber: 120 # 至少复制多少个字符就追加版权信息.
+  description: 本文章著作权归作者所有，任何形式的转载都请注明出处。
+
+# Whether to activate the mathjax, this is a global configuration, but the post still does not open the mathjax rendering.
+# Considering that the mathjax loading is time consuming,
+# you also need to add `mathjax: true` to the Front-matter of the post that needs to be rendered.
+# 是否激活mathjax数学公式，这是全局配置，但文章仍然不会都开启mathjax渲染，
+# 考虑到mathjax加载比较耗时，你还需要在需要渲染的文章的Front-matter中再加上`mathjax: true`才行.
+mathjax:
+  enable: false
+  cdn: https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+# Post word count, reading duration, site total word count.
+# Before you activate, please confirm that you have installed the hexo-wordcount plugin,
+# install the plugin command: `npm i --save hexo-wordcount`.
+# 文章字数统计、阅读时长、总字数统计等
+# 文章信息--若要开启文章字数统计，需要安装 hexo-wordcount 插件，安装命令: `npm i --save hexo-wordcount`
+postInfo:
+  date: true # 发布日期
+  update: false # 更新日期
+  wordCount: true # 文章字数统计
+  totalCount: true # 站点总文章字数
+  min2read: true # 文章阅读时长
+  readCount: true # 文章阅读次数
+
+# Whether to activate the 'love' effect of clicking on the page.
+# 是否激活点击页面的'爱心'效果，默认激活.
+clicklove:
+  enable: true
+
+# profile in about page, including avatars, career, and personal introductions.
+# 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
+profile:
+  avatar: /medias/avatar.jpg
+  career: 前端开发工程师
+  introduction: 成功取决于很多个不同因素.
+
+# config my projects informations in about page.
+# If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
+# 在“关于”页面配置"我的项目"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
+myProjects:
+  enable: true
+  data:
+    hexo-theme-matery:
+      icon: fas fa-file-alt
+      iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
+      url: http://github.com/blinkfox/hexo-theme-matery
+      desc: This is a Hexo blog theme with 'Material Design' and responsive design.
+    Fenix:
+      icon: fas fa-database
+      iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
+      url: https://github.com/blinkfox/fenix
+      desc: 这是 Spring Data JPA 复杂或动态 SQL 查询的扩展库。
+    typora-vue-theme:
+      icon: fas fa-file-alt
+      iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
+      url: https://github.com/blinkfox/typora-vue-theme
+      desc: This is a typora theme inspired by Vue document style.
+
+# config my skills informations in about page.
+# If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
+# 在“关于”页面配置"我的技能"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
+mySkills:
+  enable: true
+  data:
+    CSS:
+      background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
+      percent: 85%
+    JavaScript:
+      background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
+      percent: 80%
+    HTML5:
+      background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
+      percent: 80%
+    C:
+      background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
+      percent: 70%
+    Vue:
+      background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
+      percent: 80%
+    React:
+      background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
+      percent: 75%
+
+# config gallery of my photos in about page.
+# If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
+# 在“关于”页面配置"我的相册"图片，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
+myGallery:
+  enable: true
+  data:
+    - https://tva1.sinaimg.cn/large/006aANDQly1gya2l6qdvwj30k00dcmyi.jpg
+    - https://tva1.sinaimg.cn/large/006aANDQly1gya2kxf4wpj31z416q1kx.jpg
+    - https://tva1.sinaimg.cn/mw690/006aANDQly1gya2o3gekvj34lh32bnpm.jpg
+
+# Whether to display post-calender in the `archive` page
+# 设置在归档页面中是否显示'文章日历'控件
+postCalendar: true
+
+# 不建议使用gittalk,gitment这样权限过高的oauth app,因为它们能够 读写 授权者 所有的公共仓库 ，也就是说拿到你的授权 Token 的人，可以将你的 GitHub 公共仓库删空（这是github权限分的不够细的锅），如果恶意攻击者想获取使用者的 AccessToken，只需要在代码中加上一个 ajax 请求即可。原贴地址:https://www.v2ex.com/t/535608。建议大家看完。（我没有在用gittalk/gitment的网站上评论过，但根据v2ex网友的提示，如果网站自行修改了 gitalk.js 脚本 或者反代了 github api，就很容易拿到你的 Token ）
+
+# https://github.com/utterance/utterances 是个 GitHub App，它的权限仅限于某个仓库。像 hugo hexo 这种静态页面类型的博客，clientID/clientSecret 泄露是不可避免的。我认为较好的解决方式是像 utteras 这种 GitHubApp，只有一个仓库的读写权限，将破坏降到最小。
+
+# valine和minivaline都是使用的免费的leancloud开发版资源，即使数据丢了leancloud也不用负任何的责任。此外valine的src目录已在1.4.0后停止更新。。。薛定谔的开源。
+
+# 当初多说国内最大都倒了，livere不一定靠谱。
+
+# disqus被墙了。
+
+# 畅言需要备案。
+
+# the Gitalk config，default disabled
+# Gitalk 评论模块的配置，默认为不激活
+gitalk:
+  enable: false
+  owner: 'Parade001'
+  repo: 'Parade001.github.io'
+  oauth:
+    clientId: '6d74b24b8d49da232128'
+    clientSecret: 'c43a503dd38bf66db8bbb36a2edfc2860f5d3e12'
+  admin: ['Parade001']
+# the Gitment config，default disabled
+# Gitment 评论模块的配置，默认为不激活
+gitment:
+  enable: false
+  owner:
+  repo:
+  oauth:
+    clientId:
+    clientSecret:
+
+# disqus config, default disabled
+# Disqus评论模块的配置，默认为不激活
+disqus:
+  enable: false
+  shortname:
+
+# Livere comment configuration, the default is not activated
+# Livere 来必力评论模块的配置，默认为不激活
+livere:
+  enable: false
+  uid:
+
+# The configuration of the Valine comment module is not activated by default.
+# To use it, activate the configuration item and set appId and appKey.
+# Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
+valine:
+  enable: false
+  appId:
+  appKey:
+  notify: true
+  verify: true
+  visitor: true
+  avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  pageSize: 10
+  placeholder: 'just go go' # Comment Box placeholder
+  background: /medias/comment_bg.png
+
+# The configuration of the MiniValine comment module is not activated by default.
+# To use it, activate the configuration item and set appId and appKey.
+# MiniValine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
+# See: https://github.com/MiniValine/MiniValine
+minivaline:
+  enable: false
+  appId: zhM0AOiqle17oPoE84CoYw1e-gzGzoHsz # Your leancloud application appid
+  appKey: itmzT1JbXfAjVwMqDhGPzU45 # Your leancloud application appkey
+  mode: DesertsP # DesertsP or xCss
+  placeholder: Write a Comment # Comment box placeholder
+  math: true # Support MathJax.
+  md: true # Support Markdown.
+  enableQQ: false # Enable QQ avatar API.
+  NoRecordIP: false # Do not record commenter IP.
+  visitor: true # Article reading statistics.
+  maxNest: 6 # Sub-comment maximum nesting depth.
+  pageSize: 6 # Pagination size.
+  adminEmailMd5: de8a7aa53d07e6b6bceb45c64027763d # The MD5 of Admin Email to show Admin Flag.[Just Only DesertsP Style mode]
+  tagMeta: # The String Array of Words to show Flag.[Just Only xCss Style mode]
+    - 管理员
+    - 小伙伴
+    - 访客
+  master: # The MD5 String Array of master Email to show master Flag.[Just Only xCss Style mode]
+    - de8a7aa53d07e6b6bceb45c64027763d
+  friends: # The MD5 String Array of friends Email to show friends Flag.[Just Only xCss Style mode]
+    - b5bd5d836c7a0091aa8473e79ed4c25e
+    - adb7d1cd192658a55c0ad22a3309cecf
+    - 3ce1e6c77b4910f1871106cb30dc62b0
+    - cfce8dc43725cc14ffcd9fb4892d5bfc
+  # MiniValine's display language depends on user's browser or system environment
+  # If you want everyone visiting your site to see a uniform language, you can set a force language value
+  # Available values: en  | zh-CN | (and many more)
+  # More i18n info: https://github.com/MiniValine/minivaline-i18n
+  lang:
+  # Expression Url.
+  # https://github.com/MiniValine/MiniValine/blob/master/.github/FAQ.md#how-to-customize-emoticons
+  emoticonUrl:
+    - https://cdn.jsdelivr.net/npm/alus@latest
+    - https://cdn.jsdelivr.net/gh/MiniValine/qq@latest
+    - https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest
+    - https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest
+    - https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest
+    - https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest
+
+changyan:
+  enable: false
+  appId:
+  conf:
+# Whether to display fork me on github icon and link, default true, You can change it to your repo address
+# 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
+githubLink:
+  enable: true
+  url: https://github.com/blinkfox/hexo-theme-matery
+  title: Fork Me
+
+# The password verification feature of read post. To use this feature,
+# activate the configuration item and write the 'password' key and Cipher in the post's Front-matter.
+# Note: In order to ensure that the original password will not be leaked to the web page,
+# the password of the article must be encrypted by 'SHA256' so that it will not be cracked.
+# 阅读文章的密码验证功能，如要使用此功能请激活该配置项，并在对应文章的Front-matter中写上'password'的键和加密后的密文即可.
+# 请注意：为了保证密码原文不会被泄露到网页中，文章的密码必须是通过'SHA256'加密的，这样就不会被破解.
+verifyPassword:
+  enable: true
+  promptMessage: 请输入访问本文章的密码
+  errorMessage: 密码错误，将返回主页！
+
+# busuanzi(http://busuanzi.ibruce.info/) website statistics
+# 不蒜子(http://busuanzi.ibruce.info/) 网站统计
+busuanziStatistics:
+  enable: true
+  totalTraffic: true # 总访问量
+  totalNumberOfvisitors: true # 总人次
+
+# Add google analytics configuration
+# 添加 Google Analytics 配置
+googleAnalytics:
+  enable: false
+  id:
+
+# Add baidu analytics configuration
+# 添加 baidu Analytics 配置
+baiduAnalytics:
+  enable: false
+  id:
+
+# 百度搜索资源平台提交链接
+baiduPush: true
+
+# The used front-end library can be replaced with the corresponding CDN address as needed,
+# If the specific version is not specified below, you can use the latest version.
+# 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
+# 注：jsdelivr可以自动帮你生成.min版的js和css，所以你在设置js及css路径中可以直接写.min.xxx
+libs:
+  css:
+    matery: /css/matery.css
+    mycss: /css/my.css
+    fontAwesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css # V5.11.1
+    materialize: /libs/materialize/materialize.min.css # 1.0.0
+    aos: /libs/aos/aos.css
+    animate: /libs/animate/animate.min.css # V3.5.1
+    lightgallery: /libs/lightGallery/css/lightgallery.min.css # V1.6.11
+    aplayer: /libs/aplayer/APlayer.min.css
+    dplayer: /libs/dplayer/DPlayer.min.css
+    gitalk: /libs/gitalk/gitalk.css
+    jqcloud: /libs/jqcloud/jqcloud.css
+    tocbot: /libs/tocbot/tocbot.css
+    prism: /libs/prism/prism.css
+  js:
+    matery: /js/matery.js
+    jquery: /libs/jquery/jquery.min.js
+    materialize: /libs/materialize/materialize.min.js # 1.0.0
+    masonry: /libs/masonry/masonry.pkgd.min.js # v4.0.0
+    aos: /libs/aos/aos.js
+    scrollProgress: /libs/scrollprogress/scrollProgress.min.js
+    lightgallery: /libs/lightGallery/js/lightgallery-all.min.js # V1.6.11
+    clicklove: /libs/others/clicklove.js
+    busuanzi: /libs/others/busuanzi.pure.mini.js
+    aplayer: /libs/aplayer/APlayer.min.js
+    dplayer: /libs/dplayer/DPlayer.min.js
+    crypto: /libs/cryptojs/crypto-js.min.js
+    echarts: /libs/echarts/echarts.min.js
+    gitalk: /libs/gitalk/gitalk.min.js
+    valine: /libs/valine/Valine.min.js # 若想保持最新版，请替换为 https://unpkg.com/valine/dist/Valine.min.js  默认为 /libs/valine/Valine.min.js
+    minivaline: /libs/minivaline/MiniValine.js
+    jqcloud: /libs/jqcloud/jqcloud-1.0.4.min.js
+    tocbot: /libs/tocbot/tocbot.min.js
+    canvas_nest: /libs/background/canvas-nest.js
+    ribbon: /libs/background/ribbon.min.js
+    ribbonRefresh: /libs/background/ribbon-refresh.min.js
+    ribbon_dynamic: /libs/background/ribbon-dynamic.js
+    instantpage: /libs/instantpage/instantpage.js
+    pjax: https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/Hexo_js%E6%96%87%E4%BB%B6/jquery.pjax.min.js
+
+# The post featured images that needs to be displayed when there is no image.
+# 无文章特色图片时需要显示的文章特色图片.
+featureImages:
+  - http://api.btstu.cn/sjbz/?lx=meizi
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2l6qdvwj30k00dcmyi.jpg
+  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrds66wnvj21hc0u0khj.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrerxsu1hj31hc0xcq8r.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpgly1fwrfzbrlbtj31hc0u01kx.jpg
+  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrhuuh8ikj21hc0u0wqx.jpg
+  - https://tva2.sinaimg.cn/large/005BYqpggy1fwre36xr2mj31hc0u0199.jpg
+  - https://tva2.sinaimg.cn/large/9bd9b167ly1fwrh8y1nfpj21hc0xcjuv.jpg
+  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrhtumermj21hc0u0ty2.jpg
+  - https://api.sunweihu.com/api/bing1/api.php
+  - https://tva1.sinaimg.cn/mw690/006aANDQly1gya2o3gekvj34lh32bnpm.jpg
+  - http://api.btstu.cn/sjbz/?m_lx=suiji
+  - https://tva2.sinaimg.cn/large/9bd9b167gy1fwrhu0ouhhj21hc0u0kai.jpg
+  - https://api.ixiaowai.cn/gqapi/gqapi.php
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kdfbrpj31z41e2b29.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrclluxllj31hc0u0wru.jpg
+  - https://tva1.sinaimg.cn/large/0060lm7Tly1ftg6wuhgywj31hc0u0wjr.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2ly4asmj31aj1kw1kx.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrdy18glaj31hc0u0wls.jpg
+  - https://tva4.sinaimg.cn/large/87c01ec7gy1frmmyljiepj21kw0w0qvf.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrezhete3j31hc0xc4ex.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrenhgd46j31hc0xcn1v.jpg
+  - https://tva2.sinaimg.cn/large/005BYqpggy1fwre2b3fzij31hc0u0qog.jpg
+  - https://tva1.sinaimg.cn/large/0060lm7Tly1ftg6owkw9lj31hc0u0tt9.jpg
+  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmro0m82gj21hc0u0do7.jpg
+  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmrsyggapj21hc0u0n69.jpg
+  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmn0empcsj21kw0w0e87.jpg
+  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmmmr8twvj21hc0u0x6q.jpg
+  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/joshua-%20tree.jpg
+  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmrpcifo0j21hc0u0wn2.jpg
+  - https://tva4.sinaimg.cn/large/87c01ec7gy1frmmmwb3anj21hc0u0b2a.jpg
+  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmr2kh3xkj21kw0w0e8e.jpg
+  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmrx49dasj21hc0u0wnm.jpg
+  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmmxmp6wqj21kw0w01lc.jpg
+  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmmlso9rgj21hc0u0kjn.jpg
+  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmr3hgu9hj21hc0xcb2b.jpg
+  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmrz8e3ytj21hc0u0wnn.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2l8nx99j31z41bh4qp.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kuqiklj30lc0sgaba.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrfai4233j31hc0u04gl.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2l8aq8oj31z415e7t3.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2l48o5yj31z417v4nd.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kt48tlj31z40tuh78.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kquccuj31z41hc7wh.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kppagdj30m80etgmi.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2ko54o0j31kw1kw1kx.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kmjyg9j32yo1uokjl.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kdfbrpj31z41e2b29.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kbhircj31z41bfkbb.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2k9d1rej31z41407wh.jpg
+  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220319165159.png
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2k4fdopj31la0widm1.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2k0a86kj30m80enabi.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jztnu1j318g0p01dw.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jy3n9lj31la0wijy5.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jwnq1ij318g0rstgb.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jhma19j318g0p0q7l.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jij4lvj31hc0u0q81.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2ju5e4kj318g0rs4lp.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jegnu9j30hs0aomy0.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jirn6vj31kw0zkdix.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jqwldoj31kw16o19t.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2je4v70j30hs0bu766.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jfg907j30k00b9gn5.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jfhhxxj31be0zj3z9.jpg
+  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jre9txj318g0p040s.jpg
+  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrfyg41rwj31hc0u011h.jpg
+  - http://api.btstu.cn/sjbz/?lx=meizi
+  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrgnoxm4wj31hc0u0jw0.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpggy1fwretwl1n5j31hc0u0dqm.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrfbchq9ij31hc0u0whg.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpggy1fwre3vw89qj31hc0u04ka.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrf16epe4j31hc0u01kx.jpg
+  - https://tva2.sinaimg.cn/large/005BYqpggy1fwremac6xkj31hc0xcjxr.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpggy1fwreudu9j2j31hc0u0ana.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpggy1fwre1g4q3bj31hc0u0wx6.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrffl14f4j31hc0xcwof.jpg
+  - https://tva1.sinaimg.cn/large/9bd9b167gy1fwrhzppjf7j21hc0xch0b.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpgly1fwrfvhzyhrj31hc0u0x4u.jpg
+  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F87c01ec7gy1frmrrnjpf4j21hc0u0dot.jpg
+  - https://tva1.sinaimg.cn/large/9bd9b167gy1fwrh9mca7ej21hc0u0437.jpg
+  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmru22eeej21hc0u0aj6.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpggy1fwre79402hj31hc0u07i4.jpg
+  - https://tva2.sinaimg.cn/large/9bd9b167gy1fwrdyr5suzj21hc0u045d.jpg
+  - https://tva2.sinaimg.cn/large/005BYqpggy1fwre7nuagnj31hc0u0qhw.jpg
+  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmmmaptjmj21hc0u0npf.jpg
+  - https://tva3.sinaimg.cn/large/0060lm7Tly1ftg6xaqdu6j31hc0u0x4k.jpg
+  - https://tva1.sinaimg.cn/large/0060lm7Tly1ftg6omnqa4j31hc0u010z.jpg
+  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmru22eeej21hc0u0aj6.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpggy1fwre3t28fhj31hc0u0tr1.jpg
+  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmrpcifo0j21hc0u0wn2.jpg
+  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmrr7y6u3j21hc0u0k0c.jpg
+  - https://tva4.sinaimg.cn/large/9bd9b167ly1fwrhzl9w5xj21hc0xc4e7.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrcmtmbgqj31hc0u014s.jpg
+  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmryu38jij21hc0u0thv.jpg
+  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmrsc1lktj21hc0u07dd.jpg
+  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmry165k5j21hc0u0n6b.jpg
+  - https://tva2.sinaimg.cn/large/0060lm7Tly1ftg6xehevfj31hc0u0b29.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrel25jwaj31hc0u0njq.jpg
+  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrh8zm4qaj21hc0xc0w6.jpg
+  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmmxmp6wqj21kw0w01lc.jpg
+  - https://api.isoyu.com/bing_images.php
+  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrgpzwrpdj21hc0u0tbr.jpg
+  - https://tva2.sinaimg.cn/large/005BYqpgly1fwrg0daz54j31hc0u0aib.jpg
+  - https://tva2.sinaimg.cn/large/005BYqpggy1fwrfce8bi9j31hc0u0ncc.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpgly1fwrgkvn2f0j31hc0u01kx.jpg
+  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrey0mn2wj31hc0u0k28.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrfe59efij31hc0xc7c9.jpg
+  - https://tva4.sinaimg.cn/large/87c01ec7gy1frmrqzc5woj21hc0u0k07.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrgn7vxgdj31hc0u0nnw.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpggy1fwre2b3fzij31hc0u0qog.jpg
+  - https://tva4.sinaimg.cn/large/9bd9b167gy1fwri874ygcj21hc0u0ncj.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpgly1fwrfbzjskhj31hc0u0dyo.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrfervrpgj31hc0u01kx.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpgly1fwrf0jr143j31hc0u0143.jpg
+  - https://tva3.sinaimg.cn/large/005BYqpgly1fwrem2kqgpj31hc0xcn44.jpg
+  - https://tva2.sinaimg.cn/large/9bd9b167ly1fwrh9h9rpqj21hc0xc0xq.jpg
+  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrhch2kdhj21hc0u0x0m.jpg
+  - https://tva4.sinaimg.cn/large/9bd9b167gy1fwrdybea96j21hc0u0h5g.jpg
+  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrfe3txymj31hc0xcjz8.jpg
+  - https://tva3.sinaimg.cn/large/0060lm7Tly1ftg6onkf2aj318g0p0wmo.jpg
+  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F1200px-The_Bubble_Nebula_-_NGC_7635_-_Heic1608a.jpg
+  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Fhubble_birthofstars_0.jpg
+  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmrz8e3ytj21hc0u0wnn.jpg
+# default configs that the default policy for every articles/posts
+# default 配置文章的默认转载规则
+
+# you can define reprint policy for a single article in the front-matter of the specific md file using this key: reprintPolicy
+# 您可以使用在文章md文件的 front-matter 中指定 reprintPolicy 来给单个文章配置转载规则
+
+# 可用的转载规则有（available reprint policies are）：
+# 这些转载规则的意义请参考(you can refer to this link FMI)：https://creativecommons.org/choose/?lang=zh
+# cc_by（知识共享署名 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
+# cc_by_nd（知识共享署名-禁止演绎 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
+# cc_by_sa（知识共享署名-相同方式共享 4.0 国际许可协议 Creative Commons Attribution-ShareAlike 4.0 International License）
+# cc_by_nc（知识共享署名-非商业性使用 4.0 国际许可协议 Creative Commons Attribution-NoDerivatives 4.0 International License）
+# cc_by_nc_nd（知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License）
+# cc_by_nc_sa（知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License）
+
+# cc0（CC0 1.0 通用 (CC0 1.0) 公共领域贡献 CC0 1.0 Universal (CC0 1.0) Public Domain Dedication） https://creativecommons.org/publicdomain/zero/1.0/deed.zh
+
+# noreprint（不允许转载 not allowed to reprint）
+# pay（付费转载 pay for reprinting）
+reprint:
+  enable: true # whether enable reprint section 是否启用“转载规则限定模块”
+  default: cc_by
+
+# DaoVoice online contact
+daovoice:
+  enable: false
+  app_id:
+
+# Tidio online contact
+tidio:
+  enable: false
+  public_key:
+
+# 腾讯兔小巢，见https://txc.qq.com/
+tuxiaochao:
+  enable: true
+  productId: 374160
+#背景canvas-nest
+canvas_nest:
+  enable: false
+  color: 0,0,255 # 线条颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
+  pointColor: 0,0,255 # 交点颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
+  opacity: 0.7 # 线条透明度（0~1）, 默认: 0.5
+  zIndex: -1 # 背景的 z-index 属性，css 属性用于控制所在层的位置, 默认: -1.
+  count: 99 # 线条的总数量, 默认: 99
+
+# 背景静止彩带.
+ribbon:
+  enable: false
+  size: 150 # 彩带大小, 默认: 90.
+  alpha: 0.6 # 彩带透明度 (0 ~ 1), 默认: 0.6.
+  zIndex: -1 # 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1.
+  clickChange: false # 设置是否每次点击都更换彩带.
+
+# 背景动态彩带.
+ribbon_dynamic:
+  enable: false
+
+# sharejs文章分享模块.
+# 支持顺序，可选项目为twitter, facebook, google, qq, qzone, wechat, weibo, douban, linkedin.
+sharejs:
+  enable: true
+  sites: twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin
+
+# addthis文章分享模块.
+addthis:
+  enable: false
+  pubid: # 前往https://www.addthis.com/获取
+
+# 打字效果副标题.
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
+subtitle:
+  enable: true
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+  sub1: 纸上得来终觉浅,绝知此事要躬行
+  sub2: success depends on many different circumstances
+
+# 手机二级菜单.
+navMenu:
+  mleft: true # 二级侧栏子菜单是否对齐左边
+  bgColor: ' ' # 二级侧栏子菜单背景颜色,留空即为全局背景色
+
+# 网页预加载.
+instantpage:
+  enable: true
+
+# banner 是否每日切换.
+# 若为 false, 则 banner 默认为 /medias/banner/0.jpg
+banner:
+  enable: true
+
+#ICP备案信息尾部显示
+icp:
+  enable: false
+  url: # 备案链接
+  text: # 备案信息
+
+# CDN访问加速
+# 第一次使用本功能，一定要先配置url，再`hexo cl && hexo g && hexo d`部署到GitHub的仓库，注意！必须是GitHub的仓库！
+# 如果必须要使用国内的coding或者gitee，可以采用双部署，同时将网站部署到两个仓库（其中一个必须是GitHub的仓库）
+# URL配置规则（例子如下）： https://cdn.jsdelivr.net/gh/你的GitHub用户名/你的仓库名
+# 如果想关闭此功能，将 url地址 注释或删除即可！
+#
+# 注：配置了此项，就代表着本地调试的时候，网站依然会去GitHub请求资源（原来的资源），本地调试的时候记得将 此项配置 注释或者删除掉
+# 更多关于访问速度优化，请查看：https://blog.sky03.cn/posts/42790.html
+# 注：jsdelivr可以自动帮你生成.min版的js和css，所以你在上面设置js及css路径中可以直接写.min.xxx
+jsDelivr:
+  url: # https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io
+
+# 网站背景图
+background:
+  enable: true
+  url: 'https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/Hexo_js%E6%96%87%E4%BB%B6%2Fstar.jpg'
+
+# 说说 https://artitalk.js.org/
+artitalk:
+  enable: false
+  appId: # xxxxx
+  appKey: # xxxxxx
+
+# 哔哔功能配置
+# 登陆leancloud创建应用。进入应用后，点击创建 Class，将「 Class 名称」命名为 content
+# 点击刚刚创建的content Class，点击添加列并创建名称为content的列，类型为String，注意列注释也要填写（随意填）
+# 记录appid，masterkey，api域名
+# 输入:hexo new page bb
+# hexo就在source文件夹下创建了bb/index.md。
+# 修改index.md的frontmater下的layout为bb：
+# ---
+# title: 黑石说
+# layout: bb
+# ---
+# 里面的文字可以自己随意加，会显示在哔哔的上方。
+# 关注公众号 "黑石哔哔"，发送: //bindCurrentUser:你的APPID,你的MASTERKEY,你的RESTAPI
+# 可用leancloud国际版，国际版api为 https://appid前八位.api.lncldglobal.com
+bbtime:
+  enable: false
+  appId: # 你的appId
+  appKey: # 你的appKey
+  serverURLs: # https://你的api

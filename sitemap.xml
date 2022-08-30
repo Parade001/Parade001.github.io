@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiongteng.cc/2022/08/3139805.html</loc>
+    
+    <lastmod>2022-08-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiongteng.cc/2022/08/2021989.html</loc>
+    
+    <lastmod>2022-08-30</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiongteng.cc/2017/03/1011430.html</loc>
     
     <lastmod>2022-08-30</lastmod>
@@ -170,14 +184,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2020/03/2521103.html</loc>
+    <loc>https://xiongteng.cc/2022/06/1141018.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2022/06/1141018.html</loc>
+    <loc>https://xiongteng.cc/2020/03/2521103.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -422,14 +436,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2022/08/1236763.html</loc>
+    <loc>https://xiongteng.cc/2021/01/1834716.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2021/01/1834716.html</loc>
+    <loc>https://xiongteng.cc/2022/08/1236763.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -555,14 +569,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2019/06/1258210.html</loc>
+    <loc>https://xiongteng.cc/2019/07/2833216.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2019/07/2833216.html</loc>
+    <loc>https://xiongteng.cc/2019/06/1258210.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -576,14 +590,21 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2021/02/2462442.html</loc>
+    <loc>https://xiongteng.cc/2021/02/1950120.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2021/02/1950120.html</loc>
+    <loc>https://xiongteng.cc/2021/01/2033883.html</loc>
+    
+    <lastmod>2022-08-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiongteng.cc/2021/02/2462442.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -598,13 +619,6 @@
   
   <url>
     <loc>https://xiongteng.cc/2019/06/2021686.html</loc>
-    
-    <lastmod>2022-08-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiongteng.cc/2021/01/2033883.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -1068,6 +1082,13 @@
   </url>
   
   <url>
+    <loc>https://xiongteng.cc/tags/MySQL-%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2022-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xiongteng.cc/tags/qrcode/</loc>
     <lastmod>2022-08-30</lastmod>
     <changefreq>daily</changefreq>
@@ -1173,21 +1194,7 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/TS/</loc>
-    <lastmod>2022-08-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xiongteng.cc/tags/TS%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
-    <lastmod>2022-08-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiongteng.cc/tags/%E4%BC%98%E5%85%88%E7%BA%A7/</loc>
     <lastmod>2022-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1201,7 +1208,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/Object-defineProperty/</loc>
+    <loc>https://xiongteng.cc/tags/TS/</loc>
+    <lastmod>2022-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiongteng.cc/tags/%E4%BC%98%E5%85%88%E7%BA%A7/</loc>
     <lastmod>2022-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1209,6 +1223,13 @@
   
   <url>
     <loc>https://xiongteng.cc/tags/Vuex/</loc>
+    <lastmod>2022-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiongteng.cc/tags/Object-defineProperty/</loc>
     <lastmod>2022-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1306,6 +1327,13 @@
   </url>
   
   <url>
+    <loc>https://xiongteng.cc/tags/blog/</loc>
+    <lastmod>2022-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xiongteng.cc/tags/input%E4%BA%8B%E4%BB%B6/</loc>
     <lastmod>2022-08-30</lastmod>
     <changefreq>daily</changefreq>
@@ -1320,14 +1348,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/protoc/</loc>
+    <loc>https://xiongteng.cc/tags/state-props/</loc>
     <lastmod>2022-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/state-props/</loc>
+    <loc>https://xiongteng.cc/tags/protoc/</loc>
     <lastmod>2022-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1715,6 +1743,13 @@
   
   <url>
     <loc>https://xiongteng.cc/categories/React/</loc>
+    <lastmod>2022-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiongteng.cc/categories/MySQL/</loc>
     <lastmod>2022-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

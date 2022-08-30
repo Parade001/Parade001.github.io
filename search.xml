@@ -8,7 +8,7 @@
       <link href="/2022/08/3139805.html"/>
       <url>/2022/08/3139805.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">SELECT CATALOG_NAME FROM SCHEMATA// 查询表中的单个字段SELECT a,b,c  FROM  表名// 查询表中的多个字段SELECT * FROM 表名//查询表中的所有字段<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>···未完待更</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">USE 库名; //代表下面到操纵都在对应库名就行操纵`字段名用着重号包裹，避免被识别成关键字`SELECT CATALOG_NAME FROM SCHEMATA// 查询表中的单个字段SELECT a,b,c  FROM  表名// 查询表中的多个字段SELECT * FROM 表名//查询表中的所有字段         <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>···未完待更</p>]]></content>
       
       
       <categories>

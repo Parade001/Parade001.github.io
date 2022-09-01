@@ -745,11 +745,10 @@
         <span class="token punctuation">}</span><span class="token punctuation">,</span>delay<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>什么是节流?</p>
 <p>运用场景:</p>
 <ul>
-<li>懒加载时要监听计算<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%BB%9A%E5%8A%A8%E6%9D%A1&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22430011875%22%7D">滚动条</a>的位置，但不必每次滑动都触发，可以降低计算的频率，而不必去浪费 CPU 资源；</li>
+<li>懒加载时要监听计算<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%BB%9A%E5%8A%A8%E6%9D%A1&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A%22430011875%22%7D">滚动条</a>的位置，但不必每次滑动都触发，可以降低计算的频率，而不必去浪费 CPU 资源；</li>
 <li>函数执行一次后,规定时间内不会执行第二次(若一直触发,每隔n秒值触发一次)</li>
 </ul>
 <p>demo:</p>
@@ -765,7 +764,6 @@
 <span class="token punctuation">}</span>
 <span class="token keyword">const</span> betterFn<span class="token operator">=</span><span class="token function">throttle</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span>cosole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'fn函数执行了'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
 <span class="token function">setInterval</span><span class="token punctuation">(</span>betterFn<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>or</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">throttling</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> lastTime <span class="token operator">=</span> <span class="token number">0</span>
@@ -779,10 +777,8 @@
 <span class="token punctuation">}</span>
 <span class="token keyword">const</span> throttlingFn <span class="token operator">=</span> <span class="token function">throttling</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'fn执行了'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
 <span class="token function">setInterval</span><span class="token punctuation">(</span>throttlingFn<span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>Promise 节流 &amp;高阶防抖 写法</p>
 <img src="https://tva1.sinaimg.cn/large/006aANDQly1gzla49sr57j30f40iudnk.jpg">
-
 <p>高频事件触发，在n秒内只会执行一次，节流会稀释函数的执行频率,等待lock的状态，如果lock状态为false，则不会再次执行语句if (!lock) return;后面的内容，直至等待setTimeout函数内容执行完毕，将lock置为true之后，才会再次执行，从而达到减少fn响应次数。</p>
 <p><strong>理念：每次触发事件时都判断当前是否有等待执行的延时函数</strong></p>
 
@@ -1295,7 +1291,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168.5k</span>&nbsp;字
+                class="white-color">171k</span>&nbsp;字
             
             
             

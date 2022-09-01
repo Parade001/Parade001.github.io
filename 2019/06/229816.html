@@ -747,7 +747,6 @@
 <p><strong>2.在子组件使用变量</strong>在子组件中定义好<strong>props变量</strong>(子组件<strong>全局</strong>下),用于接受父组件的数据</p>
 <p><strong>3.父组件内, 使用子组件, 通过属性方式给props变量传值</strong></p>
 <hr>
-
 <p>子组件:</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-product<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -762,14 +761,11 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">{</span>
     <span class="token comment">//定义变量进行接收</span>
     props<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">,</span><span class="token string">'price'</span><span class="token punctuation">,</span><span class="token string">'info'</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
 <p>父组件:</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>	
 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -780,7 +776,6 @@
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>MyProduct</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> MyProduct form <span class="token string">'./components/MyProduct.vue'</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
     components<span class="token operator">:</span><span class="token punctuation">{</span>
@@ -794,9 +789,7 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
 <blockquote>
 <p><em>单项数据流:</em></p>
 </blockquote>
@@ -807,16 +800,12 @@
 <p>JS不能操作堆内存.引用数据类型指向外部的对象</p>
 <p>子组件修改,不通知父级,造成数据的不一致</p>
 <hr>
-
 <blockquote>
 <p><em><strong>子向父传值</strong></em></p>
 </blockquote>
 <p>父组件:   <strong>给子组件绑定一个自定义事件</strong>用于接收到子组件传过来的值，并把他赋值给data缓存里，渲染到页面上</p>
 <p>第一步:</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">@自定义事件名 baba="父组件methods的函数名随意起 //fn"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> son <span class="token keyword">from</span> <span class="token string">'./components/son.vue'</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
     component<span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -828,14 +817,11 @@
     			<span class="token punctuation">}</span>
 		<span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
 <p>子组件:   通过$emit触发自定义事件 第一个是自定义事件名，第二个是要传递的值。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>baba<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
     <span class="token comment">//不可直接修改props中的数据,因为Vue中props是单项数据流</span>
     props<span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">/</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  
@@ -843,19 +829,16 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span>'父组件里的自定义事件名 baba <span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
 <hr>
-
 <blockquote>
-<h6 id="任意组件传值？"><a href="#任意组件传值？" class="headerlink" title="任意组件传值？"></a>任意组件传值？</h6></blockquote>
+<h6 id="任意组件传值？"><a class="header-anchor" href="#任意组件传值？">¶</a>任意组件传值？</h6>
+</blockquote>
 <p><strong>任意组件传值通过中央事件总线$bus</strong></p>
 <p><strong>前置条件</strong>：AA组件叫A组件，BB组件叫B组件，虽然这里是兄弟关系，其实A组件和B组件之间没有任何关系也可以用这种方式。</p>
 <p><strong>定义中央事件总线，挂载到vue实例上。</strong></p>
 <p>V-model的本质</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">&lt;addBtn :value="count" @input"val =&gt; count = val"&gt;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>addBtn</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <ol>
 <li>给value属性复制</li>
 <li>接受input事件,把值赋值给变量</li>
@@ -1387,7 +1370,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168.5k</span>&nbsp;字
+                class="white-color">171k</span>&nbsp;字
             
             
             

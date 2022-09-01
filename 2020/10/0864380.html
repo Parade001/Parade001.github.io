@@ -737,12 +737,11 @@
 </ul>
 <p>React中只有类组件有生命周期,定义函数组件方法:使用JS函数.</p>
 <p>函数式组件是一个纯函数又被称为无状态组件,接收props对象返回一个react元素,不能在组件中使用setState(),因为所有生命周期钩子都来自继承的React.Component中.</p>
-<p>而***<a target="_blank" rel="noopener" href="https://react.docschina.org/docs/react-without-es6.html">类组件</a>**<em>需要去</em>继承React.Component 并且创建render函数返回react元素*.</p>
+<p>而***<a target="_blank" rel="noopener" href="https://react.docschina.org/docs/react-without-es6.html">类组件</a>*<em><em>需要去</em>继承React.Component 并且创建render函数返回react元素</em>.</p>
 <pre class="line-numbers language-none"><code class="language-none">import React from 'react
 const Baba = (prop)=&gt;{
     return &lt;h1&gt; {prop.name}&lt;/h1&gt;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>函数式组件中的this指向未undefined,因为Babel编译后的代码开启的 “use strict”</p>
 <p>此处再总结下,<em><strong>JS在哪些情况 下返回值为undefined</strong></em>?</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1.</span>访问声明<span class="token punctuation">,</span>但没有初始化的变量
@@ -772,7 +771,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">//undefined</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1283,7 +1281,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168.5k</span>&nbsp;字
+                class="white-color">171k</span>&nbsp;字
             
             
             

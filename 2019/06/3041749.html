@@ -731,37 +731,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="插槽"><a href="#插槽" class="headerlink" title="插槽:"></a>插槽:</h1><p>作用:让组件内的标签能动态传入</p>
+                <h1>插槽:</h1>
+<p>作用:让组件内的标签能动态传入</p>
 <p>用法:</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>​    当使用组件,并未给传入具体标签内容时,插槽默认内容会显示</p>
-<p>​    使用组件时传入自定义标签</p>
+<p>​	当使用组件,并未给传入具体标签内容时,插槽默认内容会显示</p>
+<p>​	使用组件时传入自定义标签</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Pannel</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Pannel</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>自定义标签会替换slot的位置</p>
 <hr>
-
 <blockquote>
 <p>父级模板里的所有内容都是在父级作用域中编译的；子模板里的所有内容都是在子作用域中编译的。</p>
 </blockquote>
 <hr>
-
-<h2 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h2><p>作用:给不同的slot分发不同的内容</p>
+<h2 id="具名插槽"><a class="header-anchor" href="#具名插槽">¶</a>具名插槽</h2>
+<p>作用:给不同的slot分发不同的内容</p>
 <blockquote>
 <p>slot name= “”    这个 attribute 可以用来定义额外的插槽</p>
 </blockquote>
 <p>给具名插槽提供内容时候,在一个 <code>&lt;template&gt;</code> 元素上使用 <code>v-slot</code> 指令，用template包裹自定义标签,并以 <code>v-slot</code> 的参数的形式提供其名称</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">v-solot:name 简写等同 #name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>template v<span class="token operator">-</span>slot<span class="token operator">:</span>header<span class="token operator">&gt;</span>
 v<span class="token operator">-</span>slot 
 只能添加在 <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span> <span class="token function">上</span> <span class="token punctuation">(</span>只有一种例外情况<span class="token punctuation">)</span>，这一点和已经废弃的 slot attribute 不同。
 具名插槽和插槽的默认语法不能混用<span class="token punctuation">,</span>会导致作用域不明确<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
-<h1 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h1><blockquote>
+<h1>作用域插槽</h1>
+<blockquote>
 <p>让插槽内容能够访问子组件中才有的数据.</p>
 <p>在子组件slot 身上添加属性和子组件的值</p>
 <p>使用组件出template 配和v-slot = ‘变量名’</p>
@@ -769,7 +765,6 @@ v<span class="token operator">-</span>slot
 <p>子组件内在的slot上绑定的变量</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">:row</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>obj<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-none"><code class="language-none">export default{
     data(){
         obj:{
@@ -778,11 +773,7 @@ v<span class="token operator">-</span>slot
         }
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <hr>
-
 <p>父组件指定接受</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Pannel</span><span class="token punctuation">&gt;</span></span>
     //scope是个对象,存储了 slot 绑定了所有属性  scope:{row:obj}
@@ -792,23 +783,20 @@ v<span class="token operator">-</span>slot
     		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Pannel</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">{</span>
     components<span class="token operator">:</span><span class="token punctuation">{</span>
         Pannel<span class="token punctuation">,</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在使用组件时开闭标签内写 template,设置v-slot=”变量”</p>
+<p>在使用组件时开闭标签内写 template,设置v-slot=“变量”</p>
 <p>当被提供的内容<em>只有</em>默认插槽时，组件的标签才可以被当作插槽的模板来使用。这样我们就可以把 <code>v-slot</code> 直接用在组件上：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">v-slot:default="变量名"
 v-slot="变量名"  等同以上<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <hr>
-
-<h1 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h1><p>作用:当Vue内置指令无法满足需求时可以自定义</p>
+<h1>自定义指令</h1>
+<p>作用:当Vue内置指令无法满足需求时可以自定义</p>
 <p>用法: 全局注册或者局部注册(<strong>核心API</strong>)</p>
-<p>全局: </p>
+<p>全局:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 全局注册指令</span>
 <span class="token comment">//参数1:指令名称 参数2: 配置对象</span>
 Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">"foc"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -820,7 +808,6 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
   <span class="token punctuation">}</span>
 
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>局部注册:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">directive<span class="token operator">:</span><span class="token punctuation">{</span>
    foc<span class="token operator">:</span><span class="token punctuation">{</span>
@@ -829,10 +816,8 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
      <span class="token punctuation">}</span>
    <span class="token punctuation">}</span>
  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>上面的focus指令能自动获取焦点</p>
 <hr>
-
 <p>下面这个案例的节选部分,实现了对btn点击转为搜索框,自动获取焦点,并注册了失去焦点,输入判定,本地存取,运用了序列化反序列化,以及使用ES7 的asnyc await 发送AJAX请求,</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>
                   <span class="token comment">&lt;!--绑定按下事件 通过监听inputVisible属性变化 以及inputValue属性注册										相应的事件  --&gt;</span>
@@ -856,7 +841,6 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
                   {{item}}
                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
     name<span class="token operator">:</span> <span class="token string">'GoodslistMygoodslist'</span><span class="token punctuation">,</span>
     components<span class="token operator">:</span><span class="token punctuation">{</span>
@@ -914,17 +898,13 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <hr>
-
-<h1 id="nextTick方法"><a href="#nextTick方法" class="headerlink" title="$nextTick方法"></a>$nextTick方法</h1><p>参数:</p>
+<h1>$nextTick方法</h1>
+<p>参数:</p>
 <blockquote>
 <p><code>{Function} [callback]</code></p>
 </blockquote>
 <hr>
-
 <p>用法：</p>
 <blockquote>
 <p>将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。它跟全局方法 <code>Vue.nextTick</code> 一样，不同的是回调的 <code>this</code> 自动绑定到调用它的实例上。</p>
@@ -933,11 +913,9 @@ Vue<span class="token punctuation">.</span><span class="token function">directiv
 <li>$nextTick 原地返回值 是个Promise对象,因此能链式编写</li>
 </ul>
 <hr>
-
 <p>示例:</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>isShow<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>点我搜索<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">v-else</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>inp<span class="token punctuation">"</span></span>   <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">return</span><span class="token operator">:</span><span class="token punctuation">{</span>
         isShow<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
@@ -949,7 +927,6 @@ methods<span class="token operator">:</span><span class="token punctuation">{</s
         		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>inp<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
  				<span class="token punctuation">}</span>
     		<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>当用户点击这个search时,会立即跳转将btn 转为search框</p>
 <p>参考:</p>
 <ul>
@@ -957,35 +934,40 @@ methods<span class="token operator">:</span><span class="token punctuation">{</s
 <li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/reactivity.html#%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0%E9%98%9F%E5%88%97">异步更新队列</a></li>
 </ul>
 <hr>
-
 <p>上文用到了$refs 方法</p>
 <p>他是获取元素DOM元素的方法</p>
-<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#ref">ref</a></h3><ul>
-<li><p><strong>预期</strong>：<code>string</code></p>
+<h3 id="ref"><a class="header-anchor" href="#ref">¶</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#ref">ref</a></h3>
+<ul>
+<li>
+<p><strong>预期</strong>：<code>string</code></p>
 <p><code>ref</code> 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 <code>$refs</code> 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例：</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;!-- `vm.$refs.p` will be the DOM node --&gt;
 &lt;p ref="p"&gt;hello&lt;/p&gt;
 
 &lt;!-- `vm.$refs.child` will be the child component instance --&gt;
 &lt;child-component ref="child"&gt;&lt;/child-component&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>当 <code>v-for</code> 用于元素或组件的时候，引用信息将是包含 DOM 节点或组件实例的数组。</p>
 <p>关于 ref 注册时间的重要说明：因为 ref 本身是作为渲染结果被创建的，在初始渲染的时候你不能访问它们 - 它们还不存在！<code>$refs</code> 也不是响应式的，因此你不应该试图用它在模板中做数据绑定。</p>
 </li>
-<li><p><strong>参考</strong>：<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0">子组件 ref</a></p>
+<li>
+<p><strong>参考</strong>：<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0">子组件 ref</a></p>
 </li>
 </ul>
 <hr>
-
-<h3 id="vm-refs"><a href="#vm-refs" class="headerlink" title="vm.$refs"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#vm-refs">vm.$refs</a></h3><ul>
-<li><p><strong>类型</strong>：<code>Object</code></p>
+<h3 id="vm-refs"><a class="header-anchor" href="#vm-refs">¶</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#vm-refs">vm.$refs</a></h3>
+<ul>
+<li>
+<p><strong>类型</strong>：<code>Object</code></p>
 </li>
-<li><p><strong>只读</strong></p>
+<li>
+<p><strong>只读</strong></p>
 </li>
-<li><p><strong>详细</strong>：</p>
+<li>
+<p><strong>详细</strong>：</p>
 <p>一个对象，持有注册过 <a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#ref"><code>ref</code> attribute</a> 的所有 DOM 元素和组件实例。</p>
 </li>
-<li><p><strong>参考</strong>：</p>
+<li>
+<p><strong>参考</strong>：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E8%AE%BF%E9%97%AE%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%88%96%E5%AD%90%E5%85%83%E7%B4%A0">子组件 ref</a></li>
 <li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#ref">特殊 attribute - ref</a></li>
@@ -993,33 +975,30 @@ methods<span class="token operator">:</span><span class="token punctuation">{</s
 </li>
 </ul>
 <hr>
-
 <blockquote>
 <p>获取原生DOM需要在Mounted生命周期获取</p>
 </blockquote>
 <hr>
-
 <p>在Mounted生命周期中获取2中方式</p>
 <ol>
-<li>在目标标签添加 id /ref </li>
+<li>在目标标签添加 id /ref</li>
 <li>在恰当实际,通过 id / ref 属性获取目标标签</li>
 </ol>
 <p>示例:</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>baba<span class="token punctuation">'</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bigH1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>ref和ID获取原生DOM<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">let</span> h1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#baba"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">let</span> h1Ref <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>bigH1<span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>h1<span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>h1Ref<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="refs-可以通过ref属性获取组件对象"><a href="#refs-可以通过ref属性获取组件对象" class="headerlink" title="$refs 可以通过ref属性获取组件对象"></a>$refs 可以通过ref属性获取组件对象</h2><h6 id="当需要调组件对象里方法等-子传父方法"><a href="#当需要调组件对象里方法等-子传父方法" class="headerlink" title="(当需要调组件对象里方法等) 子传父方法"></a><em>(当需要调组件对象里方法等)</em> 子传父方法</h6><p><strong>示例:</strong></p>
+<h2 id="refs-可以通过ref属性获取组件对象"><a class="header-anchor" href="#refs-可以通过ref属性获取组件对象">¶</a>$refs 可以通过ref属性获取组件对象</h2>
+<h6 id="当需要调组件对象里方法等-子传父方法"><a class="header-anchor" href="#当需要调组件对象里方法等-子传父方法">¶</a><em>(当需要调组件对象里方法等)</em> 子传父方法</h6>
+<p><strong>示例:</strong></p>
 <p>父组件:</p>
 <pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;h1&gt;ref 获取子组件对象&lt;/h1&gt;
 &lt;Demo ref="Yetu"&gt;&lt;/Demo&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Demo <span class="token keyword">from</span> <span class="token string">'./components/refdemo.vue'</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
 
@@ -1031,12 +1010,10 @@ components<span class="token operator">:</span><span class="token punctuation">{
         <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>yetu<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>子组件:</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>这是子组件
      {{msg}}
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
 <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token punctuation">{</span>
@@ -1049,7 +1026,6 @@ components<span class="token operator">:</span><span class="token punctuation">{
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1572,7 +1548,7 @@ components<span class="token operator">:</span><span class="token punctuation">{
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168.5k</span>&nbsp;字
+                class="white-color">171k</span>&nbsp;字
             
             
             

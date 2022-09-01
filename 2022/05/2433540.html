@@ -733,23 +733,30 @@
             <div id="articleContent">
                 <p>本期精读的文章是：</p>
 <p><a target="_blank" rel="noopener" href="https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec">How JavaScript works: memory management + how to handle 4 common memory leaks</a></p>
-<h1 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h1><p>我为什么要选这篇文章呢？</p>
+<h1>1 引言</h1>
+<p>我为什么要选这篇文章呢？</p>
 <p>sessionstack 最近接连发了好几篇文章, 深入探讨 JS, 以及  JS 中一些内部原理. 文中也讲到了, 伴随深入了解 JS 中的一些工作原理, 才有可能写出更好的代码和程序.</p>
 <p>而 JS 中的内存管理, 我的感觉就像 JS 中的一门副科, 我们平时不会太重视, 但是一旦出问题又很棘手. 所以可以通过平时多了解一些 JS 中内存管理问题, 在写代码中通过一些习惯, 避免内存泄露的问题.</p>
-<h1 id="2-内容概要"><a href="#2-内容概要" class="headerlink" title="2 内容概要"></a>2 内容概要</h1><h3 id="内存生命周期"><a href="#内存生命周期" class="headerlink" title="内存生命周期"></a>内存生命周期</h3><p><img src="https://raw.githubusercontent.com/dt-fe/weekly/master/assets/29/1.jpg"></p>
+<h1>2 内容概要</h1>
+<h3 id="内存生命周期"><a class="header-anchor" href="#内存生命周期">¶</a>内存生命周期</h3>
+<p><img src="https://raw.githubusercontent.com/dt-fe/weekly/master/assets/29/1.jpg" alt=""></p>
 <p>不管什么程序语言，内存生命周期基本是一致的：</p>
 <ol>
 <li>分配你所需要的内存</li>
 <li>使用分配到的内存（读, 写）</li>
 <li>不需要时将其释放/归还</li>
 </ol>
-<p>在 C 语言中, 有专门的内存管理接口, 像<code>malloc()</code> 和 <code>free()</code>. 而在 JS 中, 没有专门的内存管理接口, 所有的内存管理都是”自动”的. JS 在创建变量时, 自动分配内存, 并在不使用的时候, 自动释放. 这种”自动”的内存回收, 造成了很多 JS 开发并不关心内存回收, 实际上, 这是错误的.</p>
-<h2 id="JS-中的内存回收"><a href="#JS-中的内存回收" class="headerlink" title="JS 中的内存回收"></a>JS 中的内存回收</h2><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>垃圾回收算法主要依赖于引用的概念. 在内存管理的环境中, 一个对象如果有访问另一个对象的权限（隐式或者显式）, 叫做一个对象引用另一个对象. 例如: 一个 Javascript 对象具有对它原型的引用（隐式引用）和对它属性的引用（显式引用）.</p>
-<h3 id="引用计数垃圾收集"><a href="#引用计数垃圾收集" class="headerlink" title="引用计数垃圾收集"></a>引用计数垃圾收集</h3><p>这是最简单的垃圾收集算法.此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”. 如果没有引用指向该对象（零引用, 对象将被垃圾回收机制回收.<br>示例:</p>
+<p>在 C 语言中, 有专门的内存管理接口, 像<code>malloc()</code> 和 <code>free()</code>. 而在 JS 中, 没有专门的内存管理接口, 所有的内存管理都是"自动"的. JS 在创建变量时, 自动分配内存, 并在不使用的时候, 自动释放. 这种"自动"的内存回收, 造成了很多 JS 开发并不关心内存回收, 实际上, 这是错误的.</p>
+<h2 id="JS-中的内存回收"><a class="header-anchor" href="#JS-中的内存回收">¶</a>JS 中的内存回收</h2>
+<h3 id="引用"><a class="header-anchor" href="#引用">¶</a>引用</h3>
+<p>垃圾回收算法主要依赖于引用的概念. 在内存管理的环境中, 一个对象如果有访问另一个对象的权限（隐式或者显式）, 叫做一个对象引用另一个对象. 例如: 一个 Javascript 对象具有对它原型的引用（隐式引用）和对它属性的引用（显式引用）.</p>
+<h3 id="引用计数垃圾收集"><a class="header-anchor" href="#引用计数垃圾收集">¶</a>引用计数垃圾收集</h3>
+<p>这是最简单的垃圾收集算法.此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”. 如果没有引用指向该对象（零引用, 对象将被垃圾回收机制回收.<br>
+示例:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// [1,2,3,4]这时没有被引用, 会被自动回收</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="限制-循环引用"><a href="#限制-循环引用" class="headerlink" title="限制: 循环引用"></a>限制: 循环引用</h3><p>在下面的例子中, 两个对象对象被创建并互相引用, 就造成了循环引用. 它们被调用之后不会离开函数作用域, 所以它们已经没有用了, 可以被回收了. 然而, 引用计数算法考虑到它们互相都有至少一次引用, 所以它们不会被回收.</p>
+<h3 id="限制-循环引用"><a class="header-anchor" href="#限制-循环引用">¶</a>限制: 循环引用</h3>
+<p>在下面的例子中, 两个对象对象被创建并互相引用, 就造成了循环引用. 它们被调用之后不会离开函数作用域, 所以它们已经没有用了, 可以被回收了. 然而, 引用计数算法考虑到它们互相都有至少一次引用, 所以它们不会被回收.</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> o1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token keyword">var</span> o2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -757,7 +764,7 @@ arr <span class="token operator">=</span> <span class="token keyword">null</span
   o2<span class="token punctuation">.</span>p <span class="token operator">=</span> o1<span class="token punctuation">;</span> <span class="token comment">// o2 引用 o1. 这里会形成一个循环引用</span>
 <span class="token punctuation">}</span>
 <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/dt-fe/weekly/master/assets/29/2.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/dt-fe/weekly/master/assets/29/2.jpg" alt=""></p>
 <p>实际例子:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> div<span class="token punctuation">;</span>
 window<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -766,13 +773,19 @@ window<span class="token punctuation">.</span><span class="token function-variab
   div<span class="token punctuation">.</span>lotsOfData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在上面的例子里, myDivElement 这个 DOM 元素里的 circularReference 属性引用了 myDivElement, 造成了循环引用. IE 6, 7 使用引用计数方式对 DOM 对象进行垃圾回收. 该方式常常造成对象被循环引用时内存发生泄漏.  现代浏览器通过使用标记-清除内存回收算法, 来解决这一问题.</p>
-<h3 id="标记-清除算法"><a href="#标记-清除算法" class="headerlink" title="标记-清除算法"></a>标记-清除算法</h3><p>这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”.</p>
+<h3 id="标记-清除算法"><a class="header-anchor" href="#标记-清除算法">¶</a>标记-清除算法</h3>
+<p>这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”.</p>
 <p>这个算法假定设置一个叫做根<code>root</code>的对象(在 Javascript 里，根是全局对象). 定期的, 垃圾回收器将从根开始, 找所有从根开始引用的对象, 然后找这些对象引用的对象, 从根开始,垃圾回收器将找到所有可以获得的对象和所有不能获得的对象.</p>
-<p>从 2012 年起, 所有现代浏览器都使用了标记-清除内存回收算法。所有对 JavaScript 垃圾回收算法的改进都是基于标记-清除算法的改进.<br><img src="https://raw.githubusercontent.com/dt-fe/weekly/master/assets/29/3.gif"></p>
-<h3 id="自动-GC-的问题"><a href="#自动-GC-的问题" class="headerlink" title="自动 GC 的问题"></a>自动 GC 的问题</h3><p>尽管自动 GC 很方便, 但是我们不知道 GC 什么时候会进行. 这意味着如果我们在使用过程中使用了大量的内存, 而 GC 没有运行的情况下, 或者 GC 无法回收这些内存的情况下, 程序就有可能假死, 这个就需要我们在程序中手动做一些操作来触发内存回收.</p>
-<h3 id="什么是内存泄露"><a href="#什么是内存泄露" class="headerlink" title="什么是内存泄露?"></a>什么是内存泄露?</h3><p>本质上讲, 内存泄露就是不再被需要的内存, 由于某种原因, 无法被释放.</p>
-<p><img src="https://raw.githubusercontent.com/dt-fe/weekly/master/assets/29/4.jpg"></p>
-<h2 id="常见的内存泄露案例"><a href="#常见的内存泄露案例" class="headerlink" title="常见的内存泄露案例"></a>常见的内存泄露案例</h2><h4 id="1-全局变量"><a href="#1-全局变量" class="headerlink" title="1. 全局变量"></a>1. 全局变量</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<p>从 2012 年起, 所有现代浏览器都使用了标记-清除内存回收算法。所有对 JavaScript 垃圾回收算法的改进都是基于标记-清除算法的改进.<br>
+<img src="https://raw.githubusercontent.com/dt-fe/weekly/master/assets/29/3.gif" alt=""></p>
+<h3 id="自动-GC-的问题"><a class="header-anchor" href="#自动-GC-的问题">¶</a>自动 GC 的问题</h3>
+<p>尽管自动 GC 很方便, 但是我们不知道 GC 什么时候会进行. 这意味着如果我们在使用过程中使用了大量的内存, 而 GC 没有运行的情况下, 或者 GC 无法回收这些内存的情况下, 程序就有可能假死, 这个就需要我们在程序中手动做一些操作来触发内存回收.</p>
+<h3 id="什么是内存泄露"><a class="header-anchor" href="#什么是内存泄露">¶</a>什么是内存泄露?</h3>
+<p>本质上讲, 内存泄露就是不再被需要的内存, 由于某种原因, 无法被释放.</p>
+<p><img src="https://raw.githubusercontent.com/dt-fe/weekly/master/assets/29/4.jpg" alt=""></p>
+<h2 id="常见的内存泄露案例"><a class="header-anchor" href="#常见的内存泄露案例">¶</a>常见的内存泄露案例</h2>
+<h4 id="1-全局变量"><a class="header-anchor" href="#1-全局变量">¶</a>1. 全局变量</h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     bar <span class="token operator">=</span> <span class="token string">"some text"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>在 JS 中处理未被声明的变量, 上述范例中的 <code>bar</code>时, 会把<code>bar</code>, 定义到全局对象中, 在浏览器中就是 <code>window</code> 上. 在页面中的全局变量, 只有当页面被关闭后才会被销毁. 所以这种写法就会造成内存泄露, 当然在这个例子中泄露的只是一个简单的字符串, 但是在实际的代码中, 往往情况会更加糟糕.</p>
@@ -784,7 +797,8 @@ window<span class="token punctuation">.</span><span class="token function-variab
 <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在这种情况下调用<code>foo</code>,  this 被指向了全局变量<code>window</code>, 意外的创建了全局变量.</p>
 <p>我们谈到了一些意外情况下定义的全局变量, 代码中也有一些我们明确定义的全局变量. 如果使用这些全局变量用来暂存大量的数据, 记得在使用后, 对其重新赋值为 null.</p>
-<h4 id="2-未销毁的定时器和回调函数"><a href="#2-未销毁的定时器和回调函数" class="headerlink" title="2. 未销毁的定时器和回调函数"></a>2. 未销毁的定时器和回调函数</h4><p>在很多库中, 如果使用了观察者模式, 都会提供回调方法, 来调用一些回调函数. 要记得回收这些回调函数. 举一个 setInterval 的例子.</p>
+<h4 id="2-未销毁的定时器和回调函数"><a class="header-anchor" href="#2-未销毁的定时器和回调函数">¶</a>2. 未销毁的定时器和回调函数</h4>
+<p>在很多库中, 如果使用了观察者模式, 都会提供回调方法, 来调用一些回调函数. 要记得回收这些回调函数. 举一个 setInterval 的例子.</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> serverData <span class="token operator">=</span> <span class="token function">loadData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> renderer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'renderer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -793,7 +807,8 @@ window<span class="token punctuation">.</span><span class="token function-variab
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 每 5 秒调用一次</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果后续 <code>renderer</code> 元素被移除, 整个定时器实际上没有任何作用. 但如果你没有回收定时器, 整个定时器依然有效, 不但定时器无法被内存回收, 定时器函数中的依赖也无法回收. 在这个案例中的 <code>serverData</code> 也无法被回收.</p>
-<h4 id="3-闭包"><a href="#3-闭包" class="headerlink" title="3. 闭包"></a>3. 闭包</h4><p>在 JS 开发中, 我们会经常用到闭包, 一个内部函数, 有权访问包含其的外部函数中的变量. 下面这种情况下, 闭包也会造成内存泄露.</p>
+<h4 id="3-闭包"><a class="header-anchor" href="#3-闭包">¶</a>3. 闭包</h4>
+<p>在 JS 开发中, 我们会经常用到闭包, 一个内部函数, 有权访问包含其的外部函数中的变量. 下面这种情况下, 闭包也会造成内存泄露.</p>
 <pre class="line-numbers language-Javascript" data-language="Javascript"><code class="language-Javascript">var theThing = null;
 var replaceThing = function () {
   var originalThing = theThing;
@@ -812,7 +827,8 @@ setInterval(replaceThing, 1000);<span aria-hidden="true" class="line-numbers-row
 <p>这段代码, 每次调用<code>replaceThing</code>时, <code>theThing</code> 获得了包含一个巨大的数组和一个对于新闭包<code>someMethod</code>的对象.  同时 <code>unused</code> 是一个引用了<code>originalThing</code>的闭包.</p>
 <p>这个范例的关键在于, 闭包之间是共享作用域的, 尽管<code>unused</code>可能一直没有被调用, 但是<code>someMethod</code> 可能会被调用, 就会导致内存无法对其进行回收. 当这段代码被反复执行时, 内存会持续增长.</p>
 <p>该问题的更多描述可见<a target="_blank" rel="noopener" href="https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156">Meteor 团队的这篇文章</a>.</p>
-<h4 id="4-DOM-引用"><a href="#4-DOM-引用" class="headerlink" title="4. DOM 引用"></a>4. DOM 引用</h4><p>很多时候, 我们对 Dom 的操作, 会把 Dom 的引用保存在一个数组或者 Map 中.</p>
+<h4 id="4-DOM-引用"><a class="header-anchor" href="#4-DOM-引用">¶</a>4. DOM 引用</h4>
+<p>很多时候, 我们对 Dom 的操作, 会把 Dom 的引用保存在一个数组或者 Map 中.</p>
 <pre class="line-numbers language-Javascript" data-language="Javascript"><code class="language-Javascript">var elements = {
     image: document.getElementById('image')
 };
@@ -825,12 +841,14 @@ function removeImage() {
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上述案例中, 即使我们对于 image 元素进行了移除, 但是仍然有对 image 元素的引用, 依然无法对齐进行内存回收.</p>
 <p>另外需要注意的一个点是, 对于一个 Dom 树的叶子节点的引用. 举个例子: 如果我们引用了一个表格中的<code>td</code>元素, 一旦在 Dom 中删除了整个表格, 我们直观的觉得内存回收应该回收除了被引用的 <code>td</code>外的其他元素. 但是事实上, 这个<code>td</code> 元素是整个表格的一个子元素, 并保留对于其父元素的引用. 这就会导致对于整个表格, 都无法进行内存回收. 所以我们要小心处理对于 Dom 元素的引用.</p>
-<h1 id="3-精读"><a href="#3-精读" class="headerlink" title="3 精读"></a>3 精读</h1><p>ES6 中引入<code>WeakSet</code> 和 <code>WeakMap</code>两个新的概念, 来解决引用造成的内存回收问题. <code>WeakSet</code> 和 <code>WeakMap</code>对于值的引用可以忽略不计, 他们对于值的引用是弱引用,内存回收机制, 不会考虑这种引用. 当其他引用被消除后, 引用就会从内存中被释放.</p>
+<h1>3 精读</h1>
+<p>ES6 中引入<code>WeakSet</code> 和 <code>WeakMap</code>两个新的概念, 来解决引用造成的内存回收问题. <code>WeakSet</code> 和 <code>WeakMap</code>对于值的引用可以忽略不计, 他们对于值的引用是弱引用,内存回收机制, 不会考虑这种引用. 当其他引用被消除后, 引用就会从内存中被释放.</p>
 <p>JS 这类高级语言，隐藏了内存管理功能。但无论开发人员是否注意，内存管理都在那，所有编程语言最终要与操作系统打交道，在内存大小固定的硬件上工作。不幸的是，即使不考虑垃圾回收对性能的影响，2017 年最新的垃圾回收算法，也无法智能回收所有极端的情况。</p>
 <p>唯有程序员自己才知道何时进行垃圾回收，而 JS 由于没有暴露显示内存管理接口，导致触发垃圾回收的代码看起来像“垃圾”，或者优化垃圾回收的代码段看起来不优雅、甚至不可读。</p>
 <p>所以在 JS 这类高级语言中，有必要掌握基础内存分配原理，在对内存敏感的场景，比如 nodejs 代码做严格检查与优化。谨慎使用 dom 操作、主动删除没有业务意义的变量、避免提前优化、过度优化，在保证代码可读性的前提下，利用性能监控工具，通过调用栈定位问题代码。</p>
 <p>同时对于如何利用 chrome 调试工具, 分析内存泄露的方法和技巧. 可以参考上期精读<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30349982">精读《2017 前端性能优化备忘录》</a></p>
-<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h1><p>即便在 JS 中, 我们很少去直接去做内存管理. 但是我们在写代码的时候, 也要有内存管理的意识, 谨慎的处理可能会造成内存泄露的场景.</p>
+<h1>4 总结</h1>
+<p>即便在 JS 中, 我们很少去直接去做内存管理. 但是我们在写代码的时候, 也要有内存管理的意识, 谨慎的处理可能会造成内存泄露的场景.</p>
 <blockquote>
 <p>讨论地址是：<a target="_blank" rel="noopener" href="https://github.com/dt-fe/weekly/issues/40">精读《JS 中的内存管理》 · Issue #40 · dt-fe/weekly</a></p>
 </blockquote>
@@ -1360,7 +1378,7 @@ function removeImage() {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168.5k</span>&nbsp;字
+                class="white-color">171k</span>&nbsp;字
             
             
             

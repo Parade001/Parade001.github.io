@@ -321,7 +321,7 @@
 			关于
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul  >
               
                 <li>
 
@@ -346,7 +346,7 @@
 			Demo
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul  >
               
                 <li>
 
@@ -728,6 +728,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -971,6 +976,49 @@
             
         </div>
     </div>
+
+    
+        <link
+  rel="stylesheet"
+  href="/libs/gitalk/gitalk.css"
+/>
+<link
+  rel="stylesheet"
+  href="/css/my-gitalk.css"
+/>
+
+<div class="card gitalk-card" data-aos="fade-up">
+  <div
+    class="comment_headling"
+    style="
+      font-size: 20px;
+      font-weight: 700;
+      position: relative;
+      padding-left: 20px;
+      top: 15px;
+      padding-bottom: 5px;
+    "
+  >
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+  let gitalk = new Gitalk({
+      clientID: '08cb8efd61d2c27103a2',
+      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
+      repo: 'Parade001.github.io',
+      owner: 'Parade001',
+      admin: "Parade001",
+      id: '2022-03-16T23-13-37',
+      distractionFreeMode: false  // Facebook-like distraction free mode
+  });
+
+  gitalk.render('gitalk-container');
+</script>
 
     
 
@@ -1269,9 +1317,9 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2017-2022</span>
+                <span id="year">2018-2022</span>
             
-            <span id="year">2017</span>
+            <span id="year">2018</span>
             <a href="/about" target="_blank">xt_xiong</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>

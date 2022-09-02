@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>Vue 详解组件通信</title>
+      <link href="/2022/09/0214711.html"/>
+      <url>/2022/09/0214711.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>各类锁的区别与联系</title>
+      <link href="/2022/09/0238209.html"/>
+      <url>/2022/09/0238209.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><img src="https://tvax3.sinaimg.cn/large/0066jXzmgy1h5s04s5rw9j30oe0g97hy.jpg"><img src="https://tvax3.sinaimg.cn/large/0066jXzmgy1h5s09t1erfj309m03zdgm.jpg">]]></content>
+      
+      
+      <categories>
+          
+          <category> Go </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Go协程并发</title>
       <link href="/2022/09/0117215.html"/>
       <url>/2022/09/0117215.html</url>
@@ -138,7 +170,7 @@
       
       <categories>
           
-          <category> python </category>
+          <category> Python </category>
           
       </categories>
       
@@ -208,7 +240,7 @@
       <link href="/2022/07/1762666.html"/>
       <url>/2022/07/1762666.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>在提交代码的时候发现一直没有权限（windows）</p><pre class="line-numbers language-none"><code class="language-none">//无论是git init git remote add origingit fetch <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><img src="0066jXzmgy1h4s83g9rz7j30m809eq3q.jpg" alt="img"></p><pre class="line-numbers language-none"><code class="language-none">//或者git clone -b //都没有权限<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><img src="0066jXzmgy1h4s88i06v3j30cz016jr8.jpg" alt="img"></p><pre class="line-numbers language-none"><code class="language-none">//检查你用户名git config user.name//若没有配置，则配置git config --global user.name "your name"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><img src="0066jXzmgy1h4s8aubcqgj304w015a9u.jpg" alt="img"></p><pre class="line-numbers language-none"><code class="language-none">//win+r control //查看你的window凭证<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><img src="0066jXzmgy1h4s8dju17nj30kg0a83z1.jpg" alt="img"></p><p><img src="0066jXzmgy1h4s8dzuxgpj30cx061gll.jpg" alt="img"></p><p><img src="0066jXzmgy1h4s8e83i3aj30h504f0sr.jpg" alt="img"></p><ul><li>检查是否同一个</li><li>修改完成后才能有权限取clone view 仓库</li></ul><pre class="line-numbers language-none"><code class="language-none">&lt;link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css"&gt; &lt;script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"&gt;&lt;/script&gt; &lt;script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"&gt;&lt;/script&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">{% meting "7868005687" "tencent" "playlist" "theme:#555" "mutex:true" "listmaxheight:1000px" "preload:auto" %}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>在提交代码的时候发现一直没有权限（windows）</p><pre class="line-numbers language-none"><code class="language-none">//无论是git init git remote add origingit fetch <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><img src="https://tvax2.sinaimg.cn/large/0066jXzmgy1h4s83g9rz7j30m809eq3q.jpg"><pre class="line-numbers language-none"><code class="language-none">//或者git clone -b //都没有权限<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><img src="https://tva3.sinaimg.cn/large/0066jXzmgy1h4s88i06v3j30cz016jr8.jpg"><pre class="line-numbers language-none"><code class="language-none">//检查你用户名git config user.name//若没有配置，则配置git config --global user.name "your name"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><img src="https://tvax3.sinaimg.cn/large/0066jXzmgy1h4s8aubcqgj304w015a9u.jpg"><pre class="line-numbers language-none"><code class="language-none">//win+r control //查看你的window凭证<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><img src="https://tva1.sinaimg.cn/large/0066jXzmgy1h4s8dju17nj30kg0a83z1.jpg"><img src="https://tva4.sinaimg.cn/large/0066jXzmgy1h4s8dzuxgpj30cx061gll.jpg"><img src="https://tvax1.sinaimg.cn/large/0066jXzmgy1h4s8e83i3aj30h504f0sr.jpg"><ul><li>检查是否同一个</li><li>修改完成后才能有权限取clone view 仓库</li></ul>]]></content>
       
       
       <categories>
@@ -657,7 +689,7 @@
       
       <categories>
           
-          <category> Vue </category>
+          <category> Vue.js </category>
           
       </categories>
       
@@ -1784,7 +1816,7 @@
       
       <categories>
           
-          <category> Vue,js </category>
+          <category> Vue.js </category>
           
       </categories>
       

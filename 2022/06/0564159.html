@@ -741,32 +741,32 @@
 <li>省略号位置显示刚好</li>
 </ol>
 <p>基于上述的准则，下面我就讲介绍各种技巧实现截断效果，并根据上述的评判标准得出最优解。(<strong>代码我都传到 jsfiddle 平台，可点击 demo 地址查看</strong>)</p>
-<h2 id="单行文本截断-text-overflow"><a class="header-anchor" href="#单行文本截断-text-overflow">¶</a><strong>单行文本截断 text-overflow</strong></h2>
-<p>文本溢出我们经常用到的应该就是 text-overflow: ellipsis 了，相信大家也很熟悉，只需轻松几行代码就可以实现单行文本截断。</p>
+<h2 id="单行文本截断-text-overflow"><a href="#单行文本截断-text-overflow" class="headerlink" title="单行文本截断 text-overflow"></a><strong>单行文本截断 text-overflow</strong></h2><p>文本溢出我们经常用到的应该就是 text-overflow: ellipsis 了，相信大家也很熟悉，只需轻松几行代码就可以实现单行文本截断。</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span>
   <span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>实现效果：<a href="https://link.zhihu.com/?target=https%3A//jsfiddle.net/lindz/0yap1p2b/1/">demo 地址</a></p>
+
+<p>实现效果：<a href="https://link.zhihu.com/?target=https://jsfiddle.net/lindz/0yap1p2b/1/">demo 地址</a></p>
 <p>属性浏览器原生支持，各大浏览器兼容性好，缺点就是只支持单行文本截断，并不支持多行文本截取。</p>
 <p>适用场景：单行文字截断最简单实现，效果最好，放心使用。</p>
 <p>如果是多行文字截取效果，实现起来就没有那么轻松。</p>
-<h2 id="webkit-line-clamp-实现"><a class="header-anchor" href="#webkit-line-clamp-实现">¶</a><strong>-webkit-line-clamp 实现</strong></h2>
-<p>先介绍第一种方式，就是通过 -webkit-line-clamp 属性实现。具体的方式如下：</p>
+<h2 id="webkit-line-clamp-实现"><a href="#webkit-line-clamp-实现" class="headerlink" title="-webkit-line-clamp 实现"></a><strong>-webkit-line-clamp 实现</strong></h2><p>先介绍第一种方式，就是通过 -webkit-line-clamp 属性实现。具体的方式如下：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> -webkit-box<span class="token punctuation">;</span>
   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
   <span class="token property">-webkit-line-clamp</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
   <span class="token property">-webkit-box-orient</span><span class="token punctuation">:</span> vertical<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>它需要和 display、-webkit-box-orient 和 overflow 结合使用：</p>
 <ul>
 <li>display: -webkit-box; 必须结合的属性，将对象作为弹性伸缩盒子模型显示。</li>
 <li>-webkit-box-orient; 必须结合的属性，设置或检索伸缩盒对象的子元素的排列方式</li>
 <li>text-overflow: ellipsis; 可选属性，可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本。</li>
 </ul>
-<p>实现效果：<a href="https://link.zhihu.com/?target=https%3A//jsfiddle.net/lindz/eodpygu9/7/">demo 地址</a></p>
+<p>实现效果：<a href="https://link.zhihu.com/?target=https://jsfiddle.net/lindz/eodpygu9/7/">demo 地址</a></p>
 <p>从效果上来看，它的优点有：</p>
 <ol>
 <li>响应式截断，根据不同宽度做出调整</li>
@@ -775,8 +775,7 @@
 </ol>
 <p>但是缺点也是很直接，因为 -webkit-line-clamp 是一个不规范的属性，它没有出现在 CSS 规范草案中。也就是说只有 webkit 内核的浏览器才支持这个属性，像 Firefox, IE 浏览器统统都不支持这个属性，浏览器兼容性不好。</p>
 <p>使用场景：多用于移动端页面，因为移动设备浏览器更多是基于 webkit 内核，除了兼容性不好，实现截断的效果不错。</p>
-<h2 id="定位元素实现多行文本截断"><a class="header-anchor" href="#定位元素实现多行文本截断">¶</a><strong>定位元素实现多行文本截断</strong></h2>
-<p>另外还有一种靠谱简单的做法就是设置相对定位的容器高度，用包含省略号(…)的元素模拟实现，实现方式如下：</p>
+<h2 id="定位元素实现多行文本截断"><a href="#定位元素实现多行文本截断" class="headerlink" title="定位元素实现多行文本截断"></a><strong>定位元素实现多行文本截断</strong></h2><p>另外还有一种靠谱简单的做法就是设置相对定位的容器高度，用包含省略号(…)的元素模拟实现，实现方式如下：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">{</span>
     <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
     <span class="token property">line-height</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span>
@@ -798,8 +797,9 @@
     <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">-ms-linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">,</span> white 50%<span class="token punctuation">,</span> white<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 0<span class="token punctuation">)</span><span class="token punctuation">,</span> white 50%<span class="token punctuation">,</span> white<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>实现原理很好理解，就是通过伪元素绝对定位到行尾并遮住文字，再通过 overflow: hidden 隐藏多余文字。</p>
-<p>实现效果：<a href="https://link.zhihu.com/?target=https%3A//jsfiddle.net/lindz/6aqnye4u/2/">demo 地址</a></p>
+<p>实现效果：<a href="https://link.zhihu.com/?target=https://jsfiddle.net/lindz/6aqnye4u/2/">demo 地址</a></p>
 <p>从实现效果来看，它所具备的优点：</p>
 <ol>
 <li>兼容性好，对各大主流浏览器有好的支持</li>
@@ -807,8 +807,7 @@
 </ol>
 <p>但是它无法识别文字的长短，即文本超出范围才显示省略号，否则不显示省略号。还有因为是我们人为地在文字末尾添加一个省略号效果，就会导致它跟文字其实没有贴合的很紧密，遇到这种情况可以通过添加 word-break: break-all; 使一个单词能够在换行时进行拆分。</p>
 <p>适合场景：文字内容较多，确定文字内容一定会超过容器的，那么选择这种方式不错。</p>
-<h2 id="float-特性实现多行文本截断"><a class="header-anchor" href="#float-特性实现多行文本截断">¶</a><strong>float 特性实现多行文本截断</strong></h2>
-<p>回到一开始我要做的内容是多行标题文字截取效果，显然是无法控制标题的长度的，显然是无法使用上述的方式。回到事情的本质来看：我们希望 CSS 能够有一种属性，能够在文字溢出的情况下显示省略号，不溢出时不显示省略号。(两种形式，两种效果)</p>
+<h2 id="float-特性实现多行文本截断"><a href="#float-特性实现多行文本截断" class="headerlink" title="float 特性实现多行文本截断"></a><strong>float 特性实现多行文本截断</strong></h2><p>回到一开始我要做的内容是多行标题文字截取效果，显然是无法控制标题的长度的，显然是无法使用上述的方式。回到事情的本质来看：我们希望 CSS 能够有一种属性，能够在文字溢出的情况下显示省略号，不溢出时不显示省略号。(两种形式，两种效果)</p>
 <p>正当我以为 CSS 已经无能为力，只能通过 JS 去实现的时候，后来看到了一个方法非常巧妙，而且能够满足上述提到的所有准则，下面我就介绍如何通过 float 特性实现多行文本截断效果。</p>
 <p>基本原理：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-6c0839e2c8116de6933e6afe7865ddbf_720w.jpg" alt="img"></p>
@@ -824,6 +823,7 @@
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos labore sit vel itaque delectus atque quos magnam assumenda quod architecto perspiciatis animi.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>刚才的粉色盒子和黄色盒子都可以用伪元素来代替。</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.wrap</span> <span class="token punctuation">{</span>
   <span class="token property">height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
@@ -857,7 +857,8 @@
   <span class="token property">top</span><span class="token punctuation">:</span> -20px<span class="token punctuation">;</span>
   <span class="token property">padding-right</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>实现效果：<a href="https://link.zhihu.com/?target=https%3A//jsfiddle.net/lindz/95h0edp6/35/">demo 地址</a></p>
+
+<p>实现效果：<a href="https://link.zhihu.com/?target=https://jsfiddle.net/lindz/95h0edp6/35/">demo 地址</a></p>
 <p>这里我目前看到最巧妙的方式了。只需要支持 CSS 2.1 的特性就可以了，它的优点有：</p>
 <ol>
 <li>兼容性好，对各大主流浏览器有好的支持</li>
@@ -1393,7 +1394,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">170.9k</span>&nbsp;字
+                class="white-color">176.3k</span>&nbsp;字
             
             
             

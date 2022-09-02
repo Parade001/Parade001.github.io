@@ -733,25 +733,29 @@
             <div id="articleContent">
                 <p>安装富文本编辑器插件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i vue-quill-editor@3.0.6 -S <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>导入插件及 css</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> VueQuillEditor <span class="token keyword">from</span> <span class="token string">'vue-quill-editor'</span>
 <span class="token keyword">import</span> <span class="token string">'quill/dist/quill.core.css'</span>
 <span class="token keyword">import</span> <span class="token string">'quill/dist/quill.snow.css'</span>
 <span class="token keyword">import</span> <span class="token string">'quill/dist/quill.bubble.css'</span>
 Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueQuillEditor<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>文章内容<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>quill-editor</span>
        <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>artListForm.content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> //artListForm vue中v-bind绑定给el-form变量
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>quill-editor</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>当富文本高度出现塌陷时,通过给ql-editor添加min-height</p>
 <p>scope :给所有元素加上 v-data-hash 给所有选择器加上[v-data-hash]</p>
 <p>因为: scoped 仅本组件的元素而不会污染全局.</p>
 <p>因此Vue提供 /deep/</p>
-<p>原理:深度作用选择器:只作用于 css 会在前面加上 [data-v-hash]  成为后代选择器: 从交集变成后代选择器</p>
+<p> 原理:深度作用选择器:只作用于 css 会在前面加上 [data-v-hash]  成为后代选择器: 从交集变成后代选择器</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">/deep/ .ql-editor</span><span class="token punctuation">{</span>
   <span class="token property">min-height</span><span class="token punctuation">:</span>300px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1274,7 +1278,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">170.9k</span>&nbsp;字
+                class="white-color">176.3k</span>&nbsp;字
             
             
             

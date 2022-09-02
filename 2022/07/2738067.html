@@ -731,19 +731,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>【爆肝面试系列】CSS 垂直居中的正确打开方式</h1>
-<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a1c9e5382c214764961f05824186fa4d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h2 id="前言之爆锤面试官神器-CSS"><a class="header-anchor" href="#前言之爆锤面试官神器-CSS">¶</a><strong>前言之爆锤面试官神器 - CSS</strong></h2>
-<p>无论是实际开发中，亦或者是求职面试中，css 垂直居中往往都是一个绕不开的话题，其中不乏有许多面试者在多次双重尝受打击之后，而没有一个很好的反击点，刚好结合自己以前受的委屈和痛苦，来给大家一个锤爆面试官大佬们的机会。</p>
+                <h1 id="【爆肝面试系列】CSS-垂直居中的正确打开方式"><a href="#【爆肝面试系列】CSS-垂直居中的正确打开方式" class="headerlink" title="【爆肝面试系列】CSS 垂直居中的正确打开方式"></a>【爆肝面试系列】CSS 垂直居中的正确打开方式</h1><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a1c9e5382c214764961f05824186fa4d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h2 id="前言之爆锤面试官神器-CSS"><a href="#前言之爆锤面试官神器-CSS" class="headerlink" title="前言之爆锤面试官神器 - CSS"></a><strong>前言之爆锤面试官神器 - CSS</strong></h2><p>无论是实际开发中，亦或者是求职面试中，css 垂直居中往往都是一个绕不开的话题，其中不乏有许多面试者在多次双重尝受打击之后，而没有一个很好的反击点，刚好结合自己以前受的委屈和痛苦，来给大家一个锤爆面试官大佬们的机会。</p>
 <p>其实垂直居中主要分为了两种类型：<strong>居中元素宽高已知</strong> 和 <strong>居中元素宽高未知</strong>，那么我们就结合这两种类型来一一做举例。</p>
 <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0d208686e8e04fce9e22920a6c4d7a0a~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h2 id="居中元素宽高已知"><a class="header-anchor" href="#居中元素宽高已知">¶</a><strong>居中元素宽高已知</strong></h2>
-<h3 id="1-absolute-margin-auto"><a class="header-anchor" href="#1-absolute-margin-auto">¶</a><strong>1. absolute + margin auto</strong></h3>
-<p>顾名思义，就是利用当前元素的 <code>position: absolute;</code> 和 <code>margin: auto;</code></p>
+<h2 id="居中元素宽高已知"><a href="#居中元素宽高已知" class="headerlink" title="居中元素宽高已知"></a><strong>居中元素宽高已知</strong></h2><h3 id="1-absolute-margin-auto"><a href="#1-absolute-margin-auto" class="headerlink" title="1. absolute + margin auto"></a><strong>1. absolute + margin auto</strong></h3><p>顾名思义，就是利用当前元素的 <code>position: absolute;</code> 和 <code>margin: auto;</code></p>
 <p>注意使用此方法：父元素与当前元素的高度要设置；</p>
 <p>通过将各个方向的距离都设置为 0，此时将 <code>margin</code> 设置为 <code>auto</code>，就可以实现垂直居中显示了；</p>
-<h4 id="具体代码如下："><a class="header-anchor" href="#具体代码如下：">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent{
+<h4 id="具体代码如下："><a href="#具体代码如下：" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent{
   position: relative;
   width: 90vw;
   height: 90vh;
@@ -760,13 +755,11 @@
 }
 
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下："><a class="header-anchor" href="#具体效果如下：">¶</a>具体效果如下：</h4>
-<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1fb6f7e6ef794a9a8fd39d3ab89e78d6~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h3 id="2-absolute-负-margin"><a class="header-anchor" href="#2-absolute-负-margin">¶</a><strong>2. absolute + 负 margin</strong></h3>
-<p>利用绝对定位百分比 50% 来实现，因为当前元素的百分比是基于相对定位（也就是父元素）来定位的;</p>
+
+<h4 id="具体效果如下："><a href="#具体效果如下：" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1fb6f7e6ef794a9a8fd39d3ab89e78d6~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h3 id="2-absolute-负-margin"><a href="#2-absolute-负-margin" class="headerlink" title="2. absolute + 负 margin"></a><strong>2. absolute + 负 margin</strong></h3><p>利用绝对定位百分比 50% 来实现，因为当前元素的百分比是基于相对定位（也就是父元素）来定位的;</p>
 <p>然后再用负的 margin-top 和 margin-left 来进行简单的位移即可，因为现在的负 margin 是基于自身的高度和宽度来进行位移的。</p>
-<h4 id="具体代码如下：-v2"><a class="header-anchor" href="#具体代码如下：-v2">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent{
+<h4 id="具体代码如下：-1"><a href="#具体代码如下：-1" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent{
   position:relative;
   width: 90vw;
   height: 90vh;
@@ -784,12 +777,10 @@
 }
 
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下：-v2"><a class="header-anchor" href="#具体效果如下：-v2">¶</a>具体效果如下：</h4>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/136dc66faaf948519a2eef8229c32c96~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h3 id="3-absolute-calc"><a class="header-anchor" href="#3-absolute-calc">¶</a><strong>3. absolute + calc</strong></h3>
-<p>使用 CSS3 的一个计算函数来进行计算即可；方法与上面类似</p>
-<h4 id="具体代码如下：-v3"><a class="header-anchor" href="#具体代码如下：-v3">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent{
+
+<h4 id="具体效果如下：-1"><a href="#具体效果如下：-1" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/136dc66faaf948519a2eef8229c32c96~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h3 id="3-absolute-calc"><a href="#3-absolute-calc" class="headerlink" title="3. absolute + calc"></a><strong>3. absolute + calc</strong></h3><p>使用 CSS3 的一个计算函数来进行计算即可；方法与上面类似</p>
+<h4 id="具体代码如下：-2"><a href="#具体代码如下：-2" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent{
   width: 90vw;
   height: 90vh;
   border: 3px solid steelblue;
@@ -807,13 +798,10 @@
 }
 
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下：-v3"><a class="header-anchor" href="#具体效果如下：-v3">¶</a>具体效果如下：</h4>
-<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b4448eda1bf3453fa2d1bdc42ecfdcd4~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h2 id="居中元素宽高未知"><a class="header-anchor" href="#居中元素宽高未知">¶</a><strong>居中元素宽高未知</strong></h2>
-<h3 id="4-absolute-transform"><a class="header-anchor" href="#4-absolute-transform">¶</a><strong>4. absolute + transform</strong></h3>
-<p>利用 CSS3 的新特性 <code>transform</code>；因为 <code>transform</code> 的 <code>translate</code> 属性值如果是一个百分比，那么这个百分比将是基于自身的宽高计算出来的。</p>
-<h4 id="具体代码如下：-v4"><a class="header-anchor" href="#具体代码如下：-v4">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent{
+
+<h4 id="具体效果如下：-2"><a href="#具体效果如下：-2" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b4448eda1bf3453fa2d1bdc42ecfdcd4~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h2 id="居中元素宽高未知"><a href="#居中元素宽高未知" class="headerlink" title="居中元素宽高未知"></a><strong>居中元素宽高未知</strong></h2><h3 id="4-absolute-transform"><a href="#4-absolute-transform" class="headerlink" title="4. absolute + transform"></a><strong>4. absolute + transform</strong></h3><p>利用 CSS3 的新特性 <code>transform</code>；因为 <code>transform</code> 的 <code>translate</code> 属性值如果是一个百分比，那么这个百分比将是基于自身的宽高计算出来的。</p>
+<h4 id="具体代码如下：-3"><a href="#具体代码如下：-3" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent{
   width: 90vw;
   height: 90vh;
   border: 3px solid steelblue;
@@ -830,14 +818,12 @@
   transform: translate(-50%, -50%);
 }
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下：-v4"><a class="header-anchor" href="#具体效果如下：-v4">¶</a>具体效果如下：</h4>
-<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6e071ede21814f1c8e26dfc989e44173~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h3 id="5-line-height-vertical-align"><a class="header-anchor" href="#5-line-height-vertical-align">¶</a><strong>5. line-height + vertical-align</strong></h3>
-<p>把当前元素设置为行内元素，然后通过设置父元素的 <code>text-align: center;</code> 实现水平居中；</p>
+
+<h4 id="具体效果如下：-3"><a href="#具体效果如下：-3" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6e071ede21814f1c8e26dfc989e44173~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h3 id="5-line-height-vertical-align"><a href="#5-line-height-vertical-align" class="headerlink" title="5. line-height + vertical-align"></a><strong>5. line-height + vertical-align</strong></h3><p>把当前元素设置为行内元素，然后通过设置父元素的 <code>text-align: center;</code> 实现水平居中；</p>
 <p>同时通过设置当前元素的 <code>vertical-align: middle;</code> 来实现垂直居中；</p>
 <p>最后设置当前元素的 <code>line-height: initial;</code> 来继承父元素的<code>line-height</code>。</p>
-<h4 id="具体代码如下：-v5"><a class="header-anchor" href="#具体代码如下：-v5">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent{
+<h4 id="具体代码如下：-4"><a href="#具体代码如下：-4" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent{
   width: 90vw;
   border: 3px solid steelblue;
   /* 核心代码 */
@@ -853,12 +839,10 @@
   line-height: initial;
 }
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下：-v5"><a class="header-anchor" href="#具体效果如下：-v5">¶</a>具体效果如下：</h4>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/45c041123890421cb7e1d298f5307242~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h3 id="6-table-表格元素"><a class="header-anchor" href="#6-table-表格元素">¶</a><strong>6. table 表格元素</strong></h3>
-<p>通过最经典的 table 元素来进行水平垂直居中，不过代码看起来会很冗余，不推荐使用；</p>
-<h4 id="具体代码如下：-v6"><a class="header-anchor" href="#具体代码如下：-v6">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">&lt;table&gt;
+
+<h4 id="具体效果如下：-4"><a href="#具体效果如下：-4" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/45c041123890421cb7e1d298f5307242~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h3 id="6-table-表格元素"><a href="#6-table-表格元素" class="headerlink" title="6. table 表格元素"></a><strong>6. table 表格元素</strong></h3><p>通过最经典的 table 元素来进行水平垂直居中，不过代码看起来会很冗余，不推荐使用；</p>
+<h4 id="具体代码如下：-5"><a href="#具体代码如下：-5" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">&lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td class="parent"&gt;
@@ -883,12 +867,10 @@
   }
 &lt;/style&gt;
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下：-v6"><a class="header-anchor" href="#具体效果如下：-v6">¶</a>具体效果如下：</h4>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8a1d347f750146f3b58a3579822a1086~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h3 id="7-css-table-表格样式"><a class="header-anchor" href="#7-css-table-表格样式">¶</a><strong>7. css-table 表格样式</strong></h3>
-<p>如果一定要使用 <code>table</code> 的特性，但是不想写 <code>table</code> 元素的话，那么<code>css-table</code> 就很适合你；</p>
-<h4 id="具体代码如下：-v7"><a class="header-anchor" href="#具体代码如下：-v7">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent{
+
+<h4 id="具体效果如下：-5"><a href="#具体效果如下：-5" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8a1d347f750146f3b58a3579822a1086~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h3 id="7-css-table-表格样式"><a href="#7-css-table-表格样式" class="headerlink" title="7. css-table 表格样式"></a><strong>7. css-table 表格样式</strong></h3><p>如果一定要使用 <code>table</code> 的特性，但是不想写 <code>table</code> 元素的话，那么<code>css-table</code> 就很适合你；</p>
+<h4 id="具体代码如下：-6"><a href="#具体代码如下：-6" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent{
   width: 90vw;
   height: 90vh;
   border: 3px solid steelblue;
@@ -904,13 +886,11 @@
   display: inline-block;
 }
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下：-v7"><a class="header-anchor" href="#具体效果如下：-v7">¶</a>具体效果如下：</h4>
-<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/df36ab0e4689467c8b0d7d1fbfce9bdb~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h3 id="8-flex-布局（一）"><a class="header-anchor" href="#8-flex-布局（一）">¶</a><strong>8. flex 布局（一）</strong></h3>
-<p>要说现在较为流行和使用较多的布局方案，那么非 flex 莫属了，那么举例两个最常见的使用方式 ~</p>
+
+<h4 id="具体效果如下：-6"><a href="#具体效果如下：-6" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/df36ab0e4689467c8b0d7d1fbfce9bdb~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h3 id="8-flex-布局（一）"><a href="#8-flex-布局（一）" class="headerlink" title="8. flex 布局（一）"></a><strong>8. flex 布局（一）</strong></h3><p>要说现在较为流行和使用较多的布局方案，那么非 flex 莫属了，那么举例两个最常见的使用方式 ~</p>
 <p>直接在 <code>flex-container</code> 上通过几行代码即可很优雅的实现</p>
-<h4 id="具体代码如下：-v8"><a class="header-anchor" href="#具体代码如下：-v8">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent {
+<h4 id="具体代码如下：-7"><a href="#具体代码如下：-7" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent {
   width: 90vw;
   height: 90vh;
   border: 3px solid steelblue;
@@ -924,14 +904,12 @@
   background: tomato;
 }
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><code>justify-content</code> 表示：设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式；</p>
 <p><code>align-items</code> 表示：定义 flex 子项在 flex 容器的当前行的侧轴（纵轴）方向上的对齐方式。</p>
-<h4 id="具体效果如下：-v8"><a class="header-anchor" href="#具体效果如下：-v8">¶</a>具体效果如下：</h4>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cd42197963bf4b2ca5f155333a145688~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h3 id="9-flex-margin-auto（二）"><a class="header-anchor" href="#9-flex-margin-auto（二）">¶</a><strong>9. flex + margin auto（二）</strong></h3>
-<p>在 <code>flex-item</code> 上更加优雅的实现</p>
-<h4 id="具体代码如下：-v9"><a class="header-anchor" href="#具体代码如下：-v9">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent{
+<h4 id="具体效果如下：-7"><a href="#具体效果如下：-7" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cd42197963bf4b2ca5f155333a145688~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h3 id="9-flex-margin-auto（二）"><a href="#9-flex-margin-auto（二）" class="headerlink" title="9. flex + margin auto（二）"></a><strong>9. flex + margin auto（二）</strong></h3><p>在 <code>flex-item</code> 上更加优雅的实现</p>
+<h4 id="具体代码如下：-8"><a href="#具体代码如下：-8" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent{
   width: 90vw;
   height: 90vh;
   border: 3px solid steelblue;
@@ -947,19 +925,16 @@
   margin: auto;
 }
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下：-v9"><a class="header-anchor" href="#具体效果如下：-v9">¶</a>具体效果如下：</h4>
-<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bc6f274a395e4849bd5d8e375790fe3d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+
+<h4 id="具体效果如下：-8"><a href="#具体效果如下：-8" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bc6f274a395e4849bd5d8e375790fe3d~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
 <blockquote>
 <p><strong>flex 的两种方法使用取舍，任凭您意</strong></p>
 </blockquote>
-<h4 id="附赠-flex-兼容性图片一张"><a class="header-anchor" href="#附赠-flex-兼容性图片一张">¶</a>附赠 flex 兼容性图片一张</h4>
-<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/91f2dea4f7eb495ea8160c30da4ea36f~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h3 id="10-grid-网格布局-一"><a class="header-anchor" href="#10-grid-网格布局-一">¶</a><strong>10. grid 网格布局 (一)</strong></h3>
-<p>grid 布局相信大家在实际项目中用的较少，主要是该布局实在是太超前，导致了兼容性不是那么理想，但是不可否认的是 grid 的能力在 css 布局中绝对是一个质的飞越。</p>
+<h4 id="附赠-flex-兼容性图片一张"><a href="#附赠-flex-兼容性图片一张" class="headerlink" title="附赠 flex 兼容性图片一张"></a>附赠 flex 兼容性图片一张</h4><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/91f2dea4f7eb495ea8160c30da4ea36f~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h3 id="10-grid-网格布局-一"><a href="#10-grid-网格布局-一" class="headerlink" title="10. grid 网格布局 (一)"></a><strong>10. grid 网格布局 (一)</strong></h3><p>grid 布局相信大家在实际项目中用的较少，主要是该布局实在是太超前，导致了兼容性不是那么理想，但是不可否认的是 grid 的能力在 css 布局中绝对是一个质的飞越。</p>
 <p>不熟悉的可以看下阮一峰老师的详细<strong>入门教程</strong>[1]</p>
 <p><code>CSS Grid</code> 包含与 <code>Flexbox</code> 几乎相同的对齐选项，因此我们可以在 <code>grid-container</code> 上优雅的实现</p>
-<h4 id="具体代码如下：-v10"><a class="header-anchor" href="#具体代码如下：-v10">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent{
+<h4 id="具体代码如下：-9"><a href="#具体代码如下：-9" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent{
   width: 90vw;
   height: 90vh;
   border: 3px solid steelblue;
@@ -973,12 +948,10 @@
   background: tomato;
 }
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下：-v10"><a class="header-anchor" href="#具体效果如下：-v10">¶</a>具体效果如下：</h4>
-<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/33ab7c28383c4f4b8d3236c81f5c6ff2~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h3 id="11-grid-网格布局-二"><a class="header-anchor" href="#11-grid-网格布局-二">¶</a><strong>11. grid 网格布局 (二)</strong></h3>
-<p>同样我们可以像 <code>Flexbox</code> 一样，在 <code>grid-item</code> 上优雅的实现</p>
-<h4 id="具体代码如下：-v11"><a class="header-anchor" href="#具体代码如下：-v11">¶</a>具体代码如下：</h4>
-<pre class="line-numbers language-none"><code class="language-none">.parent{
+
+<h4 id="具体效果如下：-9"><a href="#具体效果如下：-9" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/33ab7c28383c4f4b8d3236c81f5c6ff2~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h3 id="11-grid-网格布局-二"><a href="#11-grid-网格布局-二" class="headerlink" title="11. grid 网格布局 (二)"></a><strong>11. grid 网格布局 (二)</strong></h3><p>同样我们可以像 <code>Flexbox</code> 一样，在 <code>grid-item</code> 上优雅的实现</p>
+<h4 id="具体代码如下：-10"><a href="#具体代码如下：-10" class="headerlink" title="具体代码如下："></a>具体代码如下：</h4><pre class="line-numbers language-none"><code class="language-none">.parent{
   width: 90vw;
   height: 90vh;
   border: 3px solid steelblue;
@@ -993,28 +966,24 @@
   justify-self: center;
 }
 复制代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="具体效果如下：-v11"><a class="header-anchor" href="#具体效果如下：-v11">¶</a>具体效果如下：</h4>
-<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5cef36061f6c41468009a1c64dec4f47~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+
+<h4 id="具体效果如下：-10"><a href="#具体效果如下：-10" class="headerlink" title="具体效果如下："></a>具体效果如下：</h4><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5cef36061f6c41468009a1c64dec4f47~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
 <blockquote>
 <p><strong>flex 的两种方法使用取舍，任凭您高兴</strong></p>
 </blockquote>
-<h4 id="附赠-grid-兼容性图片一张"><a class="header-anchor" href="#附赠-grid-兼容性图片一张">¶</a>附赠 grid 兼容性图片一张</h4>
-<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1cb0422169a44010a270541da006932e~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
-<h2 id="总结"><a class="header-anchor" href="#总结">¶</a><strong>总结</strong></h2>
-<p>在学习了上面的 11 种垂直居中布局方法后，我们简单概括一下</p>
+<h4 id="附赠-grid-兼容性图片一张"><a href="#附赠-grid-兼容性图片一张" class="headerlink" title="附赠 grid 兼容性图片一张"></a>附赠 grid 兼容性图片一张</h4><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1cb0422169a44010a270541da006932e~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" alt="图片"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><p>在学习了上面的 11 种垂直居中布局方法后，我们简单概括一下</p>
 <ul>
 <li>如果你的项目<strong>在 PC 端有兼容性要求</strong>并且<strong>宽高固定</strong>，推荐使用 <code>absolute + 负 margin</code> 方法实现；</li>
 <li>如果你的项目<strong>在 PC 端有兼容性要求</strong>并且<strong>宽高不固定</strong>，推荐使用 <code>css-table</code> 方式实现；</li>
 <li>如果你的项目<strong>在 PC 端无兼容性要求</strong> ，推荐使用 <code>flex</code> 实现居中，当然不考虑 IE 的话，<code>grid</code> 也是个不错的选择；</li>
 <li>如果你的项目<strong>在移动端使用</strong> ，那么推荐你使用 <code>flex</code> ，<code>grid</code> 也可作为备选。</li>
 </ul>
-<h2 id="写在最后"><a class="header-anchor" href="#写在最后">¶</a><strong>写在最后</strong></h2>
-<p>其实以上的是一种垂直居中方法，只是比较常见的，其实还有一些比较冷门的方式方法，例如 <strong>伪类元素</strong>、<strong>grid-container 的 grid-template-rows</strong> 等，大家下去可以自行尝试一下 ~</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a><strong>写在最后</strong></h2><p>其实以上的是一种垂直居中方法，只是比较常见的，其实还有一些比较冷门的方式方法，例如 <strong>伪类元素</strong>、<strong>grid-container 的 grid-template-rows</strong> 等，大家下去可以自行尝试一下 ~</p>
 <p>周末已结束，周一还会远吗，祝大家新的一周新的开始 ~</p>
 <p>帅气美丽的你给个赞呗再走呗 ~</p>
-<h3 id="参考资料"><a class="header-anchor" href="#参考资料">¶</a>参考资料</h3>
-<p>[1]</p>
-<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html:">https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html:</a> <em><a href="https://link.juejin.cn?target=https%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2F2019%2F03%2Fgrid-layout-tutorial.html">https://link.juejin.cn?target=https%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2F2019%2F03%2Fgrid-layout-tutorial.html</a></em></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>[1]</p>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html">https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html</a>: <em><a href="https://link.juejin.cn/?target=https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html">https://link.juejin.cn?target=https%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2F2019%2F03%2Fgrid-layout-tutorial.html</a></em></p>
 <p>关于本文</p>
 <p>来自：易师傅</p>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6991465721565806605">https://juejin.cn/post/6991465721565806605</a></p>
@@ -1540,7 +1509,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">170.9k</span>&nbsp;字
+                class="white-color">176.3k</span>&nbsp;字
             
             
             

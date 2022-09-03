@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>递归</title>
+      <link href="/2022/09/0338362.html"/>
+      <url>/2022/09/0338362.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><p>把规模大的问题转化为规模小的相似的子问题来解决<br>特性： 1.必须有一个明确的递归终止条件.<br>      2.给出递归终止时的处理办法.<br>      3.每次进入更深一层递归时，问题规模相比上次递归都应有所减少或更接近于解.<br>优点： 定义简单，逻辑清晰<br>缺点：效率不高，递归层数有限制（一般限制在1000层）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 递归 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>函数的定义调用与返回值</title>
       <link href="/2022/09/0247386.html"/>
       <url>/2022/09/0247386.html</url>

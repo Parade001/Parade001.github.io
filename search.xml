@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>git clone 的时候报443？</title>
+      <link href="/2022/09/2433105.html"/>
+      <url>/2022/09/2433105.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">Error: Failed connect to github.com:443; No error while accessing https://github.com/account/repo/info/refs?service=git-upload-pacfatal: HTTP request failed//这个时候只需要执行git config --global http.proxy “localhost：代理端口”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>[参考][<a href="https://stackoverflow.com/questions/15908802/git-clone-not-working-error-443]">https://stackoverflow.com/questions/15908802/git-clone-not-working-error-443]</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git clone 443 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>递归</title>
       <link href="/2022/09/0338362.html"/>
       <url>/2022/09/0338362.html</url>

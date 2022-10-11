@@ -736,7 +736,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="伪数组定义："><a href="#伪数组定义：" class="headerlink" title="伪数组定义："></a>伪数组定义：</h4><p>1、<strong>拥有length属性</strong>，其它属性（索引）为非负整数(对象中的索引会被当做字符串来处理，这里你可以当做是个非负整数串来理解)<br>2、<strong>不具有数组所具有的方法</strong></p>
+                <h4 id="伪数组定义："><a class="header-anchor" href="#伪数组定义：">¶</a>伪数组定义：</h4>
+<p>1、<strong>拥有length属性</strong>，其它属性（索引）为非负整数(对象中的索引会被当做字符串来处理，这里你可以当做是个非负整数串来理解)<br>
+2、<strong>不具有数组所具有的方法</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">《javascript权威指南》上给出了代码用来判断一个对象是否属于“类数组”。如下：
 <span class="token comment">// Determine if o is an array-like object.</span>
 <span class="token comment">// Strings and functions have numeric length properties, but are</span>
@@ -754,21 +756,21 @@
     <span class="token keyword">else</span>
             <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>                       <span class="token comment">// Otherwise it is not</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="伪数组转为真数组"><a href="#伪数组转为真数组" class="headerlink" title="伪数组转为真数组:"></a>伪数组转为真数组:</h4><h3 id="1-遍历添加入一个空数组"><a href="#1-遍历添加入一个空数组" class="headerlink" title="1.遍历添加入一个空数组"></a>1.遍历添加入一个空数组</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<h4 id="伪数组转为真数组"><a class="header-anchor" href="#伪数组转为真数组">¶</a>伪数组转为真数组:</h4>
+<h3 id="1-遍历添加入一个空数组"><a class="header-anchor" href="#1-遍历添加入一个空数组">¶</a>1.遍历添加入一个空数组</h3>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arrLike<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arrLike<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>比较简单易懂，但是步骤略显繁琐。</p>
-<h3 id="2-利用数组的slice-方法-【推荐】"><a href="#2-利用数组的slice-方法-【推荐】" class="headerlink" title="2.利用数组的slice()方法 【推荐】"></a>2.利用数组的slice()方法 <strong>【推荐】</strong></h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arrLike<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<h3 id="2-利用数组的slice-方法-【推荐】"><a class="header-anchor" href="#2-利用数组的slice-方法-【推荐】">¶</a>2.利用数组的slice()方法 <strong>【推荐】</strong></h3>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arrLike<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>或者</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>arrLike<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>使用<code>slice()</code>返回一个新的数组,用<code>call()</code>或<code>apply()</code>把他的作用环境指向伪数组。</p>
-<p>注意这个返回的数组中，不会保留索引值以外的其他额外属性。<br>比如jQuery中<code>$()</code>获取的DOM伪数组，里面的context属性在被此方法转化之后就不会保留。</p>
+<p>注意这个返回的数组中，不会保留索引值以外的其他额外属性。<br>
+比如jQuery中<code>$()</code>获取的DOM伪数组，里面的context属性在被此方法转化之后就不会保留。</p>
 <p>模拟一下<code>slice()</code>的内部实现</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Array<span class="token punctuation">.</span>prtotype<span class="token punctuation">.</span><span class="token function-variable function">slice</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">start<span class="token punctuation">,</span> end</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -781,17 +783,18 @@
 
     <span class="token keyword">return</span> result<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3-修改原型指向"><a href="#3-修改原型指向" class="headerlink" title="3.修改原型指向"></a>3.修改原型指向</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">arrLike<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>这样arrLike就继承了Array.prototype中的方法，可以使用<code>push()</code>，<code>unshift()</code>等方法了，<code>length</code>值也会随之动态改变。<br>另外这种直接修改原型链的方法，还会保留下伪数组中的所有属性，包括不是索引值的属性。</p>
-<h3 id="4-ES5-Array-from"><a href="#4-ES5-Array-from" class="headerlink" title="4.ES5:Array.from()"></a>4.ES5:Array.from()</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="3-修改原型指向"><a class="header-anchor" href="#3-修改原型指向">¶</a>3.修改原型指向</h3>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">arrLike<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样arrLike就继承了Array.prototype中的方法，可以使用<code>push()</code>，<code>unshift()</code>等方法了，<code>length</code>值也会随之动态改变。<br>
+另外这种直接修改原型链的方法，还会保留下伪数组中的所有属性，包括不是索引值的属性。</p>
+<h3 id="4-ES5-Array-from"><a class="header-anchor" href="#4-ES5-Array-from">¶</a>4.ES5:Array.from()</h3>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// expected output: Array ["f", "o", "o"]</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token parameter">x</span> <span class="token operator">=&gt;</span> x <span class="token operator">+</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// expected output: Array [2, 4, 6]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="5-利用扩展运算符将伪数组转成真的数组"><a href="#5-利用扩展运算符将伪数组转成真的数组" class="headerlink" title="5.利用扩展运算符将伪数组转成真的数组"></a>5.利用扩展运算符将伪数组转成真的数组</h3><pre class="line-numbers language-none"><code class="language-none">/*利用扩展运算符将伪数组转成真数组*/
+<h3 id="5-利用扩展运算符将伪数组转成真的数组"><a class="header-anchor" href="#5-利用扩展运算符将伪数组转成真的数组">¶</a>5.利用扩展运算符将伪数组转成真的数组</h3>
+<pre class="line-numbers language-none"><code class="language-none">/*利用扩展运算符将伪数组转成真数组*/
   var oDivs= document.getElementsByTagName('div');
   console.log(oDivs)
   console.log( oDivs instanceof Array)  //判断是不是真数组
@@ -799,9 +802,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
   let arr =[...oDivs];
   console.log(arr)
   console.log(arr instanceof Array)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015285969">伪数组(ArrayLike)</a></p>
+<h4 id="参考"><a class="header-anchor" href="#参考">¶</a>参考</h4>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015285969">伪数组(ArrayLike)</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.programminghunter.com/article/6096438679/">ES6扩展运算符转伪数组为真数组</a></p>
 
                 
@@ -1368,7 +1371,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">177.1k</span>&nbsp;字
+                class="white-color">178.1k</span>&nbsp;字
             
             
             

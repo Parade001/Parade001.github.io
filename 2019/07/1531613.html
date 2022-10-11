@@ -745,9 +745,10 @@
 <p>但是经过时间的沉淀，似乎他已经强大了起来，已经独立于观察者模式，成为另外一种不同的设计模式。</p>
 <p>在现在的发布订阅模式中，称为发布者的消息发送者不会将消息直接发送给订阅者，这意味着发布者和订阅者不知道彼此的存在。在发布者和订阅者之间存在第三个组件，称为<strong>消息代理或调度中心或中间件</strong>，它维持着发布者和订阅者之间的联系，过滤所有发布者传入的消息并相应地分发它们给订阅者。</p>
 <p>举一个例子，你在微博上关注了A，同时其他很多人也关注了A，那么当A发布动态的时候，微博就会为你们推送这条动态。A就是发布者，你是订阅者，微博就是调度中心，你和A是没有直接的消息往来的，全是通过微博来协调的（你的关注，A的发布动态）。</p>
-<p><img src="/832626667-5d65fd14f3957_fix732-1647429731779.png" alt="img"></p>
+<p><img src="832626667-5d65fd14f3957_fix732-1647429731779.png" alt="img"></p>
 <p>观察者模式中的订阅者是双向的,即可以是消息的发布者,也可以是消息的订阅者.</p>
-<h2 id="发布-订阅模式-Pub-Sub-Pattern"><a href="#发布-订阅模式-Pub-Sub-Pattern" class="headerlink" title="发布-订阅模式 (Pub-Sub Pattern)"></a>发布-订阅模式 (Pub-Sub Pattern)</h2><p>在发布者和订阅者之间存在第三个组件，称为消息代理或调度中心或中间件，它维持着发布者和订阅者之间的联系，过滤所有发布者传入的消息，并相应的分发给它们的订阅者。</p>
+<h2 id="发布-订阅模式-Pub-Sub-Pattern"><a class="header-anchor" href="#发布-订阅模式-Pub-Sub-Pattern">¶</a>发布-订阅模式 (Pub-Sub Pattern)</h2>
+<p>在发布者和订阅者之间存在第三个组件，称为消息代理或调度中心或中间件，它维持着发布者和订阅者之间的联系，过滤所有发布者传入的消息，并相应的分发给它们的订阅者。</p>
 <p>举例:</p>
 <p>Vue中的EventBus的实现</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">EventBus</span> <span class="token punctuation">{</span>
@@ -768,7 +769,6 @@
     <span class="token keyword">this</span><span class="token punctuation">.</span>subs<span class="token punctuation">[</span>evenType<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token function">callback</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">)</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <p>参考:</p>
 <p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000020211587">发布-订阅模式和观察者模式真的不一样？</a></p>
@@ -1338,7 +1338,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">177.1k</span>&nbsp;字
+                class="white-color">178.1k</span>&nbsp;字
             
             
             

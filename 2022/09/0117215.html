@@ -736,26 +736,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一个应用程序是运行在机器上的一个进程；<br>
-进程是一个运行在自己内存地址空间里的独立执行体。<br>
-一个进程由一个或多个操作系统线程组成，这些线程其实是共享同一个内存地址空间的一起工作的执行体。<br>
-几乎所有’正式’的程序都是多线程的，以便让用户或计算机不必等待，或者能够同时服务多个请求（如 Web 服务器），或增加性能和吞吐量（例如，通过对不同的数据集并行执行代码）。<br>
-一个并发程序可以在一个处理器或者内核上使用多个线程来执行任务，<br>
-但是只有同一个程序在某个时间点同时运行在多核或者多处理器上才是真正的并行。<br>
-并行是一种通过使用多处理器以提高速度的能力。所以并发程序可以是并行的，也可以不是。<br>
-公认的，使用多线程的应用难以做到准确，最主要的问题是内存中的数据共享，它们会被多线程以无法预知的方式进行操作，导致一些无法重现或者随机的结果（称作 竞态）。</p>
+                <p>一个应用程序是运行在机器上的一个进程；<br>进程是一个运行在自己内存地址空间里的独立执行体。<br>一个进程由一个或多个操作系统线程组成，这些线程其实是共享同一个内存地址空间的一起工作的执行体。<br>几乎所有’正式’的程序都是多线程的，以便让用户或计算机不必等待，或者能够同时服务多个请求（如 Web 服务器），或增加性能和吞吐量（例如，通过对不同的数据集并行执行代码）。<br>一个并发程序可以在一个处理器或者内核上使用多个线程来执行任务，<br>但是只有同一个程序在某个时间点同时运行在多核或者多处理器上才是真正的并行。<br>并行是一种通过使用多处理器以提高速度的能力。所以并发程序可以是并行的，也可以不是。<br>公认的，使用多线程的应用难以做到准确，最主要的问题是内存中的数据共享，它们会被多线程以无法预知的方式进行操作，导致一些无法重现或者随机的结果（称作 竞态）。</p>
 <ul>
-<li>
-<p>[ ] 程序语言并发：</p>
+<li><p><input disabled="" type="checkbox">  程序语言并发：</p>
 <ul>
 <li>线程、进程、协程</li>
 </ul>
 </li>
-<li>
-<p>[x] Go语言协程goroutine概述：</p>
+<li><p><input checked="" disabled="" type="checkbox">  Go语言协程goroutine概述：</p>
 <ul>
-<li>Go语言原生支持应用之间的通信（网络，客户端和服务端，分布式计算）和程序的并发。
-<ul>
+<li>Go语言原生支持应用之间的通信（网络，客户端和服务端，分布式计算）和程序的并发。<ul>
 <li>Go语言协程比其他语言协程更强大，也很容易从协程的逻辑复用到Go协程。</li>
 <li>在Go语言中，协程是创建计算的唯一途径。</li>
 <li>Go语言不支持创建系统线程，协程是一个Go程序内部唯一的并发实现方式。</li>
@@ -763,19 +753,16 @@
 </li>
 </ul>
 </li>
-<li>
-<p>[ ] 协程goroutine用法：</p>
+<li><p><input disabled="" type="checkbox">  协程goroutine用法：</p>
 <ul>
 <li>使用go关键字。</li>
 <li>启动一个新的协程时，协程的调用会立即返回。与函数不同，程序控制不会去等待 Go 协程执行完毕。在调用 Go 协程之后，程序控制会立即返回到代码的下一行，忽略该协程的任何返回值。</li>
 <li>如果希望运行其他 Go 协程，Go 主协程必须继续运行着。如果 Go 主协程终止，则程序终止，于是其他 Go 协程也不会继续运行。</li>
 </ul>
 </li>
-<li>
-<p>[x] 协程goroutine案例：</p>
+<li><p><input checked="" disabled="" type="checkbox">  协程goroutine案例：</p>
 <ul>
-<li>
-<p>案例一：使用延时来返回协程的返回值</p>
+<li><p>案例一：使用延时来返回协程的返回值</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>	
     start <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">go</span> <span class="token function">tester</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -794,36 +781,26 @@ HERE<span class="token punctuation">:</span>
         <span class="token keyword">return</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">goto</span> HERE
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
-<li>
-<p>[ ] 恐慌：一些致命性错误不属于恐慌。对于官方标准编译器来说，很多致命性错误（比如堆栈溢出和内存不足）不能被恢复。它们一旦产生，程序将崩溃。</p>
+<li><p><input disabled="" type="checkbox">  恐慌：一些致命性错误不属于恐慌。对于官方标准编译器来说，很多致命性错误（比如堆栈溢出和内存不足）不能被恢复。它们一旦产生，程序将崩溃。</p>
 <ul>
 <li>产生一个恐慌</li>
 <li>消除一个恐慌</li>
 </ul>
 </li>
-<li>
-<p>[ ] 恢复：</p>
+<li><p><input disabled="" type="checkbox">  恢复：</p>
 </li>
-<li>
-<p>[x] 参考链接：<a target="_blank" rel="noopener" href="https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.1.md">协程参考1</a>、<a target="_blank" rel="noopener" href="https://gfw.go101.org/article/control-flows-more.html">协程参考2</a></p>
+<li><p><input checked="" disabled="" type="checkbox">  参考链接：<a target="_blank" rel="noopener" href="https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.1.md">协程参考1</a>、<a target="_blank" rel="noopener" href="https://gfw.go101.org/article/control-flows-more.html">协程参考2</a></p>
 </li>
-<li>
-<p>[ ] 本节案例：</p>
+<li><p><input disabled="" type="checkbox">  本节案例：</p>
 
-</li>
-</ul>
 <details>
-<summary>Day018: 并发-Go语言通道</summary>
-<ul>
-<li>
-<p>[x] 本节说明：本节介绍Go语言通道(channel)的相关内容。</p>
+<summary>Day018: 并发-Go语言通道</summary></details></li>
+<li><p><input checked="" disabled="" type="checkbox">  本节说明：本节介绍Go语言通道(channel)的相关内容。</p>
 </li>
-<li>
-<p>[x] Go语言通道channel概述：</p>
+<li><p><input checked="" disabled="" type="checkbox">  Go语言通道channel概述：</p>
 <ul>
 <li>Go语言设计团队的首任负责人Rob Pike对并发编程的一个建议是：<strong>不要让计算通过共享内存来通讯，而应该通过通讯来共享内存</strong>。 通道就是这种哲学的一个设计结果。在Go语言中，可以认为一个计算就是一个协程。channel是协程之间互相通信的通道，协程之间可以通过它发送消息和接收消息。</li>
 <li>通过共享内存来通讯和通过通讯来共享内存是并发编程中的两种编程风格。</li>
@@ -834,32 +811,23 @@ HERE<span class="token punctuation">:</span>
 <li>通道的一个问题是通道的编程体验常常很有趣以至于程序员们经常在并非是通道的最佳应用场景中仍坚持使用通道。</li>
 </ul>
 </li>
-<li>
-<p>[ ] 通道类型和值：</p>
+<li><p><input disabled="" type="checkbox">  通道类型和值：</p>
 <ul>
 <li>和数组、切片以及映射类型一样，每个通道类型也有一个元素类型。 一个通道只能传送它的（通道类型的）元素类型的值。</li>
-<li>通道可以是双向的，也可以是单向的。<br>
-1、字面形式<code>chan T</code>表示一个元素类型为<code>T</code>的双向通道类型。 编译器允许从此类型的值中接收和向此类型的值中发送数据。<br>
-2、字面形式<code>chan&lt;- T</code>表示一个元素类型为<code>T</code>的单向发送通道类型。 编译器不允许从此类型的值中接收数据。<br>
-3、字面形式<code>&lt;-chan T</code>表示一个元素类型为<code>T</code>的单向接收通道类型。 编译器不允许向此类型的值中发送数据。</li>
+<li>通道可以是双向的，也可以是单向的。<br>1、字面形式<code>chan T</code>表示一个元素类型为<code>T</code>的双向通道类型。 编译器允许从此类型的值中接收和向此类型的值中发送数据。<br>2、字面形式<code>chan&lt;- T</code>表示一个元素类型为<code>T</code>的单向发送通道类型。 编译器不允许从此类型的值中接收数据。<br>3、字面形式<code>&lt;-chan T</code>表示一个元素类型为<code>T</code>的单向接收通道类型。 编译器不允许向此类型的值中发送数据。</li>
 <li>一个非零通道值必须通过内置的make函数来创建。 比如make(chan int, 10)将创建一个元素类型为int的通道值。 第二个参数指定了欲创建的通道的容量。此第二个实参是可选的，它的默认值为0。</li>
 </ul>
 </li>
-<li>
-<p>[ ] 通道值的比较：</p>
+<li><p><input disabled="" type="checkbox">  通道值的比较：</p>
 <ul>
 <li>所有通道类型均为可比较类型。比较这两个通道的结果为布尔值。</li>
 </ul>
 </li>
-<li>
-<p>[ ] 通道操作：</p>
+<li><p><input disabled="" type="checkbox">  通道操作：</p>
 <ul>
-<li>
-<p>同一个操作符 &lt;- 既用于发送也用于接收，但Go会根据操作对象弄明白该干什么。</p>
+<li><p>同一个操作符 &lt;- 既用于发送也用于接收，但Go会根据操作对象弄明白该干什么。</p>
 </li>
-<li>
-<p>Go语言中有五种通道相关的操作。假设一个通道为ch，下面列出了这五种操作的语法或者函数调用：<br>
-1、调用内置函数close来关闭一个通道：</p>
+<li><p>Go语言中有五种通道相关的操作。假设一个通道为ch，下面列出了这五种操作的语法或者函数调用：<br>1、调用内置函数close来关闭一个通道：</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token function">close</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>2、向通道ch发送一个值v。ch不能为单向接收通道。&lt;-称为数据发送操作符。</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go">ch <span class="token operator">&lt;-</span> v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -868,57 +836,46 @@ HERE<span class="token punctuation">:</span>
 <p>4、查询一个通道的容量。</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token function">cap</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>5、查询一个通道的长度。</p>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token function">len</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li>
-<p>通道可以分为三类：<br>
-1、零值（nil）通道。<br>
-2、非零值但已关闭的通道。<br>
-3、非零值并且尚未关闭的通道。</p>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token function">len</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>通道可以分为三类：<br>1、零值（nil）通道。<br>2、非零值但已关闭的通道。<br>3、非零值并且尚未关闭的通道。</p>
 </li>
 </ul>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">操作</th>
-<th style="text-align:center">一个零值nil通道</th>
-<th style="text-align:center">一个非零值但已关闭的通道</th>
-<th style="text-align:center">一个非零值且尚未关闭的通道</th>
+<th align="center">操作</th>
+<th align="center">一个零值nil通道</th>
+<th align="center">一个非零值但已关闭的通道</th>
+<th align="center">一个非零值且尚未关闭的通道</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">关闭</td>
-<td style="text-align:center">产生恐慌</td>
-<td style="text-align:center">产生恐慌</td>
-<td style="text-align:center">成功关闭©</td>
+<tbody><tr>
+<td align="center">关闭</td>
+<td align="center">产生恐慌</td>
+<td align="center">产生恐慌</td>
+<td align="center">成功关闭(C)</td>
 </tr>
 <tr>
-<td style="text-align:center">发送数据</td>
-<td style="text-align:center">永久阻塞</td>
-<td style="text-align:center">产生恐慌</td>
-<td style="text-align:center">阻塞或者成功发送(B)</td>
+<td align="center">发送数据</td>
+<td align="center">永久阻塞</td>
+<td align="center">产生恐慌</td>
+<td align="center">阻塞或者成功发送(B)</td>
 </tr>
 <tr>
-<td style="text-align:center">接收数据</td>
-<td style="text-align:center">永久阻塞</td>
-<td style="text-align:center">永不阻塞(D)</td>
-<td style="text-align:center">阻塞或者成功接收(A)</td>
+<td align="center">接收数据</td>
+<td align="center">永久阻塞</td>
+<td align="center">永不阻塞(D)</td>
+<td align="center">阻塞或者成功接收(A)</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 </li>
-<li>
-<p>[ ] 死锁：</p>
+<li><p><input disabled="" type="checkbox">  死锁：</p>
 </li>
-<li>
-<p>[ ] 恐慌绝望：</p>
+<li><p><input disabled="" type="checkbox">  恐慌绝望：</p>
 </li>
-<li>
-<p>[ ] 通道案例：</p>
+<li><p><input disabled="" type="checkbox">  通道案例：</p>
 <ul>
-<li>
-<p>通道案例一：</p>
+<li><p>通道案例一：</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
  
 <span class="token keyword">import</span> <span class="token punctuation">(</span>  
@@ -934,10 +891,8 @@ HERE<span class="token punctuation">:</span>
     <span class="token keyword">go</span> <span class="token function">hello</span><span class="token punctuation">(</span>done<span class="token punctuation">)</span>
     <span class="token operator">&lt;-</span>done
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"main function"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li>
-<p>通道案例二：</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>通道案例二：</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
@@ -962,10 +917,8 @@ HERE<span class="token punctuation">:</span>
     <span class="token punctuation">}</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
     <span class="token operator">&lt;-</span>done <span class="token comment">// 阻塞在此，直到有值发送到done</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"bye"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li>
-<p>通道案例三：</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>通道案例三：</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token string">"fmt"</span>
@@ -989,10 +942,8 @@ HERE<span class="token punctuation">:</span>
     fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">cap</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 0 2</span>
     <span class="token function">close</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token comment">// 此行将产生一个恐慌</span>
     c <span class="token operator">&lt;-</span> <span class="token number">7</span>   <span class="token comment">// 如果上一行不存在，此行也将产生一个恐慌。</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li>
-<p>通道案例四：</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>通道案例四：</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
 <span class="token keyword">import</span> <span class="token punctuation">(</span>
@@ -1016,10 +967,8 @@ HERE<span class="token punctuation">:</span>
     ball <span class="token operator">&lt;-</span> <span class="token string">"裁判"</span>   <span class="token comment">// 开球</span>
     <span class="token keyword">var</span> c <span class="token keyword">chan</span> <span class="token builtin">bool</span> <span class="token comment">// 一个零值nil通道</span>
     <span class="token operator">&lt;-</span>c             <span class="token comment">// 永久阻塞在此</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li>
-<p>通道案例五：</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>通道案例五：</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">// chanmain</span>
 <span class="token keyword">package</span> main
 
@@ -1048,18 +997,15 @@ HERE<span class="token punctuation">:</span>
         data <span class="token operator">&lt;-</span> i
     <span class="token punctuation">}</span>
     <span class="token function">close</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
-<li>
-<p>[ ] 本节参考：<a target="_blank" rel="noopener" href="https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md">通道参考1</a>、<a target="_blank" rel="noopener" href="https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.2.md">通道参考2</a>、<a target="_blank" rel="noopener" href="https://blog.csdn.net/ytd7777/article/details/85004371">通道参考3</a>、<a target="_blank" rel="noopener" href="https://gfw.go101.org/article/channel.html">通道参考4</a></p>
+<li><p><input disabled="" type="checkbox">  本节参考：<a target="_blank" rel="noopener" href="https://github.com/ffhelicopter/Go42/blob/master/content/42_22_channel.md">通道参考1</a>、<a target="_blank" rel="noopener" href="https://github.com/unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.2.md">通道参考2</a>、<a target="_blank" rel="noopener" href="https://blog.csdn.net/ytd7777/article/details/85004371">通道参考3</a>、<a target="_blank" rel="noopener" href="https://gfw.go101.org/article/channel.html">通道参考4</a></p>
 </li>
-<li>
-<p>[ ] 本节案例：</p>
-</li></ul></details>
-
-
+<li><p><input disabled="" type="checkbox">  本节案例：</p>
+</li>
+</ul>
+  
 
                 
             </div>
@@ -1617,7 +1563,7 @@ HERE<span class="token punctuation">:</span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">178.1k</span>&nbsp;字
+                class="white-color">178.3k</span>&nbsp;字
             
             
             

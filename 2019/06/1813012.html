@@ -737,14 +737,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>Vue 的组件本质上就是一个 “包含了描述组件选项的对象”。这个设计算是一个典型的 intuition based design，它不是从语言本身的机制或是类型系统出发去设计的，而是单纯从人如何描述自己想要的东西出发的                     													–  <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/310485097/answer/591869966">引用自作者</a></p>
+<p>Vue 的组件本质上就是一个 “包含了描述组件选项的对象”。这个设计算是一个典型的 intuition based design，它不是从语言本身的机制或是类型系统出发去设计的，而是单纯从人如何描述自己想要的东西出发的                                                                         –  <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/310485097/answer/591869966">引用自作者</a></p>
 </blockquote>
 <p>组件是可复用Vue实例,封装标签,样式和Js代码</p>
 <p>组件化: 封装的思想,把页面上 <em><strong>可重用部分 封装为 组件</strong></em>,从而方便项目的 开发 与维护</p>
 <p>组件都只是通过 <code>Vue.component</code> 全局注册的:</p>
 <ul>
-<li>
-<p>全局注册</p>
+<li><p>全局注册 </p>
 <blockquote>
 <p>可以用在其被注册之后的任何 (通过 <code>new Vue</code>) 新创建的 Vue 根实例，也包括其组件树中的所有子组件的模板中。</p>
 </blockquote>
@@ -755,19 +754,18 @@
 
 //把这个组件作为自定义元素来使用('组件名',组件对象)
 Vue.component('Mycomponents', 组件对象)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <blockquote>
-<h5 id="注意-上面代码块必须需要放在-new-Vue-否控制台会报错-会不认识你这个自定义组件"><a class="header-anchor" href="#注意-上面代码块必须需要放在-new-Vue-否控制台会报错-会不认识你这个自定义组件">¶</a>注意: 上面代码块必须需要放在 new Vue,否控制台会报错,会不认识你这个自定义组件</h5>
-</blockquote>
+<h5 id="注意-上面代码块必须需要放在-new-Vue-否控制台会报错-会不认识你这个自定义组件"><a href="#注意-上面代码块必须需要放在-new-Vue-否控制台会报错-会不认识你这个自定义组件" class="headerlink" title="注意: 上面代码块必须需要放在 new Vue,否控制台会报错,会不认识你这个自定义组件"></a>注意: 上面代码块必须需要放在 new Vue,否控制台会报错,会不认识你这个自定义组件</h5></blockquote>
 <ul>
-<li>
-<p>局部注册</p>
+<li><p>局部注册</p>
 <blockquote>
 <p>//引入组件</p>
 <p>import pannel from “./components/pannel.vue”</p>
 <p>//局部注册组件</p>
 <p>export default {</p>
 <p>components:{</p>
-<p>pannel</p>
+<p>  pannel</p>
 <p>}</p>
 <p>}</p>
 </blockquote>
@@ -1340,7 +1338,7 @@ Vue.component('Mycomponents', 组件对象)<span aria-hidden="true" class="line-
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">178.1k</span>&nbsp;字
+                class="white-color">178.3k</span>&nbsp;字
             
             
             

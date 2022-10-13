@@ -725,10 +725,8 @@
             <div id="articleContent">
                 <p>字面上来说:ref 即reference(参考),组件被调用时会新建一个该组件的实例,而refs就会只想这个实例.</p>
 <p>它可以是一个回调函数,这个回调函数会在组件被挂载后立即执行</p>
-<h1>Refs 转发</h1>
-<p>Ref 转发是一项将 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/refs-and-the-dom.html">ref</a> 自动地通过组件传递到其一子组件的技巧。对于大多数应用中的组件来说，这通常不是必需的。但其对某些组件，尤其是可重用的组件库是很有用的。最常见的案例如下所述。</p>
-<h2 id="转发-refs-到-DOM-组件"><a class="header-anchor" href="#转发-refs-到-DOM-组件">¶</a>转发 refs 到 DOM 组件</h2>
-<p>考虑这个渲染原生 DOM 元素 <code>button</code> 的 <code>FancyButton</code> 组件：</p>
+<h1 id="Refs-转发"><a href="#Refs-转发" class="headerlink" title="Refs 转发"></a>Refs 转发</h1><p>Ref 转发是一项将 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/refs-and-the-dom.html">ref</a> 自动地通过组件传递到其一子组件的技巧。对于大多数应用中的组件来说，这通常不是必需的。但其对某些组件，尤其是可重用的组件库是很有用的。最常见的案例如下所述。</p>
+<h2 id="转发-refs-到-DOM-组件"><a href="#转发-refs-到-DOM-组件" class="headerlink" title="转发 refs 到 DOM 组件"></a>转发 refs 到 DOM 组件</h2><p>考虑这个渲染原生 DOM 元素 <code>button</code> 的 <code>FancyButton</code> 组件：</p>
 <pre class="line-numbers language-none"><code class="language-none">function FancyButton(props) {
   return (
     &lt;button className="FancyButton"&gt;
@@ -736,6 +734,9 @@
     &lt;/button&gt;
   );
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>React 组件隐藏其实现细节，包括其渲染结果。其他使用 <code>FancyButton</code> 的组件<strong>通常不需要</strong>获取内部的 DOM 元素 <code>button</code> 的 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/refs-and-the-dom.html">ref</a>。这很好，因为这防止组件过度依赖其他组件的 DOM 结构。</p>
 <p>虽然这种封装对类似 <code>FeedStory</code> 或 <code>Comment</code> 这样的应用级组件是理想的，但其对 <code>FancyButton</code> 或 <code>MyTextInput</code> 这样的高可复用“叶”组件来说可能是不方便的。这些组件倾向于在整个应用中以一种类似常规 DOM <code>button</code> 和 <code>input</code> 的方式被使用，并且访问其 DOM 节点对管理焦点，选中或动画来说是不可避免的。</p>
 <p><strong>Ref 转发是一个可选特性，其允许某些组件接收 ref，并将其向下传递（换句话说，“转发”它）给子组件。</strong></p>
@@ -747,6 +748,9 @@
 // 你可以直接获取 DOM button 的 ref：
 const ref = React.createRef();
 &lt;FancyButton ref={ref}&gt;Click me!&lt;/FancyButton&gt;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>这样，使用 <code>FancyButton</code> 的组件可以获取底层 DOM 节点 <code>button</code> 的 ref ，并在必要时访问，就像其直接使用 DOM <code>button</code> 一样。</p>
 <p>以下是对上述示例发生情况的逐步解释：</p>
 <ol>
@@ -761,11 +765,9 @@ const ref = React.createRef();
 <p>第二个参数 <code>ref</code> 只在使用 <code>React.forwardRef</code> 定义组件时存在。常规函数和 class 组件不接收 <code>ref</code> 参数，且 props 中也不存在 <code>ref</code>。</p>
 <p>Ref 转发不仅限于 DOM 组件，你也可以转发 refs 到 class 组件实例中。</p>
 </blockquote>
-<h2 id="组件库维护者的注意事项"><a class="header-anchor" href="#组件库维护者的注意事项">¶</a>组件库维护者的注意事项</h2>
-<p><strong>当你开始在组件库中使用 forwardRef 时，你应当将其视为一个破坏性更改，并发布库的一个新的主版本。</strong> 这是因为你的库可能会有明显不同的行为（例如 refs 被分配给了谁，以及导出了什么类型），并且这样可能会导致依赖旧行为的应用和其他库崩溃。</p>
+<h2 id="组件库维护者的注意事项"><a href="#组件库维护者的注意事项" class="headerlink" title="组件库维护者的注意事项"></a>组件库维护者的注意事项</h2><p><strong>当你开始在组件库中使用 forwardRef 时，你应当将其视为一个破坏性更改，并发布库的一个新的主版本。</strong> 这是因为你的库可能会有明显不同的行为（例如 refs 被分配给了谁，以及导出了什么类型），并且这样可能会导致依赖旧行为的应用和其他库崩溃。</p>
 <p>出于同样的原因，当 <code>React.forwardRef</code> 存在时有条件地使用它也是不推荐的：它改变了你的库的行为，并在升级 React 自身时破坏用户的应用。</p>
-<h2 id="在高阶组件中转发-refs"><a class="header-anchor" href="#在高阶组件中转发-refs">¶</a>在高阶组件中转发 refs</h2>
-<p>这个技巧对<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/higher-order-components.html">高阶组件</a>（也被称为 HOC）特别有用。让我们从一个输出组件 props 到控制台的 HOC 示例开始：</p>
+<h2 id="在高阶组件中转发-refs"><a href="#在高阶组件中转发-refs" class="headerlink" title="在高阶组件中转发 refs"></a>在高阶组件中转发 refs</h2><p>这个技巧对<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/higher-order-components.html">高阶组件</a>（也被称为 HOC）特别有用。让我们从一个输出组件 props 到控制台的 HOC 示例开始：</p>
 <pre class="line-numbers language-none"><code class="language-none">function logProps(WrappedComponent) {  class LogProps extends React.Component {
     componentDidUpdate(prevProps) {
       console.log('old props:', prevProps);
@@ -778,6 +780,9 @@ const ref = React.createRef();
 
   return LogProps;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>“logProps” HOC 透传（pass through）所有 <code>props</code> 到其包裹的组件，所以渲染结果将是相同的。例如：我们可以使用该 HOC 记录所有传递到 “fancy button” 组件的 props：</p>
 <pre class="line-numbers language-none"><code class="language-none">class FancyButton extends React.Component {
   focus() {
@@ -790,6 +795,9 @@ const ref = React.createRef();
 // 我们导出 LogProps，而不是 FancyButton。
 // 虽然它也会渲染一个 FancyButton。
 export default logProps(FancyButton);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>下面的示例有一点需要注意：refs 将不会透传下去。这是因为 <code>ref</code> 不是 prop 属性。就像 <code>key</code> 一样，其被 React 进行了特殊处理。如果你对 HOC 添加 ref，该 ref 将引用最外层的容器组件，而不是被包裹的组件。</p>
 <p>这意味着用于我们 <code>FancyButton</code> 组件的 refs 实际上将被挂载到 <code>LogProps</code> 组件：</p>
 <pre class="line-numbers language-none"><code class="language-none">import FancyButton from './FancyButton';
@@ -803,6 +811,9 @@ const ref = React.createRef();
   label="Click Me"
   handleClick={handleClick}
   ref={ref}/&gt;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>幸运的是，我们可以使用 <code>React.forwardRef</code> API 明确地将 refs 转发到内部的 <code>FancyButton</code> 组件。<code>React.forwardRef</code> 接受一个渲染函数，其接收 <code>props</code> 和 <code>ref</code> 参数并返回一个 React 节点。例如：</p>
 <pre class="line-numbers language-none"><code class="language-none">function logProps(Component) {
   class LogProps extends React.Component {
@@ -821,18 +832,26 @@ const ref = React.createRef();
   // 我们可以将其作为常规 prop 属性传递给 LogProps，例如 “forwardedRef”
   // 然后它就可以被挂载到被 LogProps 包裹的子组件上。
   return React.forwardRef((props, ref) =&gt; {    return &lt;LogProps {...props} forwardedRef={ref} /&gt;;  });}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="在-DevTools-中显示自定义名称"><a class="header-anchor" href="#在-DevTools-中显示自定义名称">¶</a>在 DevTools 中显示自定义名称</h2>
-<p><code>React.forwardRef</code> 接受一个渲染函数。React DevTools 使用该函数来决定为 ref 转发组件显示的内容。</p>
+
+
+
+<h2 id="在-DevTools-中显示自定义名称"><a href="#在-DevTools-中显示自定义名称" class="headerlink" title="在 DevTools 中显示自定义名称"></a>在 DevTools 中显示自定义名称</h2><p><code>React.forwardRef</code> 接受一个渲染函数。React DevTools 使用该函数来决定为 ref 转发组件显示的内容。</p>
 <p>例如，以下组件将在 DevTools 中显示为 “<em>ForwardRef</em>”：</p>
 <pre class="line-numbers language-none"><code class="language-none">const WrappedComponent = React.forwardRef((props, ref) =&gt; {
   return &lt;LogProps {...props} forwardedRef={ref} /&gt;;
 });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>如果你命名了渲染函数，DevTools 也将包含其名称（例如 “<em>ForwardRef(myFunction)</em>”）：</p>
+
+
+
+<p>如果你命名了渲染函数，DevTools 也将包含其名称（例如 “*ForwardRef(myFunction)*”）：</p>
 <pre class="line-numbers language-none"><code class="language-none">const WrappedComponent = React.forwardRef(
   function myFunction(props, ref) {
     return &lt;LogProps {...props} forwardedRef={ref} /&gt;;
   }
 );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>你甚至可以设置函数的 <code>displayName</code> 属性来包含被包裹组件的名称：</p>
 <pre class="line-numbers language-none"><code class="language-none">function logProps(Component) {
   class LogProps extends React.Component {
@@ -1408,7 +1427,7 @@ const ref = React.createRef();
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">178.1k</span>&nbsp;字
+                class="white-color">178.3k</span>&nbsp;字
             
             
             

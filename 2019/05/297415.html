@@ -736,9 +736,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><p>当一个函数被定义在其他函数中,一个内部函数处理可以访问自己的参数和变量,也可以访问把它嵌套在其中的父函数的参数和变量,通过函数字面量创建的函数对象包含一个链接到外部上下文的连接,这被称为闭包.</p><p align="right"> JavaScript语言精粹修订版</p><p></p>
+                <h2 id="定义"><a class="header-anchor" href="#定义">¶</a>定义:</h2>
+<p>当一个函数被定义在其他函数中,一个内部函数处理可以访问自己的参数和变量,也可以访问把它嵌套在其中的父函数的参数和变量,通过函数字面量创建的函数对象包含一个链接到外部上下文的连接,这被称为闭包.</p><p align="right"> JavaScript语言精粹修订版</p><p></p>
 <hr>
-
 <ul>
 <li>A function</li>
 <li>对该函数的外部作用域(词法环境)的引用</li>
@@ -748,16 +748,14 @@
 <p>如果一个函数被一个函数调用，而这个函数又被另一个函数调用，那么就会创建一个对外部词法环境的引用链。</p>
 <p>这个链称为作用域链。</p>
 <hr>
-
-<h3 id="作用域链和原型链"><a href="#作用域链和原型链" class="headerlink" title="作用域链和原型链"></a>作用域链和原型链</h3><p>变量取值会到创建这个变量的函数的作用域中取值，如果找不到，就会向上级作用域去查，直到查到全局作用域，这么一个查找过程形成的链条就叫做作用域链</p>
-<h5 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h5><ul>
+<h3 id="作用域链和原型链"><a class="header-anchor" href="#作用域链和原型链">¶</a>作用域链和原型链</h3>
+<p>变量取值会到创建这个变量的函数的作用域中取值，如果找不到，就会向上级作用域去查，直到查到全局作用域，这么一个查找过程形成的链条就叫做作用域链</p>
+<h5 id="区别"><a class="header-anchor" href="#区别">¶</a>区别</h5>
+<ul>
 <li>作用域最顶层是windown,原型链最顶层是Object</li>
 <li>作用域链是相对变量而言,原型是相对属性而言</li>
 </ul>
 <hr>
-
-
-
 <p>在下面的代码中，当 foo 被调用时创建的执行上下文的词法环境形成一个闭包，闭包变量 secret:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> secret <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">trunc</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span>
@@ -767,7 +765,6 @@
 <span class="token punctuation">}</span>
 <span class="token keyword">const</span> f <span class="token operator">=</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// `secret` is not directly accessible from outside `foo`</span>
 <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// The only way to retrieve `secret`, is to invoke `f`</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>换句话说：在JavaScript中，函数携带对私有“状态框”的引用，只有它们（以及在同一词汇环境中声明的任何其他函数）都有访问。该框的状态对函数的来电者是看不见的，为数据隐藏和封装提供出色的机制。</p>
 <p>请记住：JavaScript中的函数可以像变量（firs class function）一样传递，这意味着这些功能和状态可以通过您的程序传递：类似于您如何通过C ++中的类的实例。</p>
 <p>如果JavaScript没有封闭，那么在函数中必须明确地传递更多状态，使参数列出更长，代码嘈杂。</p>
@@ -776,7 +773,6 @@
 <p>在C和大多数其他常用语言中，在函数返回之后，所有本地变量都不再可访问，因为堆栈帧被销毁。在JavaScript中，如果在另一个函数中声明函数，则从IT返回后，外部功能的局部变量可以保持可访问。通过这种方式，在上面的代码中，秘密仍然可用于函数对象内部，之后从foo返回之后。</p>
 <p>当您需要与函数关联的私有状态时，闭包非常有用。这是一个非常常见的场景——记住:JavaScript直到2015年才有class syntax，而且它仍然没有私有字段语法。闭包满足了这一需求。</p>
 <hr>
-
 <p>私有实例变量</p>
 <p>在下面的代码中，toString函数在Car函数内部形成闭包。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token parameter">manufacturer<span class="token punctuation">,</span> model<span class="token punctuation">,</span> year<span class="token punctuation">,</span> color</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -789,7 +785,6 @@
 <span class="token keyword">const</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token string">'Aston Martin'</span><span class="token punctuation">,</span><span class="token string">'V8 Vantage'</span><span class="token punctuation">,</span><span class="token string">'2012'</span><span class="token punctuation">,</span><span class="token string">'Quantum Silver'</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>car<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">//Aston Martin V8 Vantage (2012, Quantum Silver)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>函数式编程:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">curry</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -806,7 +801,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token keyword">const</span> curriedAdd <span class="token operator">=</span> <span class="token function">curry</span><span class="token punctuation">(</span>add<span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">curriedAdd</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>事件导向编程</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> $ <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span>
 <span class="token keyword">const</span> <span class="token constant">BACKGROUND_COLOR</span> <span class="token operator">=</span> <span class="token string">'rgba(200,200,242,1)'</span>
@@ -817,7 +811,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> onClick<span class="token punctuation">)</span>
 <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>Set background color<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span> <span class="token comment">//点击事件触发改变了背景色</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>模块化</p>
 <p>在下面的例子中，所有的实现细节都隐藏在一个立即执行的函数表达式中。函数tick和toString闭包私有状态和它们需要完成工作的函数。闭包使我们能够模块化和封装我们的代码。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> namespace <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -844,7 +837,6 @@ counter<span class="token punctuation">.</span><span class="token function">tick
 counter<span class="token punctuation">.</span><span class="token function">tick</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>counter<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
 <span class="token comment">//[98,9]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这个例子说明了局部变量不会被复制到闭包中:闭包维护了对原始变量本身的引用。这就好像堆栈帧即使在外部函数退出后也仍然活在内存中一样。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">42</span>
@@ -854,7 +846,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 <span class="token keyword">var</span> f <span class="token operator">=</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// logs 43</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在下面的代码中，三个方法分别在同一个词法环境中记录、增量和更新。</p>
 <p>每次调用 createObject 时，都会创建一个新的执行上下文(堆栈框架) ，并创建一个全新的变量 x，以及一组新的函数(log 等) ，这些函数将封闭这个新变量。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">createObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -873,7 +864,6 @@ o<span class="token punctuation">.</span><span class="token function">update</sp
 o<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 5</span>
 <span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token function">createObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 p<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 42</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>如果您使用的是用var声明的变量，请注意您要封闭的是哪个变量。使用var声明的变量被提升。由于引入了let和const，在现代JavaScript中这个问题要小得多。</p>
 <p>在下面的代码中，每次循环的时候，都会创建一个新的内部函数，它在i上关闭。但是因为var i被提升到循环的外部，所有这些内部函数都在同一个变量上闭包，这意味着i(3)的最终值被打印了三次。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -889,10 +879,10 @@ p<span class="token punctuation">.</span><span class="token function">log</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">6</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="闭包的产生"><a href="#闭包的产生" class="headerlink" title="闭包的产生:"></a>闭包的产生:</h2><blockquote>
+<h2 id="闭包的产生"><a class="header-anchor" href="#闭包的产生">¶</a>闭包的产生:</h2>
+<blockquote>
 <p><em><strong>当函数可以记住并访问所在的词法作用域,即使函数是在当前的词法作用域之外执行,这时就产生了闭包.</strong></em></p>
-<p>本质上无论何时何地,如果将函数(访问他们各自的词法作用域)当作第一级的值类型并导出传递,就能看到闭包在这些函数的应用.定时器、事件监听器、Ajax请求,跨窗口通信,web work或其他任何的异步或者同步任务中,<em><strong>凡是使用了回调函数,实际上就是在使用闭包</strong></em>    </p>
+<p>本质上无论何时何地,如果将函数(访问他们各自的词法作用域)当作第一级的值类型并导出传递,就能看到闭包在这些函数的应用.定时器、事件监听器、Ajax请求,跨窗口通信,web work或其他任何的异步或者同步任务中,<em><strong>凡是使用了回调函数,实际上就是在使用闭包</strong></em></p>
 <p align="right">你不知知道的JavaScript上卷</p>
 </blockquote>
 <p>IIFE(立即调用函数表达式)并不是观察闭包最好的例子,但是的确创建了闭包,并且也是最常用来创建可以被封闭的闭包工具.</p>
@@ -903,7 +893,6 @@ p<span class="token punctuation">.</span><span class="token function">log</span>
 		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> i <span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span><span class="token punctuation">,</span> i<span class="token operator">*</span><span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>能否解释下会打印什么?为什么?我们后面给出</p>
 <p>同样的这个demo</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -912,7 +901,6 @@ p<span class="token punctuation">.</span><span class="token function">log</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 <span class="token comment">//10个10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> i2 <span class="token operator">=</span> i
@@ -922,7 +910,6 @@ p<span class="token punctuation">.</span><span class="token function">log</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 <span class="token comment">//0-9</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">i2</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -931,7 +918,6 @@ p<span class="token punctuation">.</span><span class="token function">log</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 <span class="token comment">//0-9</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>首先因为 <code>setTimeout</code> 是个异步函数，所有会先把循环全部执行完毕，这时候 <code>i</code> 就是 6 了，所以会输出五个 6。</p>
 <p>解决办法两种，第一种使用闭包</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -942,7 +928,6 @@ p<span class="token punctuation">.</span><span class="token function">log</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token comment">//1~5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>第二种就是使用 <code>setTimeout</code> 的第三个参数</p>
 <pre class="line-numbers language-none"><code class="language-none">for ( var i=1; i&lt;=5; i++) {
 	setTimeout( function timer(j) {
@@ -950,7 +935,6 @@ p<span class="token punctuation">.</span><span class="token function">log</span>
 	}, i*1000, i);
 }
 //1~5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>第三种就是使用 <code>let</code> 定义 <code>i</code> 了</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span> <span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span><span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token function">setTimeout</span><span class="token punctuation">(</span> <span class="token keyword">function</span> <span class="token function">timer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -958,36 +942,33 @@ p<span class="token punctuation">.</span><span class="token function">log</span>
 	<span class="token punctuation">}</span><span class="token punctuation">,</span> i<span class="token operator">*</span><span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token comment">//1~5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <img src="/2019/05/297415/1639494322510.png" class="" width="1639494322510">
-
-
-
-
-
-
-
-
-
-<h2 id="最后的要点"><a href="#最后的要点" class="headerlink" title="最后的要点:"></a>最后的要点:</h2><ul>
-<li><p>当在JavaScript闭包中声明一个函数时。</p>
+<h2 id="最后的要点"><a class="header-anchor" href="#最后的要点">¶</a>最后的要点:</h2>
+<ul>
+<li>
+<p>当在JavaScript闭包中声明一个函数时。</p>
 </li>
-<li><p>从另一个函数内部返回一个函数是闭包的典型例子，因为外部函数内部的状态对返回的内部函数是隐式可用的，即使外部函数已经完成执行。</p>
+<li>
+<p>从另一个函数内部返回一个函数是闭包的典型例子，因为外部函数内部的状态对返回的内部函数是隐式可用的，即使外部函数已经完成执行。</p>
 </li>
-<li><p>每当在函数中使用eval()时，都会使用闭包。你eval的文本可以引用函数的局部变量，在非严格模式下，你甚至可以通过使用eval(‘var foo =…’)创建新的局部变量。</p>
+<li>
+<p>每当在函数中使用eval()时，都会使用闭包。你eval的文本可以引用函数的局部变量，在非严格模式下，你甚至可以通过使用eval(‘var foo =…’)创建新的局部变量。</p>
 </li>
-<li><p>当你在函数中使用new Function(…)(Function构造函数)时，它不会在它的词法环境中关闭:而是在全局上下文中关闭。新函数不能引用外部函数的局部变量。</p>
+<li>
+<p>当你在函数中使用new Function(…)(Function构造函数)时，它不会在它的词法环境中关闭:而是在全局上下文中关闭。新函数不能引用外部函数的局部变量。</p>
 </li>
-<li><p>JavaScript中的闭包就像在函数声明处保留对作用域的引用(而不是副本)，而函数声明又保留对其外部作用域的引用，以此类推，一直到作用域链的顶部的全局对象。</p>
+<li>
+<p>JavaScript中的闭包就像在函数声明处保留对作用域的引用(而不是副本)，而函数声明又保留对其外部作用域的引用，以此类推，一直到作用域链的顶部的全局对象。</p>
 </li>
-<li><p>闭包是在函数声明时创建的;此闭包用于在调用函数时配置执行上下文。</p>
+<li>
+<p>闭包是在函数声明时创建的;此闭包用于在调用函数时配置执行上下文。</p>
 </li>
-<li><p>每次调用函数时，都会创建一组新的局部变量。</p>
+<li>
+<p>每次调用函数时，都会创建一组新的局部变量。</p>
 </li>
 </ul>
-<h4 id="在一个函数使用了外部函数中的局部变量-使用变量的地方发生了闭包现象-变量定义所在的函数称为闭包函数"><a href="#在一个函数使用了外部函数中的局部变量-使用变量的地方发生了闭包现象-变量定义所在的函数称为闭包函数" class="headerlink" title="在一个函数使用了外部函数中的局部变量,使用变量的地方发生了闭包现象,变量定义所在的函数称为闭包函数"></a><strong>在一个函数使用了外部函数中的局部变量,使用变量的地方发生了闭包现象,变量定义所在的函数称为闭包函数</strong></h4><p><strong>优点:防止变量污染作用域</strong></p>
+<h4 id="在一个函数使用了外部函数中的局部变量-使用变量的地方发生了闭包现象-变量定义所在的函数称为闭包函数"><a class="header-anchor" href="#在一个函数使用了外部函数中的局部变量-使用变量的地方发生了闭包现象-变量定义所在的函数称为闭包函数">¶</a><strong>在一个函数使用了外部函数中的局部变量,使用变量的地方发生了闭包现象,变量定义所在的函数称为闭包函数</strong></h4>
+<p><strong>优点:防止变量污染作用域</strong></p>
 <p><strong>缺点:不释放则会导致内存泄漏</strong></p>
 
                 
@@ -1554,7 +1535,7 @@ p<span class="token punctuation">.</span><span class="token function">log</span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.1k</span>&nbsp;字
+                class="white-color">181.2k</span>&nbsp;字
             
             
             

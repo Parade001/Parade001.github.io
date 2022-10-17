@@ -736,7 +736,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="在vue2中应尽量避免二者同时使用"><a href="#在vue2中应尽量避免二者同时使用" class="headerlink" title="在vue2中应尽量避免二者同时使用"></a>在vue2中应尽量避免二者同时使用</h3><p><a href="https://link.juejin.cn/?target=https://cn.vuejs.org/v2/guide/conditional.html">vue 2.x官方链接</a></p>
+                <h3 id="在vue2中应尽量避免二者同时使用"><a class="header-anchor" href="#在vue2中应尽量避免二者同时使用">¶</a>在vue2中应尽量避免二者同时使用</h3>
+<p><a href="https://link.juejin.cn/?target=https%3A%2F%2Fcn.vuejs.org%2Fv2%2Fguide%2Fconditional.html">vue 2.x官方链接</a></p>
 <blockquote>
 <p>当 <code>v-if</code> 与 <code>v-for</code> 一起使用时，<code>v-for</code> 具有比 <code>v-if</code> 更高的优先级。</p>
 </blockquote>
@@ -759,14 +760,12 @@ export default {
 
 &lt;style scoped&gt;
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>它实际经过的运算是这样的</p>
 <pre class="line-numbers language-none"><code class="language-none">this.list.map(function (item,index) {
   if (index===9) {
     return item
   }
 })<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>因此哪怕我们只渲染出一小部分的元素，也得在每次重渲染的时候遍历整个列表，不论是否发生了变化。</p>
 <p>不建议这样做的原因就是比较浪费性能</p>
 <p>Vue2 推荐的改进方案也是比较简单,就是采用计算属性去生成你要遍历的数组</p>
@@ -795,9 +794,9 @@ export default {
 &lt;/script&gt;
 &lt;style scoped&gt;
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>从计算成本上来说，在计算属性中过滤会比在dom中判断是否显示更低。</p>
-<h3 id="vue3中的改变"><a href="#vue3中的改变" class="headerlink" title="vue3中的改变"></a>vue3中的改变</h3><p><a href="https://link.juejin.cn/?target=https://v3.cn.vuejs.org/guide/conditional.html%23v-show">vue 3.x官方文档</a></p>
+<h3 id="vue3中的改变"><a class="header-anchor" href="#vue3中的改变">¶</a>vue3中的改变</h3>
+<p><a href="https://link.juejin.cn/?target=https%3A%2F%2Fv3.cn.vuejs.org%2Fguide%2Fconditional.html%23v-show">vue 3.x官方文档</a></p>
 <blockquote>
 <p>当 <code>v-if</code> 与 <code>v-for</code> 一起使用时，<code>v-if</code> 具有比 <code>v-for</code> 更高的优先级。</p>
 </blockquote>
@@ -820,10 +819,8 @@ export default {
 &lt;/script&gt;
 &lt;style scoped&gt;
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>由于 v-if 优先级高,导致页面什么也不会渲染,控制台还有报错</p>
 <pre class="line-numbers language-none"><code class="language-none">[Vue warn]: Property "index" was accessed during render but is not defined on instance.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>当然还有一些其它用法例如这种,可以显示数据,只是会一些Vue warn的警告</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;template&gt;
   &lt;div class="hello"&gt;
@@ -849,7 +846,6 @@ export default {
 &lt;/script&gt;
 &lt;style scoped&gt;
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这种方法也不是最好的,官方推荐的写法是这样的, 把 v-for 移动到容器元素上,例如ul,ol 或者外面包裹一层 template</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;template&gt;
   &lt;div class="hello"&gt;
@@ -877,7 +873,6 @@ export default {
 &lt;/script&gt;
 &lt;style scoped&gt;
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>但如果想要有条件地跳过循环的执行，那么可以将v-if置于外层元素或者template上。</p>
 <p>例如这样</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;template&gt;
@@ -905,18 +900,15 @@ export default {
 &lt;style scoped&gt;
 &lt;/style&gt;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>v-if</code>与<code>v-for</code>都是<code>vue</code>模板系统中的指令</p>
 <p>在<code>vue</code>模板编译的时候，会将指令系统转化成可执行的<code>render</code>函数</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="#示例"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/vue/if_for.html#%E7%A4%BA%E4%BE%8B">#</a>示例</h3><p>编写一个<code>p</code>标签，同时使用<code>v-if</code>与 <code>v-for</code></p>
+<h3 id="示例"><a class="header-anchor" href="#示例">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/vue/if_for.html#%E7%A4%BA%E4%BE%8B">#</a>示例</h3>
+<p>编写一个<code>p</code>标签，同时使用<code>v-if</code>与 <code>v-for</code></p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;div id="app"&gt;
     &lt;p v-if="isShow" v-for="item in items"&gt;
         {{ item.title }}
     &lt;/p&gt;
 &lt;/div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p>创建<code>vue</code>实例，存放<code>isShow</code>与<code>items</code>数据</p>
 <pre class="line-numbers language-none"><code class="language-none">const app = new Vue({
   el: "#app",
@@ -933,9 +925,6 @@ export default {
     }
   }
 })<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p>模板指令的代码都会生成在<code>render</code>函数中，通过<code>app.$options.render</code>就能得到渲染函数</p>
 <pre class="line-numbers language-none"><code class="language-none">ƒ anonymous() {
   with (this) { return 
@@ -943,7 +932,6 @@ export default {
     _l((items), function (item) 
     { return (isShow) ? _c('p', [_v("\n" + _s(item.title) + "\n")]) : _e() }), 0) }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>_l</code>是<code>vue</code>的列表渲染函数，函数内部都会进行一次<code>if</code>判断</p>
 <p>初步得到结论：<code>v-for</code>优先级是比<code>v-if</code>高</p>
 <p>再将<code>v-for</code>与<code>v-if</code>置于不同标签</p>
@@ -952,7 +940,6 @@ export default {
         &lt;p v-for="item in items"&gt;{{item.title}}&lt;/p&gt;
     &lt;/template&gt;
 &lt;/div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>再输出下<code>render</code>函数</p>
 <pre class="line-numbers language-none"><code class="language-none">ƒ anonymous() {
   with(this){return 
@@ -960,7 +947,6 @@ export default {
     [(isShow)?[_v("\n"),
     _l((items),function(item){return _c('p',[_v(_s(item.title))])})]:_e()],2)}
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这时候我们可以看到，<code>v-for</code>与<code>v-if</code>作用在不同标签时候，是先进行判断，再进行列表的渲染</p>
 <p>我们再在查看下<code>vue</code>源码</p>
 <p>源码位置：<code>\vue-dev\src\compiler\codegen\index.js</code></p>
@@ -984,17 +970,16 @@ export default {
     // component or element
     ...
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在进行<code>if</code>判断的时候，<code>v-for</code>是比<code>v-if</code>先进行判断</p>
 <p>最终结论：<code>v-for</code>优先级比<code>v-if</code>高</p>
-<h2 id="三、注意事项"><a href="#三、注意事项" class="headerlink" title="#三、注意事项"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/vue/if_for.html#%E4%B8%89%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">#</a>三、注意事项</h2><ol>
+<h2 id="三、注意事项"><a class="header-anchor" href="#三、注意事项">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/vue/if_for.html#%E4%B8%89%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">#</a>三、注意事项</h2>
+<ol>
 <li>永远不要把 <code>v-if</code> 和 <code>v-for</code> 同时用在同一个元素上，带来性能方面的浪费（每次渲染都会先循环再进行条件判断）</li>
 <li>如果避免出现这种情况，则在外层嵌套<code>template</code>（页面渲染不生成<code>dom</code>节点），在这一层进行v-if判断，然后在内部进行v-for循环</li>
 </ol>
 <pre class="line-numbers language-none"><code class="language-none">&lt;template v-if="isShow"&gt;
     &lt;p v-for="item in items"&gt;
 &lt;/template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <ol>
 <li>如果条件出现在循环内部，可通过计算属性<code>computed</code>提前过滤掉那些不需要显示的项</li>
 </ol>
@@ -1005,10 +990,8 @@ export default {
       })
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><ul>
+<h3 id="结论"><a class="header-anchor" href="#结论">¶</a>结论</h3>
+<ul>
 <li>在vue2中，v-for的优先级高于v-if</li>
 <li>在vue3中，v-if的优先级高于v-for</li>
 <li>两种混在一起写法均不被官方推荐</li>
@@ -1580,7 +1563,7 @@ export default {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.1k</span>&nbsp;字
+                class="white-color">181.2k</span>&nbsp;字
             
             
             

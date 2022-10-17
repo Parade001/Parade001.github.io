@@ -736,13 +736,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="JavaScript排他思想"><a href="#JavaScript排他思想" class="headerlink" title="JavaScript排他思想"></a>JavaScript排他思想</h2><p>如果有同一组元素，我们想要某一个元素实现某种样式，需要用到循环的排他思想算法：</p>
+                <h2 id="JavaScript排他思想"><a class="header-anchor" href="#JavaScript排他思想">¶</a>JavaScript排他思想</h2>
+<p>如果有同一组元素，我们想要某一个元素实现某种样式，需要用到循环的排他思想算法：</p>
 <ol>
 <li>所有元素全部清除样式（干掉其他人）</li>
 <li>给当前元素设置样式（留下我自己）</li>
 <li>注意顺序不能颠倒，首先干掉其他人，再设置自己</li>
 </ol>
-<h2 id="demo1多个按钮"><a href="#demo1多个按钮" class="headerlink" title="demo1多个按钮"></a>demo1多个按钮</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>button<span class="token operator">&gt;</span><span class="token constant">BTN1</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<h2 id="demo1多个按钮"><a class="header-anchor" href="#demo1多个按钮">¶</a>demo1多个按钮</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>button<span class="token operator">&gt;</span><span class="token constant">BTN1</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
    <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span><span class="token constant">BTN2</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
    <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span><span class="token constant">BTN3</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
    <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span><span class="token constant">BTN4</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
@@ -758,16 +760,19 @@
            <span class="token punctuation">}</span>
        <span class="token punctuation">}</span>
    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ol>
-<li><p>首先去获取的一个伪数组</p>
+<li>
+<p>首先去获取的一个伪数组</p>
 </li>
-<li><p>利用双重for循环</p>
+<li>
+<p>利用双重for循环</p>
 </li>
-<li><p>首先先排除其他人，然后才设置自己的样式，这种排除其他人的思想我们称为排他思想</p>
+<li>
+<p>首先先排除其他人，然后才设置自己的样式，这种排除其他人的思想我们称为排他思想</p>
 </li>
 </ol>
-<h2 id="demo2全选反选"><a href="#demo2全选反选" class="headerlink" title="demo2全选反选"></a>demo2全选反选</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+<h2 id="demo2全选反选"><a class="header-anchor" href="#demo2全选反选">¶</a>demo2全选反选</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         <span class="token operator">*</span> <span class="token punctuation">{</span>
             padding<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
             margin<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -884,10 +889,8 @@
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="demo3表格隔行变色"><a href="#demo3表格隔行变色" class="headerlink" title="demo3表格隔行变色"></a>demo3表格隔行变色</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+<h2 id="demo3表格隔行变色"><a class="header-anchor" href="#demo3表格隔行变色">¶</a>demo3表格隔行变色</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         table <span class="token punctuation">{</span>
             width<span class="token operator">:</span> <span class="token number">800</span>px<span class="token punctuation">;</span>
             margin<span class="token operator">:</span> <span class="token number">100</span>px auto<span class="token punctuation">;</span>
@@ -992,16 +995,16 @@
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="demo4打开一个视口"><a href="#demo4打开一个视口" class="headerlink" title="demo4打开一个视口"></a>demo4打开一个视口</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"javascript:popUP('http://www.baidu.com/');"</span><span class="token operator">&gt;</span>baidu<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>  <span class="token comment">//Chrome会拦截弹窗,允许即可</span>
+<h2 id="demo4打开一个视口"><a class="header-anchor" href="#demo4打开一个视口">¶</a>demo4打开一个视口</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"javascript:popUP('http://www.baidu.com/');"</span><span class="token operator">&gt;</span>baidu<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>  <span class="token comment">//Chrome会拦截弹窗,允许即可</span>
    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
        <span class="token keyword">function</span> <span class="token function">popUp</span><span class="token punctuation">(</span><span class="token parameter">winURL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
            window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>winURL<span class="token punctuation">,</span> <span class="token string">" popup"</span><span class="token punctuation">,</span> <span class="token string">"width=400,height=280"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
        <span class="token punctuation">}</span>
        <span class="token function">popUp</span><span class="token punctuation">(</span><span class="token string">'http://www.baidu.com/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="demo5循环精灵图"><a href="#demo5循环精灵图" class="headerlink" title="demo5循环精灵图"></a>demo5循环精灵图</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+<h2 id="demo5循环精灵图"><a class="header-anchor" href="#demo5循环精灵图">¶</a>demo5循环精灵图</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         <span class="token operator">*</span> <span class="token punctuation">{</span>
             margin<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
             padding<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -1052,7 +1055,6 @@
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>demo6tab栏切换</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         <span class="token operator">*</span> <span class="token punctuation">{</span>
@@ -1150,7 +1152,6 @@
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>demo表单提交</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         <span class="token comment">/* * {
@@ -1816,7 +1817,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.1k</span>&nbsp;字
+                class="white-color">181.2k</span>&nbsp;字
             
             
             

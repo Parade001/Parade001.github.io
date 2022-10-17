@@ -736,9 +736,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="如何在-React-中发起-AJAX-请求？"><a href="#如何在-React-中发起-AJAX-请求？" class="headerlink" title="如何在 React 中发起 AJAX 请求？"></a>如何在 React 中发起 AJAX 请求？</h3><p>在 React 开发中，你能使用任何你喜欢的 AJAX 库，比如社区比较流行的 <a target="_blank" rel="noopener" href="https://github.com/axios/axios">Axios</a>，<a target="_blank" rel="noopener" href="https://api.jquery.com/jQuery.ajax/">jQuery AJAX</a>，或者是浏览器内置的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">window.fetch</a>。</p>
-<h3 id="应该在-React-组件的哪个生命周期函数中发起-AJAX-请求？"><a href="#应该在-React-组件的哪个生命周期函数中发起-AJAX-请求？" class="headerlink" title="应该在 React 组件的哪个生命周期函数中发起 AJAX 请求？"></a>应该在 React 组件的哪个生命周期函数中发起 AJAX 请求？</h3><p>我们推荐你在 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#mounting"><code>componentDidMount</code></a> 这个生命周期函数中发起 AJAX 请求。这样做你可以拿到 AJAX 请求返回的数据并通过 <code>setState</code> 来更新组件。</p>
-<h3 id="示例：使用-AJAX-请求结果去改变组件内部-state"><a href="#示例：使用-AJAX-请求结果去改变组件内部-state" class="headerlink" title="示例：使用 AJAX 请求结果去改变组件内部 state"></a>示例：使用 AJAX 请求结果去改变组件内部 state</h3><p>下面这个组件演示了如何在 <code>componentDidMount</code> 中发起 AJAX 请求去更新组件的 state 。</p>
+                <h3 id="如何在-React-中发起-AJAX-请求？"><a class="header-anchor" href="#如何在-React-中发起-AJAX-请求？">¶</a>如何在 React 中发起 AJAX 请求？</h3>
+<p>在 React 开发中，你能使用任何你喜欢的 AJAX 库，比如社区比较流行的 <a target="_blank" rel="noopener" href="https://github.com/axios/axios">Axios</a>，<a target="_blank" rel="noopener" href="https://api.jquery.com/jQuery.ajax/">jQuery AJAX</a>，或者是浏览器内置的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">window.fetch</a>。</p>
+<h3 id="应该在-React-组件的哪个生命周期函数中发起-AJAX-请求？"><a class="header-anchor" href="#应该在-React-组件的哪个生命周期函数中发起-AJAX-请求？">¶</a>应该在 React 组件的哪个生命周期函数中发起 AJAX 请求？</h3>
+<p>我们推荐你在 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#mounting"><code>componentDidMount</code></a> 这个生命周期函数中发起 AJAX 请求。这样做你可以拿到 AJAX 请求返回的数据并通过 <code>setState</code> 来更新组件。</p>
+<h3 id="示例：使用-AJAX-请求结果去改变组件内部-state"><a class="header-anchor" href="#示例：使用-AJAX-请求结果去改变组件内部-state">¶</a>示例：使用 AJAX 请求结果去改变组件内部 state</h3>
+<p>下面这个组件演示了如何在 <code>componentDidMount</code> 中发起 AJAX 请求去更新组件的 state 。</p>
 <p>示例 API 返回如下的 JSON 对象：</p>
 <pre class="line-numbers language-react" data-language="react"><code class="language-react">{
   "items": [
@@ -797,7 +800,6 @@ class MyComponent extends React.Component {
     }
   }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这里与 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/hooks-intro.html">Hook</a> 的实现相同：</p>
 <pre class="line-numbers language-react" data-language="react"><code class="language-react">function MyComponent() {
   const [error, setError] = useState(null);
@@ -1393,7 +1395,7 @@ class MyComponent extends React.Component {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.1k</span>&nbsp;字
+                class="white-color">181.2k</span>&nbsp;字
             
             
             

@@ -736,36 +736,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JavaScript-的组成"><a href="#JavaScript-的组成" class="headerlink" title="JavaScript 的组成"></a>JavaScript 的组成</h1><ul>
-<li><p><strong>ECMAScript</strong></p>
+                <h1>JavaScript 的组成</h1>
+<ul>
+<li>
+<p><strong>ECMAScript</strong></p>
 </li>
-<li><p><em><em>DOM</em>(文档对象模型)</em>**</p>
+<li>
+<p><em><em>DOM</em>(文档对象模型)</em>**</p>
 </li>
-<li><p><em><em>BOM</em>(浏览器对象模型)</em>**</p>
-<hr></li>
+<li>
+<p><em><em>BOM</em>(浏览器对象模型)</em>**</p>
+<hr>
+</li>
 </ul>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a><strong>API</strong></h2><p><em>appliction programming interface</em>应用程序编程接口，是一些预先定义的函数.</p>
-<h2 id="Web-API"><a href="#Web-API" class="headerlink" title="Web API"></a>Web API</h2><p>是浏览器提供的一套操作浏览器功能和页面元素的API（BOM和DOM）；</p>
+<h2 id="API"><a class="header-anchor" href="#API">¶</a><strong>API</strong></h2>
+<p><em>appliction programming interface</em>应用程序编程接口，是一些预先定义的函数.</p>
+<h2 id="Web-API"><a class="header-anchor" href="#Web-API">¶</a>Web API</h2>
+<p>是浏览器提供的一套操作浏览器功能和页面元素的API（BOM和DOM）；</p>
 <p>web编程（浏览器的网页编程）；</p>
 <p>一般都有输入和输出（函数的传参和返回值）,Web Api 很多方法（函数）；</p>
 <hr>
-
-<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p><em>Document Object Model</em>（文档对象模型）</p>
+<h3 id="DOM"><a class="header-anchor" href="#DOM">¶</a>DOM</h3>
+<p><em>Document Object Model</em>（文档对象模型）</p>
 <p>W3C推荐的处理可扩展标记语言，是一种标准编程接口</p>
-<p>当网页加载时，浏览器会为页面创建一个文档对象模型..</p>
+<p>当网页加载时，浏览器会为页面创建一个文档对象模型…</p>
 <p>所有对象都排列为树形结构…</p>
 <pre class="line-numbers language-none"><code class="language-none">文档：docunment
 元素：标签
 节点：属性，空格，注释...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
-<h1 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h1><ul>
+<h1>获取元素</h1>
+<ul>
 <li>根据ID*( getElementById)*</li>
 <li>根据标签名*(getElementByTagName)* 返回一个包括所有给定标签名称的元素的 HTML 集合<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCollection"><code>HTMLCollection</code></a>。 整个文件结构整体被搜索，包括根节点。返回的 <code>HTML集合</code>是动态的，可以自动更新自己来保持和 DOM 树的同步而不用再次调用 <code>document.getElementsByTagName()</code> 。</li>
 <li>通过标签的NAME属性值获取一组节点集合*(getElementByName)*</li>
 <li>通过指定的上下文或按照class名取指定的标签，获取的是一个<strong>元素集合</strong> <em>（getElementClassName）</em></li>
-<li>使用类名选择器获取<em>（doucument.querySelector(‘选择器’)）</em>  返回值永远是一个DOM对象,即使可以匹配多个,以第一匹配的为准,获取不到就是null</li>
+<li>使用类名选择器获取*（doucument.querySelector(‘选择器’)）*  返回值永远是一个DOM对象,即使可以匹配多个,以第一匹配的为准,获取不到就是null</li>
 <li>在指定上下文中通过选择器获取一组元素集合(<strong>伪数组+=不能使用数组的内置方法</strong>),返回值:永远是一个伪数组,即使可以匹配1个这个伪数组长度为1,元素是真正的DOM*（document.querySelectorAll(‘选择器’))*获取不到就是空元（<strong>通过数组方法取元素</strong>）</li>
 <li><em>(doucument.body)</em>      body属性用于设置或返回文档体</li>
 <li>*(doucument.doucumentElement)*以一个元素对象返回一个文档的文档元素</li>
@@ -777,7 +783,6 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> times<span class="token punctuation">)</span><span class="token punctuation">;</span>
       console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>times<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//打印返回的元素对象 查看里面的属性和方法</span>
   </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>获取DOM元素</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"time"</span><span class="token operator">&gt;</span><span class="token number">2021</span><span class="token operator">-</span><span class="token number">10</span><span class="token operator">-</span><span class="token number">20</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
@@ -819,9 +824,7 @@
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
 <p>元素的属性获取</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://www.baidu.com"</span><span class="token operator">&gt;</span>百度<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
    <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>修改<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
@@ -832,10 +835,9 @@
            a<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">'https://parade001.github.io/'</span><span class="token punctuation">;</span>
            a<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'My_blog'</span><span class="token punctuation">;</span>
        <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
-<h3 id="事件组成"><a href="#事件组成" class="headerlink" title="事件组成"></a>事件组成</h3><ul>
+<h3 id="事件组成"><a class="header-anchor" href="#事件组成">¶</a>事件组成</h3>
+<ul>
 <li>事件源(触发对象)</li>
 <li>事件类型(触发类型)</li>
 <li>事件处理程序(通过函数赋值完成)</li>
@@ -843,9 +845,6 @@
 <p>在github上看到一个比喻很是形象</p>
 <pre class="line-numbers language-none"><code class="language-none">你考试不及格惹恼了你妈妈,你妈妈叫你爸去学校,当你放学出校门把你打一顿,
 当你放学出校门那刻,你被打了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>猜猜我是谁<span class="token operator">?</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
   <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
       <span class="token comment">// var btn = document.getElementsByTagName('button')[0]; //[0]因为...bytagname返回的是一个伪数组</span>
@@ -858,7 +857,6 @@
           <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'你是狗'</span><span class="token punctuation">)</span>
       <span class="token punctuation">}</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>赋值操作</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>今天是雨天<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
   <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>记得带伞<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
@@ -868,9 +866,6 @@
       btn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
           div<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;span style=color:red&gt;爪巴啊&lt;/span&gt;"</span>
           <span class="token comment">// div.innerText = "&lt;span style=color:red&gt;爪巴啊&lt;/span&gt;"// interHTMl可以识别网页元素标签,innerText则不行;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p>操作元素的deemo</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>当前时间为<span class="token operator">:</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>时间<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
@@ -894,7 +889,6 @@
         <span class="token keyword">var</span> p <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         p<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>通过更改路径达到更换图片的deemo</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> ldh <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'ldh'</span><span class="token punctuation">)</span>
       <span class="token keyword">var</span> zxy <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'zxy'</span><span class="token punctuation">)</span>
@@ -907,7 +901,6 @@
           img<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token comment">// 图片路径;</span>
               img<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'刘德华'</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>京东密码框表单元素的deemo</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
      <span class="token punctuation">.</span>box input <span class="token punctuation">{</span>
@@ -967,9 +960,6 @@
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p>Web API输入框焦点deemo</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         <span class="token punctuation">.</span>box input <span class="token punctuation">{</span>
@@ -1023,9 +1013,6 @@
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p>关闭广告的deemo</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token punctuation">.</span>box <span class="token punctuation">{</span>
             position<span class="token operator">:</span> relative<span class="token punctuation">;</span>
@@ -1071,9 +1058,6 @@
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <p>下拉菜单的案例</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         <span class="token operator">*</span> <span class="token punctuation">{</span>
@@ -1141,7 +1125,6 @@
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>背景颜色关灯案例</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         body <span class="token punctuation">{</span>
@@ -1173,7 +1156,6 @@
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1739,7 +1721,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.1k</span>&nbsp;字
+                class="white-color">181.2k</span>&nbsp;字
             
             
             

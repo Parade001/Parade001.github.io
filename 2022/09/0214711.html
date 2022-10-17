@@ -736,15 +736,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="面试官：Vue组件之间的通信方式都有哪些？"><a href="#面试官：Vue组件之间的通信方式都有哪些？" class="headerlink" title="面试官：Vue组件之间的通信方式都有哪些？"></a>面试官：Vue组件之间的通信方式都有哪些？</h1><p><img src="https://static.vue-js.com/7de50d20-3aca-11eb-85f6-6fac77c0c9b3.png"></p>
-<h2 id="一、组件间通信的概念"><a href="#一、组件间通信的概念" class="headerlink" title="一、组件间通信的概念"></a>一、组件间通信的概念</h2><p>开始之前，我们把<strong>组件间通信</strong>这个词进行拆分</p>
+                <h1>面试官：Vue组件之间的通信方式都有哪些？</h1>
+<p><img src="https://static.vue-js.com/7de50d20-3aca-11eb-85f6-6fac77c0c9b3.png" alt=""></p>
+<h2 id="一、组件间通信的概念"><a class="header-anchor" href="#一、组件间通信的概念">¶</a>一、组件间通信的概念</h2>
+<p>开始之前，我们把<strong>组件间通信</strong>这个词进行拆分</p>
 <ul>
 <li>组件</li>
 <li>通信</li>
 </ul>
 <p>都知道组件是<code>vue</code>最强大的功能之一，<code>vue</code>中每一个<code>.vue</code>我们都可以视之为一个组件通信指的是发送者通过某种媒体以某种格式来传递信息到收信者以达到某个目的。广义上，任何信息的交通都是通信<strong>组件间通信</strong>即指组件(<code>.vue</code>)通过某种方式来传递信息以达到某个目的举个栗子我们在使用<code>UI</code>框架中的<code>table</code>组件，可能会往<code>table</code>组件中传入某些数据，这个本质就形成了组件之间的通信</p>
-<h2 id="二、组件间通信解决了什么"><a href="#二、组件间通信解决了什么" class="headerlink" title="二、组件间通信解决了什么"></a>二、组件间通信解决了什么</h2><p>在古代，人们通过驿站、飞鸽传书、烽火报警、符号、语言、眼神、触碰等方式进行信息传递，到了今天，随着科技水平的飞速发展，通信基本完全利用有线或无线电完成，相继出现了有线电话、固定电话、无线电话、手机、互联网甚至视频电话等各种通信方式从上面这段话，我们可以看到通信的本质是信息同步，共享回到<code>vue</code>中，每个组件之间的都有独自的作用域，组件间的数据是无法共享的但实际开发工作中我们常常需要让组件之间共享数据，这也是组件通信的目的要让它们互相之间能进行通讯，这样才能构成一个有机的完整系统</p>
-<h2 id="二、组件间通信的分类"><a href="#二、组件间通信的分类" class="headerlink" title="二、组件间通信的分类"></a>二、组件间通信的分类</h2><p>组件间通信的分类可以分成以下</p>
+<h2 id="二、组件间通信解决了什么"><a class="header-anchor" href="#二、组件间通信解决了什么">¶</a>二、组件间通信解决了什么</h2>
+<p>在古代，人们通过驿站、飞鸽传书、烽火报警、符号、语言、眼神、触碰等方式进行信息传递，到了今天，随着科技水平的飞速发展，通信基本完全利用有线或无线电完成，相继出现了有线电话、固定电话、无线电话、手机、互联网甚至视频电话等各种通信方式从上面这段话，我们可以看到通信的本质是信息同步，共享回到<code>vue</code>中，每个组件之间的都有独自的作用域，组件间的数据是无法共享的但实际开发工作中我们常常需要让组件之间共享数据，这也是组件通信的目的要让它们互相之间能进行通讯，这样才能构成一个有机的完整系统</p>
+<h2 id="二、组件间通信的分类"><a class="header-anchor" href="#二、组件间通信的分类">¶</a>二、组件间通信的分类</h2>
+<p>组件间通信的分类可以分成以下</p>
 <ul>
 <li>父子组件之间的通信</li>
 <li>兄弟组件之间的通信</li>
@@ -752,19 +756,21 @@
 <li>非关系组件间之间的通信</li>
 </ul>
 <p>关系图:</p>
-<p><img src="https://static.vue-js.com/85b92400-3aca-11eb-ab90-d9ae814b240d.png"></p>
-<h2 id="三、组件间通信的方案"><a href="#三、组件间通信的方案" class="headerlink" title="三、组件间通信的方案"></a>三、组件间通信的方案</h2><p>整理<code>vue</code>中8种常规的通信方案</p>
+<p><img src="https://static.vue-js.com/85b92400-3aca-11eb-ab90-d9ae814b240d.png" alt=""></p>
+<h2 id="三、组件间通信的方案"><a class="header-anchor" href="#三、组件间通信的方案">¶</a>三、组件间通信的方案</h2>
+<p>整理<code>vue</code>中8种常规的通信方案</p>
 <ol>
-<li> 通过 props 传递</li>
-<li> 通过 $emit 触发自定义事件</li>
-<li> 使用 ref</li>
-<li> EventBus</li>
-<li> $parent 或$root</li>
-<li> attrs 与 listeners</li>
-<li> Provide 与 Inject</li>
-<li> Vuex</li>
+<li>通过 props 传递</li>
+<li>通过 $emit 触发自定义事件</li>
+<li>使用 ref</li>
+<li>EventBus</li>
+<li>$parent 或$root</li>
+<li>attrs 与 listeners</li>
+<li>Provide 与 Inject</li>
+<li>Vuex</li>
 </ol>
-<h3 id="props传递数据"><a href="#props传递数据" class="headerlink" title="props传递数据"></a>props传递数据</h3><p><img src="https://static.vue-js.com/8f80a670-3aca-11eb-ab90-d9ae814b240d.png"></p>
+<h3 id="props传递数据"><a class="header-anchor" href="#props传递数据">¶</a>props传递数据</h3>
+<p><img src="https://static.vue-js.com/8f80a670-3aca-11eb-ab90-d9ae814b240d.png" alt=""></p>
 <ul>
 <li>适用场景：父组件传递数据给子组件</li>
 <li>子组件设置<code>props</code>属性，定义接收父组件传递过来的参数</li>
@@ -781,22 +787,20 @@
        require<span class="token operator">:</span><span class="token boolean">true</span> <span class="token comment">// age属性必须传递  </span>
     <span class="token punctuation">}</span>  
 <span class="token punctuation">}</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>Father.vue</code>组件</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>Children name<span class="token operator">=</span><span class="token string">"jack"</span> age<span class="token operator">=</span><span class="token number">18</span> <span class="token operator">/</span><span class="token operator">&gt;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="emit-触发自定义事件"><a href="#emit-触发自定义事件" class="headerlink" title="$emit 触发自定义事件"></a>$emit 触发自定义事件</h3><ul>
+<h3 id="emit-触发自定义事件"><a class="header-anchor" href="#emit-触发自定义事件">¶</a>$emit 触发自定义事件</h3>
+<ul>
 <li>适用场景：子组件传递数据给父组件</li>
 <li>子组件通过<code>$emit触发</code>自定义事件，<code>$emit</code>第二个参数为传递的数值</li>
 <li>父组件绑定监听器获取到子组件传递过来的参数</li>
 </ul>
 <p><code>Chilfen.vue</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'add'</span><span class="token punctuation">,</span> good<span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><code>Father.vue</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>Children @add<span class="token operator">=</span><span class="token string">"cartAdd($event)"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><ul>
+<h3 id="ref"><a class="header-anchor" href="#ref">¶</a>ref</h3>
+<ul>
 <li>父组件在使用子组件的时候设置<code>ref</code></li>
 <li>父组件通过设置子组件<code>ref</code>来获取数据</li>
 </ul>
@@ -804,8 +808,8 @@
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>Children ref<span class="token operator">=</span><span class="token string">"foo"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>  
   
 <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>foo  <span class="token comment">// 获取子组件实例，通过子组件实例我们就能拿到对应的数据  </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h3><ul>
+<h3 id="EventBus"><a class="header-anchor" href="#EventBus">¶</a>EventBus</h3>
+<ul>
 <li>使用场景：兄弟组件传值</li>
 <li>创建一个中央事件总线<code>EventBus</code></li>
 <li>兄弟组件通过<code>$emit</code>触发自定义事件，<code>$emit</code>第二个参数为传递的数值</li>
@@ -832,32 +836,30 @@
 <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$bus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bus</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 将$bus挂载到vue实例的原型上  </span>
 <span class="token comment">// 另一种方式  </span>
 <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$bus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// Vue已经实现了Bus的功能  </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>Children1.vue</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">this</span><span class="token punctuation">.</span>$bus<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><code>Children2.vue</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">this</span><span class="token punctuation">.</span>$bus<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handle<span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="parent-或-root"><a href="#parent-或-root" class="headerlink" title="$parent 或$&nbsp;root"></a>$parent 或$&nbsp;root</h3><ul>
+<h3 id="parent-或-root"><a class="header-anchor" href="#parent-或-root">¶</a>$parent 或$&nbsp;root</h3>
+<ul>
 <li>通过共同祖辈<code>$parent</code>或者<code>$root</code>搭建通信桥连</li>
 </ul>
 <p>兄弟组件</p>
 <p><code>this.$parent.on('add',this.add)   </code></p>
 <p>另一个兄弟组件</p>
 <p><code>this.$parent.emit('add')   </code></p>
-<h3 id="attrs-与-listeners"><a href="#attrs-与-listeners" class="headerlink" title="$attrs  与$ listeners"></a>$attrs  与$ listeners</h3><ul>
-<li>   适用场景：祖先传递数据给子孙</li>
-<li>   设置批量向下传属性<code>$attrs</code>和 <code>$listeners</code></li>
-<li>   包含了父级作用域中不作为 <code>prop</code> 被识别 (且获取) 的特性绑定 ( class 和 style 除外)。</li>
-<li>   可以通过 <code>v-bind="$attrs"</code> 传⼊内部组件</li>
+<h3 id="attrs-与-listeners"><a class="header-anchor" href="#attrs-与-listeners">¶</a>$attrs  与$ listeners</h3>
+<ul>
+<li>适用场景：祖先传递数据给子孙</li>
+<li>设置批量向下传属性<code>$attrs</code>和 <code>$listeners</code></li>
+<li>包含了父级作用域中不作为 <code>prop</code> 被识别 (且获取) 的特性绑定 ( class 和 style 除外)。</li>
+<li>可以通过 <code>v-bind="$attrs"</code> 传⼊内部组件</li>
 </ul>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// child：并未在props中声明foo  </span>
 <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>$attrs<span class="token punctuation">.</span>foo<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>  
   
 <span class="token comment">// parent  </span>
 <span class="token operator">&lt;</span>HelloWorld foo<span class="token operator">=</span><span class="token string">"foo"</span><span class="token operator">/</span><span class="token operator">&gt;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 给Grandson隔代传值，communication/index.vue  </span>
 <span class="token operator">&lt;</span>Child2 msg<span class="token operator">=</span><span class="token string">"lalala"</span> @some<span class="token operator">-</span>event<span class="token operator">=</span><span class="token string">"onSomeEvent"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Child2<span class="token operator">&gt;</span>  
   
@@ -868,8 +870,8 @@
 <span class="token operator">&lt;</span>div @click<span class="token operator">=</span><span class="token string">"$emit('some-event', 'msg from grandson')"</span><span class="token operator">&gt;</span>  
 <span class="token punctuation">{</span><span class="token punctuation">{</span>msg<span class="token punctuation">}</span><span class="token punctuation">}</span>  
 <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="provide-与-inject"><a href="#provide-与-inject" class="headerlink" title="provide 与 inject"></a>provide 与 inject</h3><ul>
+<h3 id="provide-与-inject"><a class="header-anchor" href="#provide-与-inject">¶</a>provide 与 inject</h3>
+<ul>
 <li>在祖先组件定义<code>provide</code>属性，返回传递的值</li>
 <li>在后代组件通过<code>inject</code>接收组件传递过来的值</li>
 </ul>
@@ -879,45 +881,56 @@
         foo<span class="token operator">:</span><span class="token string">'foo'</span>  
     <span class="token punctuation">}</span>  
 <span class="token punctuation">}</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>后代组件</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">inject<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'foo'</span><span class="token punctuation">]</span> <span class="token comment">// 获取到祖先组件传递过来的值  </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a><code>vuex</code></h3><ul>
-<li><p>适用场景: 复杂关系的组件数据传递</p>
+<h3 id="vuex"><a class="header-anchor" href="#vuex">¶</a><code>vuex</code></h3>
+<ul>
+<li>
+<p>适用场景: 复杂关系的组件数据传递</p>
 </li>
-<li><p><code>Vuex</code>作用相当于一个用来存储共享变量的容器<br><img src="https://static.vue-js.com/fa207cd0-3aca-11eb-ab90-d9ae814b240d.png"></p>
+<li>
+<p><code>Vuex</code>作用相当于一个用来存储共享变量的容器<br>
+<img src="https://static.vue-js.com/fa207cd0-3aca-11eb-ab90-d9ae814b240d.png" alt=""></p>
 </li>
-<li><p><code>state</code>用来存放共享变量的地方</p>
+<li>
+<p><code>state</code>用来存放共享变量的地方</p>
 </li>
-<li><p><code>getter</code>，可以增加一个<code>getter</code>派生状态，(相当于<code>store</code>中的计算属性），用来获得共享变量的值</p>
+<li>
+<p><code>getter</code>，可以增加一个<code>getter</code>派生状态，(相当于<code>store</code>中的计算属性），用来获得共享变量的值</p>
 </li>
-<li><p><code>mutations</code>用来存放修改<code>state</code>的方法。</p>
+<li>
+<p><code>mutations</code>用来存放修改<code>state</code>的方法。</p>
 </li>
-<li><p><code>actions</code>也是用来存放修改state的方法，不过<code>action</code>是在<code>mutations</code>的基础上进行。常用来做一些异步操作</p>
+<li>
+<p><code>actions</code>也是用来存放修改state的方法，不过<code>action</code>是在<code>mutations</code>的基础上进行。常用来做一些异步操作</p>
 </li>
 </ul>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<h3 id="小结"><a class="header-anchor" href="#小结">¶</a>小结</h3>
+<ul>
 <li>父子关系的组件数据传递选择 <code>props</code> &nbsp;与 <code>$emit</code>进行传递，也可选择<code>ref</code></li>
 <li>兄弟关系的组件数据传递可选择<code>$bus</code>，其次可以选择<code>$parent</code>进行传递</li>
 <li>祖先与后代组件数据传递可选择<code>attrs</code>与<code>listeners</code>或者 <code>Provide</code>与 <code>Inject</code></li>
 <li>复杂关系的组件数据传递可以通过<code>vuex</code>存放共享的变量</li>
 </ul>
-<h3 id="组件通信-父向子-props"><a href="#组件通信-父向子-props" class="headerlink" title="组件通信-父向子-props"></a>组件通信-父向子-props</h3><p>因为每个组件的变量和值都是独立的</p>
+<h3 id="组件通信-父向子-props"><a class="header-anchor" href="#组件通信-父向子-props">¶</a>组件通信-父向子-props</h3>
+<p>因为每个组件的变量和值都是独立的</p>
 <p>组件通信先暂时关注父传子, 子传父</p>
 <p>父: 使用其他组件的vue文件</p>
 <p>子: 被引入的组件(嵌入)</p>
 <p>例如: App.vue(父)  MyProduct.vue(子)</p>
-<h3 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h3><p>需求: 封装一个商品组件MyProduct.vue - 外部传入具体要显示的数据, 如下图所示</p>
-
+<h3 id="讲解"><a class="header-anchor" href="#讲解">¶</a>讲解</h3>
+<p>需求: 封装一个商品组件MyProduct.vue - 外部传入具体要显示的数据, 如下图所示</p>
 
 <p>步骤:</p>
 <ol>
-<li><p>创建组件components/MyProduct.vue - 复制下面标签</p>
+<li>
+<p>创建组件components/MyProduct.vue - 复制下面标签</p>
 </li>
-<li><p>组件内在props定义变量, 用于接收外部传入的值</p>
+<li>
+<p>组件内在props定义变量, 用于接收外部传入的值</p>
 </li>
-<li><p>App.vue中引入注册组件, 使用时, 传入具体数据给组件显示</p>
+<li>
+<p>App.vue中引入注册组件, 使用时, 传入具体数据给组件显示</p>
 </li>
 </ol>
 <p>components/MyProduct.vue - 准备标签</p>
@@ -944,7 +957,6 @@ export default {
   margin: 10px;
 }
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>App.vue中使用并传入数据</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
@@ -982,37 +994,40 @@ export default {
 &lt;style&gt;
 
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>总结: 组件封装复用的标签和样式, 而具体数据要靠外面传入</p>
 </blockquote>
-<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ol>
-<li><p>什么时候需要父传子技术?</p>
+<h3 id="小结-v2"><a class="header-anchor" href="#小结-v2">¶</a>小结</h3>
+<ol>
+<li>
+<p>什么时候需要父传子技术?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>从一个vue组件里把值传给另一个vue组件(父-&gt;子)</li>
 </ol> 
-</details></li>
-</ol>
-<ol start="2">
-<li><p>父传子口诀(步骤)是什么?</p>
+</details>
+</li>
+<li>
+<p>父传子口诀(步骤)是什么?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>子组件内, props定义变量, 在子组件使用变量</li>
 <li>父组件内, 使用子组件, 属性方式给props变量传值</li>
 </ol> 
-</details></li>
+</details>
+</li>
 </ol>
-<h2 id="组件通信-父向子-配合循环"><a href="#组件通信-父向子-配合循环" class="headerlink" title="组件通信-父向子-配合循环"></a>组件通信-父向子-配合循环</h2><p>把数据循环分别传入给组件内显示</p>
-<h3 id="讲解-1"><a href="#讲解-1" class="headerlink" title="讲解"></a>讲解</h3><p>数据</p>
+<h2 id="组件通信-父向子-配合循环"><a class="header-anchor" href="#组件通信-父向子-配合循环">¶</a>组件通信-父向子-配合循环</h2>
+<p>把数据循环分别传入给组件内显示</p>
+<h3 id="讲解-v2"><a class="header-anchor" href="#讲解-v2">¶</a>讲解</h3>
+<p>数据</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">list<span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> proname<span class="token operator">:</span> <span class="token string">"超级好吃的棒棒糖"</span><span class="token punctuation">,</span> proprice<span class="token operator">:</span> <span class="token number">18.8</span><span class="token punctuation">,</span> info<span class="token operator">:</span> <span class="token string">'开业大酬宾, 全场8折'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> proname<span class="token operator">:</span> <span class="token string">"超级好吃的大鸡腿"</span><span class="token punctuation">,</span> proprice<span class="token operator">:</span> <span class="token number">34.2</span><span class="token punctuation">,</span> info<span class="token operator">:</span> <span class="token string">'好吃不腻, 快来买啊'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> proname<span class="token operator">:</span> <span class="token string">"超级无敌的冰激凌"</span><span class="token punctuation">,</span> proprice<span class="token operator">:</span> <span class="token number">14.2</span><span class="token punctuation">,</span> info<span class="token operator">:</span> <span class="token string">'炎热的夏天, 来个冰激凌了'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>正确代码(==不可复制==)`</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
@@ -1064,17 +1079,21 @@ export default {
 
 &lt;style&gt;
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><ol>
-<li><p>循环使用组件注意事项?</p>
+<h3 id="小结-v3"><a class="header-anchor" href="#小结-v3">¶</a>小结</h3>
+<ol>
+<li>
+<p>循环使用组件注意事项?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>每次循环, 变量和组件, 都是独立的</li>
 </ol> 
-</details></li>
+</details>
+</li>
 </ol>
-<h2 id="组件通信-单向数据流"><a href="#组件通信-单向数据流" class="headerlink" title="组件通信_单向数据流"></a>组件通信_单向数据流</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>在vue中需要遵循单向数据流原则</p>
+<h2 id="组件通信-单向数据流"><a class="header-anchor" href="#组件通信-单向数据流">¶</a>组件通信_单向数据流</h2>
+<h3 id="目标"><a class="header-anchor" href="#目标">¶</a>目标</h3>
+<p>在vue中需要遵循单向数据流原则</p>
 <ol>
 <li>父组件的数据发生了改变，子组件会自动跟着变</li>
 <li>子组件不能直接修改父组件传递过来的props  props是只读的</li>
@@ -1083,7 +1102,8 @@ export default {
 <blockquote>
 <p>总结: props的值不能重新赋值, 对象引用关系属性值改变, 互相影响</p>
 </blockquote>
-<h3 id="讲解-2"><a href="#讲解-2" class="headerlink" title="讲解"></a>讲解</h3><p>props变量本身是只读不能重新赋值</p>
+<h3 id="讲解-v3"><a class="header-anchor" href="#讲解-v3">¶</a>讲解</h3>
+<p>props变量本身是只读不能重新赋值</p>
 <p>目标：从==父到子==的数据流向,叫==单向数据流==</p>
 <p>原因: 子组件修改, 不通知父级, 造成数据不一致性</p>
 <p>如果第一个MyProduct.vue内自己修改商品价格为5.5, 但是App.vue里原来还记着18.8 - 数据 不一致了</p>
@@ -1091,41 +1111,46 @@ export default {
 <blockquote>
 <p>总结: 所以props变量本身是不能重新赋值的</p>
 </blockquote>
-<h3 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h3><ol>
-<li><p>为何不建议, 子组件修改父组件传过来的值?</p>
+<h3 id="小结-v4"><a class="header-anchor" href="#小结-v4">¶</a>小结</h3>
+<ol>
+<li>
+<p>为何不建议, 子组件修改父组件传过来的值?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>父子数据不一致, 而且子组件是依赖父传入的值</li>
 </ol> 
-</details></li>
-</ol>
-<ol start="2">
-<li><p>什么是单向数据流?</p>
+</details>
+</li>
+<li>
+<p>什么是单向数据流?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>从父到子的数据流向, 叫单向数据流</li>
 </ol> 
-</details></li>
-</ol>
-<ol start="3">
-<li><p>props里定义的变量能修改吗?</p>
+</details>
+</li>
+<li>
+<p>props里定义的变量能修改吗?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>不能, props里的变量本身是只读的</li>
 </ol> 
-</details></li>
+</details>
+</li>
 </ol>
-<h2 id="组件通信-子向父"><a href="#组件通信-子向父" class="headerlink" title="组件通信-子向父"></a>组件通信-子向父</h2><h3 id="目标-1"><a href="#目标-1" class="headerlink" title="目标"></a>目标</h3><p>从子组件把值传出来给外面使用</p>
-<h3 id="讲解-3"><a href="#讲解-3" class="headerlink" title="讲解"></a>讲解</h3><p>问题:  那我怎么才能修改子组件接收到的值呢? - 其实要影响父亲, 然后数据响应式来影响儿子们</p>
+<h2 id="组件通信-子向父"><a class="header-anchor" href="#组件通信-子向父">¶</a>组件通信-子向父</h2>
+<h3 id="目标-v2"><a class="header-anchor" href="#目标-v2">¶</a>目标</h3>
+<p>从子组件把值传出来给外面使用</p>
+<h3 id="讲解-v4"><a class="header-anchor" href="#讲解-v4">¶</a>讲解</h3>
+<p>问题:  那我怎么才能修改子组件接收到的值呢? - 其实要影响父亲, 然后数据响应式来影响儿子们</p>
 <p>需求: 课上例子, 砍价功能, 子组件点击实现随机砍价-1功能</p>
-
 
 <p>语法:</p>
 <ul>
-<li>父: @自定义事件名=”父methods函数”</li>
+<li>父: @自定义事件名=“父methods函数”</li>
 <li>子: this.$emit(“自定义事件名”, 传值) - 执行父methods里函数代码</li>
 </ul>
 <p>components/MyProduct_sub.vue</p>
@@ -1160,7 +1185,6 @@ export default {
   margin: 10px;
 }
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>App.vue</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
@@ -1218,71 +1242,86 @@ export default {
 
 &lt;style&gt;
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>总结: 父自定义事件和方法, 等待子组件触发事件给方法传值</p>
 </blockquote>
-<h3 id="小结-4"><a href="#小结-4" class="headerlink" title="小结"></a>小结</h3><ol>
-<li><p>什么时候使用子传父技术?</p>
+<h3 id="小结-v5"><a class="header-anchor" href="#小结-v5">¶</a>小结</h3>
+<ol>
+<li>
+<p>什么时候使用子传父技术?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>当子想要去改变父里的数据</li>
 </ol> 
-</details></li>
-</ol>
-<ol start="2">
-<li><p>子传父如何实现?</p>
+</details>
+</li>
+<li>
+<p>子传父如何实现?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>父组件内, 给组件@自定义事件="父methods函数"</li>
 <li>子组件内, 恰当时机this.$emit('自定义事件名', 值)</li>
 </ol> 
-</details></li>
+</details>
+</li>
 </ol>
-<h2 id="阶段小结"><a href="#阶段小结" class="headerlink" title="阶段小结"></a>阶段小结</h2><p>总结父子组件关系-通信技术口诀</p>
+<h2 id="阶段小结"><a class="header-anchor" href="#阶段小结">¶</a>阶段小结</h2>
+<p>总结父子组件关系-通信技术口诀</p>
 <ol>
-<li><p>组件是什么?</p>
+<li>
+<p>组件是什么?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>是一个vue实例, 封装标签, 样式和JS代码</li>
 </ol> 
-</details></li>
-</ol>
-<ol start="2">
-<li><p>组件好处?</p>
+</details>
+</li>
+<li>
+<p>组件好处?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>便于复用, 易于扩展</li>
 </ol> 
-</details></li>
-</ol>
-<ol start="3">
-<li><p>组件通信哪几种, 具体如何实现?</p>
+</details>
+</li>
+<li>
+<p>组件通信哪几种, 具体如何实现?</p>
 <details>     
 <summary>答案</summary> 
 <ol>
 <li>父 -&gt; 子</li>
 <li>父 &lt;- 子</li>
 </ol> 
-</details></li>
-</ol>
-<h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><h3 id="1-请说下封装-vue-组件的过程"><a href="#1-请说下封装-vue-组件的过程" class="headerlink" title="1. 请说下封装 vue 组件的过程"></a>1. 请说下封装 vue 组件的过程</h3><p>​    首先，组件可以提升整个项目的开发效率。能够把页面抽象成多个相对独立的模块，解决了我们传统项目开发：效率低、难维护、复用性等问题。</p>
-<ul>
-<li><p>分析需求：确定业务需求，把页面中可以复用的结构，样式以及功能，单独抽离成一个组件，实现复用</p>
+</details>
 </li>
-<li><p>具体步骤：Vue.component 或者在new Vue配置项components中, 定义组件名, 可以在props中接受给组件传的参数和值，子组件修改好数据后，想把数据传递给父组件。可以采用$emit方法。</p>
+</ol>
+<h2 id="面试题"><a class="header-anchor" href="#面试题">¶</a>面试题</h2>
+<h3 id="1-请说下封装-vue-组件的过程"><a class="header-anchor" href="#1-请说下封装-vue-组件的过程">¶</a>1. 请说下封装 vue 组件的过程</h3>
+<p>​    首先，组件可以提升整个项目的开发效率。能够把页面抽象成多个相对独立的模块，解决了我们传统项目开发：效率低、难维护、复用性等问题。</p>
+<ul>
+<li>
+<p>分析需求：确定业务需求，把页面中可以复用的结构，样式以及功能，单独抽离成一个组件，实现复用</p>
+</li>
+<li>
+<p>具体步骤：Vue.component 或者在new Vue配置项components中, 定义组件名, 可以在props中接受给组件传的参数和值，子组件修改好数据后，想把数据传递给父组件。可以采用$emit方法。</p>
 </li>
 </ul>
-<h3 id="2-Vue组件如何进行传值的"><a href="#2-Vue组件如何进行传值的" class="headerlink" title="2. Vue组件如何进行传值的"></a>2. Vue组件如何进行传值的</h3><p>父向子 -&gt; props定义变量 -&gt; 父在使用组件用属性给props变量传值</p>
+<h3 id="2-Vue组件如何进行传值的"><a class="header-anchor" href="#2-Vue组件如何进行传值的">¶</a>2. Vue组件如何进行传值的</h3>
+<p>父向子 -&gt; props定义变量 -&gt; 父在使用组件用属性给props变量传值</p>
 <p>子向父 -&gt; $emit触发父的事件 -&gt; 父在使用组件用@自定义事件名=父的方法 (子把值带出来)</p>
-<h3 id="3-Vue-组件-data-为什么必须是函数"><a href="#3-Vue-组件-data-为什么必须是函数" class="headerlink" title="3. Vue 组件 data 为什么必须是函数"></a>3. Vue 组件 data 为什么必须是函数</h3><p>每个组件都是 Vue 的实例, 为了独立作用域, 不让变量污染别人的变量</p>
-<h3 id="4-讲一下组件的命名规范"><a href="#4-讲一下组件的命名规范" class="headerlink" title="4. 讲一下组件的命名规范"></a>4. 讲一下组件的命名规范</h3><p>​    给组件命名有两种方式(在Vue.Component/components时)，一种是使用链式命名”my-component”，一种是使用大驼峰命名”MyComponent”，</p>
-<p>​    因为要遵循W3C规范中的自定义组件名 (字母全小写且必须包含一个连字符)，避免和当前以及未来的 HTML 元素相冲突</p>
-<h2 id="额外扩展"><a href="#额外扩展" class="headerlink" title="额外扩展"></a>额外扩展</h2><h3 id="组件通信-EventBus"><a href="#组件通信-EventBus" class="headerlink" title="组件通信-EventBus"></a>组件通信-EventBus</h3><h4 id="目标-2"><a href="#目标-2" class="headerlink" title="目标"></a>目标</h4><p>常用于跨组件通信时使用</p>
+<h3 id="3-Vue-组件-data-为什么必须是函数"><a class="header-anchor" href="#3-Vue-组件-data-为什么必须是函数">¶</a>3. Vue 组件 data 为什么必须是函数</h3>
+<p>每个组件都是 Vue 的实例, 为了独立作用域, 不让变量污染别人的变量</p>
+<h3 id="4-讲一下组件的命名规范"><a class="header-anchor" href="#4-讲一下组件的命名规范">¶</a>4. 讲一下组件的命名规范</h3>
+<p>​    给组件命名有两种方式(在Vue.Component/components时)，一种是使用链式命名"my-component"，一种是使用大驼峰命名"MyComponent"，</p>
+<p>​	因为要遵循W3C规范中的自定义组件名 (字母全小写且必须包含一个连字符)，避免和当前以及未来的 HTML 元素相冲突</p>
+<h2 id="额外扩展"><a class="header-anchor" href="#额外扩展">¶</a>额外扩展</h2>
+<h3 id="组件通信-EventBus"><a class="header-anchor" href="#组件通信-EventBus">¶</a>组件通信-EventBus</h3>
+<h4 id="目标-v3"><a class="header-anchor" href="#目标-v3">¶</a>目标</h4>
+<p>常用于跨组件通信时使用</p>
 <p>讲解</p>
 <p>两个组件的关系非常的复杂，通过父子组件通讯是非常麻烦的。这时候可以使用通用的组件通讯方案：事件总线（event-bus)</p>
 <p>核心语法</p>
@@ -1290,7 +1329,6 @@ export default {
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
 <span class="token comment">// 导出空白vue对象</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>List.vue注册事件 - 等待接收要砍价的值 (==直接复制==) - 准备兄弟页面</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;ul class="my-product"&gt;
@@ -1316,7 +1354,6 @@ export default {
   margin: 10px;
 }
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>components/MyProduct_sub.vue(==带学生主要写触发eventBus身上事件==)</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div class="my-product"&gt;
@@ -1349,7 +1386,6 @@ export default {
   margin: 10px;
 }
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>List.vue正确代码(==EventBus接收方==)</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;ul class="my-product"&gt;
@@ -1386,23 +1422,26 @@ export default {
   margin: 10px;
 }
 &lt;/style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>总结: 空的Vue对象, 只负责$on注册事件, $emit触发事件, 一定要确保$on先执行</p>
 </blockquote>
-<h4 id="小结-5"><a href="#小结-5" class="headerlink" title="小结"></a>小结</h4><ol>
-<li>什么时候使用eventBus技术?<ol>
+<h4 id="小结-v6"><a class="header-anchor" href="#小结-v6">¶</a>小结</h4>
+<ol>
+<li>什么时候使用eventBus技术?
+<ol>
 <li>当2个没有引用关系的组件之间要通信传值</li>
 </ol>
 </li>
-<li>eventBus技术本质是什么?<ol>
+<li>eventBus技术本质是什么?
+<ol>
 <li>空白Vue对象, 只负责$on和$emit</li>
 </ol>
 </li>
 </ol>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<h2 id="参考文献"><a class="header-anchor" href="#参考文献">¶</a>参考文献</h2>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903990052782094#heading-0">https://juejin.cn/post/6844903990052782094#heading-0</a></li>
-<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki//%E9/%80/%9A/%E4/%BF/%A1">https://zh.wikipedia.org/wiki/\%E9\%80\%9A\%E4\%BF\%A1</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%80%9A%E4%BF%A1">https://zh.wikipedia.org/wiki/通信</a></li>
 <li><a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh">https://vue3js.cn/docs/zh</a></li>
 </ul>
 <p>面试官VUE系列总进度：5／33</p>
@@ -1410,7 +1449,7 @@ export default {
 <p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzU1OTgxNDQ1Nw==&amp;mid=2247484119&amp;idx=1&amp;sn=d171b28a00d42549d279498944a98519&amp;chksm=fc10c081cb6749976814aaeda6a6433db418223cec57edda7e15b9e5a0ca69ad549655639c61&amp;scene=21#wechat_redirect">面试官：说说你对SPA（单页应用）的理解?</a></p>
 <p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzU1OTgxNDQ1Nw==&amp;mid=2247484167&amp;idx=1&amp;sn=7b00b4333ab2722f25f12586b70667ca&amp;chksm=fc10c151cb6748476008dab2f4e6c6264f5d19678305955c85cec1b619e56e8f7457b7357fb9&amp;scene=21#wechat_redirect">面试官：说说你对双向绑定的理解?</a></p>
 <p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzU1OTgxNDQ1Nw==&amp;mid=2247484176&amp;idx=1&amp;sn=5623421ed2678046ed9e438aadf6e26f&amp;chksm=fc10c146cb67485015f24f7e9f5862c4c685fc33485fe30e1b375a534b4031978439c554e0c0&amp;scene=21#wechat_redirect">面试官：说说你对Vue生命周期的理解?</a></p>
-<p><img src="https://static.vue-js.com/821b87b0-3ac6-11eb-ab90-d9ae814b240d.png"></p>
+<p><img src="https://static.vue-js.com/821b87b0-3ac6-11eb-ab90-d9ae814b240d.png" alt=""></p>
 
                 
             </div>
@@ -1968,7 +2007,7 @@ export default {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.1k</span>&nbsp;字
+                class="white-color">181.2k</span>&nbsp;字
             
             
             

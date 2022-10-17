@@ -739,7 +739,7 @@
                 <blockquote>
 <p>回流:</p>
 <p>构造完渲染树后,会将DOM节点与对应的CSS结合,同时我们要进入布局阶段,还需要计算他们在设备视口ViewPort内的确切位置的大小,这个阶段就是回流</p>
-<p>​                                                                                                    <a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction">谷歌开发者文档</a></p>
+<p>​																									<a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction">谷歌开发者文档</a></p>
 </blockquote>
 <blockquote>
 <p>重绘:当DOM变化影响元素的几何属性(宽高边距等),浏览器会重新绘制受影响的部分属性到屏幕中,这个过程叫’重绘’.</p>
@@ -747,7 +747,6 @@
 </blockquote>
 <p>重排何时发生:</p>
 <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/%E9%87%8D%E6%8E%92%E4%BD%95%E6%97%B6%E5%8F%91%E7%94%9F.jpg" alt="重排何时发生">
-
 <p>最小化重绘和重排:</p>
 <ul>
 <li>延迟访问布局信息:合并多次改变,一次修改class而不是内联</li>
@@ -760,69 +759,83 @@
 <li>事件委托</li>
 </ul>
 <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/%E6%80%BB%E7%BB%93.jpg" alt="总结">
-
 <p>什么影响布局/回流?</p>
 <p>以下所有属性或方法，当在 JavaScript 中请求/调用时，将触发浏览器同步计算样式和布局*。这也称为回流或<a target="_blank" rel="noopener" href="http://www.kellegous.com/j/2013/01/26/layout-performance/">布局抖动</a>，是常见的性能瓶颈。</p>
 <p>一般所有同步提供布局指标的API都会触发强制回流/布局。继续阅读以了解更多案例和详细信息。</p>
-<h3 id="元素-API"><a href="#元素-API" class="headerlink" title="元素 API"></a>元素 API</h3><h5 id="获取盒子指标"><a href="#获取盒子指标" class="headerlink" title="获取盒子指标"></a>获取盒子指标</h5><ul>
+<h3 id="元素-API"><a class="header-anchor" href="#元素-API">¶</a>元素 API</h3>
+<h5 id="获取盒子指标"><a class="header-anchor" href="#获取盒子指标">¶</a>获取盒子指标</h5>
+<ul>
 <li><code>elem.offsetLeft</code>, <code>elem.offsetTop</code>, <code>elem.offsetWidth</code>, <code>elem.offsetHeight</code>,<code>elem.offsetParent</code></li>
 <li><code>elem.clientLeft</code>, <code>elem.clientTop</code>, <code>elem.clientWidth</code>,<code>elem.clientHeight</code></li>
 <li><code>elem.getClientRects()</code>,<code>elem.getBoundingClientRect()</code></li>
 </ul>
-<h5 id="滚动的东西"><a href="#滚动的东西" class="headerlink" title="滚动的东西"></a>滚动的东西</h5><ul>
+<h5 id="滚动的东西"><a class="header-anchor" href="#滚动的东西">¶</a>滚动的东西</h5>
+<ul>
 <li><code>elem.scrollBy()</code>,<code>elem.scrollTo()</code></li>
 <li><code>elem.scrollIntoView()</code>,<code>elem.scrollIntoViewIfNeeded()</code></li>
 <li><code>elem.scrollWidth</code>,<code>elem.scrollHeight</code></li>
 <li><code>elem.scrollLeft</code>,<code>elem.scrollTop</code>也, 设置它们</li>
 </ul>
-<h5 id="设置焦点"><a href="#设置焦点" class="headerlink" title="设置焦点"></a>设置焦点</h5><ul>
+<h5 id="设置焦点"><a class="header-anchor" href="#设置焦点">¶</a>设置焦点</h5>
+<ul>
 <li><code>elem.focus()</code> （<a target="_blank" rel="noopener" href="https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/dom/element.cc;l=4206-4225;drc=d685ea3c9ffcb18c781bc3a0bdbb92eb88842b1b">来源</a>）</li>
 </ul>
-<h5 id="还…"><a href="#还…" class="headerlink" title="还…"></a>还…</h5><ul>
+<h5 id="还…"><a class="header-anchor" href="#还…">¶</a>还…</h5>
+<ul>
 <li><code>elem.computedRole</code>,<code>elem.computedName</code></li>
 <li><code>elem.innerText</code>（<a target="_blank" rel="noopener" href="https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/editing/element_inner_text.cc;l=462-468;drc=d685ea3c9ffcb18c781bc3a0bdbb92eb88842b1b">来源</a>）</li>
 </ul>
-<h3 id="获取窗口尺寸"><a href="#获取窗口尺寸" class="headerlink" title="获取窗口尺寸"></a>获取窗口尺寸</h3><ul>
+<h3 id="获取窗口尺寸"><a class="header-anchor" href="#获取窗口尺寸">¶</a>获取窗口尺寸</h3>
+<ul>
 <li><code>window.scrollX</code>,<code>window.scrollY</code></li>
 <li><code>window.innerHeight</code>,<code>window.innerWidth</code></li>
 <li>window.visualViewport.height/width/offsetTop/offsetLeft(<a target="_blank" rel="noopener" href="https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/frame/visual_viewport.cc;l=435-461;drc=a3c165458e524bdc55db15d2a5714bb9a0c69c70?originalUrl=https://cs.chromium.org/">源码</a>)</li>
 </ul>
-<h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><ul>
+<h3 id="文档"><a class="header-anchor" href="#文档">¶</a>文档</h3>
+<ul>
 <li><code>document.scrollingElement</code>只强制风格</li>
 <li><code>document.elementFromPoint</code></li>
 </ul>
-<h3 id="形式：设置选择-焦点"><a href="#形式：设置选择-焦点" class="headerlink" title="形式：设置选择+焦点"></a>形式：设置选择+焦点</h3><ul>
+<h3 id="形式：设置选择-焦点"><a class="header-anchor" href="#形式：设置选择-焦点">¶</a>形式：设置选择+焦点</h3>
+<ul>
 <li><code>inputElem.focus()</code></li>
 <li><code>inputElem.select()</code>,<code>textareaElem.select()</code></li>
 </ul>
-<h3 id="鼠标事件：读取偏移数据"><a href="#鼠标事件：读取偏移数据" class="headerlink" title="鼠标事件：读取偏移数据"></a>鼠标事件：读取偏移数据</h3><ul>
+<h3 id="鼠标事件：读取偏移数据"><a class="header-anchor" href="#鼠标事件：读取偏移数据">¶</a>鼠标事件：读取偏移数据</h3>
+<ul>
 <li><code>mouseEvt.layerX</code>, <code>mouseEvt.layerY</code>, <code>mouseEvt.offsetX</code>, <code>mouseEvt.offsetY</code>(<a target="_blank" rel="noopener" href="https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/events/mouse_event.cc;l=476-487;drc=52fd700fb07a43b740d24595d42d8a6a57a43f81">来源</a>)</li>
 </ul>
-<h3 id="调用-getComputedStyle"><a href="#调用-getComputedStyle" class="headerlink" title="调用 getComputedStyle()"></a>调用 getComputedStyle()</h3><p><code>window.getComputedStyle()</code>通常会强制重新计算样式。</p>
+<h3 id="调用-getComputedStyle"><a class="header-anchor" href="#调用-getComputedStyle">¶</a>调用 getComputedStyle()</h3>
+<p><code>window.getComputedStyle()</code>通常会强制重新计算样式。</p>
 <p><code>window.getComputedStyle()</code>通常也会强制布局。</p>
 <details style="box-sizing: border-box; display: block; margin-top: 0px; margin-bottom: 16px; color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary style="box-sizing: border-box; display: list-item; cursor: pointer;"><font style="box-sizing: border-box; vertical-align: inherit;"><font style="box-sizing: border-box; vertical-align: inherit;">gCS() 强制布局条件的详细信息</font></font></summary></details>
-
-<h3 id="获取Range维度"><a href="#获取Range维度" class="headerlink" title="获取Range维度"></a>获取<code>Range</code>维度</h3><ul>
+<h3 id="获取Range维度"><a class="header-anchor" href="#获取Range维度">¶</a>获取<code>Range</code>维度</h3>
+<ul>
 <li><code>range.getClientRects()</code>,<code>range.getBoundingClientRect()</code></li>
 </ul>
-<h3 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h3><p>相当多的属性/方法强制，但我没有列出详尽的清单。此列表不完整：</p>
+<h3 id="SVG"><a class="header-anchor" href="#SVG">¶</a>SVG</h3>
+<p>相当多的属性/方法强制，但我没有列出详尽的清单。此列表不完整：</p>
 <ul>
 <li>SVGLocatable: <code>computeCTM()</code>,<code>getBBox()</code></li>
 <li>SVGTextContent: <code>getCharNumAtPosition()</code>, <code>getComputedTextLength()</code>, <code>getEndPositionOfChar()</code>, <code>getExtentOfChar()</code>, <code>getNumberOfChars()</code>, <code>getRotationOfChar()</code>, <code>getStartPositionOfChar()</code>, <code>getSubStringLength()</code>,<code>selectSubString()</code></li>
 <li>SVG使用：<code>instanceRoot</code></li>
 </ul>
 <p>使用下面的“铬源树链接”自行探索！</p>
-<h3 id="内容可编辑"><a href="#内容可编辑" class="headerlink" title="内容可编辑"></a>内容可编辑</h3><ul>
+<h3 id="内容可编辑"><a class="header-anchor" href="#内容可编辑">¶</a>内容可编辑</h3>
+<ul>
 <li>很多很多东西，…包括将图像复制到剪贴板（<a target="_blank" rel="noopener" href="https://source.chromium.org/search?q=UpdateStyleAndLayout%20-f:test&amp;ss=chromium/chromium/src:third_party/blink/renderer/core/editing/">来源</a>）</li>
 </ul>
-<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><ul>
-<li><p>仅当文档已更改并使样式或布局无效时，重排才会产生成本。通常，这是因为 DOM 已更改（修改了类，添加/删除了节点，甚至添加了 :focus 之类的伪类）。</p>
+<h3 id="附录"><a class="header-anchor" href="#附录">¶</a>附录</h3>
+<ul>
+<li>
+<p>仅当文档已更改并使样式或布局无效时，重排才会产生成本。通常，这是因为 DOM 已更改（修改了类，添加/删除了节点，甚至添加了 :focus 之类的伪类）。</p>
 </li>
-<li><p>如果强制布局，则必须先重新计算样式。所以强制布局会触发这两种操作。它们的成本很大程度上取决于内容/情况，但通常两种操作的成本相似。</p>
+<li>
+<p>如果强制布局，则必须先重新计算样式。所以强制布局会触发这两种操作。它们的成本很大程度上取决于内容/情况，但通常两种操作的成本相似。</p>
 </li>
-<li><p>你应该怎么做？好吧，</p>
+<li>
+<p>你应该怎么做？好吧，</p>
 <pre class="line-numbers language-none"><code class="language-none">More on forced layout<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>下面的部分更详细地介绍了所有内容，但简短的版本是：</p>
 <ol>
 <li><code>for</code>强制布局和更改 DOM 的循环是最糟糕的，避免它们。</li>
@@ -833,14 +846,16 @@
 </ul>
 <hr>
 <p>卫报的时间线痕迹。Outbrain 正在反复强制布局，可能是在一个循环中。</p>
-<h5 id="跨浏览器"><a href="#跨浏览器" class="headerlink" title="跨浏览器"></a>跨浏览器</h5><ul>
+<h5 id="跨浏览器"><a class="header-anchor" href="#跨浏览器">¶</a>跨浏览器</h5>
+<ul>
 <li>以上数据是通过阅读 Blink 源码构建的，因此对于 Chrome、Opera、Brave、Edge 和大多数安卓浏览器都是如此。<a target="_blank" rel="noopener" href="https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/dom/document.h;l=657-680;drc=d685ea3c9ffcb18c781bc3a0bdbb92eb88842b1b">您可以在 Chromium 源代码树中自行</a>浏览它们。</li>
 <li><a target="_blank" rel="noopener" href="http://gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit.html">Tony Gentilcore 的 Layout Triggering List</a>是针对 2011 WebKit 的，通常与上述一致。</li>
 <li>现代 WebKit 的强制布局实例大多是一致的：<a target="_blank" rel="noopener" href="https://github.com/WebKit/webkit/search?q=updateLayoutIgnorePendingStylesheets&amp;utf8=%E2%9C%93"><code>updateLayoutIgnorePendingStylesheets</code>- GitHub 搜索 - WebKit/WebKit</a></li>
 <li>Gecko 的回流似乎是通过 FrameNeedsReflow 请求的。结果：<a target="_blank" rel="noopener" href="https://searchfox.org/mozilla-central/search?q=FrameNeedsReflow&amp;case=false&amp;regexp=false&amp;path=%5E%5B%5E%5C0%5D"><code>FrameNeedsReflow</code>- Mozilla-central searchfox</a></li>
 <li>没有关于 IE 或 EdgeHTML 的具体数据，但它们可能大致相同，因为这些属性的返回值是指定的。</li>
 </ul>
-<h4 id="更多关于强制布局"><a href="#更多关于强制布局" class="headerlink" title="更多关于强制布局"></a>更多关于强制布局</h4><ul>
+<h4 id="更多关于强制布局"><a class="header-anchor" href="#更多关于强制布局">¶</a>更多关于强制布局</h4>
+<ul>
 <li><strong>避免布局抖动 — Web 基础知识</strong>识别和修复此主题的<strong>最佳</strong>资源。</li>
 <li><a target="_blank" rel="noopener" href="http://csstriggers.com/">CSS 触发器</a>- 涵盖了设置/更改给定 CSS 值所需的操作。然而，上面的列表都是关于从 JavaScript 同步强制紫色/绿色/深绿色圆圈的原因。</li>
 <li><a target="_blank" rel="noopener" href="https://mattandre.ws/2014/05/really-fixing-layout-thrashing/">修复现实世界中的布局抖动| 马特·安德鲁斯</a></li>
@@ -856,8 +871,8 @@
 <li><a target="_blank" rel="noopener" href="http://jankfree.org/">免费</a></li>
 </ul>
 <hr>
-
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction">谷歌开发者文档</a></p>
+<h3 id="参考"><a class="header-anchor" href="#参考">¶</a>参考</h3>
+<p><a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction">谷歌开发者文档</a></p>
 <p>JavaScript高性能</p>
 <p>MDN</p>
 
@@ -1425,7 +1440,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.1k</span>&nbsp;字
+                class="white-color">181.2k</span>&nbsp;字
             
             
             

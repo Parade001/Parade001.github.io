@@ -736,31 +736,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>Decorator（装饰器模式）</h1>
-<p>Decorator（装饰器模式）属于结构型模式，是一种拓展对象额外功能的设计模式，别名 <code>wrapper</code>。</p>
+                <h1 id="Decorator（装饰器模式）"><a href="#Decorator（装饰器模式）" class="headerlink" title="Decorator（装饰器模式）"></a>Decorator（装饰器模式）</h1><p>Decorator（装饰器模式）属于结构型模式，是一种拓展对象额外功能的设计模式，别名 <code>wrapper</code>。</p>
 <p><strong>意图：动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator 模式相比生成子类更为灵活。</strong></p>
-<h2 id="举例子"><a class="header-anchor" href="#举例子">¶</a>举例子</h2>
-<p>如果看不懂上面的意图介绍，没有关系，设计模式需要在日常工作里用起来，结合例子可以加深你的理解，下面我准备了三个例子，让你体会什么场景下会用到这种设计模式。</p>
-<h3 id="相框"><a class="header-anchor" href="#相框">¶</a>相框</h3>
-<p>照片 + 相框 = 带相框的照片，这背后就是一种装饰器模式：照片具有看的功能，相框具有装饰功能，在你看照片的基础上，还能看到精心设计的相框，增加了美感，同时相框还可以增加照片的保存时间与安全性。</p>
+<h2 id="举例子"><a href="#举例子" class="headerlink" title="举例子"></a>举例子</h2><p>如果看不懂上面的意图介绍，没有关系，设计模式需要在日常工作里用起来，结合例子可以加深你的理解，下面我准备了三个例子，让你体会什么场景下会用到这种设计模式。</p>
+<h3 id="相框"><a href="#相框" class="headerlink" title="相框"></a>相框</h3><p>照片 + 相框 = 带相框的照片，这背后就是一种装饰器模式：照片具有看的功能，相框具有装饰功能，在你看照片的基础上，还能看到精心设计的相框，增加了美感，同时相框还可以增加照片的保存时间与安全性。</p>
 <p>相框与照片是一种组合关系，任何照片都可以放到相框中，而不是每个照片生成一个特定的相框，显然，组合的方式更加灵活。</p>
-<h3 id="带有缓存的文件读写"><a class="header-anchor" href="#带有缓存的文件读写">¶</a>带有缓存的文件读写</h3>
-<p>假设我们有一个类 <code>FileIO</code> 用来读写文件，但是没有缓存能力，此时是新建一个 <code>CachedFileIO</code> 子类好，还是创建一个 <code>CachedIO</code>?</p>
+<h3 id="带有缓存的文件读写"><a href="#带有缓存的文件读写" class="headerlink" title="带有缓存的文件读写"></a>带有缓存的文件读写</h3><p>假设我们有一个类 <code>FileIO</code> 用来读写文件，但是没有缓存能力，此时是新建一个 <code>CachedFileIO</code> 子类好，还是创建一个 <code>CachedIO</code>?</p>
 <p>一眼看上去好像 <code>CachedFileIO</code> 用起来更方便，而 <code>CachedIO</code> 的用法是 <code>new CachedIO(new FileIO())</code> 稍微麻烦一些，但如果我们增加一个网络读写类 <code>NetworkIO</code>，一个数据库读写类 <code>DBIO</code> 呢？</p>
 <p>显然，继承的方式会使子类数量极速膨胀，而组合的方式则非常灵活，生成一个支持缓存的网络读写器，只需要 <code>new CachedIO(new NetworkIO())</code> 即可，这就是组合灵活的地方。</p>
 <p>当然，为了实现这个能力，<code>CachedIO</code> 需要与 <code>FileIO</code>、<code>CachedFileIO</code>、<code>CachedIO</code> 继承自同一个类，具备相同的接口。</p>
-<h3 id="搭建平台的组件-wrapper"><a class="header-anchor" href="#搭建平台的组件-wrapper">¶</a>搭建平台的组件 wrapper</h3>
-<p>装饰器模式别名也叫 <code>wrapper</code>，<code>wrapper</code> 也经常在前端搭建场景中遇到，当搭建平台加载一个组件时，希望拓展其基础能力，一般会使用 <code>wrapper</code> 层对组件进行嵌套，<code>wrapper</code> 层就是在不改变 API 的基础上，对第三方组件进行增强。</p>
-<h2 id="意图解释"><a class="header-anchor" href="#意图解释">¶</a>意图解释</h2>
-<p><strong>意图：动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator 模式相比生成子类更为灵活。</strong></p>
+<h3 id="搭建平台的组件-wrapper"><a href="#搭建平台的组件-wrapper" class="headerlink" title="搭建平台的组件 wrapper"></a>搭建平台的组件 wrapper</h3><p>装饰器模式别名也叫 <code>wrapper</code>，<code>wrapper</code> 也经常在前端搭建场景中遇到，当搭建平台加载一个组件时，希望拓展其基础能力，一般会使用 <code>wrapper</code> 层对组件进行嵌套，<code>wrapper</code> 层就是在不改变 API 的基础上，对第三方组件进行增强。</p>
+<h2 id="意图解释"><a href="#意图解释" class="headerlink" title="意图解释"></a>意图解释</h2><p><strong>意图：动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator 模式相比生成子类更为灵活。</strong></p>
 <p>不同于继承，组合可以在运行时进行，所以称之为 “动态添加”，这里的 “额外职责” 泛指一切功能，比如在按钮点击时进行一些 log 日志的打印，在绘制 text 文本框时，额外绘制一个滚动条和边框等等。</p>
 <p>“就增加功能来说，Decorator 模式相比生成子类更为灵活” 这句话的含义是，组合比继承更灵活，当可拓展的功能很多时，继承方案会产生大量的子类，而组合可以提前写好处理函数，在需要时动态构造，显然是更灵活的。</p>
-<h2 id="结构图"><a class="header-anchor" href="#结构图">¶</a>结构图</h2>
-<img width="600" src="https://img.alicdn.com/tfs/TB1cmhe3FY7gK0jSZKzXXaikpXa-1624-688.png">
+<h2 id="结构图"><a href="#结构图" class="headerlink" title="结构图"></a>结构图</h2><img width="600" src="https://img.alicdn.com/tfs/TB1cmhe3FY7gK0jSZKzXXaikpXa-1624-688.png">
+
 <p><code>ConcreteComponent</code> 指的是需要被装饰的组件，可以看到，装饰器 <code>Decorator</code> 与他都继承同一个类，这样能保证 API 的一致，才保证无论装饰多少层，始终符合 <code>Component</code> 类型。</p>
 <p>装饰器如果有多种，就要将 <code>Decorator</code> 申明为抽象类，<code>ConcreteDecoratorA</code>、<code>ConcreteDecoratorB</code> 分别实现它们，如果只有一种装饰器，可以退化到 <code>Decorator</code> 自身就是一种实现。</p>
-<h2 id="代码例子"><a class="header-anchor" href="#代码例子">¶</a>代码例子</h2>
-<p>下面例子使用 typescript 编写。</p>
+<h2 id="代码例子"><a href="#代码例子" class="headerlink" title="代码例子"></a>代码例子</h2><p>下面例子使用 typescript 编写。</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
   <span class="token comment">// 具有点击事件</span>
   <span class="token keyword">public</span> <span class="token function-variable function">onClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
@@ -786,17 +779,17 @@ component<span class="token punctuation">.</span><span class="token function">on
 <span class="token keyword">const</span> wrapperComponent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Decorator</span><span class="token punctuation">(</span>component<span class="token punctuation">)</span>
 <span class="token comment">// 一个具有打点功能的点击</span>
 wrapperComponent<span class="token punctuation">.</span><span class="token function">onClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>其实方法很简单，通过组合，我们得到了一个能力更强的组件，而实现的方式就是利用构造函数保存组件实例，并在复写函数时，增加一些增强实现。</p>
-<h2 id="弊端"><a class="header-anchor" href="#弊端">¶</a>弊端</h2>
-<p>装饰器的问题也是组合的问题，过多的组合会导致：</p>
+<h2 id="弊端"><a href="#弊端" class="headerlink" title="弊端"></a>弊端</h2><p>装饰器的问题也是组合的问题，过多的组合会导致：</p>
 <ul>
 <li>组合过程的复杂，要生成过多的对象。</li>
 <li>包装器层次增多，会增加调试成本，我们比较难追溯到一个 bug 是在哪一层包装导致的。</li>
 </ul>
-<h2 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h2>
-<p>装饰器模式是非常常用的模式，Decorator 是一个透明的包装，只要保证包装的透明性，就可以最大限度发挥装饰器模式的优势。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>装饰器模式是非常常用的模式，Decorator 是一个透明的包装，只要保证包装的透明性，就可以最大限度发挥装饰器模式的优势。</p>
 <p>最后总结一个装饰器应用图：</p>
 <img width="500" src="https://img.alicdn.com/tfs/TB1wlpgqPMZ7e4jSZFOXXX7epXa-1232-478.png">
+
 <blockquote>
 <p>讨论地址是：<a target="_blank" rel="noopener" href="https://github.com/dt-fe/weekly/issues/286">精读《设计模式 - Decorator 装饰器模式》· Issue #286 · dt-fe/weekly</a></p>
 </blockquote>
@@ -1369,7 +1362,7 @@ wrapperComponent<span class="token punctuation">.</span><span class="token funct
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.2k</span>&nbsp;字
+                class="white-color">181.9k</span>&nbsp;字
             
             
             

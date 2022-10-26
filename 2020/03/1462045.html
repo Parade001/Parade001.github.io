@@ -736,37 +736,30 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="什么是webpack"><a class="header-anchor" href="#什么是webpack">¶</a>什么是webpack</h3>
-<ol>
+                <h3 id="什么是webpack"><a href="#什么是webpack" class="headerlink" title="什么是webpack"></a>什么是webpack</h3><ol>
 <li>webpack是一个javascript的静态模块打包工具</li>
 <li>webpack里一切文件皆模块，通过loader转换文件，通过plugin注入钩子</li>
 <li>最后输出由多个模块组合成的文件，webpack专注构建模块化项目</li>
 </ol>
-<h3 id="webpack的优点是什么？"><a class="header-anchor" href="#webpack的优点是什么？">¶</a>webpack的优点是什么？</h3>
-<ol>
+<h3 id="webpack的优点是什么？"><a href="#webpack的优点是什么？" class="headerlink" title="webpack的优点是什么？"></a>webpack的优点是什么？</h3><ol>
 <li>专注于处理模块化的项目，能做到开箱即用，一步到位</li>
 <li>通过plugin扩展，完整好用又不失灵活</li>
 <li>通过loaders扩展, 可以让webpack把所有类型的文件都解析打包</li>
 <li>社区庞大活跃，经常引入紧跟时代发展的新特性，能为大多数场景找到已有的开源扩展</li>
 </ol>
-<h2 id="webpack-开发服务器-为何学"><a class="header-anchor" href="#webpack-开发服务器-为何学">¶</a>webpack-开发服务器-为何学</h2>
-<h3 id="目标"><a class="header-anchor" href="#目标">¶</a>目标</h3>
-<p>开发时, 快速自动打包查看效果</p>
-<h3 id="问题"><a class="header-anchor" href="#问题">¶</a>问题</h3>
-<p>每次修改代码, 重新打包, 才能看到最新的效果</p>
+<h2 id="webpack-开发服务器-为何学"><a href="#webpack-开发服务器-为何学" class="headerlink" title="webpack-开发服务器-为何学"></a>webpack-开发服务器-为何学</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>开发时, 快速自动打包查看效果</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>每次修改代码, 重新打包, 才能看到最新的效果</p>
 <p>实际工作中, 打包非常费时 (10-30s) 之间, 影响开发效率</p>
-<h3 id="原因"><a class="header-anchor" href="#原因">¶</a>原因</h3>
-<ol>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><ol>
 <li>构建入口和所有模块依赖关系图</li>
 <li>磁盘读取对应的文件到内存, 才能加载</li>
 <li>用对应的 loader 进行处理和翻译</li>
 <li>将处理完的内容, 输出到磁盘指定文件内</li>
 <li>以后代码变化, <strong>从1重新开始</strong></li>
 </ol>
-<h2 id="webpack-构建流程分析"><a class="header-anchor" href="#webpack-构建流程分析">¶</a>webpack 构建流程分析</h2>
-<img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/89747816-fe344280-daf2-11ea-820a-6a1a99e34f14.png">
-<h2 id="webpack-构建流程"><a class="header-anchor" href="#webpack-构建流程">¶</a>webpack 构建流程</h2>
-<p>Webpack 的运行流程是一个串行的过程,从启动到结束会依次执行以下流程 :</p>
+<h2 id="webpack-构建流程分析"><a href="#webpack-构建流程分析" class="headerlink" title="webpack 构建流程分析"></a>webpack 构建流程分析</h2><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/89747816-fe344280-daf2-11ea-820a-6a1a99e34f14.png">
+
+<h2 id="webpack-构建流程"><a href="#webpack-构建流程" class="headerlink" title="webpack 构建流程"></a>webpack 构建流程</h2><p>Webpack 的运行流程是一个串行的过程,从启动到结束会依次执行以下流程 :</p>
 <ol>
 <li>初始化参数：从配置文件和 Shell 语句中读取与合并参数,得出最终的参数。</li>
 <li>开始编译：用上一步得到的参数初始化 Compiler 对象,加载所有配置的插件,执行对象的 run 方法开始执行编译。</li>
@@ -858,26 +851,21 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token punctuation">}</span>
 
 <span class="token comment">// o.output.path</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>babel</p>
 <hr>
-<h4 id="找出所有依赖模块"><a class="header-anchor" href="#找出所有依赖模块">¶</a>找出所有依赖模块</h4>
-<p>Babel 提供了@babel/traverse(遍历)方法维护这 AST 树的整体状态,我们这里使用它来帮我们找出依赖模块。</p>
-<h4 id="AST-转换为-code"><a class="header-anchor" href="#AST-转换为-code">¶</a>AST 转换为 code</h4>
-<p>将 AST 语法树转换为浏览器可执行代码,我们这里使用@babel/core 和 @babel/preset-env。</p>
-<h5 id="递归解析所有依赖项-生成依赖关系图"><a class="header-anchor" href="#递归解析所有依赖项-生成依赖关系图">¶</a>递归解析所有依赖项,生成依赖关系图</h5>
-<h3 id="重写-require-函数-输出-bundle"><a class="header-anchor" href="#重写-require-函数-输出-bundle">¶</a>重写 require 函数,输出 bundle</h3>
-<hr>
+<h4 id="找出所有依赖模块"><a href="#找出所有依赖模块" class="headerlink" title="找出所有依赖模块"></a>找出所有依赖模块</h4><p>Babel 提供了@babel/traverse(遍历)方法维护这 AST 树的整体状态,我们这里使用它来帮我们找出依赖模块。</p>
+<h4 id="AST-转换为-code"><a href="#AST-转换为-code" class="headerlink" title="AST 转换为 code"></a>AST 转换为 code</h4><p>将 AST 语法树转换为浏览器可执行代码,我们这里使用@babel/core 和 @babel/preset-env。</p>
+<h5 id="递归解析所有依赖项-生成依赖关系图"><a href="#递归解析所有依赖项-生成依赖关系图" class="headerlink" title="递归解析所有依赖项,生成依赖关系图"></a>递归解析所有依赖项,生成依赖关系图</h5><h3 id="重写-require-函数-输出-bundle"><a href="#重写-require-函数-输出-bundle" class="headerlink" title="重写 require 函数,输出 bundle"></a>重写 require 函数,输出 bundle</h3><hr>
 <p>webpack默认入口和出口是什么?</p>
 <p>默认入口: src/index.js</p>
 <p>默认出口: dist/main.js</p>
 <hr>
-<h3 id="说一下-webpack-的热更新原理"><a class="header-anchor" href="#说一下-webpack-的热更新原理">¶</a>说一下 webpack 的热更新原理</h3>
-<p>webpack 的热更新又称热替换（Hot Module Replacement），缩写为 HMR。这个机制可以做到不用刷新浏览器而将新变更的模块替换掉旧的模块。</p>
-<p>HMR的核心就是客户端从服务端拉去更新后的文件，准确的说是 chunk diff (chunk 需要更新的部分)，实际上 WDS(webpack-dev-server) 与浏览器之间维护了一个 Websocket，当本地资源发生变化时，WDS 会向浏览器推送更新，并带上构建时的 hash，让客户端与上一次资源进行对比。客户端对比出差异后会向 WDS 发请求来获取更改内容(文件列表、hash)，这样客户端就可以再借助这些信息继续向 WDS 发起 jsonp 请求获取该chunk的增量更新。</p>
-<p>后续的部分(拿到增量更新之后如何处理？哪些状态该保留？哪些又需要更新？)由 HotModulePlugin 来完成，提供了相关 API 以供开发者针对自身场景进行处理，像react-hot-loader 和 vue-loader 都是借助这些 API 实现 HMR。</p>
+<h3 id="说一下-webpack-的热更新原理"><a href="#说一下-webpack-的热更新原理" class="headerlink" title="说一下 webpack 的热更新原理"></a>说一下 webpack 的热更新原理</h3><p> webpack 的热更新又称热替换（Hot Module Replacement），缩写为 HMR。这个机制可以做到不用刷新浏览器而将新变更的模块替换掉旧的模块。</p>
+<p> HMR的核心就是客户端从服务端拉去更新后的文件，准确的说是 chunk diff (chunk 需要更新的部分)，实际上 WDS(webpack-dev-server) 与浏览器之间维护了一个 Websocket，当本地资源发生变化时，WDS 会向浏览器推送更新，并带上构建时的 hash，让客户端与上一次资源进行对比。客户端对比出差异后会向 WDS 发请求来获取更改内容(文件列表、hash)，这样客户端就可以再借助这些信息继续向 WDS 发起 jsonp 请求获取该chunk的增量更新。</p>
+<p> 后续的部分(拿到增量更新之后如何处理？哪些状态该保留？哪些又需要更新？)由 HotModulePlugin 来完成，提供了相关 API 以供开发者针对自身场景进行处理，像react-hot-loader 和 vue-loader 都是借助这些 API 实现 HMR。</p>
 <hr>
-<h3 id="有哪些常见的Loader？他们是解决什么问题的？"><a class="header-anchor" href="#有哪些常见的Loader？他们是解决什么问题的？">¶</a>有哪些常见的Loader？他们是解决什么问题的？</h3>
-<p>1、 file-loader：把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件</p>
+<h3 id="有哪些常见的Loader？他们是解决什么问题的？"><a href="#有哪些常见的Loader？他们是解决什么问题的？" class="headerlink" title="有哪些常见的Loader？他们是解决什么问题的？"></a>有哪些常见的Loader？他们是解决什么问题的？</h3><p>1、 file-loader：把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件</p>
 <p>2、 url-loader：和 file-loader 类似，但是能在文件很小的情况下以 base64 的方式把文件内容注入到代码中去</p>
 <p>3、 source-map-loader：加载额外的 Source Map 文件，以方便断点调试</p>
 <p>4、 image-loader：加载并且压缩图片文件</p>
@@ -886,13 +874,12 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <p>7、 style-loader：把 CSS 代码注入到 JavaScript 中，通过 DOM 操作去加载 CSS。</p>
 <p>8、 eslint-loader：通过 ESLint 检查 JavaScript 代码</p>
 <hr>
-<h3 id="Loader和Plugin的不同？"><a class="header-anchor" href="#Loader和Plugin的不同？">¶</a>Loader和Plugin的不同？</h3>
-<p><strong>1)</strong> <strong>不同的作用</strong></p>
-<p>loader直译为”加载器”。webpack将一切文件视为模块，但是webpack原生是只能解析js文件，如果想将其他文件也打包的话，就会用到loader。 所以loader的作用是让webpack拥有了加载和解析非JavaScript文件的能力。</p>
-<p>Plugin直译为”插件”。Plugin可以扩展webpack的功能，让webpack具有更多的灵活性。 在 webpack 运行的生命周期中会广播出许多事件，Plugin 可以监听这些事件，在合适的时机通过 webpack 提供的 API 改变输出结果。</p>
+<h3 id="Loader和Plugin的不同？"><a href="#Loader和Plugin的不同？" class="headerlink" title="Loader和Plugin的不同？"></a>Loader和Plugin的不同？</h3><p><strong>1)</strong> <strong>不同的作用</strong></p>
+<p> loader直译为”加载器”。webpack将一切文件视为模块，但是webpack原生是只能解析js文件，如果想将其他文件也打包的话，就会用到loader。 所以loader的作用是让webpack拥有了加载和解析非JavaScript文件的能力。</p>
+<p> Plugin直译为”插件”。Plugin可以扩展webpack的功能，让webpack具有更多的灵活性。 在 webpack 运行的生命周期中会广播出许多事件，Plugin 可以监听这些事件，在合适的时机通过 webpack 提供的 API 改变输出结果。</p>
 <p><strong>2)</strong> <strong>不同的用法</strong></p>
-<p>Loader在module.rules中配置，也就是说他作为模块的解析规则而存在。 类型为数组，每一项都是一个Object，里面描述了对于什么类型的文件（test），使用什么加载(loader)和使用的参数（options）</p>
-<p>Plugin在plugins中单独配置。 类型为数组，每一项是一个plugin的实例，参数都通过构造函数传入。</p>
+<p> Loader在module.rules中配置，也就是说他作为模块的解析规则而存在。 类型为数组，每一项都是一个Object，里面描述了对于什么类型的文件（test），使用什么加载(loader)和使用的参数（options）</p>
+<p> Plugin在plugins中单独配置。 类型为数组，每一项是一个plugin的实例，参数都通过构造函数传入。</p>
 
                 
             </div>
@@ -1458,7 +1445,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">181.2k</span>&nbsp;字
+                class="white-color">181.9k</span>&nbsp;字
             
             
             

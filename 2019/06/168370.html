@@ -701,7 +701,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    536
+                    537
                 </div>
                 
 
@@ -736,13 +736,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vue双向绑定"><a href="#Vue双向绑定" class="headerlink" title="Vue双向绑定"></a>Vue双向绑定</h1><p><strong>v-model</strong> 指令用来在 input、select、textarea、checkbox</p>
+                <h1>Vue双向绑定</h1>
+<p><strong>v-model</strong> 指令用来在 input、select、textarea、checkbox</p>
 <p>、radio 等表单控件元素上创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值。</p>
 <p>按钮的事件我们可以使用 v-on 监听事件，并对用户的输入进行响应。</p>
 <p>value 属性和Vue数据变量,双向绑定到一起</p>
 <ul>
-<li>语法: v-model=”vue数据变量”</li>
-<li>双向数据绑定<ul>
+<li>语法: v-model=“vue数据变量”</li>
+<li>双向数据绑定
+<ul>
 <li>数据变化 -&gt; 视图自动同步</li>
 <li>视图变化 -&gt; 数据自动同步</li>
 </ul>
@@ -752,27 +754,21 @@
 <p>vue双向绑定实现原理是Object.defineProperty(obj, prop, descriptor)</p>
 </blockquote>
 <p>如果你不太记得这个方法:</p>
-<p>​    此处就贴上MDN中的介绍</p>
+<p>​	此处就贴上MDN中的介绍</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">Object.defineProperty()</a> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。</p>
 </blockquote>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">value
 该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。
 默认为 undefined。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">get
 属性的 getter 函数，如果没有 getter，则为 undefined。当访问该属性时，会调用此函数。执行时不传入任何参数，但是会传入 this 对象（由于继承关系，这里的this并不一定是定义该属性的对象）。该函数的返回值会被用作属性的值。
 默认为 undefined。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">set
 属性的 setter 函数，如果没有 setter，则为 undefined。当属性值被修改时，会调用此函数。该方法接受一个参数（也就是被赋予的新值），会传入赋值时的 this 对象。
 默认为 undefined。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-<h2 id="key的作用又是什么？"><a href="#key的作用又是什么？" class="headerlink" title="key的作用又是什么？"></a>key的作用又是什么？</h2><blockquote>
+<h2 id="key的作用又是什么？"><a class="header-anchor" href="#key的作用又是什么？">¶</a>key的作用又是什么？</h2>
+<blockquote>
 <p>vue官网: key 是给每一个 vnode 的唯一 id ，也是 diff 的一种优化策略，可以根据 key，更准确， 更快的找到对应的 vnode 节点</p>
 </blockquote>
 <p>要求:key 值 不得是重复的字符串和数字,是唯一的 id,不能为对象.</p>
@@ -782,9 +778,6 @@
 <p>如何用 key ? 有 id 绑 id 无 id 用索引</p>
 <p>Vue: 动态添加class</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">语法:  :class="{键/名: 值}"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
 
                 
             </div>
@@ -1350,7 +1343,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">182.7k</span>&nbsp;字
+                class="white-color">183.1k</span>&nbsp;字
             
             
             

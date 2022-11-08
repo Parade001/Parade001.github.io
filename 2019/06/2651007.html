@@ -748,13 +748,8 @@
 <li><em><strong>销毁      beforeDestory        destoryed</strong></em></li>
 </ul>
 <p>vue实例从创建到编译模板执行了  beforeCreate / Created 钩子函数</p>
-<p>​                </p><h1 align="center">生命周期图示</h1><p></p>
+<p>​				</p><h1 align="center">生命周期图示</h1><p></p>
 <img src="/2019/06/2651007/lifecycle-1639461741701.png" class="" title="图片来自Vue官网">
-
-
-
-
-
 <pre class="line-numbers language-none"><code class="language-none">&lt;script&gt;
 export default {
   name: 'Day05App',
@@ -774,30 +769,31 @@ export default {
   },
 };
 &lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
 <blockquote>
 <p><em>beforeCreate</em>=&gt;<em>created</em></p>
 </blockquote>
-<h1 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段"></a>初始化阶段</h1><ol>
-<li><p>new Vue()=&gt; init Events&amp;Lifecycle 初始化事件和生命周期函数</p>
+<h1>初始化阶段</h1>
+<ol>
+<li>
+<p>new Vue()=&gt; init Events&amp;Lifecycle 初始化事件和生命周期函数</p>
 </li>
-<li><p>beforeCreate 生命周期钩子函数被执行,不能访问data/methids..</p>
+<li>
+<p>beforeCreate 生命周期钩子函数被执行,不能访问data/methids…</p>
 </li>
-<li><p>init injiections&amp;reactivity -Vue 内部添加data 和methods等</p>
+<li>
+<p>init injiections&amp;reactivity -Vue 内部添加data 和methods等</p>
 </li>
-<li><p>created 生命周期钩子函数被执行阶段  实例创建 可以访问data/methods..</p>
+<li>
+<p>created 生命周期钩子函数被执行阶段  实例创建 可以访问data/methods…</p>
 </li>
-<li><p>编译模板阶段-开始分析</p>
+<li>
+<p>编译模板阶段-开始分析</p>
 </li>
-<li><p>has el option ? 有检查挂载到那里</p>
+<li>
+<p>has el option ? 有检查挂载到那里</p>
 </li>
-<li><p>没有,调用$mount()方法</p>
+<li>
+<p>没有,调用$mount()方法</p>
 <p>有继续检查template阶段</p>
 </li>
 </ol>
@@ -805,20 +801,22 @@ export default {
 <blockquote>
 <p><em>beforeMount</em>=&gt;<em>mounted</em></p>
 </blockquote>
-<h1 id="挂载阶段"><a href="#挂载阶段" class="headerlink" title="挂载阶段"></a>挂载阶段</h1><ol>
+<h1>挂载阶段</h1>
+<ol>
 <li>template 选项检查</li>
 <li>有 编译template返回render函数</li>
 <li>无 编译el选项对应标签作为template(要渲染的模板)</li>
 <li>虚拟DOM 挂载真实DOM之前</li>
 <li>beforeMount -生命周期钩子函数被执行  不能访问真实DOM</li>
-<li>Create.. 把虚拟DOM和渲染的数据一并挂载到真实DOM上</li>
+<li>Create… 把虚拟DOM和渲染的数据一并挂载到真实DOM上</li>
 <li>真是DOM挂载完毕</li>
 <li>Mounted-生命周期钩子函数被执行</li>
 </ol>
 <blockquote>
 <p><em>beforeUpdate=&gt;updated</em></p>
 </blockquote>
-<h1 id="更新阶段"><a href="#更新阶段" class="headerlink" title="更新阶段"></a>更新阶段</h1><ol>
+<h1>更新阶段</h1>
+<ol>
 <li>当date 里数据改变,更新DOM之前</li>
 <li>beforeUpdate-生命周期钩子函数被执行  不能访问更新后的真实DOM,但是data数据已更新</li>
 <li>Virtual DOM … 虚拟DOM重新渲染 打patch 到真实DOM</li>
@@ -826,11 +824,12 @@ export default {
 <li>当有date数据改变,重复这个循环</li>
 </ol>
 <p>beforeUpdate 获取更新前的真实DOM</p>
-<p>updated       获取更新后的真是DOM</p>
+<p>updated 	  获取更新后的真是DOM</p>
 <blockquote>
 <p><em>beforeDestory</em> =&gt; <em>destoryed</em></p>
 </blockquote>
-<h1 id="销毁阶段"><a href="#销毁阶段" class="headerlink" title="销毁阶段"></a>销毁阶段</h1><ol>
+<h1>销毁阶段</h1>
+<ol>
 <li>当$destroy()被调用 – 比如组件DOM被移除(例v-if)</li>
 <li>beforeDestroy – 生命周期钩子函数被执行</li>
 <li>拆卸数据监视器、子组件和事件侦听器 释放内存</li>
@@ -1402,7 +1401,7 @@ export default {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">182.7k</span>&nbsp;字
+                class="white-color">183.1k</span>&nbsp;字
             
             
             

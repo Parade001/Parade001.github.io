@@ -736,20 +736,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h1><blockquote>
+                <h1>语法:</h1>
+<blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token function">callback</span><span class="token punctuation">(</span>accumulator<span class="token punctuation">,</span> currentValue<span class="token punctuation">[</span><span class="token punctuation">,</span> index<span class="token punctuation">[</span><span class="token punctuation">,</span> array<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">,</span> initialValue<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
 <p>reduce有2个参数:</p>
 <p><em>第一个参数是回调参数</em>:</p>
 <p><em>第二个参数是初始值(建议带上初始值)</em>:</p>
-<p>​    如果不写初始值:sum 是数组第一个元素,并且循环从第二个元素开始.</p>
+<p>​	如果不写初始值:sum 是数组第一个元素,并且循环从第二个元素开始.</p>
 <p>回调函数有4个参数</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">reducer函数接收<span class="token number">4</span>个参数<span class="token operator">:</span>
 <span class="token number">1.</span> <span class="token function">Accumulator</span> <span class="token punctuation">(</span>acc<span class="token punctuation">)</span> <span class="token punctuation">(</span>累计器<span class="token punctuation">)</span>
 <span class="token number">2.</span> Current <span class="token function">Value</span> <span class="token punctuation">(</span>cur<span class="token punctuation">)</span> <span class="token punctuation">(</span>当前值<span class="token punctuation">)</span>
 <span class="token number">3.</span> Current <span class="token function">Index</span> <span class="token punctuation">(</span>idx<span class="token punctuation">)</span> <span class="token punctuation">(</span>当前索引<span class="token punctuation">)</span>
 <span class="token number">4.</span> Source <span class="token function">Array</span> <span class="token punctuation">(</span>src<span class="token punctuation">)</span> <span class="token punctuation">(</span>源数组<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> array1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token function-variable function">reducer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">previousValue<span class="token punctuation">,</span> currentValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> previousValue <span class="token operator">+</span> currentValue<span class="token punctuation">;</span>
 
@@ -761,7 +761,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>array1<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>reducer<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// expected output: 15</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>reduce 对数组每个成员执行sum函数,执行到第二个会将一个值累加过来</p>
 <p>reduce的回调函数必须return 结果,而return 的结果会作为下一次循环的累计器的值.</p>
 <p><code>reduce</code> 可以理解为「归一」，意为海纳百川，万剑归一，完整的结构是 <code>Array.prototype.reduce(callbackfn[, initialValue])</code>，这里第二个参数并不是 thisArg 了，而是初始值 <code>initialValue</code>，关于初始值之前有介绍过。</p>
@@ -813,13 +812,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 
 <span class="token comment">// 代码亲测已通过</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这部分源码主要多了对于 <code>initialValue</code> 的处理，有初始值时比较简单，即 <code>accumulator = initialValue</code>，<code>kValue = O[0]</code>。</p>
 <p>无初始值处理在 Step 8，循环判断当 O 及其原型链上存在属性 k 时，<code>accumulator = O[k]</code> 并退出循环，因为 <code>k++</code>，所以 <code>kValue = O[k++]</code>。</p>
 <p>更多的数组方法有 <code>find</code>、<code>findIndex</code>、<code>forEach</code> 等，其源码实现也是大同小异，无非就是在 <code>callbackfn.call</code> 这部分做些处理，有兴趣的可以看看 TC39 和 MDN 官网，参考部分链接直达。</p>
 <hr>
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="muyiy.cn/blog/6/6.3.html#array-prototype-filter">Array 原型方法源码实现大解密</a></p>
+<h1>参考</h1>
+<p><a href="muyiy.cn/blog/6/6.3.html#array-prototype-filter">Array 原型方法源码实现大解密</a></p>
 
                 
             </div>
@@ -1385,7 +1383,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">182.7k</span>&nbsp;字
+                class="white-color">183.1k</span>&nbsp;字
             
             
             

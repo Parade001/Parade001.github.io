@@ -736,11 +736,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="面试官：什么是防抖和节流？有什么区别？如何实现？"><a href="#面试官：什么是防抖和节流？有什么区别？如何实现？" class="headerlink" title="面试官：什么是防抖和节流？有什么区别？如何实现？"></a>面试官：什么是防抖和节流？有什么区别？如何实现？</h1><p><img src="https://static.vue-js.com/912f1a10-8787-11eb-85f6-6fac77c0c9b3.png"></p>
-<h2 id="一、是什么"><a href="#一、是什么" class="headerlink" title="一、是什么"></a>一、是什么</h2><p>本质上是优化高频率执行代码的一种手段</p>
+                <h1>面试官：什么是防抖和节流？有什么区别？如何实现？</h1>
+<p><img src="https://static.vue-js.com/912f1a10-8787-11eb-85f6-6fac77c0c9b3.png" alt=""></p>
+<h2 id="一、是什么"><a class="header-anchor" href="#一、是什么">¶</a>一、是什么</h2>
+<p>本质上是优化高频率执行代码的一种手段</p>
 <p>如：浏览器的 <code>resize</code>、<code>scroll</code>、<code>keypress</code>、<code>mousemove</code> 等事件在触发时，会不断地调用绑定在事件上的回调函数，极大地浪费资源，降低前端性能</p>
 <p>为了优化体验，需要对这类事件进行调用次数的限制，对此我们就可以采用 <strong>防抖（debounce）</strong> 和 <strong>节流（throttle）</strong> 的方式来减少调用频率</p>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<h4 id="定义"><a class="header-anchor" href="#定义">¶</a>定义</h4>
+<ul>
 <li>节流: n 秒内只运行一次，若在 n 秒内重复触发，只有一次生效</li>
 <li>防抖: n 秒后在执行该事件，若在 n 秒内被重复触发，则重新计时</li>
 </ul>
@@ -749,7 +752,9 @@
 <p>假设电梯有两种运行策略 <code>debounce</code> 和 <code>throttle</code>，超时设定为15秒，不考虑容量限制</p>
 <p>电梯第一个人进来后，15秒后准时运送一次，这是节流</p>
 <p>电梯第一个人进来后，等待15秒。如果过程中又有人进来，15秒等待重新计时，直到15秒后开始运送，这是防抖</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><p>完成节流可以使用时间戳与定时器的写法</p>
+<h2 id="代码实现"><a class="header-anchor" href="#代码实现">¶</a>代码实现</h2>
+<h3 id="节流"><a class="header-anchor" href="#节流">¶</a>节流</h3>
+<p>完成节流可以使用时间戳与定时器的写法</p>
 <p>使用时间戳写法，事件会立即执行，停止触发后没有办法再次执行</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">throttled1</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay <span class="token operator">=</span> <span class="token number">500</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> oldtime <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -762,7 +767,6 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>使用定时器写法，<code>delay</code>毫秒后第一次执行，第二次事件停止触发后依然会再一次执行</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">throttled2</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay <span class="token operator">=</span> <span class="token number">500</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
@@ -775,7 +779,6 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>可以将时间戳写法的特性与定时器写法的特性相结合，实现一个更加精确的节流。实现如下</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">throttled</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
@@ -794,8 +797,8 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>简单版本的实现</p>
+<h3 id="防抖"><a class="header-anchor" href="#防抖">¶</a>防抖</h3>
+<p>简单版本的实现</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">func<span class="token punctuation">,</span> wait</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> timeout<span class="token punctuation">;</span>
 
@@ -809,7 +812,6 @@
         <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>防抖如果需要立即执行，可加入第三个参数用于判断，实现如下：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">func<span class="token punctuation">,</span> wait<span class="token punctuation">,</span> immediate</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
@@ -836,8 +838,8 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="二、区别"><a href="#二、区别" class="headerlink" title="二、区别"></a>二、区别</h2><p>相同点：</p>
+<h2 id="二、区别"><a class="header-anchor" href="#二、区别">¶</a>二、区别</h2>
+<p>相同点：</p>
 <ul>
 <li>都可以通过使用 <code>setTimeout</code> 实现</li>
 <li>目的都是，降低回调执行频率。节省计算资源</li>
@@ -849,8 +851,9 @@
 </ul>
 <p>例如，都设置时间频率为500ms，在2秒时间内，频繁触发函数，节流，每隔 500ms 就执行一次。防抖，则不管调动多少次方法，在2s后，只会执行一次</p>
 <p>如下图所示：</p>
-<p><img src="https://static.vue-js.com/a2c81b50-8787-11eb-ab90-d9ae814b240d.png"></p>
-<h2 id="三、应用场景"><a href="#三、应用场景" class="headerlink" title="三、应用场景"></a>三、应用场景</h2><p>防抖在连续的事件，只需触发一次回调的场景有：</p>
+<p><img src="https://static.vue-js.com/a2c81b50-8787-11eb-ab90-d9ae814b240d.png" alt=""></p>
+<h2 id="三、应用场景"><a class="header-anchor" href="#三、应用场景">¶</a>三、应用场景</h2>
+<p>防抖在连续的事件，只需触发一次回调的场景有：</p>
 <ul>
 <li>搜索框搜索输入。只需用户最后一次输入完，再发送请求</li>
 <li>手机号、邮箱验证输入检测</li>
@@ -879,11 +882,10 @@
         <span class="token punctuation">}</span><span class="token punctuation">,</span>delay<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>什么是节流?</p>
 <p>运用场景:</p>
 <ul>
-<li>懒加载时要监听计算<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%BB%9A%E5%8A%A8%E6%9D%A1&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22430011875%22%7D">滚动条</a>的位置，但不必每次滑动都触发，可以降低计算的频率，而不必去浪费 CPU 资源；</li>
+<li>懒加载时要监听计算<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%BB%9A%E5%8A%A8%E6%9D%A1&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22article%22%2C%22sourceId%22%3A%22430011875%22%7D">滚动条</a>的位置，但不必每次滑动都触发，可以降低计算的频率，而不必去浪费 CPU 资源；</li>
 <li>函数执行一次后,规定时间内不会执行第二次(若一直触发,每隔n秒值触发一次)</li>
 </ul>
 <p>demo:</p>
@@ -899,7 +901,6 @@
 <span class="token punctuation">}</span>
 <span class="token keyword">const</span> betterFn<span class="token operator">=</span><span class="token function">throttle</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span>cosole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'fn函数执行了'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
 <span class="token function">setInterval</span><span class="token punctuation">(</span>betterFn<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>or</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">throttling</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> lastTime <span class="token operator">=</span> <span class="token number">0</span>
@@ -913,10 +914,8 @@
 <span class="token punctuation">}</span>
 <span class="token keyword">const</span> throttlingFn <span class="token operator">=</span> <span class="token function">throttling</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'fn执行了'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
 <span class="token function">setInterval</span><span class="token punctuation">(</span>throttlingFn<span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>Promise 节流 &amp;高阶防抖 写法</p>
 <img src="https://tva1.sinaimg.cn/large/006aANDQly1gzla49sr57j30f40iudnk.jpg">
-
 <p>高频事件触发，在n秒内只会执行一次，节流会稀释函数的执行频率,等待lock的状态，如果lock状态为false，则不会再次执行语句if (!lock) return;后面的内容，直至等待setTimeout函数内容执行完毕，将lock置为true之后，才会再次执行，从而达到减少fn响应次数。</p>
 <p><strong>理念：每次触发事件时都判断当前是否有等待执行的延时函数</strong></p>
 
@@ -1476,7 +1475,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">182.7k</span>&nbsp;字
+                class="white-color">183.1k</span>&nbsp;字
             
             
             

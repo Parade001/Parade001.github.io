@@ -736,36 +736,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>JavaScript 对象</h1>
-<p>在 JavaScript中，几乎所有的事物都是对象。</p>
+                <h1 id="JavaScript-对象"><a href="#JavaScript-对象" class="headerlink" title="JavaScript 对象"></a>JavaScript 对象</h1><p>在 JavaScript中，几乎所有的事物都是对象。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> car <span class="token operator">=</span> <span class="token string">"Fiat"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="对象属性"><a class="header-anchor" href="#对象属性">¶</a>对象属性</h2>
-<h3 id="“JavaScript-对象是变量的容器”"><a class="header-anchor" href="#“JavaScript-对象是变量的容器”">¶</a>“JavaScript 对象是变量的容器”</h3>
-<p>通常认为 “JavaScript 对象是键值对的容器”。<br>
-键值对通常写法为 name : value (键与值以冒号分割)。<br>
-键值对在 JavaScript 对象通常称为 对象属性。</p>
-<h2 id="访问对象属性"><a class="header-anchor" href="#访问对象属性">¶</a>访问对象属性</h2>
-<p>通过两种方式访问对象属性:</p>
+
+<h2 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h2><h3 id="“JavaScript-对象是变量的容器”"><a href="#“JavaScript-对象是变量的容器”" class="headerlink" title="“JavaScript 对象是变量的容器”"></a>“JavaScript 对象是变量的容器”</h3><p>通常认为 “JavaScript 对象是键值对的容器”。<br>键值对通常写法为 name : value (键与值以冒号分割)。<br>键值对在 JavaScript 对象通常称为 对象属性。</p>
+<h2 id="访问对象属性"><a href="#访问对象属性" class="headerlink" title="访问对象属性"></a>访问对象属性</h2><p>通过两种方式访问对象属性:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">person<span class="token punctuation">.</span>lastName<span class="token punctuation">;</span>
 person<span class="token punctuation">[</span><span class="token string">"lastName"</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="对象方法"><a class="header-anchor" href="#对象方法">¶</a>对象方法</h2>
-<p>对象的方法定义了一个函数，并作为对象的属性存储。<br>
-对象方法通过添加 () 调用 (作为一个函数)。<br>
-该实例访问了 person 对象的 fullName() 方法:</p>
+
+<h2 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h2><p>对象的方法定义了一个函数，并作为对象的属性存储。<br>对象方法通过添加 () 调用 (作为一个函数)。<br>该实例访问了 person 对象的 fullName() 方法:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">name <span class="token operator">=</span> person<span class="token punctuation">.</span><span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>如果你要访问 person 对象的 fullName 属性，它将作为一个定义函数的字符串返回：实例</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">name <span class="token operator">=</span> person<span class="token punctuation">.</span>fullName<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="访问对象方法"><a class="header-anchor" href="#访问对象方法">¶</a>访问对象方法</h2>
-<p>你可以使用以下语法 <strong>创建对象</strong> 方法：</p>
+
+<h2 id="访问对象方法"><a href="#访问对象方法" class="headerlink" title="访问对象方法"></a>访问对象方法</h2><p>你可以使用以下语法 <strong>创建对象</strong> 方法：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function-variable function">methodName</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 <span class="token comment">// 代码}</span>
 	
 objectName<span class="token punctuation">.</span><span class="token function">methodName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h1>JavaScript数组</h1>
-<p><strong>JS中的<code>Array</code>可以包含任意数据类型</strong>，并通过索引来访问每个元素。</p>
+
+
+
+
+
+<h1 id="JavaScript数组"><a href="#JavaScript数组" class="headerlink" title="JavaScript数组"></a>JavaScript数组</h1><p><strong>JS中的<code>Array</code>可以包含任意数据类型</strong>，并通过索引来访问每个元素。</p>
 <p>要取得<code>Array</code>的长度，直接访问<code>length</code>属性：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token string">'Hello'</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token comment">// 6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>直接给<code>Array</code>的<code>length</code>赋一个新的值会导致<code>Array</code>大小的变化：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token comment">// 3</span>
@@ -773,15 +772,18 @@ arr<span class="token punctuation">.</span>length <span class="token operator">=
 arr<span class="token punctuation">;</span> <span class="token comment">// arr变为[1, 2, 3, undefined, undefined, undefined]</span>
 arr<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// arr变为[1, 2]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><code>Array</code>可以通过索引把对应的元素修改为新的值，因此，对<code>Array</code>的索引进行赋值会直接修改这个<code>Array</code>：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">99</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// arr现在变为['A', 99, 'C']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">//当new array 有2个以上的参数，表示的是数组的元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>计算数组所有元素和与平均值</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span>
 <span class="token keyword">var</span> sum <span class="token operator">=</span> <span class="token number">0</span>
@@ -792,31 +794,33 @@ console<span class="token punctuation">.</span><span class="token function">log<
 ave <span class="token operator">=</span> sum <span class="token operator">/</span>arr<span class="token punctuation">.</span>length
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sum<span class="token punctuation">.</span>ave<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>请注意*，如果通过索引赋值时，索引超过了范围，同样会引起<code>Array</code>大小的变化：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'x'</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// arr变为[1, 2, 3, undefined, undefined, 'x']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="indexOf"><a class="header-anchor" href="#indexOf">¶</a>indexOf</h3>
-<p>与String类似，<code>Array</code>也可以通过<code>indexOf()</code>来搜索一个指定的元素的位置：</p>
+
+<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h3><p>与String类似，<code>Array</code>也可以通过<code>indexOf()</code>来搜索一个指定的元素的位置：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'30'</span><span class="token punctuation">,</span> <span class="token string">'xyz'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 元素10的索引为0</span>
 arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 元素20的索引为1</span>
 arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 元素30没有找到，返回-1</span>
 arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'30'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 元素'30'的索引为2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>注意了，数字<code>30</code>和字符串<code>'30'</code>是不同的元素。</p>
-<h3 id="slice"><a class="header-anchor" href="#slice">¶</a>slice</h3>
-<p><code>slice()</code>就是对应String的<code>substring()</code>版本，它截取<code>Array</code>的部分元素，然后返回一个新的<code>Array</code>：</p>
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h3><p><code>slice()</code>就是对应String的<code>substring()</code>版本，它截取<code>Array</code>的部分元素，然后返回一个新的<code>Array</code>：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">,</span> <span class="token string">'F'</span><span class="token punctuation">,</span> <span class="token string">'G'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 从索引0开始，到索引3结束，但不包括索引3: ['A', 'B', 'C']</span>
 arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 从索引3开始到结束: ['D', 'E', 'F', 'G']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>注意到<code>slice()</code>的起止参数包括开始索引，不包括结束索引。</p>
 <p>如果不给<code>slice()</code>传递任何参数，它就会从头到尾截取所有元素。利用这一点，我们可以很容易地复制一个<code>Array</code>：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">,</span> <span class="token string">'F'</span><span class="token punctuation">,</span> <span class="token string">'G'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> aCopy <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 aCopy<span class="token punctuation">;</span> <span class="token comment">// ['A', 'B', 'C', 'D', 'E', 'F', 'G']</span>
 aCopy <span class="token operator">===</span> arr<span class="token punctuation">;</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="push和pop"><a class="header-anchor" href="#push和pop">¶</a>push和pop</h3>
-<p><code>push()</code>向<code>Array</code>的末尾添加若干元素，<code>pop()</code>则把<code>Array</code>的最后一个元素删除掉：</p>
+
+<h3 id="push和pop"><a href="#push和pop" class="headerlink" title="push和pop"></a>push和pop</h3><p><code>push()</code>向<code>Array</code>的末尾添加若干元素，<code>pop()</code>则把<code>Array</code>的最后一个元素删除掉：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 返回Array新的长度: 4</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// [1, 2, 'A', 'B']</span>
@@ -826,8 +830,8 @@ arr<span class="token punctuation">.</span><span class="token function">pop</spa
 arr<span class="token punctuation">;</span> <span class="token comment">// []</span>
 arr<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 空数组继续pop不会报错，而是返回undefined</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// []</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="unshift和shift"><a class="header-anchor" href="#unshift和shift">¶</a>unshift和shift</h3>
-<p>如果要往<code>Array</code>的头部添加若干元素，使用<code>unshift()</code>方法，<code>shift()</code>方法则把<code>Array</code>的第一个元素删掉：</p>
+
+<h3 id="unshift和shift"><a href="#unshift和shift" class="headerlink" title="unshift和shift"></a>unshift和shift</h3><p>如果要往<code>Array</code>的头部添加若干元素，使用<code>unshift()</code>方法，<code>shift()</code>方法则把<code>Array</code>的第一个元素删掉：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 返回Array新的长度: 4</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// ['A', 'B', 1, 2]</span>
@@ -837,19 +841,19 @@ arr<span class="token punctuation">.</span><span class="token function">shift</s
 arr<span class="token punctuation">;</span> <span class="token comment">// []</span>
 arr<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 空数组继续shift不会报错，而是返回undefined</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// []</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="sort"><a class="header-anchor" href="#sort">¶</a>sort</h3>
-<p><code>sort()</code>可以对当前<code>Array</code>进行排序，它会直接修改当前<code>Array</code>的元素位置，直接调用时，按照默认顺序排序：</p>
+
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p><code>sort()</code>可以对当前<code>Array</code>进行排序，它会直接修改当前<code>Array</code>的元素位置，直接调用时，按照默认顺序排序：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// ['A', 'B', 'C']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>能否按照我们自己指定的顺序排序呢？完全可以，我们将在后面的函数中讲到。</p>
-<h3 id="reverse"><a class="header-anchor" href="#reverse">¶</a>reverse</h3>
-<p><code>reverse()</code>把整个<code>Array</code>的元素给调个个，也就是反转：</p>
+<h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h3><p><code>reverse()</code>把整个<code>Array</code>的元素给调个个，也就是反转：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 arr<span class="token punctuation">;</span> <span class="token comment">// ['three', 'two', 'one']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="splice"><a class="header-anchor" href="#splice">¶</a>splice</h3>
-<p><code>splice()</code>方法是修改<code>Array</code>的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素：</p>
+
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h3><p><code>splice()</code>方法是修改<code>Array</code>的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Microsoft'</span><span class="token punctuation">,</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span> <span class="token string">'Yahoo'</span><span class="token punctuation">,</span> <span class="token string">'AOL'</span><span class="token punctuation">,</span> <span class="token string">'Excite'</span><span class="token punctuation">,</span> <span class="token string">'Oracle'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token comment">// 从索引2开始删除3个元素,然后再添加两个元素:</span>
 arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'Google'</span><span class="token punctuation">,</span> <span class="token string">'Facebook'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 返回删除的元素 ['Yahoo', 'AOL', 'Excite']</span>
@@ -860,63 +864,56 @@ arr<span class="token punctuation">;</span> <span class="token comment">// ['Mic
 <span class="token comment">// 只添加,不删除:</span>
 arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'Google'</span><span class="token punctuation">,</span> <span class="token string">'Facebook'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 返回[],因为没有删除任何元素</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="concat"><a class="header-anchor" href="#concat">¶</a>concat</h3>
-<p><code>concat()</code>方法把当前的<code>Array</code>和另一个<code>Array</code>连接起来，并返回一个新的<code>Array</code>：</p>
+
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><p><code>concat()</code>方法把当前的<code>Array</code>和另一个<code>Array</code>连接起来，并返回一个新的<code>Array</code>：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> added <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 added<span class="token punctuation">;</span> <span class="token comment">// ['A', 'B', 'C', 1, 2, 3]</span>
 arr<span class="token punctuation">;</span> <span class="token comment">// ['A', 'B', 'C']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><em>请注意</em>，<code>concat()</code>方法并没有修改当前<code>Array</code>，而是返回了一个新的<code>Array</code>。</p>
 <p>实际上，<code>concat()</code>方法可以接收任意个元素和<code>Array</code>，并且自动把<code>Array</code>拆开，然后全部添加到新的<code>Array</code>里：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ['A', 'B', 'C', 1, 2, 3, 4]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="join"><a class="header-anchor" href="#join">¶</a>join</h3>
-<p><code>join()</code>方法是一个非常实用的方法，它把当前<code>Array</code>的每个元素都用指定的字符串连接起来，然后返回连接后的字符串：</p>
+
+<h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><p><code>join()</code>方法是一个非常实用的方法，它把当前<code>Array</code>的每个元素都用指定的字符串连接起来，然后返回连接后的字符串：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'A-B-C-1-2-3'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>如果<code>Array</code>的元素不是字符串，将自动转换为字符串后再连接。</p>
-<h3 id="多维数组"><a class="header-anchor" href="#多维数组">¶</a>多维数组</h3>
-<p>如果数组的某个元素又是一个<code>Array</code>，则可以形成多维数组，例如：</p>
+<h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><p>如果数组的某个元素又是一个<code>Array</code>，则可以形成多维数组，例如：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">400</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>上述<code>Array</code>包含3个元素，其中头两个元素本身也是<code>Array</code>。</p>
-<h1>JavaScript条件语句</h1>
-<p>条件语句用于基于不同的条件来执行不同的动作。</p>
+<h1 id="JavaScript条件语句"><a href="#JavaScript条件语句" class="headerlink" title="JavaScript条件语句"></a>JavaScript条件语句</h1><p>条件语句用于基于不同的条件来执行不同的动作。</p>
 <hr>
-<h2 id="条件语句"><a class="header-anchor" href="#条件语句">¶</a>条件语句</h2>
-<p>通常在写代码时，您总是需要为不同的决定来执行不同的动作。您可以在代码中使用条件语句来完成该任务。</p>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><p>通常在写代码时，您总是需要为不同的决定来执行不同的动作。您可以在代码中使用条件语句来完成该任务。</p>
 <p>在 JavaScript 中，我们可使用以下条件语句：</p>
 <ul>
-<li>
-<p><strong>if 语句</strong> - (单分支语句）只有当指定条件为 true 时，使用该语句来执行代码</p>
-<p>​			为false则不执行花括号里的语句跳出</p>
+<li><p><strong>if 语句</strong> - (单分支语句）只有当指定条件为 true 时，使用该语句来执行代码</p>
+<p>​            为false则不执行花括号里的语句跳出</p>
 </li>
-<li>
-<p><strong>if…else 语句</strong> - 当条件为 true 时执行代码，当条件为 false 时执行其他代码</p>
+<li><p><strong>if…else 语句</strong> - 当条件为 true 时执行代码，当条件为 false 时执行其他代码</p>
 </li>
-<li>
-<p><strong>if…else if…else 语句</strong>- 使用该语句来选择多个代码块之一来执行</p>
+<li><p><strong>if…else if….else 语句</strong>- 使用该语句来选择多个代码块之一来执行</p>
 </li>
-<li>
-<p><strong>switch 语句</strong> - 使用该语句来选择多个代码块之一来执行</p>
+<li><p><strong>switch 语句</strong> - 使用该语句来选择多个代码块之一来执行</p>
 </li>
 </ul>
-<h3 id="通过分支流程控制if语句"><a class="header-anchor" href="#通过分支流程控制if语句">¶</a>通过分支流程控制if语句</h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<h3 id="通过分支流程控制if语句"><a href="#通过分支流程控制if语句" class="headerlink" title="通过分支流程控制if语句"></a>通过分支流程控制if语句</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
 	<span class="token keyword">var</span> age <span class="token operator">=</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">'请输入您的年龄'</span><span class="token punctuation">)</span>
 	<span class="token keyword">if</span> <span class="token punctuation">(</span>age <span class="token operator">&gt;=</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'我想带你去网吧偷耳机'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="通过双分支语句控制流程（if-else"><a class="header-anchor" href="#通过双分支语句控制流程（if-else">¶</a>通过双分支语句控制流程（if else)</h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//条件成立 执行if 里面的代码，否则执行else 里面的代码</span>
+
+<h3 id="通过双分支语句控制流程（if-else"><a href="#通过双分支语句控制流程（if-else" class="headerlink" title="通过双分支语句控制流程（if else)"></a>通过双分支语句控制流程（if else)</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//条件成立 执行if 里面的代码，否则执行else 里面的代码</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 <span class="token comment">//如果条件成立 执行代码</span>
 <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
 <span class="token comment">//否则 执行的代码</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="判断闰年案例"><a class="header-anchor" href="#判断闰年案例">¶</a>判断闰年案例</h2>
-<p>案例分析：判断任意年份是否为闰年，需要满足以下条件中的任意一个：<br>
-① 该年份能被 4 整除同时不能被 100 整除；<br>
-② 该年份能被400整除。</p>
+
+<h2 id="判断闰年案例"><a href="#判断闰年案例" class="headerlink" title="判断闰年案例"></a>判断闰年案例</h2><p>案例分析：判断任意年份是否为闰年，需要满足以下条件中的任意一个：<br>① 该年份能被 4 整除同时不能被 100 整除；<br>② 该年份能被400整除。</p>
 <p>弹出prompt 输入框让用户输入年丰，取过来值保存在变量中</p>
 <p>使用if语句判断，是输入闰年语句否则执行else里面输出的语句</p>
 <p>注意逻辑运算符&amp;&amp;与||的用法，通过取模判断余数为0</p>
@@ -928,8 +925,8 @@ arr<span class="token punctuation">.</span><span class="token function">join</sp
 	<span class="token keyword">else</span><span class="token punctuation">{</span>
 	<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'该年是平年'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="多分支语句（if-else-if"><a class="header-anchor" href="#多分支语句（if-else-if">¶</a>多分支语句（if else if)</h3>
-<p>语法规范</p>
+
+<h3 id="多分支语句（if-else-if"><a href="#多分支语句（if-else-if" class="headerlink" title="多分支语句（if else if)"></a>多分支语句（if else if)</h3><p>语法规范</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span><span class="token punctuation">(</span>条件表达式<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 <span class="token comment">//语句1;</span>
 <span class="token punctuation">}</span>
@@ -939,32 +936,38 @@ arr<span class="token punctuation">.</span><span class="token function">join</sp
 <span class="token keyword">else</span> <span class="token punctuation">(</span>条件表达式<span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 <span class="token comment">//语句3;</span>
 <span class="token punctuation">}</span>san'yun<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="三元表达式"><a class="header-anchor" href="#三元表达式">¶</a>三元表达式</h2>
-<p>能做一些简单的条件选择。有三元运算符组成的式子称为三元表达式。</p>
+
+<h2 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式"></a>三元表达式</h2><p>能做一些简单的条件选择。有三元运算符组成的式子称为三元表达式。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">++</span>num <span class="token number">3</span><span class="token operator">+</span><span class="token number">5</span> <span class="token operator">?</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>语法结构</p>
 <p>条件表达式？ 表达式1 :  表达式2</p>
 <p>执行思路：如果条件表达式为true 则返回表达式1 的值</p>
 <p>否则，为false 返回表达式2的值</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span>
 <span class="token keyword">var</span> result <span class="token operator">=</span> num <span class="token operator">&gt;</span><span class="token number">5</span> <span class="token operator">?</span> <span class="token string">'是的'</span> <span class="token operator">:</span> <span class="token string">'不是的'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>案例：利用三元表达式输出最大数值</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num1 <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
     <span class="token keyword">var</span> num2 <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
     <span class="token keyword">var</span> num3 <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
     <span class="token keyword">var</span> end <span class="token operator">=</span> <span class="token punctuation">(</span>num1 <span class="token operator">&gt;</span> num2 <span class="token operator">?</span> <span class="token punctuation">(</span>num1 <span class="token operator">&gt;</span> num3 <span class="token operator">?</span> num1 <span class="token operator">:</span> num3<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>num2 <span class="token operator">&gt;</span> num3 <span class="token operator">?</span> num2 <span class="token operator">:</span> num3<span class="token punctuation">)</span><span class="token punctuation">)</span>
         <span class="token function">alert</span><span class="token punctuation">(</span>end <span class="token operator">+</span> <span class="token string">'最大'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>案例：数字补0</p>
 <p>输入数字，若小于10，则前面补0,如果大于10，则不用.</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">'请输入0-59任意一个数字：'</span><span class="token punctuation">)</span>
 <span class="token keyword">var</span> result <span class="token operator">=</span> time <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token operator">?</span> <span class="token string">'0'</span><span class="token operator">+</span>time <span class="token operator">:</span> time<span class="token punctuation">;</span>
 <span class="token function">alert</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 扩展 padStart(长度.填的数值)</span>
 <span class="token comment">// padEnd(长度,填的数值)</span>
 <span class="token keyword">var</span> result <span class="token operator">=</span> num<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="Switch执行多分支语句"><a class="header-anchor" href="#Switch执行多分支语句">¶</a>Switch执行多分支语句</h3>
-<p>lion给表达式的值与case 的选项值相匹配，若都没有匹配上则执行default的语句</p>
+
+
+
+<h3 id="Switch执行多分支语句"><a href="#Switch执行多分支语句" class="headerlink" title="Switch执行多分支语句"></a>Switch执行多分支语句</h3><p>lion给表达式的值与case 的选项值相匹配，若都没有匹配上则执行default的语句</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">switch</span> <span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">case</span> value1：
 		业务逻辑<span class="token number">1</span><span class="token punctuation">;</span>
@@ -978,7 +981,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 	dafault<span class="token operator">:</span>
 <span class="token comment">//执行最后的语句；</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>注意：</strong></p>
+
+<p><strong>注意：</strong>    </p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num <span class="token operator">=</span><span class="token number">3</span> <span class="token punctuation">;</span>
 <span class="token keyword">switch</span> <span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
@@ -990,38 +994,37 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// 表达式经常用作变量</span>
 <span class="token comment">//num值和case的值匹配属于全等=== 才可以</span>
 <span class="token comment">//case 里面如果没有break 则不会推出switch 继续执行下一个case</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>Switch 和If else if 语句的区别</p>
 <ul>
 <li>一般情况下，他们两个语句可以相互替换</li>
-<li>switch… case 语句 通常处理case **比较确定值(全等)**的情况,二if…else更灵活，<strong>常用于范围判定</strong>(大于，等于某个范围)</li>
+<li>switch… case 语句 通常处理case <strong>比较确定值(全等)<strong>的情况,二if…else更灵活，</strong>常用于范围判定</strong>(大于，等于某个范围)</li>
 <li>switch 语句进行条件判断后直接执行到程序的条件语句效果更高。而else 语句有几种条件,就得判断多少次</li>
 <li>当分支比较少时，if…else 语句执行效率比switch语句高</li>
 <li>当分支比较多时，switch语句的执行的效率比较高，而且结构更加清晰</li>
 </ul>
-<h2 id="循环结构"><a class="header-anchor" href="#循环结构">¶</a>循环结构</h2>
-<p>循环的目的：解决重复操作提高效率.</p>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><p>循环的目的：解决重复操作提高效率.</p>
 <p>被重复的语句称之为循环体</p>
 <p>循环体和终止条件组成的语句称之为循环语句</p>
-<h1>JavaScript中的循环</h1>
-<ul>
+<h1 id="JavaScript中的循环"><a href="#JavaScript中的循环" class="headerlink" title="JavaScript中的循环"></a>JavaScript中的循环</h1><ul>
 <li>for 循环</li>
 <li>while循环</li>
-<li>do…while循环</li>
+<li>do..while循环</li>
 <li>for…in循环</li>
 </ul>
-<h2 id="for-循环语法结构"><a class="header-anchor" href="#for-循环语法结构">¶</a>for 循环语法结构</h2>
-<p>重复执行某些代码，通常和技术有关系</p>
+<h2 id="for-循环语法结构"><a href="#for-循环语法结构" class="headerlink" title="for 循环语法结构"></a>for 循环语法结构</h2><p>重复执行某些代码，通常和技术有关系   </p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span>初始化表达式<span class="token punctuation">;</span>条件表达式<span class="token punctuation">;</span>操作表达式<span class="token punctuation">)</span><span class="token punctuation">{</span>
 <span class="token comment">//循环体</span>
 <span class="token punctuation">}</span>
 <span class="token comment">//初始化变量即 Var 声明的一个普通变量，通常用作计数器使用，在for里只执行一次 index</span>
 <span class="token comment">//条件表达式 用来决定每一个循环是否继续执行,即终止条件</span>
 <span class="token comment">//操作表达式 每次循环最后执行的代码 经常用于计数器变量的更新递增或者递减</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">1</span><span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'速爪巴'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="通过for-循环计算1-100的偶数和奇数的和"><a class="header-anchor" href="#通过for-循环计算1-100的偶数和奇数的和">¶</a>通过for 循环计算1-100的偶数和奇数的和</h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> even <span class="token operator">=</span> <span class="token number">0</span>
+
+<h3 id="通过for-循环计算1-100的偶数和奇数的和"><a href="#通过for-循环计算1-100的偶数和奇数的和" class="headerlink" title="通过for 循环计算1-100的偶数和奇数的和"></a>通过for 循环计算1-100的偶数和奇数的和</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> even <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token keyword">var</span> odd <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	<span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -1031,16 +1034,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 	<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"1~100之间偶数和为:"</span><span class="token operator">+</span>even<span class="token operator">+</span><span class="token string">'n'</span><span class="token operator">+</span><span class="token string">"1-100所有奇数和为:"</span><span class="token operator">+</span>odd<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="通过1-100直接所有能被3整除的数字和"><a class="header-anchor" href="#通过1-100直接所有能被3整除的数字和">¶</a>通过1-100直接所有能被3整除的数字和</h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token number">0</span> 
+
+<h3 id="通过1-100直接所有能被3整除的数字和"><a href="#通过1-100直接所有能被3整除的数字和" class="headerlink" title="通过1-100直接所有能被3整除的数字和"></a>通过1-100直接所有能被3整除的数字和</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token number">0</span> 
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	<span class="token keyword">if</span> <span class="token punctuation">(</span> i <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	result <span class="token operator">=</span> result <span class="token operator">+</span>i<span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 	<span class="token function">alert</span> <span class="token punctuation">(</span><span class="token string">"1-100直接所有能被3整除的数字和是"</span><span class="token operator">+</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="通过for循环计算若干人数-若干成绩-求解班级总分和平均成绩"><a class="header-anchor" href="#通过for循环计算若干人数-若干成绩-求解班级总分和平均成绩">¶</a>通过for循环计算若干人数&amp;若干成绩.求解班级总分和平均成绩</h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token function">prompt</span> <span class="token punctuation">(</span><span class="token string">'请输入班级总人数'</span><span class="token punctuation">)</span>
+
+<h3 id="通过for循环计算若干人数-amp-若干成绩-求解班级总分和平均成绩"><a href="#通过for循环计算若干人数-amp-若干成绩-求解班级总分和平均成绩" class="headerlink" title="通过for循环计算若干人数&amp;若干成绩.求解班级总分和平均成绩"></a>通过for循环计算若干人数&amp;若干成绩.求解班级总分和平均成绩</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token function">prompt</span> <span class="token punctuation">(</span><span class="token string">'请输入班级总人数'</span><span class="token punctuation">)</span>
  <span class="token keyword">var</span> sum <span class="token operator">=</span> <span class="token number">0</span>
  <span class="token keyword">var</span> ave <span class="token operator">=</span> <span class="token number">0</span>
  <span class="token keyword">for</span> <span class="token keyword">var</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -1049,12 +1052,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span>
 ave <span class="token operator">=</span>sum <span class="token operator">/</span> num
 <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'班级总成绩'</span><span class="token operator">+</span>sum <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token operator">+</span><span class="token string">'班级平均分'</span><span class="token operator">+</span>ave<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="for循环打印string"><a class="header-anchor" href="#for循环打印string">¶</a>for循环打印string</h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">;</span>
+
+<h3 id="for循环打印string"><a href="#for循环打印string" class="headerlink" title="for循环打印string"></a>for循环打印string</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	str <span class="token operator">=</span> str <span class="token operator">+</span><span class="token string">'string'</span>
 <span class="token punctuation">}</span>
 <span class="token function">alert</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token function">prompt</span> <span class="token punctuation">(</span><span class="token string">'想要出现多少个星星？'</span><span class="token punctuation">)</span>
 <span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
 <span class="token comment">//此处定义一个空的字符串赋空值是为了给字符串初始化，这个变量是用来准备存放对象的，也方便调错。</span>
@@ -1062,8 +1066,8 @@ ave <span class="token operator">=</span>sum <span class="token operator">/</spa
 	str <span class="token operator">=</span> str <span class="token operator">+</span> <span class="token string">"string"</span>
 <span class="token punctuation">}</span>
 <span class="token function">alert</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="双重for循环运用"><a class="header-anchor" href="#双重for循环运用">¶</a>双重for循环运用</h3>
-<p>嵌套关系，可以将内层的循环看作外层循环的语句</p>
+
+<h3 id="双重for循环运用"><a href="#双重for循环运用" class="headerlink" title="双重for循环运用"></a>双重for循环运用</h3><p>嵌套关系，可以将内层的循环看作外层循环的语句</p>
 <p><strong>外层的循环循环一次，里面的循环执行全部</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -1072,6 +1076,7 @@ ave <span class="token operator">=</span>sum <span class="token operator">/</spa
 	cosole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'这是内层循环的第'</span><span class="token operator">+</span>j<span class="token operator">+</span><span class="token string">'次'</span><span class="token punctuation">)</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>逐行打印string</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">''</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">;</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -1082,6 +1087,7 @@ ave <span class="token operator">=</span>sum <span class="token operator">/</spa
 	<span class="token comment">//然后执行外层循环因此需在外层加换行符</span>
 	str <span class="token operator">=</span> str <span class="token operator">+</span><span class="token string">'\n'</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>打印N*N行string</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> row <span class="token operator">=</span> <span class="token function">prompt</span> <span class="token punctuation">(</span><span class="token string">'请您输入行数'</span><span class="token punctuation">)</span>
 <span class="token keyword">var</span> cow <span class="token operator">=</span> <span class="token function">prompt</span> <span class="token punctuation">(</span><span class="token string">'请您输入列数'</span><span class="token punctuation">)</span>
@@ -1094,6 +1100,7 @@ ave <span class="token operator">=</span>sum <span class="token operator">/</spa
 <span class="token punctuation">}</span>
 	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>打印到string (倒三角案例)j</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -1103,6 +1110,7 @@ ave <span class="token operator">=</span>sum <span class="token operator">/</spa
 	str <span class="token operator">+=</span> <span class="token string">'\n'</span>
 <span class="token punctuation">}</span>
 	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>正三角</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">''</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1112,6 +1120,9 @@ ave <span class="token operator">=</span>sum <span class="token operator">/</spa
 	str <span class="token operator">+=</span> <span class="token string">'\n'</span>
  <span class="token punctuation">}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>乘法表</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">''</span>
        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1121,12 +1132,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
            str <span class="token operator">+=</span> <span class="token string">'\n'</span>
        <span class="token punctuation">}</span>
        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>打印人的一生</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span>
        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">这个人今年</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">岁了</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
            i<span class="token operator">++</span>
        <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
         <span class="token keyword">do</span> <span class="token punctuation">{</span>
             i<span class="token operator">++</span>
@@ -1136,12 +1149,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">你猝死了</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>打印我爱你</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> mes <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">'你爱我吗？'</span><span class="token punctuation">)</span>
        <span class="token keyword">while</span> <span class="token punctuation">(</span>mes <span class="token operator">!==</span> <span class="token string">'我爱你'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
            mes <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">'你爱我吗!'</span><span class="token punctuation">)</span>
        <span class="token punctuation">}</span>
        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'滚!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>打印100以内奇数偶数和</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">
 <span class="token keyword">var</span> even <span class="token operator">=</span> <span class="token number">0</span>
@@ -1159,14 +1174,19 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>even<span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>odd<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1>While循环</h1>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">while</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+
+
+<h1 id="While循环"><a href="#While循环" class="headerlink" title="While循环"></a>While循环</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">while</span><span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">{</span>
 <span class="token comment">//循环体</span>
 <span class="token punctuation">}</span>
 <span class="token comment">//当表达式结果为true时一直执行循环体 因此常配合操作表达式使用</span>
 <span class="token comment">//否则退出循环</span>
 <span class="token comment">//也应有计数器初始化变量</span>
 <span class="token comment">//操作表达式完成计时器更新防止死循环</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>计算1~100之间所有整数的和</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> sum <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">1</span>
@@ -1175,11 +1195,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
 	j<span class="token operator">++</span>
 <span class="token punctuation">}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>复合赋值运算符</p>
-<h1>JavaScript Array（数组） 对象</h1>
-<p>数组对象的作用是：使用单独的变量名来存储一系列的值，他是一个有序的集合。</p>
-<h2 id="创建一个数组"><a class="header-anchor" href="#创建一个数组">¶</a>创建一个数组</h2>
-<p>创建一个数组，有三种方法。</p>
+<h1 id="JavaScript-Array（数组）-对象"><a href="#JavaScript-Array（数组）-对象" class="headerlink" title="JavaScript Array（数组） 对象"></a>JavaScript Array（数组） 对象</h1><p>数组对象的作用是：使用单独的变量名来存储一系列的值，他是一个有序的集合。</p>
+<h2 id="创建一个数组"><a href="#创建一个数组" class="headerlink" title="创建一个数组"></a>创建一个数组</h2><p>创建一个数组，有三种方法。</p>
 <p>下面的代码定义了一个名为 myCars的数组对象：</p>
 <p>1: 常规方式:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> myCars<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1187,12 +1208,15 @@ myCars<span class="token punctuation">[</span><span class="token number">0</span
 myCars<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"Volvo"</span><span class="token punctuation">;</span>
 myCars<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"BMW"</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myCars<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>2: 简洁方式:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> myCars<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token string">"Saab"</span><span class="token punctuation">,</span><span class="token string">"Volvo"</span><span class="token punctuation">,</span><span class="token string">"BMW"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myCars<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>3: 字面:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> myCars<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"Saab"</span><span class="token punctuation">,</span><span class="token string">"Volvo"</span><span class="token punctuation">,</span><span class="token string">"BMW"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myCars<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <hr>
 <p>案例：取数值最大值：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span>
@@ -1202,6 +1226,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 		max <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
  <span class="token punctuation">}</span>
 	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'最大数为:'</span> <span class="token operator">+</span> max<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 输出99</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//求数值最小值</span>
         <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">322</span><span class="token punctuation">,</span> <span class="token number">232</span><span class="token punctuation">,</span> <span class="token number">2313</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">323</span><span class="token punctuation">,</span> <span class="token number">232</span><span class="token punctuation">,</span> <span class="token number">324</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">43434</span><span class="token punctuation">]</span>
         <span class="token keyword">var</span> min <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
@@ -1211,21 +1236,27 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span> 
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>min<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="访问数组"><a class="header-anchor" href="#访问数组">¶</a>访问数组</h2>
-<p>通过指定数组名以及索引号码，你可以访问某个特定的元素。</p>
+
+
+
+<h2 id="访问数组"><a href="#访问数组" class="headerlink" title="访问数组"></a>访问数组</h2><p>通过指定数组名以及索引号码，你可以访问某个特定的元素。</p>
 <p>以下实例可以访问myCars数组的第一个值：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> name<span class="token operator">=</span>myCars<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>以下实例修改了数组 myCars 的第一个元素:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">myCars<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"Opel"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>利用for循环索引数组</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token string">'4'</span>
 <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'apple'</span><span class="token punctuation">,</span> <span class="token string">'sow'</span><span class="token punctuation">,</span> <span class="token string">'cow'</span><span class="token punctuation">,</span> <span class="token string">'string'</span><span class="token punctuation">,</span> <span class="token string">'gold'</span><span class="token punctuation">]</span>
 	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token comment">//输出 前4个元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>利用Math.max.apply输出最大值</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">555</span><span class="token punctuation">,</span> <span class="token number">777</span><span class="token punctuation">]</span>
 	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>Math<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 777</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1791,7 +1822,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">183.1k</span>&nbsp;字
+                class="white-color">183.3k</span>&nbsp;字
             
             
             

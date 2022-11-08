@@ -727,37 +727,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>​	具体添加如下内容:</p>
+                <p>​    具体添加如下内容:</p>
 <ul>
-<li>
-<p>类型批注和编译时类型检查</p>
+<li><p>类型批注和编译时类型检查</p>
 </li>
-<li>
-<p>类型推断</p>
+<li><p>类型推断</p>
 </li>
-<li>
-<p>类型擦除</p>
+<li><p>类型擦除</p>
 </li>
-<li>
-<p>接口</p>
+<li><p>接口</p>
 </li>
-<li>
-<p>枚举</p>
+<li><p>枚举</p>
 </li>
-<li>
-<p>Mixin</p>
+<li><p>Mixin</p>
 </li>
-<li>
-<p>泛型编程</p>
+<li><p>泛型编程</p>
 </li>
-<li>
-<p>命名空间</p>
+<li><p>命名空间</p>
 </li>
-<li>
-<p>元组</p>
+<li><p>元组</p>
 </li>
-<li>
-<p>async/await</p>
+<li><p>async/await</p>
 <p>以下功能是从ECMA 2015反向移植而来：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B1%BB_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">类</a></li>
@@ -768,10 +758,14 @@
 </li>
 </ul>
 <hr>
+
+
+
 <p>安装TS:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g typescript
 tsc -v //查看版本
 tsc app.ts //编译app 为js 代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>TypeScript 程序由以下几个部分组成：</p>
 <ul>
 <li>模块</li>
@@ -783,10 +777,11 @@ tsc app.ts //编译app 为js 代码<span aria-hidden="true" class="line-numbers-
 <p>编写第一个TS程序</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> hello <span class="token operator">:</span><span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">'hello world'</span>
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hello<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>ts代码不能直接运行在浏览器端(目前),需要编译为JS格式后(通过tsc 命令进行编译</p>
 <hr>
-<h2 id="TypeScript-保留关键字"><a class="header-anchor" href="#TypeScript-保留关键字">¶</a>TypeScript 保留关键字</h2>
-<p>TypeScript 保留关键字如下表所示：</p>
+
+<h2 id="TypeScript-保留关键字"><a href="#TypeScript-保留关键字" class="headerlink" title="TypeScript 保留关键字"></a>TypeScript 保留关键字</h2><p>TypeScript 保留关键字如下表所示：</p>
 <table>
 <thead>
 <tr>
@@ -796,8 +791,7 @@ tsc app.ts //编译app 为js 代码<span aria-hidden="true" class="line-numbers-
 <th>switch</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>case</td>
 <td>if</td>
 <td>throw</td>
@@ -863,27 +857,23 @@ tsc app.ts //编译app 为js 代码<span aria-hidden="true" class="line-numbers-
 <td></td>
 <td></td>
 </tr>
-</tbody>
-</table>
-<h3 id="空白和换行"><a class="header-anchor" href="#空白和换行">¶</a>空白和换行</h3>
-<p>TypeScript 会忽略程序中出现的空格、制表符和换行符。</p>
+</tbody></table>
+<h3 id="空白和换行"><a href="#空白和换行" class="headerlink" title="空白和换行"></a>空白和换行</h3><p>TypeScript 会忽略程序中出现的空格、制表符和换行符。</p>
 <p>空格、制表符通常用来缩进代码，使代码易于阅读和理解。</p>
-<h3 id="TypeScript-区分大小写"><a class="header-anchor" href="#TypeScript-区分大小写">¶</a>TypeScript 区分大小写</h3>
-<p>TypeScript 区分大写和小写字符。</p>
-<h3 id="分号是可选的"><a class="header-anchor" href="#分号是可选的">¶</a>分号是可选的</h3>
-<p>每行指令都是一段语句，你可以使用分号或不使用， 分号在 TypeScript 中是可选的，建议使用。</p>
+<h3 id="TypeScript-区分大小写"><a href="#TypeScript-区分大小写" class="headerlink" title="TypeScript 区分大小写"></a>TypeScript 区分大小写</h3><p>TypeScript 区分大写和小写字符。</p>
+<h3 id="分号是可选的"><a href="#分号是可选的" class="headerlink" title="分号是可选的"></a>分号是可选的</h3><p>每行指令都是一段语句，你可以使用分号或不使用， 分号在 TypeScript 中是可选的，建议使用。</p>
 <p>以下代码都是合法的：</p>
 <pre class="line-numbers language-none"><code class="language-none">console.log("Runoob")
 console.log("Google");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>如果语句写在同一行则一定需要使用分号来分隔，否则会报错，如：</p>
 <pre class="line-numbers language-none"><code class="language-none">console.log("Runoob");console.log("Google");<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="TypeScript-注释"><a class="header-anchor" href="#TypeScript-注释">¶</a>TypeScript 注释</h3>
-<p>注释是一个良好的习惯，虽然很多程序员讨厌注释，但还是建议你在每段代码写上文字说明。</p>
+
+<h3 id="TypeScript-注释"><a href="#TypeScript-注释" class="headerlink" title="TypeScript 注释"></a>TypeScript 注释</h3><p>注释是一个良好的习惯，虽然很多程序员讨厌注释，但还是建议你在每段代码写上文字说明。</p>
 <p>注释可以提高程序的可读性。</p>
 <p>注释可以包含有关程序一些信息，如代码的作者，有关函数的说明等。</p>
 <p>编译器会忽略注释。</p>
-<h3 id="TypeScript-支持两种类型的注释"><a class="header-anchor" href="#TypeScript-支持两种类型的注释">¶</a>TypeScript 支持两种类型的注释</h3>
-<ul>
+<h3 id="TypeScript-支持两种类型的注释"><a href="#TypeScript-支持两种类型的注释" class="headerlink" title="TypeScript 支持两种类型的注释"></a>TypeScript 支持两种类型的注释</h3><ul>
 <li><strong>单行注释 ( // )</strong> − 在 // 后面的文字都是注释内容。</li>
 <li><strong>多行注释 (/* */)</strong> − 这种注释可以跨越多行。</li>
 </ul>
@@ -895,6 +885,7 @@ console.log("Google");<span aria-hidden="true" class="line-numbers-rows"><span><
  这是一个多行注释 
  这是一个多行注释 
 */<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1460,7 +1451,7 @@ console.log("Google");<span aria-hidden="true" class="line-numbers-rows"><span><
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">183.1k</span>&nbsp;字
+                class="white-color">183.3k</span>&nbsp;字
             
             
             

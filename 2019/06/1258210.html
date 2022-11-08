@@ -742,10 +742,10 @@
 </blockquote>
 <p>vue 其本质是一个构造函数,当我们使用new关键字实例化一个对象的时候,其原型、原型链上声明的属性和方法会根据面向对象编程思想(OOP)传入的参数，构建我们需要的对象，我们所有的操作，其本质上来讲就是在操作这个对象的属性改变和方法调用， console一下实例化出来的Vue对象瞅瞅</p>
 <p><img src="https://pic1.zhimg.com/v2-e0b215d7b4a3157a10c7e90afe6366ae_720w.jpg?source=3af55fa1" alt="preview"></p>
-<p>库:	封装方法和属性的集合;</p>
-<p>框架:	有自己的语法规则</p>
+<p>库:    封装方法和属性的集合;</p>
+<p>框架:    有自己的语法规则</p>
 <p>声明式渲染 (Declarative Rendering)=&gt;组件系统(Component System)=&gt;</p>
-<p>客户端路由(Component System)=&gt;大规模状态管理器(Large Scale State Management)=&gt;</p>
+<p>客户端路由(Component System)=&gt;大规模状态管理器(Large Scale State Management)=&gt; </p>
 <p>构建工具(Build System)</p>
 <pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token text string">{% mermaid %}</span>
 <span class="token keyword">graph</span> LR<span class="token punctuation">;</span>
@@ -759,19 +759,28 @@ id4<span class="token text string">(大规模状态管理)</span><span class="to
 <span class="token keyword">style</span> id4 <span class="token style"><span class="token property">width</span><span class="token operator">:</span>120px</span><span class="token punctuation">;</span>
 <span class="token keyword">style</span> id5 <span class="token style"><span class="token property">width</span><span class="token operator">:</span>80px</span><span class="token punctuation">;</span>
 <span class="token text string">{% endmermaid %}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>@Vue/cli 脚手架</p>
 <p>好处:开箱即用,webpack 0 配置</p>
 <p>安装全局包</p>
 <pre class="line-numbers language-none"><code class="language-none">yarn global add @vue/cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>检差是否安装成功</p>
 <pre class="line-numbers language-none"><code class="language-none">vue -V<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>返回版本号,安装成功</p>
 <p>否则查看yarn 环境变量是否配置好</p>
 <p>找到 yarn  全局包路径</p>
 <pre class="line-numbers language-none"><code class="language-none">yarn global bin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>将路径添加到环境变量path</p>
 <p>Vue初始化工程</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">vue create vuecli<span class="token operator">-</span>demo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token text string">{% mermaid %}</span>
 <span class="token keyword">graph</span> BT<span class="token punctuation">;</span>
  main.js<span class="token text string">(main.js)</span><span class="token punctuation">;</span>
@@ -791,8 +800,14 @@ id4<span class="token text string">(大规模状态管理)</span><span class="to
    <span class="token keyword">end</span>
    newVue<span class="token arrow operator">==&gt;</span>index.html<span class="token punctuation">;</span>
    <span class="token text string">{% endmermaid %}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1>Vue设计模式-MVVM</h1>
-<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token text string">{% mermaid %}</span>
+
+
+
+
+
+
+
+<h1 id="Vue设计模式-MVVM"><a href="#Vue设计模式-MVVM" class="headerlink" title="Vue设计模式-MVVM"></a>Vue设计模式-MVVM</h1><pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token text string">{% mermaid %}</span>
 <span class="token keyword">graph</span> LR<span class="token punctuation">;</span>
 
 View<span class="token arrow operator">--&gt;</span>Viewmodel<span class="token punctuation">;</span>
@@ -800,6 +815,9 @@ Viewmodel<span class="token arrow operator">--&gt;</span>View<span class="token 
 Viewmodel<span class="token arrow operator">--&gt;</span>model<span class="token punctuation">;</span>
 model<span class="token arrow operator">--&gt;</span>Viewmodel<span class="token punctuation">;</span>
 <span class="token text string">{% endmermaid %}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token text string">{% mermaid %}</span>
 <span class="token keyword">graph</span> RL<span class="token punctuation">;</span>
 <span class="token keyword">subgraph</span> ViewModel
@@ -811,9 +829,14 @@ id2<span class="token text string">(DOM Listers)</span><span class="token arrow 
 id3<span class="token text string">(Model)</span><span class="token arrow operator">--&gt;</span>id4<span class="token text string">(Data Bindings)</span><span class="token punctuation">;</span>
 id4<span class="token text string">(Data Bindings)</span><span class="token arrow operator">--&gt;</span>id1<span class="token text string">(View)</span><span class="token punctuation">;</span>
 <span class="token text string">{% endmermaid %}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1>Vue语法</h1>
-<blockquote>
+
+
+
+<h1 id="Vue语法"><a href="#Vue语法" class="headerlink" title="Vue语法"></a>Vue语法</h1><blockquote>
 <p>Vue模板语法,基于 HTML 的模板语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。</p>
 </blockquote>
 <p>语法:</p>
@@ -826,12 +849,13 @@ id4<span class="token text string">(Data Bindings)</span><span class="token arro
 
 //动态参数的缩写
 @[event]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="指令"><a class="header-anchor" href="#指令">¶</a>指令</h3>
-<blockquote>
+
+
+
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><blockquote>
 <p>指令 (Directives) 是带有 <code>v-</code> 前缀的特殊 attribute  –<a href="cn.vue.js.org">官网解释</a></p>
 </blockquote>
-<h3 id="修饰符"><a class="header-anchor" href="#修饰符">¶</a>修饰符</h3>
-<p>修饰符是以半角句号 <strong>.</strong> 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，<strong>.prevent</strong> 修饰符告诉 <strong>v-on</strong> 指令对于触发的事件调用 <strong>event.preventDefault()</strong>：</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>修饰符是以半角句号 <strong>.</strong> 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，**.prevent** 修饰符告诉 <strong>v-on</strong> 指令对于触发的事件调用 **event.preventDefault()**：</p>
 
                 
             </div>
@@ -1397,7 +1421,7 @@ id4<span class="token text string">(Data Bindings)</span><span class="token arro
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">183.1k</span>&nbsp;字
+                class="white-color">183.3k</span>&nbsp;字
             
             
             

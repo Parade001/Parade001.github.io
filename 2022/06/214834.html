@@ -736,12 +736,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
-<p>前端侧重于人机交互和用户体验，后端侧重于业务逻辑和大规模数据处理。理论上，面向用户的产品里，所有问题（包括产品、设计、后端、甚至看不见的问题）的表现形式，都会暴露在前端，而只有部分问题（数据问题、计算问题、安全问题等）暴露在后端，这就意味着前端起到了至关重要的承载和连接作用。</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前端侧重于人机交互和用户体验，后端侧重于业务逻辑和大规模数据处理。理论上，面向用户的产品里，所有问题（包括产品、设计、后端、甚至看不见的问题）的表现形式，都会暴露在前端，而只有部分问题（数据问题、计算问题、安全问题等）暴露在后端，这就意味着前端起到了至关重要的承载和连接作用。</p>
 <p>前端技术的更新日新月异；前端框架的技术选型百家争鸣；视觉审美的潮流不断更替；可视化效果酷炫无比；用户的运营体系逐渐精细化；适老化、无障碍化、青少年人群的诉求浮出水面；智能设备的升级和适配无穷无尽。所有的这一切，对前端领域和前端同学就一个要求：要折腾，爱折腾，反复折腾。</p>
-<h2 id="一、前端开发流程"><a class="header-anchor" href="#一、前端开发流程">¶</a>一、前端开发流程</h2>
-<h3 id="需求评审"><a class="header-anchor" href="#需求评审">¶</a>需求评审</h3>
-<blockquote>
+<h2 id="一、前端开发流程"><a href="#一、前端开发流程" class="headerlink" title="一、前端开发流程"></a>一、前端开发流程</h2><h3 id="需求评审"><a href="#需求评审" class="headerlink" title="需求评审"></a>需求评审</h3><blockquote>
 <p>一般在做需求评审时，PRD里只有交互稿，尚未有视觉稿。需要在评审结束并达成一致后，再输出视觉稿。</p>
 </blockquote>
 <p>1、需求分析：需求点逐一讨论、需求合理性、交互评审、逻辑梳理，以及可能遗漏的部分。</p>
@@ -760,9 +757,8 @@
 <p>数据来源：哪些是调接口，哪些是做成<strong>可配置</strong>，哪些是前端写死；可配置的部分，是前端读取，还是接口读取然后返给前端。提示：可配置的灵活性与风险正相关。</p>
 <p>异常流设计：容错、容灾、兜底、降级、回退机制、风险可控。prd一般只写了正常流的逻辑，异常流往往需要研发同学配合做全盘考虑。</p>
 <p>6、需求变更：如有需求不明确、改需求、加需求、砍需求、加时间、改时间、加人力等等，需要提前预判风险。</p>
-<h3 id="视觉评审"><a class="header-anchor" href="#视觉评审">¶</a>视觉评审</h3>
-<p>1、进度跟进：<strong>视觉稿是分批交付，还是一次性给到</strong>？这是要首先考虑的。</p>
-<p>按照历史经验，前端项目进度的延误，有一半的概率依赖于视觉稿的进度；因为一个新页面的开发，前端有30%~50%的工作在做页面构建。</p>
+<h3 id="视觉评审"><a href="#视觉评审" class="headerlink" title="视觉评审"></a>视觉评审</h3><p>1、进度跟进：<strong>视觉稿是分批交付，还是一次性给到</strong>？这是要首先考虑的。</p>
+<p>按照历史经验，前端项目进度的延误，有一半的概率依赖于视觉稿的进度；因为一个新页面的开发，前端有30%~50%的工作在做页面构建。 </p>
 <p>2、视觉稿的文件格式：</p>
 <ul>
 <li>Sketch 原型设计软件：.sketch 格式。一般用来画<strong>视觉稿</strong>。</li>
@@ -786,8 +782,7 @@
 <p>6、切图格式：png（透明格式）、jpg</p>
 <p>切图的图片大小，不要太大。移动端的大图（比如幕帘弹窗的背景图）建议不超过50kb，小图建议不超过20kb。图片在上传之前，可以先在 <a target="_blank" rel="noopener" href="https://tinypng.com/">https://tinypng.com/</a>  上进行压缩。</p>
 <p>7、复杂图形、动画的实现难度和实现方式，技术评估。详见接下来要讲的「技术选型」。</p>
-<h3 id="排期评估"><a class="header-anchor" href="#排期评估">¶</a>排期评估</h3>
-<p>1、排期一般包含这几个要素：</p>
+<h3 id="排期评估"><a href="#排期评估" class="headerlink" title="排期评估"></a>排期评估</h3><p>1、排期一般包含这几个要素：</p>
 <ul>
 <li>开发时间：视觉构建时长、接口文档（接口协议）交付时间、前后端联调时间、自测时间</li>
 <li>转体验时间</li>
@@ -800,8 +795,7 @@
 <p>5、即将进入开发阶段后，与测试部门协调测试资源，确认转测时间；大型项目&amp;重点项目，需要在需求评审阶段，提前知会测试部门，让其预留时间。</p>
 <p>6、如果自己有在并行开发其他项目，则排期时需要给自己预留 buffer。并行开发两个项目是家常便饭；但，这个项目在测试时，往往很难抽身去做别的项目，因为会一直被测试童鞋牵制。</p>
 <p>7、开发排期：如果开发排期有变更，需要立即周知其他相关人员，尤其是要评估测试排期的风险。测试排期比开发排期 更难变更。</p>
-<h3 id="技术选型"><a class="header-anchor" href="#技术选型">¶</a>技术选型</h3>
-<blockquote>
+<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><blockquote>
 <p>技术选型千变万化，百家争鸣。这里需要列出你所在部门的常用技术选型，并非市面上的技术栈罗列。</p>
 </blockquote>
 <p>1、页面开发框架：</p>
@@ -837,8 +831,7 @@
 <li>3D动画：<a target="_blank" rel="noopener" href="https://www.zoo.team/article/webglabout">WebGL</a>（<a target="_blank" rel="noopener" href="http://www.webgl3d.cn/Three.js/">Three.js</a> 是 WebGL 的综合库）常见案例：太阳系</li>
 <li>游戏框架：Cocos 引擎</li>
 </ul>
-<h3 id="概要设计"><a class="header-anchor" href="#概要设计">¶</a>概要设计</h3>
-<ul>
+<h3 id="概要设计"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计</h3><ul>
 <li>需求背景及资源</li>
 <li>风险评估</li>
 <li>技术选型</li>
@@ -848,8 +841,7 @@
 <li>依赖接口</li>
 <li>工作量拆解和排期</li>
 </ul>
-<h3 id="开发环节"><a class="header-anchor" href="#开发环节">¶</a>开发环节</h3>
-<p>1、代码设计：</p>
+<h3 id="开发环节"><a href="#开发环节" class="headerlink" title="开发环节"></a>开发环节</h3><p>1、代码设计：</p>
 <p>（1）目录结构设计、代码风格</p>
 <p>（2）公共组件、工具类设计：确保<strong>可复用</strong>、高内聚低耦合的原则。哪些可以复用京喜平台的公共组件，哪些需要自己单独写 components、utils。</p>
 <p>（3）弹窗设计：如果一个页面有多个弹窗，建议先设计一个抽象的弹窗基类。<strong>设计弹窗时，需要考虑的是</strong>：</p>
@@ -905,8 +897,7 @@
 <li>在真机上体验页面，而不是在模拟器上。</li>
 <li>写一部分测试用例，加快后续的测试进度。前面梳理的思维导图，其实就是测试的最佳素材。</li>
 </ul>
-<h3 id="产品体验"><a class="header-anchor" href="#产品体验">¶</a>产品体验</h3>
-<p>1、在真机体验，而不是在模拟器上。最好是 iOS和 Android 都要对比体验。</p>
+<h3 id="产品体验"><a href="#产品体验" class="headerlink" title="产品体验"></a>产品体验</h3><p>1、在真机体验，而不是在模拟器上。最好是 iOS和 Android 都要对比体验。</p>
 <p>2、体验时，记录整理各种 todolist：</p>
 <ul>
 <li>需求待确认 list：一些小的、风险可控的需求点，可以在体检阶段，集中向产品童鞋提出。</li>
@@ -915,8 +906,7 @@
 <li>体验问题 list：边体验，边记录产品反馈的问题，并在稍后同步给测试童鞋。</li>
 <li>依赖项 list：接口、视觉切图、真实的测试环境等等。</li>
 </ul>
-<h3 id="代码评审-代码review"><a class="header-anchor" href="#代码评审-代码review">¶</a>代码评审/代码review</h3>
-<blockquote>
+<h3 id="代码评审-代码review"><a href="#代码评审-代码review" class="headerlink" title="代码评审/代码review"></a>代码评审/代码review</h3><blockquote>
 <p>代码 review 可以在测试期间进行。</p>
 </blockquote>
 <p>review顺序：</p>
@@ -928,14 +918,12 @@
 <li>系统安全和风险</li>
 <li>用户体验</li>
 </ul>
-<h3 id="视觉走查"><a class="header-anchor" href="#视觉走查">¶</a>视觉走查</h3>
-<blockquote>
+<h3 id="视觉走查"><a href="#视觉走查" class="headerlink" title="视觉走查"></a>视觉走查</h3><blockquote>
 <p>视觉走查 可以在测试期间进行。</p>
 </blockquote>
 <p>视觉童鞋都有像素眼，即便是一两个像素的区别，他们都能瞧出来。所以，建议前端童鞋加强自测，努力做到<strong>像素级还原视觉稿</strong>。</p>
 <p>推荐前端童鞋使用 <a target="_blank" rel="noopener" href="https://zh.snipaste.com/">Snipaste</a> 截图软件，按F1截图，F2贴图，然后调整贴图的透明度为50%，将贴图与前端页面进行像素级比对。</p>
-<h3 id="测试环节"><a class="header-anchor" href="#测试环节">¶</a>测试环节</h3>
-<p>1、建议加强自测质量。进入测试阶段后，测试童鞋会进行一轮冒烟测试，如果质量不合格，将会被打回，这就很尴尬了。</p>
+<h3 id="测试环节"><a href="#测试环节" class="headerlink" title="测试环节"></a>测试环节</h3><p>1、建议加强自测质量。进入测试阶段后，测试童鞋会进行一轮冒烟测试，如果质量不合格，将会被打回，这就很尴尬了。</p>
 <p>2、整理自测、测试、发布时需要的主流程checkList，每次迭代时都能用上。</p>
 <p>转测邮件的基本元素，包括但不仅限于：</p>
 <ul>
@@ -955,8 +943,7 @@
 <p>3、测试童鞋提的bug单，开发同学需要在 XX 小时内处理完成，否则会被QA催。</p>
 <p>4、需要控制bug单数量，否则会被追责复盘。同类问题，建议测试童鞋合并到同一个bug单中。</p>
 <p>5、测试管理系统 是所有人处理bug 流程的平台，不是让测试童鞋随便记录个人问题的。所以要提醒测试童鞋，明确该问题是bug，再提单；不是bug，要么不提，要么在沟通后驳回。</p>
-<h3 id="发布方案"><a class="header-anchor" href="#发布方案">¶</a>发布方案</h3>
-<ul>
+<h3 id="发布方案"><a href="#发布方案" class="headerlink" title="发布方案"></a>发布方案</h3><ul>
 <li>发布顺序：一般是先发后端，再发前端</li>
 <li>依赖项是否准备就绪：配置的数据、配置项等</li>
 <li>是否会对线上业务、线上数据造成影响</li>
@@ -964,18 +951,15 @@
 <li>回退机制</li>
 <li>发布 checkList</li>
 </ul>
-<h3 id="上线确认"><a class="header-anchor" href="#上线确认">¶</a>上线确认</h3>
-<ul>
+<h3 id="上线确认"><a href="#上线确认" class="headerlink" title="上线确认"></a>上线确认</h3><ul>
 <li>发布完成后，需要输出上线确认邮件</li>
 <li>观察页面体验、页面性能表现</li>
 <li>观察监控数据、业务调用量</li>
 <li>总结复盘</li>
 </ul>
-<h2 id="二、前端工程化"><a class="header-anchor" href="#二、前端工程化">¶</a>二、前端工程化</h2>
-<h3 id="Git-版本管理"><a class="header-anchor" href="#Git-版本管理">¶</a>Git 版本管理</h3>
-<p>1、前端代码仓库 git 分支规范：</p>
-<p><img src="https://img.smyhvae.com/image-20220510164257833.png" alt=""></p>
-<p><img src="https://img.smyhvae.com/image-20220510164323243.png" alt=""></p>
+<h2 id="二、前端工程化"><a href="#二、前端工程化" class="headerlink" title="二、前端工程化"></a>二、前端工程化</h2><h3 id="Git-版本管理"><a href="#Git-版本管理" class="headerlink" title="Git 版本管理"></a>Git 版本管理</h3><p>1、前端代码仓库 git 分支规范：</p>
+<p><img src="https://img.smyhvae.com/image-20220510164257833.png"></p>
+<p><img src="https://img.smyhvae.com/image-20220510164323243.png"></p>
 <p>2、Commit Message 的格式，只允许使用以下10种标识，最常见的是 feat和 fix ：</p>
 <ul>
 <li><strong>feat:</strong> 新功能</li>
@@ -995,54 +979,45 @@
 <li>紧急bug修复分支：hotfix_xxx_YYMMDD</li>
 <li>小程序发布分支（自动生成）：release_YYMMDD</li>
 </ul>
-<h3 id="代码规范"><a class="header-anchor" href="#代码规范">¶</a>代码规范</h3>
-<ul>
+<h3 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h3><ul>
 <li>代码格式化：Prettier</li>
 <li>代码格式检查：ESLint</li>
 </ul>
-<h3 id="CSS预处理器"><a class="header-anchor" href="#CSS预处理器">¶</a>CSS预处理器</h3>
-<ul>
+<h3 id="CSS预处理器"><a href="#CSS预处理器" class="headerlink" title="CSS预处理器"></a>CSS预处理器</h3><ul>
 <li>SASS（用得较多）</li>
 <li>Less</li>
 <li>PostCSS</li>
 </ul>
-<h3 id="包管理"><a class="header-anchor" href="#包管理">¶</a>包管理</h3>
-<ul>
+<h3 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h3><ul>
 <li>包管理工具：npm（最常见）、yarn</li>
 <li>cnpm、nvm、nrm常用命令</li>
 </ul>
-<h3 id="编译构建"><a class="header-anchor" href="#编译构建">¶</a>编译构建</h3>
-<ul>
+<h3 id="编译构建"><a href="#编译构建" class="headerlink" title="编译构建"></a>编译构建</h3><ul>
 <li>webpack（最常见）</li>
 <li>Vite</li>
 <li>Gulp</li>
 <li>Babel：ES6语法转为ES5语法</li>
 </ul>
-<h3 id="小程序工程化"><a class="header-anchor" href="#小程序工程化">¶</a>小程序工程化</h3>
-<p><img src="https://img.smyhvae.com/640.jpeg" alt="图片"></p>
+<h3 id="小程序工程化"><a href="#小程序工程化" class="headerlink" title="小程序工程化"></a>小程序工程化</h3><p><img src="https://img.smyhvae.com/640.jpeg" alt="图片"></p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/_NSJTQ-4-8gTnwTVK-tn0A">小程序工程化探索</a></li>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/tJN3Yz6usSt9LG37_pN7dw">京喜小程序最佳实践：我是如何写超大型小程序代码的</a></li>
 </ul>
-<h3 id="测试相关"><a class="header-anchor" href="#测试相关">¶</a>测试相关</h3>
-<ul>
+<h3 id="测试相关"><a href="#测试相关" class="headerlink" title="测试相关"></a>测试相关</h3><ul>
 <li>编写测试用例代码</li>
 <li>单元测试</li>
 <li>自动化测试</li>
 </ul>
-<h2 id="三、前端核心知识"><a class="header-anchor" href="#三、前端核心知识">¶</a>三、前端核心知识</h2>
-<blockquote>
+<h2 id="三、前端核心知识"><a href="#三、前端核心知识" class="headerlink" title="三、前端核心知识"></a>三、前端核心知识</h2><blockquote>
 <p>前端入门核心知识点</p>
 </blockquote>
-<h3 id="浏览器"><a class="header-anchor" href="#浏览器">¶</a>浏览器</h3>
-<ul>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><ul>
 <li>Web标准：结构标准（HTML）、表现标准（CSS）、行为标准（JS）</li>
 <li>浏览器分为两部分：渲染引擎（即：浏览器内核）、JS 引擎</li>
 <li>浏览器的工作原理：重绘和重排、V8引擎</li>
 <li>App的WebView容器，相当于浏览器，可以内嵌H5网页</li>
 </ul>
-<h3 id="HTML5"><a class="header-anchor" href="#HTML5">¶</a>HTML5</h3>
-<ul>
+<h3 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h3><ul>
 <li>语义化标签：<code>&lt;header&gt;</code>、<code>&lt;article&gt;</code> 、<code>&lt;footer&gt;</code>等。</li>
 <li>多媒体标签：<code>&lt;audio&gt;</code>、<code>&lt;video&gt;</code></li>
 <li>更强的本地存储能力和设备兼容性：indexDB、HTML5 APP cookie</li>
@@ -1050,8 +1025,7 @@
 <li>更有效的实时连接：WebSocket、Server-Sent Events</li>
 <li>无障碍体验</li>
 </ul>
-<h3 id="CSS、CSS3"><a class="header-anchor" href="#CSS、CSS3">¶</a>CSS、CSS3</h3>
-<ul>
+<h3 id="CSS、CSS3"><a href="#CSS、CSS3" class="headerlink" title="CSS、CSS3"></a>CSS、CSS3</h3><ul>
 <li>CSS盒模型、BFC</li>
 <li>浮动、定位（绝对定位和相对定位）</li>
 <li>flex 布局</li>
@@ -1063,62 +1037,43 @@
 <li>CSS hack</li>
 <li>Retina 屏幕的 1px 像素，如何实现</li>
 </ul>
-<h3 id="JS基础"><a class="header-anchor" href="#JS基础">¶</a>JS基础</h3>
-<ul>
-<li>
-<p>ES6语法：严格模式、箭头函数、Promise、Symbol数据类型、Set 和Map数据结构</p>
+<h3 id="JS基础"><a href="#JS基础" class="headerlink" title="JS基础"></a>JS基础</h3><ul>
+<li><p>ES6语法：严格模式、箭头函数、Promise、Symbol数据类型、Set 和Map数据结构</p>
 </li>
-<li>
-<p>ES6转ES5</p>
+<li><p>ES6转ES5</p>
 </li>
-<li>
-<p>JS数据类型转换、隐式类型转换</p>
+<li><p>JS数据类型转换、隐式类型转换</p>
 </li>
-<li>
-<p>内置对象及其方法</p>
+<li><p>内置对象及其方法</p>
 </li>
-<li>
-<p>数组的各种方法：map、filter、every、reduce等</p>
+<li><p>数组的各种方法：map、filter、every、reduce等</p>
 </li>
-<li>
-<p>事件机制、原型继承、立即执行函数</p>
+<li><p>事件机制、原型继承、立即执行函数</p>
 </li>
-<li>
-<p>DOM操作、虚拟 DOM 的 diff 算法</p>
+<li><p>DOM操作、虚拟 DOM 的 diff 算法</p>
 </li>
-<li>
-<p>BOM浏览器操作</p>
+<li><p>BOM浏览器操作</p>
 </li>
-<li>
-<p>事件冒泡机制：捕获阶段、目标阶段、冒泡阶段。</p>
+<li><p>事件冒泡机制：捕获阶段、目标阶段、冒泡阶段。</p>
 </li>
-<li>
-<p>异步编程：Ajax、Promise、async await</p>
+<li><p>异步编程：Ajax、Promise、async await</p>
 </li>
-<li>
-<p>SessionStorage和LocalStorage、Cookie</p>
+<li><p>SessionStorage和LocalStorage、Cookie</p>
 </li>
-<li>
-<p>迭代器Iterator和生成器Generator</p>
+<li><p>迭代器Iterator和生成器Generator</p>
 </li>
-<li>
-<p>Web Socket</p>
+<li><p>Web Socket</p>
 </li>
-<li>
-<p>异步编程</p>
+<li><p>异步编程</p>
 </li>
-<li>
-<p>单线程</p>
+<li><p>单线程</p>
 </li>
-<li>
-<p>Canvas图像绘制</p>
+<li><p>Canvas图像绘制</p>
 </li>
-<li>
-<p>svg 动画</p>
+<li><p>svg 动画</p>
 </li>
 </ul>
-<h3 id="JS-高级"><a class="header-anchor" href="#JS-高级">¶</a>JS 高级</h3>
-<ul>
+<h3 id="JS-高级"><a href="#JS-高级" class="headerlink" title="JS 高级"></a>JS 高级</h3><ul>
 <li>JS 三座大山：原型与原型链、作用域及闭包、异步和单线程</li>
 <li>作用域链、类、继承、原型继承</li>
 <li>this的指向和绑定规则</li>
@@ -1141,8 +1096,7 @@
 <li>Vue.js、React.js的<strong>状态管理</strong>：Vuex、Redux、Redux Toolkit、React Hooks、zustand</li>
 <li>V8引擎源码</li>
 </ul>
-<h3 id="Node-js"><a class="header-anchor" href="#Node-js">¶</a>Node.js</h3>
-<ul>
+<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><ul>
 <li>回调函数</li>
 <li>时间驱动机制</li>
 <li>模块化</li>
@@ -1151,31 +1105,24 @@
 <li>全局方法</li>
 <li>文件系统</li>
 </ul>
-<h3 id="Web-安全"><a class="header-anchor" href="#Web-安全">¶</a>Web 安全</h3>
-<ul>
+<h3 id="Web-安全"><a href="#Web-安全" class="headerlink" title="Web 安全"></a>Web 安全</h3><ul>
 <li>跨域问题、同源策略、JSONP</li>
 <li>CORS</li>
 <li>XSS</li>
 <li>CSRF</li>
 </ul>
-<h3 id="页面形式"><a class="header-anchor" href="#页面形式">¶</a>页面形式</h3>
-<ul>
-<li>
-<p>多端自适应布局</p>
+<h3 id="页面形式"><a href="#页面形式" class="headerlink" title="页面形式"></a>页面形式</h3><ul>
+<li><p>多端自适应布局</p>
 </li>
-<li>
-<p>SPA单页应用</p>
+<li><p>SPA单页应用</p>
 </li>
-<li>
-<p>PWA（Progressive Web App）：小程序的鼻祖</p>
+<li><p>PWA（Progressive Web App）：小程序的鼻祖</p>
 </li>
 </ul>
-<h2 id="四、前端框架"><a class="header-anchor" href="#四、前端框架">¶</a>四、前端框架</h2>
-<blockquote>
+<h2 id="四、前端框架"><a href="#四、前端框架" class="headerlink" title="四、前端框架"></a>四、前端框架</h2><blockquote>
 <p>每个框架和工具，都有自己的约束、价值和最佳实践。</p>
 </blockquote>
-<h3 id="JS框架"><a class="header-anchor" href="#JS框架">¶</a>JS框架</h3>
-<ul>
+<h3 id="JS框架"><a href="#JS框架" class="headerlink" title="JS框架"></a>JS框架</h3><ul>
 <li>Vue.js</li>
 <li>React.js</li>
 <li>Svelte（轻量级框架，最近比较火）。</li>
@@ -1187,110 +1134,87 @@
 <li>React：函数式编程。如果你要改变数据，那么必须调用api去改。</li>
 </ul>
 <p>在vue 中，几乎给你想要的全部给你了；而react 追求的更多的是自力更生。</p>
-<h3 id="CSS框架、组件库（B端常用）"><a class="header-anchor" href="#CSS框架、组件库（B端常用）">¶</a>CSS框架、组件库（B端常用）</h3>
-<ul>
+<h3 id="CSS框架、组件库（B端常用）"><a href="#CSS框架、组件库（B端常用）" class="headerlink" title="CSS框架、组件库（B端常用）"></a>CSS框架、组件库（B端常用）</h3><ul>
 <li>React 技术栈：<a target="_blank" rel="noopener" href="https://ant.design/index-cn">Ant Design</a>（简称Antd）</li>
 <li>Vue 技术栈：<a target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN">Element</a>、<a target="_blank" rel="noopener" href="https://antdv.com/components/overview-cn">Ant Design Vue</a></li>
 <li>简单的CSS响应式框架：<a target="_blank" rel="noopener" href="https://www.bootcss.com/">Bootstrap</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/tailwindlabs/tailwindcss">Tailwind CSS</a>（最近比较火）</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/youzan/vant-weapp">Vant Weapp</a>：轻量级的移动端（含H5、小程序）组件库</li>
 </ul>
-<h3 id="知识库框架"><a class="header-anchor" href="#知识库框架">¶</a>知识库框架</h3>
-<ul>
+<h3 id="知识库框架"><a href="#知识库框架" class="headerlink" title="知识库框架"></a>知识库框架</h3><ul>
 <li>Vuepress（基于 Vue.js，推荐）</li>
 <li>Docusaurus（基于 React.js，推荐）</li>
 <li>GitBook</li>
 <li>docsify：可制作简易的 wiki 文档。案例：<a target="_blank" rel="noopener" href="https://wiki.juemuren4449.com/">掘墓人的 Wiki</a></li>
 </ul>
 <p>补充：知识库框架，首先推荐 Vuepress 和 Docusaurus，功能强大，成熟稳定。</p>
-<h3 id="API-文档框架"><a class="header-anchor" href="#API-文档框架">¶</a>API 文档框架</h3>
-<ul>
+<h3 id="API-文档框架"><a href="#API-文档框架" class="headerlink" title="API 文档框架"></a>API 文档框架</h3><ul>
 <li>TypeDoc：将TypeScript项目生成 html、markdown等文档。</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/storybookjs/storybook/">storybook</a>：用于搭建UI组件的知识库。可在线预览UI组件的样式和交互效果。</li>
 </ul>
-<h3 id="跨端框架"><a class="header-anchor" href="#跨端框架">¶</a>跨端框架</h3>
-<ul>
-<li>
-<p>Flutter（最近比较火）：Flutter 的Dart开发语言，可以编译为 ARM 64、x86 和 JavaScript 代码</p>
+<h3 id="跨端框架"><a href="#跨端框架" class="headerlink" title="跨端框架"></a>跨端框架</h3><ul>
+<li><p>Flutter（最近比较火）：Flutter 的Dart开发语言，可以编译为 ARM 64、x86 和 JavaScript 代码</p>
 </li>
-<li>
-<p>ReactNative（逐渐没落）：App、Web端</p>
+<li><p>ReactNative（逐渐没落）：App、Web端</p>
 </li>
-<li>
-<p>Taro：小程序、H5</p>
+<li><p>Taro：小程序、H5</p>
 </li>
 </ul>
-<h3 id="桌面应用开发框架"><a class="header-anchor" href="#桌面应用开发框架">¶</a>桌面应用开发框架</h3>
-<ul>
+<h3 id="桌面应用开发框架"><a href="#桌面应用开发框架" class="headerlink" title="桌面应用开发框架"></a>桌面应用开发框架</h3><ul>
 <li>Electron 框架。案例：VS Code软件就是用  Electron 开发的。</li>
 </ul>
 <p>Electron 非常流行，也被大量公司使用，也有很多成功软件，比如 VS Code、Facebook Messager、Twitch、Microsoft Teams 等。Electron 虽然上手容易，但问题也很明显，就是<strong>慢、吃内存和大</strong>，Electron 吃内存是因为打包的 Chromium 吃内容，同时一个 Hello World 编译后就要 120M+ 。</p>
 <p><strong>VS Code、chrome、小程序开发者工具</strong>，本质上都是运行的 chrome 内核。所以你会发现，这三个软件都很占内存，都很卡。我将其称之为“<strong>前端头痛三剑客</strong>”。</p>
-<h3 id="前端可视化框架、图表库"><a class="header-anchor" href="#前端可视化框架、图表库">¶</a>前端可视化框架、图表库</h3>
-<ul>
+<h3 id="前端可视化框架、图表库"><a href="#前端可视化框架、图表库" class="headerlink" title="前端可视化框架、图表库"></a>前端可视化框架、图表库</h3><ul>
 <li>ECharts：百度的开源图表库。</li>
 <li>D3.js：可视化 js 库。</li>
 <li><a target="_blank" rel="noopener" href="http://www.webgl3d.cn/Three.js/">Three.js</a>：基于原生 <a target="_blank" rel="noopener" href="https://www.zoo.team/article/webglabout">WebGL</a> 封装运行的三维引擎。<a target="_blank" rel="noopener" href="http://www.yanhuangxueyuan.com/3D/solarSystem/index.html">太阳系案例</a> <a target="_blank" rel="noopener" href="https://www.teqng.com/2021/08/16/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E7%94%A8three-js%E5%88%9B%E9%80%A0%E4%B8%80%E4%B8%AA%E4%B8%89%E7%BB%B4%E5%A4%AA%E9%98%B3%E7%B3%BB/">#</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cocos.com/products#Cocos2d-x">Cocos 引擎</a>：游戏动画开发框架。</li>
 <li><a target="_blank" rel="noopener" href="https://www.egret.com/">白鹭引擎</a>：H5游戏引擎，一套完整的H5游戏解决方案。白鹭引擎的所在公司已在2022年初破产，不建议使用。</li>
 </ul>
-<h3 id="编辑器框架"><a class="header-anchor" href="#编辑器框架">¶</a>编辑器框架</h3>
-<ul>
+<h3 id="编辑器框架"><a href="#编辑器框架" class="headerlink" title="编辑器框架"></a>编辑器框架</h3><ul>
 <li>wangEditor：国内很流行</li>
 <li>TinyMCE：国外很火</li>
 <li>ueditor：百度的开源框架。比较老，逐渐没落。</li>
 <li>Monaco Editor：VS Code的在线版</li>
 </ul>
-<h3 id="Node-js-框架"><a class="header-anchor" href="#Node-js-框架">¶</a>Node.js 框架</h3>
-<ul>
+<h3 id="Node-js-框架"><a href="#Node-js-框架" class="headerlink" title="Node.js 框架"></a>Node.js 框架</h3><ul>
 <li>Koa：新一代 Node.js 框架。</li>
 <li><a target="_blank" rel="noopener" href="https://eggjs.github.io/zh/">Egg.js</a>：Egg是在Koa基础上进一步封装的企业级Web开发框架。</li>
 <li>Express：比较老的Node.js 框架。</li>
 </ul>
-<h3 id="服务端渲染框架"><a class="header-anchor" href="#服务端渲染框架">¶</a>服务端渲染框架</h3>
-<ul>
+<h3 id="服务端渲染框架"><a href="#服务端渲染框架" class="headerlink" title="服务端渲染框架"></a>服务端渲染框架</h3><ul>
 <li>Next.js （基于React.js）</li>
 <li>Nuxt.js （基于Vue.js）</li>
 </ul>
-<h3 id="前端测试框架"><a class="header-anchor" href="#前端测试框架">¶</a>前端测试框架</h3>
-<ul>
+<h3 id="前端测试框架"><a href="#前端测试框架" class="headerlink" title="前端测试框架"></a>前端测试框架</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/mochajs/mocha">Mocha</a>：JS 测试框架。</li>
 <li><a target="_blank" rel="noopener" href="https://tiga.jd.com/docs/">Tiga</a>：跨端（H5、小程序）项目的自动化测试 SDK。凹凸实验室出品。</li>
 </ul>
-<h2 id="五、前端性能优化"><a class="header-anchor" href="#五、前端性能优化">¶</a>五、前端性能优化</h2>
-<h3 id="性能分析工具"><a class="header-anchor" href="#性能分析工具">¶</a>性能分析工具</h3>
-<ul>
-<li>
-<p>控制台的瀑布图 Waterfall</p>
+<h2 id="五、前端性能优化"><a href="#五、前端性能优化" class="headerlink" title="五、前端性能优化"></a>五、前端性能优化</h2><h3 id="性能分析工具"><a href="#性能分析工具" class="headerlink" title="性能分析工具"></a>性能分析工具</h3><ul>
+<li><p>控制台的瀑布图 Waterfall</p>
 </li>
-<li>
-<p>控制台的 performance工具：日常开发过程中观察分析运行时的性能表现</p>
+<li><p>控制台的 performance工具：日常开发过程中观察分析运行时的性能表现</p>
 </li>
-<li>
-<p>控制台的 LightHouse ：跑分、输出性能报告，分析性能</p>
+<li><p>控制台的 LightHouse ：跑分、输出性能报告，分析性能</p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://www.webpagetest.org">WebPageTest</a>网站：评估网站性能</p>
+<li><p><a target="_blank" rel="noopener" href="https://www.webpagetest.org/">WebPageTest</a>网站：评估网站性能</p>
 </li>
-<li>
-<p>Performance 这个API：实时动态测量性能</p>
+<li><p>Performance 这个API：实时动态测量性能</p>
 </li>
 </ul>
-<h3 id="性能参数"><a class="header-anchor" href="#性能参数">¶</a>性能参数</h3>
-<ul>
+<h3 id="性能参数"><a href="#性能参数" class="headerlink" title="性能参数"></a>性能参数</h3><ul>
 <li>首屏时间 = 白屏时间 + 渲染时间。预解析、预加载、预渲染、懒加载、懒执行。</li>
 <li>FPS帧率</li>
 <li>性能的测量标准：RAIL 模型</li>
 <li>弱网环境，耗时对比</li>
 </ul>
-<h3 id="浏览器渲染优化"><a class="header-anchor" href="#浏览器渲染优化">¶</a>浏览器渲染优化</h3>
-<ul>
+<h3 id="浏览器渲染优化"><a href="#浏览器渲染优化" class="headerlink" title="浏览器渲染优化"></a>浏览器渲染优化</h3><ul>
 <li>了解渲染过程、关键渲染路径</li>
 <li>减少重排和重绘</li>
 <li>用户从输入url到页面加载显示完成，经历了哪些过程</li>
 </ul>
-<h3 id="JavaScript-优化"><a class="header-anchor" href="#JavaScript-优化">¶</a>JavaScript 优化</h3>
-<ul>
+<h3 id="JavaScript-优化"><a href="#JavaScript-优化" class="headerlink" title="JavaScript 优化"></a>JavaScript 优化</h3><ul>
 <li>JS资源优化：按需加载、编译打包、解析执行、异步加载</li>
 <li>V8引擎工作原理、性能优化原理</li>
 <li>防抖和节流</li>
@@ -1299,8 +1223,7 @@
 <li>时间分片：把一个运行时间比较长的任务分解成一块一块比较小的任务，分块去执行，减少用户的卡顿感</li>
 <li>JS内存管理</li>
 </ul>
-<h3 id="资源优化"><a class="header-anchor" href="#资源优化">¶</a>资源优化</h3>
-<ul>
+<h3 id="资源优化"><a href="#资源优化" class="headerlink" title="资源优化"></a>资源优化</h3><ul>
 <li>资源的压缩与合并：减少http请求数量；减少请求资源的大小；使用 http缓存</li>
 <li>HTML优化：减少iframe的使用；避免节点的深层次嵌套；避免使用table布局</li>
 <li>CSS优化：降低CSS对页面渲染的阻塞，尽早加载CSS；利用GPU渲染CSS动画；使用 contain属性，减少布局和绘制的消耗时间</li>
@@ -1308,14 +1231,12 @@
 <li>字体优化：字体闪动问题；使用特殊字体时，建议动态加载网络字体</li>
 <li>异步加载第三方资源：第三方资源不可控会影响页面的加载和显示</li>
 </ul>
-<h3 id="构建优化"><a class="header-anchor" href="#构建优化">¶</a>构建优化</h3>
-<ul>
+<h3 id="构建优化"><a href="#构建优化" class="headerlink" title="构建优化"></a>构建优化</h3><ul>
 <li>tree shaking、代码拆分（Code Splitting）</li>
 <li>代码压缩混淆</li>
 <li>打包时，避免对不变的库重复构建。</li>
 </ul>
-<h3 id="网络传输优化"><a class="header-anchor" href="#网络传输优化">¶</a>网络传输优化</h3>
-<ul>
+<h3 id="网络传输优化"><a href="#网络传输优化" class="headerlink" title="网络传输优化"></a>网络传输优化</h3><ul>
 <li>启用Gzip对资源进行压缩</li>
 <li>CDN传输：静态资源全部放CDN上，使用户可就近获取所需内容，大幅减小光纤传输距离。</li>
 <li>避免重定向：301、302 重定向会降低响应速度</li>
@@ -1323,27 +1244,22 @@
 <li>PWA，Service worker</li>
 <li>SSR 服务端渲染/Node直出</li>
 </ul>
-<h2 id="六、前端工具和资源"><a class="header-anchor" href="#六、前端工具和资源">¶</a>六、前端工具和资源</h2>
-<h3 id="前端文档"><a class="header-anchor" href="#前端文档">¶</a>前端文档</h3>
-<ul>
+<h2 id="六、前端工具和资源"><a href="#六、前端工具和资源" class="headerlink" title="六、前端工具和资源"></a>六、前端工具和资源</h2><h3 id="前端文档"><a href="#前端文档" class="headerlink" title="前端文档"></a>前端文档</h3><ul>
 <li>MDN 官方文档：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web">https://developer.mozilla.org/zh-CN/docs/Web</a></li>
 </ul>
-<h3 id="前端社区"><a class="header-anchor" href="#前端社区">¶</a>前端社区</h3>
-<ul>
+<h3 id="前端社区"><a href="#前端社区" class="headerlink" title="前端社区"></a>前端社区</h3><ul>
 <li>GitHub</li>
 <li>stackoverflow</li>
 <li>掘金</li>
 </ul>
-<h3 id="JS-学习资源"><a class="header-anchor" href="#JS-学习资源">¶</a>JS 学习资源</h3>
-<ul>
+<h3 id="JS-学习资源"><a href="#JS-学习资源" class="headerlink" title="JS 学习资源"></a>JS 学习资源</h3><ul>
 <li>现代 JavaScript 教程：<a target="_blank" rel="noopener" href="https://zh.javascript.info/">https://zh.javascript.info/</a></li>
 <li>阮一峰 JS教程：<a target="_blank" rel="noopener" href="https://wangdoc.com/javascript/">https://wangdoc.com/javascript/</a></li>
 <li>阮一峰 ES6教程：<a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">https://es6.ruanyifeng.com/</a></li>
 <li>TypeScript 入门教程：<a target="_blank" rel="noopener" href="https://github.com/xcatliu/typescript-tutorial">https://github.com/xcatliu/typescript-tutorial</a></li>
 <li>Node.js学习指南：<a target="_blank" rel="noopener" href="https://blog.poetries.top/node-learning-notes/">https://blog.poetries.top/node-learning-notes/</a></li>
 </ul>
-<h3 id="JS-代码规范"><a class="header-anchor" href="#JS-代码规范">¶</a>JS 代码规范</h3>
-<p>1、Airbnb JavaScript Style Guide：</p>
+<h3 id="JS-代码规范"><a href="#JS-代码规范" class="headerlink" title="JS 代码规范"></a>JS 代码规范</h3><p>1、Airbnb JavaScript Style Guide：</p>
 <ul>
 <li>英文原版：<a target="_blank" rel="noopener" href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a></li>
 <li>中文版：<a target="_blank" rel="noopener" href="https://github.com/lin-123/javascript">https://github.com/lin-123/javascript</a></li>
@@ -1354,73 +1270,59 @@
 <li>中文版1：<a target="_blank" rel="noopener" href="https://github.com/alivebao/clean-code-js">https://github.com/alivebao/clean-code-js</a></li>
 <li>中文版2：<a target="_blank" rel="noopener" href="https://github.com/beginor/clean-code-javascript">https://github.com/beginor/clean-code-javascript</a></li>
 </ul>
-<h3 id="前端刷题"><a class="header-anchor" href="#前端刷题">¶</a>前端刷题</h3>
-<ul>
+<h3 id="前端刷题"><a href="#前端刷题" class="headerlink" title="前端刷题"></a>前端刷题</h3><ul>
 <li>前端进阶之道：<a target="_blank" rel="noopener" href="https://yuchengkai.cn/">https://yuchengkai.cn/</a></li>
 </ul>
-<h3 id="CSS-学习资源"><a class="header-anchor" href="#CSS-学习资源">¶</a>CSS 学习资源</h3>
-<ul>
+<h3 id="CSS-学习资源"><a href="#CSS-学习资源" class="headerlink" title="CSS 学习资源"></a>CSS 学习资源</h3><ul>
 <li>CSS灵感：<a target="_blank" rel="noopener" href="https://github.com/chokcoco/CSS-Inspiration">https://github.com/chokcoco/CSS-Inspiration</a></li>
 <li>CSS的各种实现效果：<a target="_blank" rel="noopener" href="https://lhammer.cn/You-need-to-know-css/#/">https://lhammer.cn/You-need-to-know-css/#/</a></li>
 <li>css_tricks：<a target="_blank" rel="noopener" href="https://github.com/QiShaoXuan/css_tricks">https://github.com/QiShaoXuan/css_tricks</a></li>
 <li>按需定制 CSS 动画效果：<a target="_blank" rel="noopener" href="https://github.com/QiShaoXuan/css_tricks">https://github.com/QiShaoXuan/css_tricks</a></li>
 </ul>
-<h3 id="字体相关资源"><a class="header-anchor" href="#字体相关资源">¶</a>字体相关资源</h3>
-<ul>
+<h3 id="字体相关资源"><a href="#字体相关资源" class="headerlink" title="字体相关资源"></a>字体相关资源</h3><ul>
 <li>360字体版权查询：<a target="_blank" rel="noopener" href="https://fonts.safe.360.cn/">https://fonts.safe.360.cn/</a></li>
 <li>最全的免费可商用字体-效果预览：<a target="_blank" rel="noopener" href="https://wordshub.github.io/free-font/index.html">https://wordshub.github.io/free-font/index.html</a></li>
 <li>常见的免费字体：<a target="_blank" rel="noopener" href="http://zenozeng.github.io/Free-Chinese-Fonts/">http://zenozeng.github.io/Free-Chinese-Fonts/</a></li>
 </ul>
-<h3 id="抓包工具"><a class="header-anchor" href="#抓包工具">¶</a>抓包工具</h3>
-<ul>
+<h3 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h3><ul>
 <li>Whistle：<a target="_blank" rel="noopener" href="https://wproxy.org/whistle/">https://wproxy.org/whistle/</a></li>
 </ul>
-<h3 id="兼容性查看工具"><a class="header-anchor" href="#兼容性查看工具">¶</a>兼容性查看工具</h3>
-<ul>
+<h3 id="兼容性查看工具"><a href="#兼容性查看工具" class="headerlink" title="兼容性查看工具"></a>兼容性查看工具</h3><ul>
 <li>Can I use（前端API兼容性查看）：<a target="_blank" rel="noopener" href="https://caniuse.com/">https://caniuse.com/</a></li>
 </ul>
-<h3 id="图片相关工具"><a class="header-anchor" href="#图片相关工具">¶</a>图片相关工具</h3>
-<ul>
+<h3 id="图片相关工具"><a href="#图片相关工具" class="headerlink" title="图片相关工具"></a>图片相关工具</h3><ul>
 <li>图片压缩：<a target="_blank" rel="noopener" href="https://tinypng.com/">https://tinypng.com/</a></li>
 <li>图片压缩：<a target="_blank" rel="noopener" href="https://docsmall.com/">https://docsmall.com/</a></li>
 <li>生成代码截图：<a target="_blank" rel="noopener" href="https://carbon.now.sh/">https://carbon.now.sh/</a></li>
 </ul>
-<h3 id="设计工具"><a class="header-anchor" href="#设计工具">¶</a>设计工具</h3>
-<ul>
+<h3 id="设计工具"><a href="#设计工具" class="headerlink" title="设计工具"></a>设计工具</h3><ul>
 <li><strong>墨刀</strong>：原型设计工具。网址：<a target="_blank" rel="noopener" href="https://modao.cc/">https://modao.cc/</a></li>
-<li><strong>蓝湖</strong>：一款产品文档和设计图的在线协作平台。网址：<a target="_blank" rel="noopener" href="https://lanhuapp.com">https://lanhuapp.com</a></li>
+<li><strong>蓝湖</strong>：一款产品文档和设计图的在线协作平台。网址：<a target="_blank" rel="noopener" href="https://lanhuapp.com/">https://lanhuapp.com</a></li>
 <li><strong>PxCook（像素大厨）</strong>：高效易用的自动标注工具。软件下载链接：<a target="_blank" rel="noopener" href="https://www.fancynode.com.cn/pxcook">https://www.fancynode.com.cn/pxcook</a></li>
 <li>即时设计、稿定、master go</li>
 </ul>
-<h3 id="流程图工具"><a class="header-anchor" href="#流程图工具">¶</a>流程图工具</h3>
-<ul>
+<h3 id="流程图工具"><a href="#流程图工具" class="headerlink" title="流程图工具"></a>流程图工具</h3><ul>
 <li>ProcessOn：<a target="_blank" rel="noopener" href="https://www.processon.com/">https://www.processon.com/</a></li>
 </ul>
-<h3 id="大纲笔记"><a class="header-anchor" href="#大纲笔记">¶</a>大纲笔记</h3>
-<ul>
-<li><strong>幕布</strong>：<a target="_blank" rel="noopener" href="https://mubu.com">https://mubu.com</a></li>
+<h3 id="大纲笔记"><a href="#大纲笔记" class="headerlink" title="大纲笔记"></a>大纲笔记</h3><ul>
+<li><strong>幕布</strong>：<a target="_blank" rel="noopener" href="https://mubu.com/">https://mubu.com</a></li>
 <li>飞书-思维笔记</li>
 </ul>
-<h3 id="markdown-编辑器"><a class="header-anchor" href="#markdown-编辑器">¶</a>markdown 编辑器</h3>
-<ul>
+<h3 id="markdown-编辑器"><a href="#markdown-编辑器" class="headerlink" title="markdown 编辑器"></a>markdown 编辑器</h3><ul>
 <li>typora</li>
-<li>VS Code</li>
+<li>VS Code </li>
 </ul>
-<h3 id="代码编辑器"><a class="header-anchor" href="#代码编辑器">¶</a>代码编辑器</h3>
-<ul>
+<h3 id="代码编辑器"><a href="#代码编辑器" class="headerlink" title="代码编辑器"></a>代码编辑器</h3><ul>
 <li>VS Code</li>
 <li>Sublime Text</li>
 </ul>
-<h2 id="七、前端书籍推荐"><a class="header-anchor" href="#七、前端书籍推荐">¶</a>七、前端书籍推荐</h2>
-<h3 id="JS经典书籍"><a class="header-anchor" href="#JS经典书籍">¶</a>JS经典书籍</h3>
-<ul>
+<h2 id="七、前端书籍推荐"><a href="#七、前端书籍推荐" class="headerlink" title="七、前端书籍推荐"></a>七、前端书籍推荐</h2><h3 id="JS经典书籍"><a href="#JS经典书籍" class="headerlink" title="JS经典书籍"></a>JS经典书籍</h3><ul>
 <li>红宝书：《JavaScript高级程序设计》</li>
 <li>小黄书：《你不知道的JavaScript》上、下册</li>
 <li>犀牛书：《JavaScript权威指南》</li>
 <li>绿皮书：《javascript语言精粹与编程实践》</li>
 </ul>
-<h3 id="JS进阶"><a class="header-anchor" href="#JS进阶">¶</a>JS进阶</h3>
-<ul>
+<h3 id="JS进阶"><a href="#JS进阶" class="headerlink" title="JS进阶"></a>JS进阶</h3><ul>
 <li>《前端开发核心知识进阶》</li>
 <li>《JavaScript 二十年》</li>
 <li>《JavaScript 悟道》</li>
@@ -1432,46 +1334,36 @@
 <li>《WebKit技术内幕》</li>
 <li>《JavaScript启示录》</li>
 </ul>
-<h3 id="CSS"><a class="header-anchor" href="#CSS">¶</a>CSS</h3>
-<ul>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><ul>
 <li>《CSS世界》</li>
 <li>《CSS新世界》</li>
 <li>《CSS揭秘》</li>
 <li>《精通 CSS》</li>
 </ul>
-<h3 id="Vue-js"><a class="header-anchor" href="#Vue-js">¶</a>Vue.js</h3>
-<ul>
+<h3 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h3><ul>
 <li>《Vue.js设计与实现》</li>
 <li>《深入浅出Vue.js》</li>
 </ul>
-<h3 id="Node-js-v2"><a class="header-anchor" href="#Node-js-v2">¶</a>Node.js</h3>
-<ul>
+<h3 id="Node-js-1"><a href="#Node-js-1" class="headerlink" title="Node.js"></a>Node.js</h3><ul>
 <li>《深入浅出Node.js》</li>
 <li>《Node.js：来一打 C++ 扩展》</li>
 </ul>
-<h3 id="数据结构和算法"><a class="header-anchor" href="#数据结构和算法">¶</a>数据结构和算法</h3>
-<ul>
+<h3 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h3><ul>
 <li>《计算之魂》</li>
 <li>《大话数据结构》</li>
 <li>《学习JavaScript数据结构与算法》</li>
 </ul>
-<h3 id="后端"><a class="header-anchor" href="#后端">¶</a>后端</h3>
-<ul>
-<li>
-<p>《领域驱动设计》</p>
+<h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><ul>
+<li><p>《领域驱动设计》</p>
 </li>
-<li>
-<p>《推荐系统实践》</p>
+<li><p>《推荐系统实践》</p>
 </li>
-<li>
-<p>《数据密集型应用系统设计》</p>
+<li><p>《数据密集型应用系统设计》</p>
 </li>
-<li>
-<p>《代码精进之路：从码农到工匠》</p>
+<li><p>《代码精进之路：从码农到工匠》</p>
 </li>
 </ul>
-<h3 id="项目管理和认知"><a class="header-anchor" href="#项目管理和认知">¶</a>项目管理和认知</h3>
-<ul>
+<h3 id="项目管理和认知"><a href="#项目管理和认知" class="headerlink" title="项目管理和认知"></a>项目管理和认知</h3><ul>
 <li>《人月神话》</li>
 <li>《黑客与画家》</li>
 <li>Joel Spolsky的书：《软件随想录》《Joel 说软件》《Joel 谈优秀软件开发方法》</li>
@@ -1483,8 +1375,7 @@
 <li>《程序员的思维修炼》</li>
 <li>《管理的常识》</li>
 </ul>
-<h3 id="产品"><a class="header-anchor" href="#产品">¶</a>产品</h3>
-<ul>
+<h3 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h3><ul>
 <li>《启示录》</li>
 <li>《结网》</li>
 <li>《人人都是产品经理》</li>
@@ -1499,8 +1390,7 @@
 <li>《产品经理面试宝典》</li>
 <li>《体验引擎：游戏设计全景探秘》</li>
 </ul>
-<h3 id="设计"><a class="header-anchor" href="#设计">¶</a>设计</h3>
-<ul>
+<h3 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h3><ul>
 <li>《设计心理学》四册</li>
 <li>《用户体验要素》</li>
 <li>《点石成金》</li>
@@ -1514,16 +1404,14 @@
 <li>《瞬间之美：Web界面设计如何让用户心动》</li>
 <li>《用户体验度量：收集、分析与呈现》</li>
 </ul>
-<h3 id="运营"><a class="header-anchor" href="#运营">¶</a>运营</h3>
-<ul>
+<h3 id="运营"><a href="#运营" class="headerlink" title="运营"></a>运营</h3><ul>
 <li>《运营之光》两册</li>
 <li>《我在一线做用户增长》</li>
 <li>《增长黑客：创业公司的用户与收入增长秘籍》</li>
 <li>《流量池》</li>
 <li>《超级运营术》</li>
 </ul>
-<h3 id="商业"><a class="header-anchor" href="#商业">¶</a>商业</h3>
-<ul>
+<h3 id="商业"><a href="#商业" class="headerlink" title="商业"></a>商业</h3><ul>
 <li>《史蒂夫·乔布斯传》</li>
 <li>《浪潮之巅》</li>
 <li>《赢》</li>
@@ -1536,8 +1424,7 @@
 <li>《冲浪板上的公司》</li>
 <li>《一本书读懂财报》</li>
 </ul>
-<h3 id="思维和认知"><a class="header-anchor" href="#思维和认知">¶</a>思维和认知</h3>
-<ul>
+<h3 id="思维和认知"><a href="#思维和认知" class="headerlink" title="思维和认知"></a>思维和认知</h3><ul>
 <li>《学会提问》</li>
 <li>《思考，快与慢》</li>
 <li>《清醒思考的艺术》</li>
@@ -1547,17 +1434,14 @@
 <li>《沟通的方法》</li>
 <li>《我们为什么要睡觉》</li>
 </ul>
-<h2 id="八、前端总结和认知"><a class="header-anchor" href="#八、前端总结和认知">¶</a>八、前端总结和认知</h2>
-<h3 id="研发视角，如何理解需求"><a class="header-anchor" href="#研发视角，如何理解需求">¶</a>研发视角，如何理解需求</h3>
-<blockquote>
+<h2 id="八、前端总结和认知"><a href="#八、前端总结和认知" class="headerlink" title="八、前端总结和认知"></a>八、前端总结和认知</h2><h3 id="研发视角，如何理解需求"><a href="#研发视角，如何理解需求" class="headerlink" title="研发视角，如何理解需求"></a>研发视角，如何理解需求</h3><blockquote>
 <p><a target="_blank" rel="noopener" href="https://img.smyhvae.com/20220613_1330-2.jpg">点击查看大图</a>。</p>
 </blockquote>
-<p><img src="https://img.smyhvae.com/20220613_1330-2.jpg" alt=""></p>
+<p><img src="https://img.smyhvae.com/20220613_1330-2.jpg"></p>
 <p>从上面的流程图中可以看出，产品经理的交付物是什么？是prd吗？显然不是。</p>
 <p>产品经理的工作跟设计师、工程师非常不同。人们对工程师的期望是交付有效的代码，对设计师的期望是交付视觉稿。而对于产品经理来说，只交付一份prd是不够的。</p>
 <p>产品经理要负责跟进整个产品周期，包括上线后的页面效果和数据表现。编写需求规范是一种<strong>沟通和推动项目</strong>的手段，但<strong>规范本身并没有内在的价值</strong>。很多产品经理并不借助prd来交流他们的想法，他们可以用谈话，还可以把想法画在白板上。也有一些产品经理虽然写了规范，但却没有参照执行。</p>
-<h3 id="前端工程师应该具备怎样的能力和素质"><a class="header-anchor" href="#前端工程师应该具备怎样的能力和素质">¶</a>前端工程师应该具备怎样的能力和素质</h3>
-<ul>
+<h3 id="前端工程师应该具备怎样的能力和素质"><a href="#前端工程师应该具备怎样的能力和素质" class="headerlink" title="前端工程师应该具备怎样的能力和素质"></a>前端工程师应该具备怎样的能力和素质</h3><ul>
 <li>技术功底、技术视野、技术追求</li>
 <li>除了开发业务功能外，还需要对开发规范、工程化、组件化、模块化、测试、设计模式有一定的认知和实践</li>
 <li>沟通表达能力、书面表达能力、总结复盘习惯</li>
@@ -1566,8 +1450,7 @@
 <li>综合权衡：成本、效率、质量、风险、体验</li>
 <li>关注产品、设计、商业等各个领域。交叉学科会带来更多创新。</li>
 </ul>
-<h3 id="前端认知"><a class="header-anchor" href="#前端认知">¶</a>前端认知</h3>
-<p>1、虽然我们绝大多数时间耗在业务开发上，但仍需要积累其他方面的沉淀，做多一些有趣的、可持续的事情，比如分享总结、基础能力建设、研发效能提升、技术运营建设、技术沉淀等。</p>
+<h3 id="前端认知"><a href="#前端认知" class="headerlink" title="前端认知"></a>前端认知</h3><p>1、虽然我们绝大多数时间耗在业务开发上，但仍需要积累其他方面的沉淀，做多一些有趣的、可持续的事情，比如分享总结、基础能力建设、研发效能提升、技术运营建设、技术沉淀等。</p>
 <p>2、学会提问。我们日常在提出问题和解决问题时，经常容易陷入<a target="_blank" rel="noopener" href="https://coolshell.cn/articles/10804.html">X-Y问题</a>，导致目标不明确、思路不清晰、沟通效率低下，甚至在一个完全错误的方向上浪费大量的资源、时间和精力。无论是在寻求帮助的人身上，还是在提供帮助的人身上，都有所体现。</p>
 <p>在面对一个问题时，要理解这句话的意图、事实、情绪、期待。学会提问，学会答疑，都是一种智慧。参考<a target="_blank" rel="noopener" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md">提问的智慧</a> 。</p>
 <p>3、全流程跟进，持续交付，创造业务价值。</p>
@@ -2146,7 +2029,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">183.1k</span>&nbsp;字
+                class="white-color">183.3k</span>&nbsp;字
             
             
             

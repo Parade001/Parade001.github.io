@@ -184,13 +184,6 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/friends/index.html</loc>
-    
-    <lastmod>2022-08-21</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://xiongteng.cc/contact/index.html</loc>
     
     <lastmod>2022-08-21</lastmod>
@@ -198,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/scaffolds/page.html</loc>
+    <loc>https://xiongteng.cc/friends/index.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -206,6 +199,13 @@
   
   <url>
     <loc>https://xiongteng.cc/scaffolds/draft.html</loc>
+    
+    <lastmod>2022-08-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiongteng.cc/scaffolds/page.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -282,14 +282,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2020/03/1521925.html</loc>
+    <loc>https://xiongteng.cc/2022/07/071650.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2022/07/071650.html</loc>
+    <loc>https://xiongteng.cc/2020/03/1521925.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -464,13 +464,6 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2020/11/0418511.html</loc>
-    
-    <lastmod>2022-08-21</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://xiongteng.cc/2019/11/153671.html</loc>
     
     <lastmod>2022-08-21</lastmod>
@@ -479,6 +472,13 @@
   
   <url>
     <loc>https://xiongteng.cc/2022/03/1629700.html</loc>
+    
+    <lastmod>2022-08-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiongteng.cc/2020/11/0418511.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -506,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2019/01/2056154.html</loc>
+    <loc>https://xiongteng.cc/2020/10/0153718.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -520,7 +520,7 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2020/10/0153718.html</loc>
+    <loc>https://xiongteng.cc/2019/01/2056154.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -765,14 +765,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2021/02/0817051.html</loc>
+    <loc>https://xiongteng.cc/2020/12/2411950.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/2020/12/2411950.html</loc>
+    <loc>https://xiongteng.cc/2021/02/0817051.html</loc>
     
     <lastmod>2022-08-21</lastmod>
     
@@ -1082,14 +1082,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/%E6%B3%A8%E5%86%8C%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6/</loc>
+    <loc>https://xiongteng.cc/tags/%E5%8D%8F%E7%A8%8B%E5%B9%B6%E5%8F%91/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/%E5%8D%8F%E7%A8%8B%E5%B9%B6%E5%8F%91/</loc>
+    <loc>https://xiongteng.cc/tags/%E6%B3%A8%E5%86%8C%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1229,14 +1229,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</loc>
+    <loc>https://xiongteng.cc/tags/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>https://xiongteng.cc/tags/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1467,14 +1467,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/git-%E6%9D%83%E9%99%90/</loc>
+    <loc>https://xiongteng.cc/tags/git-tree/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/git-tree/</loc>
+    <loc>https://xiongteng.cc/tags/git-%E6%9D%83%E9%99%90/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1544,7 +1544,7 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/BFC/</loc>
+    <loc>https://xiongteng.cc/tags/Virtual-DOM/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1558,7 +1558,7 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/Virtual-DOM/</loc>
+    <loc>https://xiongteng.cc/tags/BFC/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1733,14 +1733,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://xiongteng.cc/tags/ES2018/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/ES2018/</loc>
+    <loc>https://xiongteng.cc/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1817,14 +1817,14 @@
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</loc>
+    <loc>https://xiongteng.cc/tags/%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xiongteng.cc/tags/%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85/</loc>
+    <loc>https://xiongteng.cc/tags/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</loc>
     <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

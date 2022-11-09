@@ -333,7 +333,7 @@
       <link href="/2022/09/0238209.html"/>
       <url>/2022/09/0238209.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><img src="https://tvax3.sinaimg.cn/large/0066jXzmgy1h5s04s5rw9j30oe0g97hy.jpg"><img src="https://tvax3.sinaimg.cn/large/0066jXzmgy1h5s09t1erfj309m03zdgm.jpg">]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><ul><li>不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁.<br>出现死锁后，不会出现异常，不会出现提示，只是所有的线程都处于阻塞状态，无法继续</li></ul><hr><p>解决办法:</p><ul><li><p>专门的算法、原则</p></li><li><p>尽量减少同步资源的定义</p></li><li><p>尽量避免嵌套同步</p></li></ul><img src="https://tvax3.sinaimg.cn/large/0066jXzmgy1h5s04s5rw9j30oe0g97hy.jpg"><img src="https://tvax3.sinaimg.cn/large/0066jXzmgy1h5s09t1erfj309m03zdgm.jpg">]]></content>
       
       
       <categories>

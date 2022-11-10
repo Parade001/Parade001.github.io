@@ -766,6 +766,9 @@
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
+<p>以上代码存在重票，错票问题，即线程不安全。</p>
+<hr>
+<hr>
 <p>方式2： 实现 Runnable 接口</p>
 <ul>
 <li>创建一个实现了 Runnable 接口的类</li>
@@ -799,9 +802,6 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<hr>
-<hr>
-<p>以上代码存在重票，错票问题，即线程不安全。</p>
 <hr>
 <p>方式3： 实现 callable 接口</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">CreatedThread</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span> <span class="token punctuation">{</span>

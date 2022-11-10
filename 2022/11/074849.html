@@ -737,8 +737,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>JVM 内存模型<br><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221107230240.jpg"><br>堆与方法去进程内共享</p>
-<ul>
-<li>方式1 继承Thread类<br>1.创建一个继承于Thread类的子类<br>2.重写Thread类的run(),将此线程执行的操作声明在run()中<br>3.创建Thread类的子类对象<br>4.通过此对象调用start()<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadTest</span><span class="token punctuation">{</span>
+<hr>
+<p>方式1: 继承 Thread 类<br>  1.创建一个继承于Thread类的子类<br>  2.重写Thread类的run(),将此线程执行的操作声明在run()中<br>  3.创建Thread类的子类对象<br>  4.通过此对象调用start()</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadTest</span><span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token class-name">MyThread</span> T1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         T1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -763,8 +764,8 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
 <p>方式2： 实现 Runnable 接口</p>
 <ul>
 <li>创建一个实现了 Runnable 接口的类</li>
@@ -798,6 +799,9 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
+<hr>
+<hr>
+<p>以上代码存在重票，错票问题，即线程不安全。</p>
 <hr>
 <p>方式3： 实现 callable 接口</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">CreatedThread</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span> <span class="token punctuation">{</span>
@@ -899,9 +903,8 @@
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<hr>
-<p>以上代码存在重票，错票问题，即线程不安全。</p>
-<hr>
+
+
 <h3 id="线程的分类"><a href="#线程的分类" class="headerlink" title="线程的分类"></a>线程的分类</h3><ul>
 <li>守护线程</li>
 <li>用户线程<br>唯一区别：判断JVM何时离开。</li>

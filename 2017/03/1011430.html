@@ -736,255 +736,188 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="git是什么"><a href="#git是什么" class="headerlink" title="git是什么?"></a>git是什么?</h2><blockquote>
+                <h2 id="git是什么"><a class="header-anchor" href="#git是什么">¶</a>git是什么?</h2>
+<blockquote>
 <p>Git是目前世界上最先进的分布式版本控制系统（没有之一）</p>
 <p>Git有什么特点？简单来说就是：高端大气上档次！  – 引用自廖雪峰的官网</p>
 </blockquote>
 <p>安装完git后</p>
 <p>检查是否安装完成</p>
 <pre class="line-numbers language-gitgitbash" data-language="gitgitbash"><code class="language-gitgitbash">git --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="进行全局配置"><a href="#进行全局配置" class="headerlink" title="进行全局配置"></a>进行全局配置</h3><pre class="line-numbers language-gitgitbash" data-language="gitgitbash"><code class="language-gitgitbash">$ git config --list
+<h3 id="进行全局配置"><a class="header-anchor" href="#进行全局配置">¶</a>进行全局配置</h3>
+<pre class="line-numbers language-gitgitbash" data-language="gitgitbash"><code class="language-gitgitbash">$ git config --list
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 $ git config --global user.password 'youpassword'  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="与远程仓库握手"><a href="#与远程仓库握手" class="headerlink" title="与远程仓库握手"></a>与远程仓库握手</h3><p>我们通常需要在github或gitee去生成的钥匙</p>
+<h3 id="与远程仓库握手"><a class="header-anchor" href="#与远程仓库握手">¶</a>与远程仓库握手</h3>
+<p>我们通常需要在github或gitee去生成的钥匙</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">ssh-keygen -t rsa -C "你的邮箱地址" <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">cd .ssh
 cat .\id_rsa.pub
 cv 到github 或者gitee <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>要熟练理解 git 的 使用:就要有</p>
-<h2 id="时间线的概念"><a href="#时间线的概念" class="headerlink" title="时间线的概念"></a>时间线的概念</h2><p>每一次commit 就是一个版本生成一个它的id</p>
+<h2 id="时间线的概念"><a class="header-anchor" href="#时间线的概念">¶</a>时间线的概念</h2>
+<p>每一次commit 就是一个版本生成一个它的id</p>
 <p><em><strong>git 分为3个区域:工作区、暂存区、版本控制区</strong></em></p>
 <p>首先对需要跟踪的项目进行初始化</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git init <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>会选择当前路径的所有文件 单个跟踪就直接输入对应文件</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git add . <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>此时我们的文件会从当前的工作区跟踪到暂存区</p>
 <p>当我们需要进行提交到版本控制区的时候</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git commit -m "提交备注信息"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>第一次推送时</p>
 <pre class="line-numbers language-none"><code class="language-none">git remote add origin  git@gitee 用户名加项目仓库地址   //cv 你的项目仓库地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>推送并创建到你的master</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <hr>
  一些常用的git指令
 重命名分支
-
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git branch -m oldname newname<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>删除远程分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git branch --delete origin oldname<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>上传新分支到远程</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git push origin newname<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>把修改后的本地分支与远程分支关联</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git branch --set-upstream-to origin/newName<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>拉取远程仓库且合并</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git pull origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>l拉取本地不合并</p>
 <pre class="line-numbers language-none"><code class="language-none">git fetch &lt;remote&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看状态</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git status    <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看官方手册</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git help git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看提交日志</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git log <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git branch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看本地和远程所有分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git branch -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>拉取远程的并切换到新分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git checkout -b 新分支名 origin/远程分支名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>提一句: - b , 意思就是base 会议当前的分支未base,新建分支</p>
 <pre class="line-numbers language-gitgitbash" data-language="gitgitbash"><code class="language-gitgitbash">git checkout remote/.../...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看提交日志树</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git log --graph --oneline<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看当前目录所有改动的内容</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git diff<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看一个文件的改动情况</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git diff 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>撤销修改</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git checkout -- 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>从git缓存中删除而不是磁盘</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git rm --cached 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>强制删除</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git rm 文件名 -f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看完整的提交哈希码</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git log --graph --pretty=oneline<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>管理 reflog 信息</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git reflog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>此时我们通过查看到的信息配合回滚命令</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git reset --hard 版本号进行强制回滚<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>查看当前暂存区的文件</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git ls-files <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>显示暂存的条目的相关信息</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git ls-files -s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>显示删除了的文件</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git ls-files -d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><strong>撤销</strong>错误添加到<strong>暂存区</strong>的文件</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git rm --cache 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>删除提交到暂存区的文件|文件夹</p>
 <pre class="line-numbers language-none"><code class="language-none">git rm -r --cache 文件|文件夹名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <hr>
 **撤销所有**
-
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git reset HEAD -- .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><strong>撤销特点目标</strong></p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git reset HEAD -- 文件或者文件夹名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>将文件从缓存中删除</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git rm -cached filepath <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h6 id="删除错误提交的commit有三个选项，–hard、–mixed、–soft"><a href="#删除错误提交的commit有三个选项，–hard、–mixed、–soft" class="headerlink" title="删除错误提交的commit有三个选项，–hard、–mixed、–soft"></a>删除错误提交的commit有三个选项，–hard、–mixed、–soft</h6><pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">仅仅只是撤销已提交的版本库，不会修改暂存区和工作区
+<h6 id="删除错误提交的commit有三个选项，–hard、–mixed、–soft"><a class="header-anchor" href="#删除错误提交的commit有三个选项，–hard、–mixed、–soft">¶</a>删除错误提交的commit有三个选项，–hard、–mixed、–soft</h6>
+<pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">仅仅只是撤销已提交的版本库，不会修改暂存区和工作区
 git reset --soft 版本库ID  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">//仅仅只是撤销已提交的版本库和暂存区，不会修改工作区
 git reset --mixed 版本库ID<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">//彻底将工作区、暂存区和版本库记录恢复到指定的版本库
 git reset --hard 版本库ID<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>显示暂存区的目录树，其中第三个字段不是文件大小而是暂存区编号<br>若想针对暂存区的目录树使用git ls-tree命令，需要先将暂存区的目录树写入Git对象库，然后针对该目录树执行git ls-tree命令</p>
+<p>显示暂存区的目录树，其中第三个字段不是文件大小而是暂存区编号<br>
+若想针对暂存区的目录树使用git ls-tree命令，需要先将暂存区的目录树写入Git对象库，然后针对该目录树执行git ls-tree命令</p>
 <blockquote>
 <p>查看HEAD（版本库中当前提交）指向的目录树</p>
 </blockquote>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git ls-tree -l HEAD<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h4 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h4><pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git branch 分支名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<h4 id="创建分支"><a class="header-anchor" href="#创建分支">¶</a>创建分支</h4>
+<pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git branch 分支名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>切换分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git checkout 分支名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>创建并立即切换到分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git checkout -b 分支名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>合并分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git merge 分支名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><em><strong>删除分支(合并后,谨慎使用)</strong></em></p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git branch -d 分支名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
 <hr>
 **删除远程源仓库**
-
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git remote rm origin <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>删除远程分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git push origin --delete 分支名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>添加远程源仓库**</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git remote add origin 仓库地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><strong>直接修改远程源仓库</strong></p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git remote set-url origin 仓库地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p><strong>将本地分支和远程分支合并关联</strong></p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git push --set-upstream origin 新分支名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <hr>
-
-<h1 id="git-Fork-项目的仓库同步更新上游"><a href="#git-Fork-项目的仓库同步更新上游" class="headerlink" title="git Fork 项目的仓库同步更新上游"></a>git Fork 项目的仓库同步更新上游</h1><p>git被称为搞基网,可能跟 fork me 有关联…此处应该有一张图</p>
-<h3 id="在你clone-下来的-fork-别人-fork-后的地址-的本地仓库里-运行"><a href="#在你clone-下来的-fork-别人-fork-后的地址-的本地仓库里-运行" class="headerlink" title="在你clone 下来的 fork 别人(fork 后的地址) 的本地仓库里 运行:"></a>在你clone 下来的 fork 别人(fork 后的地址) 的本地仓库里 运行:</h3><p>第一步 验证远程分支</p>
+<h1>git Fork 项目的仓库同步更新上游</h1>
+<p>git被称为搞基网,可能跟 fork me 有关联…此处应该有一张图</p>
+<h3 id="在你clone-下来的-fork-别人-fork-后的地址-的本地仓库里-运行"><a class="header-anchor" href="#在你clone-下来的-fork-别人-fork-后的地址-的本地仓库里-运行">¶</a>在你clone 下来的 fork 别人(fork 后的地址) 的本地仓库里 运行:</h3>
+<p>第一步 验证远程分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git remote -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>如果你是第一次使用本操作,那么不出意外的话,你的源仓库 就是你 fork 过来的仓库</p>
 <p>第二步 现在你要指定你的上游仓库,也就是原作者的仓库地址,去复制过来</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git remote add upstream 原作者的仓库<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p> 第三步 进行验证</p>
+<p>第三步 进行验证</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git remote -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>现在它有4行了.</p>
 <p>第四步  拉取更新的 branches 和 commits</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git fetch upstream<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>第五步 Checkout 本地分支</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git checkout master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>第六步 合并</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git merge upstream/master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>第七步 提交</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <hr>
-
-<h4 id="谨慎使用"><a href="#谨慎使用" class="headerlink" title="谨慎使用"></a>谨慎使用</h4><p>删除暂存区中的文件</p>
-<h3 id="同时删除暂存区与工作区中的文件"><a href="#同时删除暂存区与工作区中的文件" class="headerlink" title="同时删除暂存区与工作区中的文件!"></a>同时删除暂存区与工作区中的文件!</h3><pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git rm -f 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="删除远程仓库"><a href="#删除远程仓库" class="headerlink" title="删除远程仓库"></a>删除远程仓库</h3><pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git remote rm 远程仓库名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<h4 id="谨慎使用"><a class="header-anchor" href="#谨慎使用">¶</a>谨慎使用</h4>
+<p>删除暂存区中的文件</p>
+<h3 id="同时删除暂存区与工作区中的文件"><a class="header-anchor" href="#同时删除暂存区与工作区中的文件">¶</a>同时删除暂存区与工作区中的文件!</h3>
+<pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git rm -f 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="删除远程仓库"><a class="header-anchor" href="#删除远程仓库">¶</a>删除远程仓库</h3>
+<pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git remote rm 远程仓库名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>初学者 不容易理清楚 remote、origin 以及时间线的概念,其实很好理解</p>
-<p>remote 直译: 远程 </p>
+<p>remote 直译: 远程</p>
 <p>origin 直译: 源</p>
 <p>时间线:类似黑客帝国 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AD%90%E5%BC%B9%E6%97%B6%E9%97%B4/2966162">子弹时间</a> 的实现原理</p>
 <p>提一句</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git pull     // 等同 git fetch + git merge <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>一句话:将远程的部分与本地进行合并</p>
-<h2 id="推荐使用"><a href="#推荐使用" class="headerlink" title="推荐使用"></a>推荐使用</h2><p>创建 .gitignore <br>字面意思:git 忽略 ,git 会依赖此文件<em><strong>忽略文件匹配管理</strong></em></p>
+<h2 id="推荐使用"><a class="header-anchor" href="#推荐使用">¶</a>推荐使用</h2>
+<p>创建 .gitignore <br>字面意思:git 忽略 ,git 会依赖此文件<em><strong>忽略文件匹配管理</strong></em></p>
 <p>把他建在仓库根目录下</p>
 <p>无需后缀名 ,可以直接用正则进行匹配</p>
 <p>比如:我们推送远程,发给你的协调开发者时,无需或者不想发送某些文件的时候</p>
 <pre class="line-numbers language-none"><code class="language-none">node_modules/                   //匹配所有node_modules目录以及目录下的所有目录以及文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
 <p>可能遇到的问题</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git merge upstream/master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>可能提示</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">error: Your local changes to the following files would be overwritten by merge:
         hr/src/views/employees/employees.vue
 Please commit your changes or stash them before you merge.
 Aborting<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>解决办法:回滚</p>
 <pre class="line-numbers language-none"><code class="language-none">git stash
 git pull origin master
 git stash pop //此时，执行git stash pop，您将看到冲突的局部更改仍然存在,让你决定将进行什么操纵<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>回滚:</p>
 <pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">git reflog   //查阅版本号
 git reset --hard 版本号
@@ -997,8 +930,8 @@ git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 5
  
 统计所有用户的行数信息
 git log --shortstat --pretty="%cE" | sed 's/\(.*\)@.*/\1/' | grep -v "^$" | awk 'BEGIN { line=""; } !/^ / { if (line=="" || !match(line, $0)) {line = $0 "," line }} /^ / { print line " # " $0; line=""}' | sort | sed -E 's/# //;s/ files? changed,//;s/([0-9]+) ([0-9]+ deletion)/\1 0 insertions\(+\), \2/;s/\(\+\)$/\(\+\), 0 deletions\(-\)/;s/insertions?\(\+\), //;s/ deletions?\(-\)//' | awk 'BEGIN {name=""; files=0; insertions=0; deletions=0;} {if ($1 != name &amp;&amp; name != "") { print name ": " files " files changed, " insertions " insertions(+), " deletions " deletions(-), " insertions-deletions " net"; files=0; insertions=0; deletions=0; name=$1; } name=$1; files+=$2; insertions+=$3; deletions+=$4} END {print name ": " files " files changed, " insertions " insertions(+), " deletions " deletions(-), " insertions-deletions " net";}'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="git-blame-h"><a href="#git-blame-h" class="headerlink" title="git blame -h"></a>git blame -h</h4><pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">--incremental 在我们找到它们时显示责备条目，增量
+<h4 id="git-blame-h"><a class="header-anchor" href="#git-blame-h">¶</a>git blame -h</h4>
+<pre class="line-numbers language-gitbash" data-language="gitbash"><code class="language-gitbash">--incremental 在我们找到它们时显示责备条目，增量
     -b 不显示边界提交的对象名称（默认值：关闭）
     --root 不将根提交视为边界（默认值：关闭）
     --show-stats 显示工作成本统计
@@ -1026,7 +959,6 @@ git log --shortstat --pretty="%cE" | sed 's/\(.*\)@.*/\1/' | grep -v "^$" | awk 
     -M[&lt;score&gt;] 查找文件内和文件间的行移动
     -L &lt;range&gt; 只处理行范围 &lt;start&gt;,&lt;end&gt; 或 function :&lt;funcname&gt;
     --abbrev[=&lt;n&gt;] 使用 &lt;n&gt; 位来显示对象名称<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1593,7 +1525,7 @@ git log --shortstat --pretty="%cE" | sed 's/\(.*\)@.*/\1/' | grep -v "^$" | awk 
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">183.9k</span>&nbsp;字
+                class="white-color">184k</span>&nbsp;字
             
             
             

@@ -701,7 +701,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    986
+                    987
                 </div>
                 
 
@@ -744,15 +744,20 @@
 <p>首先我们应该了解什么是迭代器以及<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Iterators_and_Generators">生成器</a>,继而去了解迭代对象,再去创建迭代循环,为自定义的迭代钩子去执行不同的语句</p>
 <hr>
 <p>在 JavaScript 中，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Iterators_and_Generators">迭代器</a>是一个对象，它定义一个序列，并在终止时可能返回一个返回值。 更具体地说，迭代器是通过使用 <code>next()</code> 方法实现 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol">Iterator protocol</a> 的任何一个对象，该方法返回具有两个属性的对象： <code>value</code>，这是序列中的 next 值；和 <code>done</code> ，如果已经迭代到序列中的最后一个值，则它为 <code>true</code> 。如果 <code>value</code> 和 <code>done</code> 一起存在，则它是迭代器的返回值。</p>
-<h2 id="可迭代对象"><a href="#可迭代对象" class="headerlink" title="可迭代对象"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#%E5%86%85%E7%BD%AE%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1">可迭代对象</a></h2><p>内置可迭代对象:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray"><code>TypedArray</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map"><code>Map</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set"><code>Set</code></a>，它们的原型对象都实现了 <code>@@``iterator</code> 方法。</p>
+<h2 id="可迭代对象"><a class="header-anchor" href="#可迭代对象">¶</a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#%E5%86%85%E7%BD%AE%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1">可迭代对象</a></h2>
+<p>内置可迭代对象:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray"><code>TypedArray</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map"><code>Map</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set"><code>Set</code></a>，它们的原型对象都实现了 <code>@@``iterator</code> 方法。</p>
 <p>迭代器可用于:</p>
 <ul>
-<li><p>可以展开可迭代对象:初始化数组或者函数调用的参数列表</p>
+<li>
+<p>可以展开可迭代对象:初始化数组或者函数调用的参数列表</p>
 </li>
-<li><p>可以用于解构赋值</p>
+<li>
+<p>可以用于解构赋值</p>
 </li>
-<li><p>迭代map对象的时候 返回的是键值对</p>
-<p>在for/of循环中可以直接使用解构赋值<br>只想循环键或者值用object key objectvalues操作可迭代对象类似array set map .</p>
+<li>
+<p>迭代map对象的时候 返回的是键值对</p>
+<p>在for/of循环中可以直接使用解构赋值<br>
+只想循环键或者值用object key objectvalues操作可迭代对象类似array set map .</p>
 </li>
 </ul>
 <p>JavaScript迭代三种类型</p>
@@ -785,7 +790,6 @@ iterable<span class="token punctuation">.</span>foo <span class="token operator"
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> i <span class="token keyword">of</span> iterable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// logs 3, 5, 7</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>对于为什么使用for…in:MDN的官方解释是:</p>
 <blockquote>
 <p><code>for ... in</code>是为遍历对象属性而构建的，不建议与数组一起使用，数组可以用<code>Array.prototype.forEach()</code>和<code>for ... of</code>，那么<code>for ... in</code>的到底有什么用呢？</p>
@@ -794,7 +798,8 @@ iterable<span class="token punctuation">.</span>foo <span class="token operator"
 <p>需要检查其中的任何键是否为某值的情况时，还是推荐用<code>for ... in</code>。</p>
 </blockquote>
 <p>下面的函数接受一个对象作为参数。被调用时迭代传入对象的所有可枚举属性然后返回一个所有属性名和其对应值的字符串。</p>
-<h4 id="遍历对象"><a href="#遍历对象" class="headerlink" title="遍历对象"></a>遍历对象</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span> c<span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<h4 id="遍历对象"><a class="header-anchor" href="#遍历对象">¶</a>遍历对象</h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span> c<span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> prop <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"obj."</span> <span class="token operator">+</span> prop <span class="token operator">+</span> <span class="token string">" = "</span> <span class="token operator">+</span> obj<span class="token punctuation">[</span>prop<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -805,8 +810,8 @@ iterable<span class="token punctuation">.</span>foo <span class="token operator"
 <span class="token comment">// "obj.a = 1"</span>
 <span class="token comment">// "obj.b = 2"</span>
 <span class="token comment">// "obj.c = 3"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="for-of-不能直接遍历对象"><a href="#for-of-不能直接遍历对象" class="headerlink" title="for of 不能直接遍历对象"></a>for of 不能直接遍历对象</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span> c<span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<h4 id="for-of-不能直接遍历对象"><a class="header-anchor" href="#for-of-不能直接遍历对象">¶</a>for of 不能直接遍历对象</h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span> c<span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> prop <span class="token keyword">of</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"obj."</span> <span class="token operator">+</span> prop <span class="token operator">+</span> <span class="token string">" = "</span> <span class="token operator">+</span> obj<span class="token punctuation">[</span>prop<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//console.log(`obj.${prop}=${obj[prop]}`);</span>
@@ -814,8 +819,8 @@ iterable<span class="token punctuation">.</span>foo <span class="token operator"
 
 <span class="token constant">VM293</span><span class="token operator">:</span><span class="token number">3</span> Uncaught TypeError<span class="token operator">:</span> obj is not iterable
     at <span class="token operator">&lt;</span>anonymous<span class="token operator">&gt;</span><span class="token operator">:</span><span class="token number">3</span><span class="token operator">:</span><span class="token number">18</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="配合object-keys-返回键值"><a href="#配合object-keys-返回键值" class="headerlink" title="配合object.keys.返回键值"></a>配合object.keys.返回键值</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+<h4 id="配合object-keys-返回键值"><a class="header-anchor" href="#配合object-keys-返回键值">¶</a>配合object.keys.返回键值</h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
     a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
     b<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
     c<span class="token operator">:</span><span class="token number">3</span>
@@ -823,17 +828,14 @@ iterable<span class="token punctuation">.</span>foo <span class="token operator"
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span>
+<h4 id="遍历数组"><a class="header-anchor" href="#遍历数组">¶</a>遍历数组</h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span>
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">in</span> arr <span class="token punctuation">)</span><span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 <span class="token comment">//1</span>
 <span class="token comment">//2</span>
 <span class="token comment">//3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span>
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> arr <span class="token punctuation">)</span><span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
@@ -841,8 +843,10 @@ iterable<span class="token punctuation">.</span>foo <span class="token operator"
 <span class="token comment">//a</span>
 <span class="token comment">//b</span>
 <span class="token comment">//c</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="结论"><a class="header-anchor" href="#结论">¶</a>结论:</h2>
+<h4 id="for-in-都可以遍历-当遍历对象的时候返回的是键值-遍历数组的时候返回的是索引"><a class="header-anchor" href="#for-in-都可以遍历-当遍历对象的时候返回的是键值-遍历数组的时候返回的是索引">¶</a>for in 都可以遍历,当遍历对象的时候返回的是键值,遍历数组的时候返回的是索引</h4>
+<h4 id="for-of-不能直接遍历普通对象-需要配合Object-keys-才能取键值-而遍历数组返回值是键值"><a class="header-anchor" href="#for-of-不能直接遍历普通对象-需要配合Object-keys-才能取键值-而遍历数组返回值是键值">¶</a>for of 不能直接遍历普通对象,需要配合Object.keys()才能取键值,而遍历数组返回值是键值</h4>
 
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论:"></a>结论:</h2><h4 id="for-in-都可以遍历-当遍历对象的时候返回的是键值-遍历数组的时候返回的是索引"><a href="#for-in-都可以遍历-当遍历对象的时候返回的是键值-遍历数组的时候返回的是索引" class="headerlink" title="for in 都可以遍历,当遍历对象的时候返回的是键值,遍历数组的时候返回的是索引"></a>for in 都可以遍历,当遍历对象的时候返回的是键值,遍历数组的时候返回的是索引</h4><h4 id="for-of-不能直接遍历普通对象-需要配合Object-keys-才能取键值-而遍历数组返回值是键值"><a href="#for-of-不能直接遍历普通对象-需要配合Object-keys-才能取键值-而遍历数组返回值是键值" class="headerlink" title="for of 不能直接遍历普通对象,需要配合Object.keys()才能取键值,而遍历数组返回值是键值"></a>for of 不能直接遍历普通对象,需要配合Object.keys()才能取键值,而遍历数组返回值是键值</h4>
                 
             </div>
             <hr/>
@@ -1407,7 +1411,7 @@ iterable<span class="token punctuation">.</span>foo <span class="token operator"
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">183.9k</span>&nbsp;字
+                class="white-color">184k</span>&nbsp;字
             
             
             

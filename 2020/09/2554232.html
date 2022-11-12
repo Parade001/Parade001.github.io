@@ -736,12 +736,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="React类组件生命周期主要分三个阶段"><a href="#React类组件生命周期主要分三个阶段" class="headerlink" title="React类组件生命周期主要分三个阶段:"></a>React类组件生命周期主要分三个阶段:</h3><ul>
+                <h3 id="React类组件生命周期主要分三个阶段"><a class="header-anchor" href="#React类组件生命周期主要分三个阶段">¶</a>React类组件生命周期主要分三个阶段:</h3>
+<ul>
 <li>挂载阶段</li>
 <li>更新阶段</li>
 <li>卸载阶段</li>
 </ul>
-<h3 id="挂载阶段"><a href="#挂载阶段" class="headerlink" title="挂载阶段"></a><strong>挂载阶段</strong></h3><table>
+<h3 id="挂载阶段"><a class="header-anchor" href="#挂载阶段">¶</a><strong>挂载阶段</strong></h3>
+<table>
 <thead>
 <tr>
 <th>钩子函数</th>
@@ -749,7 +751,8 @@
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>constructor</td>
 <td>创建组件时，最先执行</td>
 <td>1. 初始化 state 2. 创建 Ref 等</td>
@@ -764,31 +767,36 @@
 <td>组件挂载（完成 DOM 渲染）后</td>
 <td>1. 发送网络请求 2.DOM 操作</td>
 </tr>
-</tbody></table>
-<h3 id="更新阶段"><a href="#更新阶段" class="headerlink" title="更新阶段"></a><strong>更新阶段</strong></h3><table>
+</tbody>
+</table>
+<h3 id="更新阶段"><a class="header-anchor" href="#更新阶段">¶</a><strong>更新阶段</strong></h3>
+<table>
 <thead>
 <tr>
-<th align="center">钩子函数</th>
+<th style="text-align:center">钩子函数</th>
 <th>触发时机</th>
 <th>作用</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">render</td>
+<tbody>
+<tr>
+<td style="text-align:center">render</td>
 <td>每次组件渲染都会触发</td>
 <td>渲染 UI（与挂载阶段是同一个 render）</td>
 </tr>
 <tr>
-<td align="center">componentDidUpdate</td>
+<td style="text-align:center">componentDidUpdate</td>
 <td>组件更新（完成 DOM 渲染）后</td>
 <td>DOM 操作，可以获取到更新后的 DOM 内容，不要调用 setState</td>
 </tr>
-</tbody></table>
-<h3 id="卸载阶段"><a href="#卸载阶段" class="headerlink" title="卸载阶段"></a><strong>卸载阶段</strong></h3><p>componentWillUnmount  组件卸载（从页面中消失）  执行清理工作（比如：清理定时器等、解绑事件等）</p>
+</tbody>
+</table>
+<h3 id="卸载阶段"><a class="header-anchor" href="#卸载阶段">¶</a><strong>卸载阶段</strong></h3>
+<p>componentWillUnmount  组件卸载（从页面中消失）  执行清理工作（比如：清理定时器等、解绑事件等）</p>
 <hr>
-
 <p>当组件的 props 或 state 发生变化时会触发更新。</p>
-<h3 id="组件更新的生命周期调用顺序如下："><a href="#组件更新的生命周期调用顺序如下：" class="headerlink" title="组件更新的生命周期调用顺序如下："></a><em><strong>组件更新的生命周期调用顺序如下</strong></em>：</h3><ul>
+<h3 id="组件更新的生命周期调用顺序如下："><a class="header-anchor" href="#组件更新的生命周期调用顺序如下：">¶</a><em><strong>组件更新的生命周期调用顺序如下</strong></em>：</h3>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops"><code>static getDerivedStateFromProps()</code></a></li>
 <li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#shouldcomponentupdate"><code>shouldComponentUpdate()</code></a></li>
 <li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#render"><strong>render()</strong></a></li>
@@ -1360,7 +1368,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">183.9k</span>&nbsp;字
+                class="white-color">184k</span>&nbsp;字
             
             
             

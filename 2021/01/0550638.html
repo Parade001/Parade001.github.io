@@ -701,7 +701,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    311
+                    316
                 </div>
                 
 
@@ -736,25 +736,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>HOC</strong><br>优点<br>通过传递props去影响内层组件的状态，不直接改变内层组件的状态，降低了耦合度<br>缺点<br>组件多层嵌套， 增加复杂度与理解成本<br>ref隔断， React.forwardRef 来解决<br>高阶组件多层嵌套，相同命名的props会覆盖老属性<br>不清楚props来源与哪个高阶组件</p>
+                <p><strong>HOC</strong><br>
+优点<br>
+通过传递props去影响内层组件的状态，不直接改变内层组件的状态，降低了耦合度<br>
+缺点<br>
+组件多层嵌套， 增加复杂度与理解成本<br>
+ref隔断， React.forwardRef 来解决<br>
+高阶组件多层嵌套，相同命名的props会覆盖老属性<br>
+不清楚props来源与哪个高阶组件</p>
 <hr>
-
-<p><strong>render props</strong><br>优点<br>props命名可修改，不存在相互覆盖<br>清楚props来源<br>不会出现组件多层嵌套<br>缺点<br>函数回调形式的嵌套<br>写法繁琐，没有hoc装饰器写法简单<br>无法在return以外的地方访问数据</p>
+<p><strong>render props</strong><br>
+优点<br>
+props命名可修改，不存在相互覆盖<br>
+清楚props来源<br>
+不会出现组件多层嵌套<br>
+缺点<br>
+函数回调形式的嵌套<br>
+写法繁琐，没有hoc装饰器写法简单<br>
+无法在return以外的地方访问数据</p>
 <hr>
-
-<p> 组件状态复用问题:</p>
-<p>  mixins:数据来源不清晰,命名冲突,</p>
-<p>  HOC,render props  <strong>重构组件结构,导致组件形成JSX嵌套形成的JSX嵌套地狱问题</strong></p>
+<p>组件状态复用问题:</p>
+<p>mixins:数据来源不清晰,命名冲突,</p>
+<p>HOC,render props  <strong>重构组件结构,导致组件形成JSX嵌套形成的JSX嵌套地狱问题</strong></p>
 <ul>
-<li><p>class组件自身的问题: </p>
+<li>
+<p>class组件自身的问题:</p>
 </li>
-<li><p>同一业务状态和业务逻辑被拆分到不同位置.</p>
+<li>
+<p>同一业务状态和业务逻辑被拆分到不同位置.</p>
 <p>不利于代码压缩和优化,不利于TS类型推导</p>
 </li>
 </ul>
 <hr>
-
-<p><strong>hook</strong><br>优点<br>解决了hoc，render props的嵌套问题<br>可以在 return 之外使用数据<br>可以重命名，不存在覆盖，且清楚数据来源<br>缺点<br>在闭包场景可能会引用到旧的state、props值</p>
+<p><strong>hook</strong><br>
+优点<br>
+解决了hoc，render props的嵌套问题<br>
+可以在 return 之外使用数据<br>
+可以重命名，不存在覆盖，且清楚数据来源<br>
+缺点<br>
+在闭包场景可能会引用到旧的state、props值</p>
 
                 
             </div>
@@ -1320,7 +1340,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">183.9k</span>&nbsp;字
+                class="white-color">184k</span>&nbsp;字
             
             
             

@@ -688,7 +688,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    652
+                    650
                 </div>
                 
 
@@ -724,8 +724,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>当类组件的输入属性相同时，可以使用 <strong>pureComponent</strong> 或 <strong>shouldComponentUpdate</strong> 来避免组件的渲染。现在，你可以通过把函数组件包装在 <strong>React.memo</strong> 中来实现相同的功能。</p>
-<h3 id="React-PureComponent"><a class="header-anchor" href="#React-PureComponent">¶</a><code>React.PureComponent</code></h3>
-<p><code>React.PureComponent</code> 与 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-api.html#reactcomponent"><code>React.Component</code></a> 很相似。两者的区别在于 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-api.html#reactcomponent"><code>React.Component</code></a> 并未实现 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#shouldcomponentupdate"><code>shouldComponentUpdate()</code></a>，而 <code>React.PureComponent</code> 中以浅层对比 prop 和 state 的方式来实现了该函数。</p>
+<h3 id="React-PureComponent"><a href="#React-PureComponent" class="headerlink" title="React.PureComponent"></a><code>React.PureComponent</code></h3><p><code>React.PureComponent</code> 与 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-api.html#reactcomponent"><code>React.Component</code></a> 很相似。两者的区别在于 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-api.html#reactcomponent"><code>React.Component</code></a> 并未实现 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#shouldcomponentupdate"><code>shouldComponentUpdate()</code></a>，而 <code>React.PureComponent</code> 中以浅层对比 prop 和 state 的方式来实现了该函数。</p>
 <p>如果赋予 React 组件相同的 props 和 state，<code>render()</code> 函数会渲染相同的内容，那么在某些情况下使用 <code>React.PureComponent</code> 可提高性能。</p>
 <blockquote>
 <p>注意</p>
@@ -733,10 +732,11 @@
 <p>此外，<code>React.PureComponent</code> 中的 <code>shouldComponentUpdate()</code> 将跳过所有子组件树的 prop 更新。因此，请确保所有子组件也都是“纯”的组件。</p>
 </blockquote>
 <hr>
-<h3 id="React-memo"><a class="header-anchor" href="#React-memo">¶</a><code>React.memo</code></h3>
-<pre class="line-numbers language-none"><code class="language-none">const MyComponent = React.memo(function MyComponent(props) {
+
+<h3 id="React-memo"><a href="#React-memo" class="headerlink" title="React.memo"></a><code>React.memo</code></h3><pre class="line-numbers language-none"><code class="language-none">const MyComponent = React.memo(function MyComponent(props) {
   /* 使用 props 渲染 */
 });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p><code>React.memo</code> 为<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/higher-order-components.html">高阶组件</a>。</p>
 <p>如果你的组件在相同 props 的情况下渲染相同的结果，那么你可以通过将其包装在 <code>React.memo</code> 中调用，以此通过记忆组件渲染结果的方式来提高组件的性能表现。这意味着在这种情况下，React 将跳过渲染组件的操作并直接复用最近一次渲染的结果。</p>
 <p><code>React.memo</code> 仅检查 props 变更。如果函数组件被 <code>React.memo</code> 包裹，且其实现中拥有 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/hooks-state.html"><code>useState</code></a>，<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/hooks-reference.html#usereducer"><code>useReducer</code></a> 或 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/hooks-reference.html#usecontext"><code>useContext</code></a> 的 Hook，当 state 或 context 发生变化时，它仍会重新渲染。</p>
@@ -752,6 +752,7 @@ function areEqual(prevProps, nextProps) {
   */
 }
 export default React.memo(MyComponent, areEqual);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>此方法仅作为<strong>性能优化</strong>的方式而存在。但请不要依赖它来“阻止”渲染，因为这会产生 bug。</p>
 <blockquote>
 <p>注意</p>
@@ -1318,7 +1319,7 @@ export default React.memo(MyComponent, areEqual);<span aria-hidden="true" class=
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">184k</span>&nbsp;字
+                class="white-color">184.1k</span>&nbsp;字
             
             
             

@@ -737,10 +737,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4>区别</h4>
+
 <p><strong>Apply</strong></p>
-<p>接受两个参数，第一个参数是this的指向，<br>
-<strong>第二个参数是函数接受的参数，以<em>数组</em>的形式传入</strong><br><br>
-改变 this 指向后原函数会立即执行，且此方法只是临时改变 this 指向一次</p>
+<p>接受两个参数，第一个参数是this的指向，<br> <strong>第二个参数是函数接受的参数，以<em>数组</em>的形式传入</strong><br><br>改变 this 指向后原函数会立即执行，且此方法只是临时改变 this 指向一次</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
@@ -750,8 +749,8 @@
 
 <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// this会变成传入的obj，传入的参数必须是一个数组；</span>
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// this指向window</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="Call"><a class="header-anchor" href="#Call">¶</a>Call</h5>
-<p><code>第一个参数也是</code>this的指向</p>
+
+<h5 id="Call"><a href="#Call" class="headerlink" title="Call"></a>Call</h5><p><code>第一个参数也是</code>this的指向</p>
 <p><strong>后面传入的是一个<em>参数列表</em></strong></p>
 <p>跟<code>apply</code>一样，改变<code>this</code>指向后原函数会立即执行，且此方法只是临时改变<code>this</code>指向一次</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -763,8 +762,8 @@
 
 <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// this会变成传入的obj，传入的参数必须是一个数组；</span>
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// this指向window</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="bind"><a class="header-anchor" href="#bind">¶</a>bind</h3>
-<p>bind方法和call很相似，第一参数也是<code>this</code>的指向，后面传入的也是一个参数列表(但是<em><strong>这个参数列表可以分多次传入</strong></em>)</p>
+
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><p>bind方法和call很相似，第一参数也是<code>this</code>的指向，后面传入的也是一个参数列表(但是<em><strong>这个参数列表可以分多次传入</strong></em>)</p>
 <p>改变<code>this</code>指向后不会立即执行，而是返回一个永久改变<code>this</code>指向的函数</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -776,31 +775,26 @@
 <span class="token keyword">const</span> bindFn <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// this 也会变成传入的obj ，bind不是立即执行需要执行一次</span>
 <span class="token function">bindFn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// this指向obj</span>
 <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// this指向window</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="小结"><a class="header-anchor" href="#小结">¶</a>小结</h3>
-<p>从上面可以看到，<code>apply</code>、<code>call</code>、<code>bind</code>三者的区别在于：</p>
+
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>从上面可以看到，<code>apply</code>、<code>call</code>、<code>bind</code>三者的区别在于：</p>
 <ul>
-<li>
-<p>三者都可以改变函数的<code>this</code>对象指向</p>
+<li><p>三者都可以改变函数的<code>this</code>对象指向</p>
 </li>
-<li>
-<p>三者第一个参数都是<code>this</code>要指向的对象，如果如果没有这个参数或参数为<code>undefined</code>或<code>null</code>，则默认指向全局<code>window</code></p>
+<li><p>三者第一个参数都是<code>this</code>要指向的对象，如果如果没有这个参数或参数为<code>undefined</code>或<code>null</code>，则默认指向全局<code>window</code></p>
 </li>
-<li>
-<p>三者都可以传参，但是<code>apply</code>是数组，而<code>call</code>是参数列表，且<code>apply</code>和<code>call</code>是一次性传入参数，而<code>bind</code>可以分为多次传入</p>
+<li><p>三者都可以传参，但是<code>apply</code>是数组，而<code>call</code>是参数列表，且<code>apply</code>和<code>call</code>是一次性传入参数，而<code>bind</code>可以分为多次传入</p>
 </li>
-<li>
-<p><code>bind </code>是返回绑定this之后的函数，<code>apply </code>、<code>call</code> 则是立即执行</p>
-<hr>
-</li>
+<li><p><code>bind </code>是返回绑定this之后的函数，<code>apply </code>、<code>call</code> 则是立即执行</p>
+<hr></li>
 </ul>
 <p>当第一个参数为 null、undefined 的时候，默认指向 window(在浏览器中)</p>
-<p>fn.apply(null,[1,2]); // this 指向 window<br>
-fn.apply(undefined,[1,2]); // this 指向 window</p>
+<p>fn.apply(null,[1,2]); // this 指向 window<br>fn.apply(undefined,[1,2]); // this 指向 window</p>
 <p>call 是属于所有 Function 的方法,也就是 Funtion.prototype.call<br></p>
 <p>call 方法的 length 属性是 1。</p>
 <p><code>call()</code> 方法使用一个指定的 <code>this</code> 值和单独给出的一个或多个参数来调用一个函数。</p>
 <p>注意:与 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code>apply()</code></a> 方法类似，只有一个区别，就是 <code>call()</code> 方法接受的是<strong>一个参数列表</strong>，而 <code>apply()</code> 方法接受的是<strong>一个包含多个参数的数组</strong>。</p>
 <br>
+
 <p>示例:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>
@@ -811,12 +805,15 @@ fn.apply(undefined,[1,2]); // this 指向 window</p>
 <span class="token punctuation">}</span>
 <span class="token function">fun</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'cai'</span><span class="token punctuation">,</span> <span class="token string">'cai'</span><span class="token punctuation">,</span> <span class="token string">'24'</span><span class="token punctuation">,</span> <span class="token string">'18'</span><span class="token punctuation">)</span>
 <span class="token comment">//cheng [Arguments] { '0': 'cai', '1': 'cai', '2': '24', '3': '18' }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><code>apply</code> 与 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call"><code>call()</code></a> 非常相似，不同之处在于提供参数的方式。<code>apply</code> 使用参数数组而不是一组参数列表。<code>apply</code> 可以使用数组字面量（array literal），如 <code>fun.apply(this, ['eat', 'bananas'])</code>，或数组对象，</p>
 <p>如 <code>fun.apply(this, new Array('eat', 'bananas'))</code>。</p>
 <p>你也可以使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments"><code>arguments</code></a>对象作为 <code>argsArray</code> 参数。 <code>arguments</code> 是一个函数的局部变量。 它可以被用作被调用对象的所有未指定的参数。 这样，你在使用 apply 函数的时候就不需要知道被调用对象的所有参数。 你**<em>可以使用 arguments 来把所有的参数传递给被调用对象</em>**。 被调用对象接下来就负责处理这些参数。</p>
 <br>
+
 <p>从 ECMAScript 第 5 版开始，可以使用任何种类的类数组对象，就是说只要有一个 <code>length</code> 属性和<code>(0..length-1)</code>范围的整数属性。例如现在可以使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/NodeList"><code>NodeList</code></a> 或一个自己定义的类似 <code>{'length': 2, '0': 'eat', '1': 'bananas'}</code> 形式的对象。</p>
 <br>
+
 <p>通过语法就可以看出 call 和 apply 的在参数上的一个区别：</p>
 <blockquote>
 <ol>
@@ -825,15 +822,19 @@ fn.apply(undefined,[1,2]); // this 指向 window</p>
 </ol>
 </blockquote>
 <br>
+
 <blockquote>
 <p><strong>语法</strong>:func.apply(thisArg, [argsArray]);</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">apply</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 方法调用一个函数<span class="token punctuation">,</span> 其具有一个指定的<span class="token keyword">this</span>值，以及作为一个数组（或类似数组的对象）提供的参数。
  @param thisArg <span class="token keyword">this</span>指向
  @param argsArray 参数数组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">thisArg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>必选的。在 <em>func</em> 函数运行时使用的 <code>this</code> 值。请注意，<code>this</code>可能不是该方法看到的实际值：如果这个函数处于<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode">非严格模式</a>下，则指定为 <code>null</code> 或 <code>undefined</code> 时会自动替换为指向全局对象，原始值会被包装。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">argsArray<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>可选的。一个数组或者类数组对象，其中的数组元素将作为单独的参数传给 <code>func</code> 函数。如果该参数的值为 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null"><code>null</code></a> 或 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>，则表示不需要传入任何参数。从 ECMAScript 5 开始可以使用类数组对象</p>
 <p>示例:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span>
@@ -841,7 +842,9 @@ fn.apply(undefined,[1,2]); // this 指向 window</p>
 array<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> elements<span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span> <span class="token comment">// ["a", "b", 0, 1, 2]</span>
 <span class="token comment">//[ 'a', 'b', 0, 1, 2 ]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <br>
+
 <blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function-variable function">语法</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">[</span><span class="token punctuation">,</span> arg1<span class="token punctuation">[</span><span class="token punctuation">,</span> arg2<span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
@@ -1410,7 +1413,7 @@ console<span class="token punctuation">.</span><span class="token function">info
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">184k</span>&nbsp;字
+                class="white-color">184.1k</span>&nbsp;字
             
             
             

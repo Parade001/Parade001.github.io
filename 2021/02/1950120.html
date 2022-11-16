@@ -736,30 +736,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="TypeScript-与面向对象"><a href="#TypeScript-与面向对象" class="headerlink" title="TypeScript 与面向对象"></a>TypeScript 与面向对象</h2><p>面向对象是一种对像是世界理解和抽象的方法</p>
+                <h2 id="TypeScript-与面向对象"><a class="header-anchor" href="#TypeScript-与面向对象">¶</a>TypeScript 与面向对象</h2>
+<p>面向对象是一种对像是世界理解和抽象的方法</p>
 <p>TS是一种面向对象的编程语言.</p>
 <p>面向对象的主要两个概念:对象和类</p>
 <ul>
-<li><p>对象:是类的一个实例,有状态和行为,即键(名)值对</p>
+<li>
+<p>对象:是类的一个实例,有状态和行为,即键(名)值对</p>
 </li>
-<li><p>类:是一个默默,是属性和值的集合,它描述一类对象的行为和状态,可以用于共享属性,为创建的实例对象使用</p>
+<li>
+<p>类:是一个默默,是属性和值的集合,它描述一类对象的行为和状态,可以用于共享属性,为创建的实例对象使用</p>
 </li>
-<li><p>方法:函数和对象合写在一起就成了’’方法’’</p>
-<hr></li>
+<li>
+<p>方法:函数和对象合写在一起就成了’‘方法’’</p>
+<hr>
+</li>
 </ul>
-<h4 id="继承"><a href="#继承" class="headerlink" title="继承:"></a>继承:</h4><p>关键字继承extends,调用父类方法使用super</p>
+<h4 id="继承"><a class="header-anchor" href="#继承">¶</a>继承:</h4>
+<p>关键字继承extends,调用父类方法使用super</p>
 <ul>
-<li><p>private（private的成员不能被外部访问；比较带有<code>private</code>或<code>protected</code>成员的类型时，两个类型兼容的条件是private或protected的成员必须相同切来至同一个声明（同一个类））</p>
+<li>
+<p>private（private的成员不能被外部访问；比较带有<code>private</code>或<code>protected</code>成员的类型时，两个类型兼容的条件是private或protected的成员必须相同切来至同一个声明（同一个类））</p>
 </li>
-<li><p>protected（protected和private相似，但protected成员可以在派生类中访问（能被继承，但不能在实例中访问，若构造函数是protected，则不能被实例化，只能被继承））</p>
+<li>
+<p>protected（protected和private相似，但protected成员可以在派生类中访问（能被继承，但不能在实例中访问，若构造函数是protected，则不能被实例化，只能被继承））</p>
 </li>
-<li><p>readonly（设置属性为只读，必须在声明时或构造函数里初始化</p>
+<li>
+<p>readonly（设置属性为只读，必须在声明时或构造函数里初始化</p>
 </li>
-<li><p><strong>参数属性</strong>（参数属性通过给构造函数参数添加一个访问限定符来声明（public,private,protected）,把声明和赋值合并至一处）</p>
+<li>
+<p><strong>参数属性</strong>（参数属性通过给构造函数参数添加一个访问限定符来声明（public,private,protected）,把声明和赋值合并至一处）</p>
 </li>
-<li><p><strong>存取器（get、set   只带有 get不带有set的存取器自动被推断为readonly）</strong></p>
+<li>
+<p><strong>存取器（get、set   只带有 get不带有set的存取器自动被推断为readonly）</strong></p>
 </li>
-<li><p><strong>静态属性（static，不能被实例访问，在类里面访问时，需要加上类名）</strong></p>
+<li>
+<p><strong>静态属性（static，不能被实例访问，在类里面访问时，需要加上类名）</strong></p>
 </li>
 </ul>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -794,16 +806,17 @@
     <span class="token keyword">const</span> dog <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token string">'baba'</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>dog<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类:"></a>抽象类:</h4><p><strong>抽象类</strong>（abstract，抽象类做为其它派生类的基类使用。 它们一般不会直接被实例化。抽象类中的抽象方法不包含具体实现并且必须在派生类中实现）</p>
+<h4 id="抽象类"><a class="header-anchor" href="#抽象类">¶</a>抽象类:</h4>
+<p><strong>抽象类</strong>（abstract，抽象类做为其它派生类的基类使用。 它们一般不会直接被实例化。抽象类中的抽象方法不包含具体实现并且必须在派生类中实现）</p>
 <ul>
-<li><p>抽象类专门用于给子类继承方法 ,没有方法体,抽象方法只能定义在抽象类中,子类对抽象方法进行了重写.</p>
+<li>
+<p>抽象类专门用于给子类继承方法 ,没有方法体,抽象方法只能定义在抽象类中,子类对抽象方法进行了重写.</p>
 </li>
-<li><p>继承 类 作用: 给别人当爸爸.</p>
+<li>
+<p>继承 类 作用: 给别人当爸爸.</p>
 </li>
-<li><p>抽象类和其他类区别,不能用于创建对象</p>
+<li>
+<p>抽象类和其他类区别,不能用于创建对象</p>
 </li>
 </ul>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -826,14 +839,10 @@
   <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>snake<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-<h4 id="接口"><a href="#接口" class="headerlink" title="接口:"></a>接口:</h4><p>接口定义一个类结构 :用于定义类应该包含那些属性和方法,同时接口也可以当作类型声明去使用,接口种的的所有方法都是抽象方法.</p>
+<h4 id="接口"><a class="header-anchor" href="#接口">¶</a>接口:</h4>
+<p>接口定义一个类结构 :用于定义类应该包含那些属性和方法,同时接口也可以当作类型声明去使用,接口种的的所有方法都是抽象方法.</p>
 <p>实现接口就是使类满足接口的要求.</p>
-<p> 主要作用含义:类比usb type :接口实际上定义一个规范 只要实现这个规范,就可以在指定的场景使用,是对类的一个限制.</p>
+<p>主要作用含义:类比usb type :接口实际上定义一个规范 只要实现这个规范,就可以在指定的场景使用,是对类的一个限制.</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">interface</span> <span class="token class-name">myInterface</span> <span class="token punctuation">{</span>
     name<span class="token operator">:</span> <span class="token builtin">string</span>
@@ -869,10 +878,8 @@
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型:"></a>泛型:</h4><p>在定义函数或者类的时候,遇到数据类型不明确的,需要根据实际调用的时候决定是什么数据类型的时候可以使用泛型.</p>
+<h4 id="泛型"><a class="header-anchor" href="#泛型">¶</a>泛型:</h4>
+<p>在定义函数或者类的时候,遇到数据类型不明确的,需要根据实际调用的时候决定是什么数据类型的时候可以使用泛型.</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript">描述类型用大写表示
 定义一个泛型函数
 <span class="token keyword">function</span> <span class="token generic-function"><span class="token function">fn</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">K</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token constant">K</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">K</span><span class="token punctuation">{</span>
@@ -881,14 +888,12 @@
 <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">//不指定泛型ts会 自动推断</span>
 <span class="token comment">// 可以直接调用具有泛型的函数</span>
 <span class="token keyword">let</span> res2 <span class="token operator">=</span> <span class="token generic-function"><span class="token function">fn</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token string">'baba'</span><span class="token punctuation">)</span> <span class="token comment">//指定泛型</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>可以同时定义多个泛型</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">fn2</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">K</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token constant">K</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">T</span> <span class="token punctuation">{</span>
   <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
   <span class="token keyword">return</span> a
 <span class="token punctuation">}</span>
 <span class="token generic-function"><span class="token function">fn2</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">,</span> <span class="token string">'yetu'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>定义一个函数 用于且实现 接口的类</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">fn3</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">T</span> <span class="token keyword">extends</span> Inter<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> a<span class="token punctuation">.</span>length
@@ -901,7 +906,6 @@
 <span class="token punctuation">}</span>
 <span class="token keyword">const</span> mc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyClass<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;</span></span><span class="token punctuation">(</span><span class="token string">'爸爸'</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1467,7 +1471,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">184.1k</span>&nbsp;字
+                class="white-color">185k</span>&nbsp;字
             
             
             

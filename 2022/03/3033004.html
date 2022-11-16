@@ -738,13 +738,12 @@
             <div id="articleContent">
                 <p><strong>useRef是个hook 因此不能用在类组件</strong></p>
 <p>createRef并没有 Hooks 的效果，其值会随着 FunctionComponent 重复执行而不断被初始化：</p>
-<p>作用完全一样,但是只要你认真读一下官方文档, 就会发现, 它们两个确实不一样.  </p>
-<p>官网的定义如下: </p>
+<p>作用完全一样,但是只要你认真读一下官方文档, 就会发现, 它们两个确实不一样.</p>
+<p>官网的定义如下:</p>
 <p><code>useRef</code> returns a mutable ref object whose <code>.current</code> property is initialized to the passed argument (<code>initialValue</code>). The returned object will persist for the full lifetime of the component.</p>
-<p>换句人话说 ,  useRef 在 react hook 中的作用, 正如官网说的, 它像一个变量, 类似于 this , 它就像一个盒子, 你可以存放任何东西. </p>
+<p>换句人话说 ,  useRef 在 react hook 中的作用, 正如官网说的, 它像一个变量, 类似于 this , 它就像一个盒子, 你可以存放任何东西.</p>
 <p><strong>createRef 每次渲染都会返回一个新的引用，而 useRef 每次都会返回相同的引用</strong></p>
 <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
-
 <p>在<code>Render phase</code>这个阶段是因为代码不做“副作用”，发现也就是写引擎，这是因为这个阶段可能会被 React 随时取消或重做。</p>
 <p>修改阶段属于作为操作，因此不适合在这个阶段<code>Commit phase</code>看到这件事，或者我们可以在正常执行中进行操作。</p>
 <p>最懒惰的所以下，最多只是被允许使用的情况，而且这种行为是允许使用的。</p>
@@ -757,16 +756,14 @@
   } ) ; 
   返回 参考。当前；
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在渲染<code>useEffect</code>完成后才执行，因此<code>ref</code>在当前渲染中永远是上一次渲染的时候，我们可以利用它来上一次渲染</p>
 <pre class="line-numbers language-none"><code class="language-none">函数 应用程序（道具） { 
   const  preProps  =  usePrevious （道具）；
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>不同之处在于可以将值兑现为在实现同样的功能，<code>ref</code>不同的特性，以实现闭包中传递的功能。</p>
 <hr>
-
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1586855">useRef 与 createRef 区别</a></p>
+<h3 id="参考"><a class="header-anchor" href="#参考">¶</a>参考</h3>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1586855">useRef 与 createRef 区别</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/ascoders/weekly/blob/master/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/141.%E7%B2%BE%E8%AF%BB%E3%80%8AuseRef%20%E4%B8%8E%20createRef%20%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%8B.md"><strong>精读《useRef 与 createRef 的区别》</strong></a></p>
 
                 
@@ -1333,7 +1330,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">184.1k</span>&nbsp;字
+                class="white-color">185k</span>&nbsp;字
             
             
             

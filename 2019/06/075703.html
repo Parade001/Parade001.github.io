@@ -708,7 +708,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 Min
+                    14 Min
                 </div>
                 
 
@@ -736,56 +736,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Ajax是Asynchronous JavaScript and XML 的缩写</p>
+                <h3 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h3>
+<p>Ajax是Asynchronous JavaScript and XML 的缩写</p>
 <blockquote>
 <p><em>超文本传输协议(hyper transfer protocol,HTTP)规定Web浏览器如何从Web服务器获取文档和向Web服务器提交表达内容,以及Web服务器如何响应这些请求和提交.通常,HTTP并不在脚本的控制下,知识当用户点击链接、提交表达和输入url时发生.</em></p>
 <p><em>但是,用JS代码操纵http是可行的</em></p>
 <p><em>ajax应用的主要特点,是用脚本操纵http和Web服务器进行数据交换,不会导致页面重载.</em></p>
 <p><em>script标签的src属性能设置URL并发起HTTP GET请求,可以通过跨域通讯而不受同源策略限制.</em></p>
 <p><em>通常,基于script标签的Ajax传输协议时,服务器响应采用JSON编码的数据结构.</em></p>
-<p><em>当执行脚本时,JS解析器能自动将其解码.<strong>由于它使用JSON数据格式,因此这种Ajax传输协议也叫”JSONP”</strong></em></p>
-<p>​                                                                                           JavaScript权威指南 第六版</p>
+<p><em>当执行脚本时,JS解析器能自动将其解码.<strong>由于它使用JSON数据格式,因此这种Ajax传输协议也叫"JSONP"</strong></em></p>
+<p>​																						   JavaScript权威指南 第六版</p>
 </blockquote>
-<h3 id="HTTP请求由4部分组成："><a href="#HTTP请求由4部分组成：" class="headerlink" title="HTTP请求由4部分组成："></a>HTTP请求由4部分组成：</h3><ul>
-<li><p>HTTP请求方法或“动作”（verb)</p>
+<h3 id="HTTP请求由4部分组成："><a class="header-anchor" href="#HTTP请求由4部分组成：">¶</a>HTTP请求由4部分组成：</h3>
+<ul>
+<li>
+<p>HTTP请求方法或“动作”（verb)</p>
 </li>
-<li><p>正在请求的URL</p>
+<li>
+<p>正在请求的URL</p>
 </li>
-<li><p>一个可选的请求头集合，其中可能包括身份验证信息</p>
+<li>
+<p>一个可选的请求头集合，其中可能包括身份验证信息</p>
 </li>
-<li><p>一个可选的请求主体</p>
+<li>
+<p>一个可选的请求主体</p>
 </li>
 </ul>
-<h3 id="服务器返回的HTTP响应包含3部分："><a href="#服务器返回的HTTP响应包含3部分：" class="headerlink" title="服务器返回的HTTP响应包含3部分："></a><strong>服务器返回的HTTP响应包含3部分：</strong></h3><ul>
+<h3 id="服务器返回的HTTP响应包含3部分："><a class="header-anchor" href="#服务器返回的HTTP响应包含3部分：">¶</a><strong>服务器返回的HTTP响应包含3部分：</strong></h3>
+<ul>
 <li>一个数字和文字组成的状态码，用来显示请求的成功和失败</li>
 <li>一个响应头集合</li>
 <li>响应主体</li>
 </ul>
-<p align="right">    JavaScript权威指南 第六版</p>
-
-
-
+<p align="right">	JavaScript权威指南 第六版</p>
 <img src="https://tva1.sinaimg.cn/large/006aANDQly1gyfkj1nyxlj30ig04eq4z.jpg">
-
-
-
-<h3 id="XHR的readyState码"><a href="#XHR的readyState码" class="headerlink" title="XHR的readyState码"></a>XHR的readyState码</h3><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/readystatecode.png">
-
-
-
+<h3 id="XHR的readyState码"><a class="header-anchor" href="#XHR的readyState码">¶</a>XHR的readyState码</h3>
+<img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/readystatecode.png">
 <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/readystate2.png">
-
 <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Freadystate2.png" alt="">
-
 <hr>
-
-<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>JSON 是JS子集.<a target="_blank" rel="noopener" href="https://www.json.org/json-en.html">请参考</a></p>
+<h1>JSON</h1>
+<p>JSON 是JS子集.<a target="_blank" rel="noopener" href="https://www.json.org/json-en.html">请参考</a></p>
 <p>XMLHttpRequest()不是协议级的HTTP API而是浏览器级的API。</p>
 <p>通过下面2中方法拿到服务器响应回来的数据</p>
 <ul>
-<li><p><strong>load 事件</strong></p>
+<li>
+<p><strong>load 事件</strong></p>
 </li>
-<li><p><strong>xhr.response</strong></p>
+<li>
+<p><strong>xhr.response</strong></p>
 </li>
 </ul>
 <p>浏览器需要考虑cookie、重定向、缓存和代理，但代码只需要担心请求和响应。</p>
@@ -799,14 +798,15 @@
 <p><strong>②value 的值只能是字符串、数字、布尔值<br></strong></p>
 <p><strong>null、数组、对象类型（可选类型只有这 6 种）</strong></p>
 <hr>
-
-<h1 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h1><p><strong>什么是同源?</strong></p>
+<h1>同源策略</h1>
+<p><strong>什么是同源?</strong></p>
 <blockquote>
 <p><strong>同源</strong>指的是<strong>两个 URL 地址</strong>具有相同的<strong>协议、主机名、端口号</strong></p>
 <p><strong>反之则是跨域</strong></p>
 <p><strong>出现跨域的根本原因：浏览器的同源策略不允许非同源的 URL 之间进行资源的交互</strong></p>
 </blockquote>
-<p>下表给出了相对于 <a target="_blank" rel="noopener" href="http://www.test.com/index.html">http://www.test.com/index.html</a><br>页面的 5 个同源检测结果：</p>
+<p>下表给出了相对于 <a target="_blank" rel="noopener" href="http://www.test.com/index.html">http://www.test.com/index.html</a><br>
+页面的 5 个同源检测结果：</p>
 <table>
 <thead>
 <tr>
@@ -815,7 +815,8 @@
 <th>原因说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><a target="_blank" rel="noopener" href="http://www.test.com/other.html">http://www.test.com/other.html</a></td>
 <td>是</td>
 <td>同源（协议、域名、端口相同）</td>
@@ -828,7 +829,7 @@
 <tr>
 <td><a target="_blank" rel="noopener" href="http://blog.test.com/movie.html">http://blog.test.com/movie.html</a></td>
 <td>否</td>
-<td>域名不同（<a target="_blank" rel="noopener" href="http://www.test.com/">www.test.com</a> 与 blog.test.com）</td>
+<td>域名不同（<a target="_blank" rel="noopener" href="http://www.test.com">www.test.com</a> 与 <a target="_blank" rel="noopener" href="http://blog.test.com">blog.test.com</a>）</td>
 </tr>
 <tr>
 <td><a target="_blank" rel="noopener" href="http://www.test.com:8001/home.html">http://www.test.com:8001/home.html</a></td>
@@ -836,29 +837,33 @@
 <td>端口不同（默认的 80 端口与 7001 端口,https默认443.,mysql默认3306）</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="http://www.test.com/main.html">http://www.test.com:80/main.html</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.test.com:80/main.html">http://www.test.com:80/main.html</a></td>
 <td>是</td>
 <td>同源（协议、域名、端口相同）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>同源策略（英文全称 <em>Same origin policy</em>）是浏览器提供的一个安全功能。</p>
 <p><strong>浏览器的同源策略规定：不允许非同源的 URL 之间进行资源的交互。</strong></p>
 <hr>
-
 <p>突破浏览器跨域限制的方案</p>
 <ul>
-<li><p><em>JSONP</em></p>
+<li>
+<p><em>JSONP</em></p>
 <p>优点:  兼容性好（兼容低版本 IE）</p>
 <p>缺点:  仅支持 GET请求</p>
 </li>
-<li><p><em>CORS(Cross-origin resource sharing)</em></p>
+<li>
+<p><em>CORS(Cross-origin resource sharing)</em></p>
 <p>优点:  支持 <em>GET、POST、PUT、DELETE、PATCH</em>等常见的请求方式</p>
 <p>缺点:  不兼容某些低版本浏览器</p>
 </li>
-<li><p>正向代理Proxy(纯前端)</p>
+<li>
+<p>正向代理Proxy(纯前端)</p>
 <p>只适用于开发版本地开发环境</p>
 </li>
-<li><p>反选代理nginx(后端)</p>
+<li>
+<p>反选代理nginx(后端)</p>
 </li>
 </ul>
 <p>CORS 是解决跨域数据请求的终极解决方案，全称是 Cross-origin resource sharing。</p>
@@ -867,13 +872,11 @@
 <p>②服务器要开启 CORS 功能（需要后端开发者为接口开启 CORS 功能）</p>
 <p>实现 CORS 的关键，是在服务器端,因为如果服务器端没有开启 CORS 功能，则客户端无法访问那些跨域的接口！</p>
 <hr>
-
 <p>在解决跨域问题时：</p>
 <p>CORS 方案用到了 XMLHttpRequest 对象，发起的是纯正的 Ajax 请求</p>
 <p>JSONP 方案底层没有用到 XMLHttpRequest 对象，因此，JSONP 不是真正的 Ajax 技术.JSONP 底层原理用 script 标签的  src  属性。</p>
 <p>结论：只要用到了 XMLHttpRequest 对象，发起的就是 Ajax 请求！</p>
 <hr>
-
 <p><em><strong>JSONP底层实现原理:</strong></em></p>
 <ul>
 <li>通过script 的src标签 ,把非同源的JavaScript 代码请求到本地</li>
@@ -915,11 +918,10 @@
 
   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
   <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"http://localhost:8888/api/jsonp?callback=ccc"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> <span class="token operator">--</span><span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
 <ul>
-<li><p>后端接口代码：</p>
+<li>
+<p>后端接口代码：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/api/jsonp'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token comment">// res.send('hello');</span>
   <span class="token comment">// res.send('console.log(1234)');</span>
@@ -932,7 +934,6 @@
   <span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
   res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>fn <span class="token operator">+</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>str<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>前端代码：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token comment">// 提前准备好一个函数</span>
@@ -942,25 +943,27 @@
 
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://localhost:3006/api/jsonp?callback=xxx<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>前端需要做什么？</p>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://localhost:3006/api/jsonp?callback=xxx<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p>前端需要做什么？</p>
 <ul>
 <li>如果使用jQuery，$.ajax({ <strong>dataType: ‘jsonp’</strong> })，必须指定dataType选项为jsonp即可</li>
 </ul>
 </li>
-<li><p>后端需要做什么？</p>
+<li>
+<p>后端需要做什么？</p>
 <ul>
 <li>如果使用express，那么直接调用 <code>res.jsonp(数据)</code> 即可。</li>
 </ul>
 </li>
 </ul>
 <hr>
-
 <p>防抖：频繁触发事件，只执行最后 1 次</p>
 <p>节流：单位时间内，频繁触发的事件只执行 1 次</p>
 <hr>
-
-<h1 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h1><p>当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含 HTTP 状态码的信息头（server header）用以响应浏览器的请求。</p>
+<h1>HTTP 状态码</h1>
+<p>当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含 HTTP 状态码的信息头（server header）用以响应浏览器的请求。</p>
 <p>HTTP 状态码的英文为 <strong>HTTP Status Code</strong></p>
 <p>下面是常见的 HTTP 状态码：</p>
 <ul>
@@ -969,7 +972,8 @@
 <li><strong>404 - 请求的资源（网页等）不存在</strong></li>
 <li><strong>500 - 内部服务器错误</strong></li>
 </ul>
-<h2 id="HTTP-状态码分类"><a href="#HTTP-状态码分类" class="headerlink" title="HTTP 状态码分类"></a>HTTP 状态码分类</h2><p>HTTP 状态码由三个十进制数字组成，第一个十进制数字定义了状态码的类型。响应分为五类：</p>
+<h2 id="HTTP-状态码分类"><a class="header-anchor" href="#HTTP-状态码分类">¶</a>HTTP 状态码分类</h2>
+<p>HTTP 状态码由三个十进制数字组成，第一个十进制数字定义了状态码的类型。响应分为五类：</p>
 <ul>
 <li><strong>信息响应(100–199)</strong></li>
 <li><strong>成功响应(200–299)</strong></li>
@@ -984,7 +988,8 @@
 <th>分类描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>1**</td>
 <td>信息，服务器收到请求，需要请求者继续执行操作</td>
 </tr>
@@ -1004,7 +1009,8 @@
 <td>5**</td>
 <td>服务器错误，服务器在处理请求的过程中发生了错误</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>HTTP状态码列表:</p>
 <table>
 <thead>
@@ -1014,7 +1020,8 @@
 <th>中文描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>100</td>
 <td>Continue</td>
 <td>继续。客户端应继续其请求</td>
@@ -1137,7 +1144,7 @@
 <tr>
 <td>404</td>
 <td>Not Found</td>
-<td>服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</td>
+<td>服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置"您所请求的资源无法找到"的个性页面</td>
 </tr>
 <tr>
 <td>405</td>
@@ -1239,37 +1246,32 @@
 <td>HTTP Version not supported</td>
 <td>服务器不支持请求的HTTP协议的版本，无法完成处理</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <hr>
-
-
-
-<h4 id="封装AJAX函数的步骤"><a href="#封装AJAX函数的步骤" class="headerlink" title="封装AJAX函数的步骤"></a><strong>封装AJAX函数的步骤</strong></h4><p>1.创建xhr对象</p>
+<h4 id="封装AJAX函数的步骤"><a class="header-anchor" href="#封装AJAX函数的步骤">¶</a><strong>封装AJAX函数的步骤</strong></h4>
+<p>1.创建xhr对象</p>
 <p>2.调用xhr.open()函数</p>
-<p>​    open第一个参数指定HTTP方法或者动辄.这个字符串不区分大小写.但是通常用大写字母匹配HTTP协议.</p>
-<p>​    <strong>GET用于常规请求</strong>适用于当URL完全指定请求资源,当请求对服务器没有任何副作用以及当服务器的响应是可缓存时。（当提交表单的目标仅仅是一个只读查询，GET比POST更合适。）</p>
-<p>​    <strong>“POST”方法常用于HTML表单</strong>。它在请求主体中包含额外数据（表单数据）且这些数据常存储到服务器上的数据库中（副作用）。相同URL的重复POST请求从服务器得到的响应可能不同，同时不应该缓存使用这个方法的请求。</p>
+<p>​	open第一个参数指定HTTP方法或者动辄.这个字符串不区分大小写.但是通常用大写字母匹配HTTP协议.</p>
+<p>​	<strong>GET用于常规请求</strong>适用于当URL完全指定请求资源,当请求对服务器没有任何副作用以及当服务器的响应是可缓存时。（当提交表单的目标仅仅是一个只读查询，GET比POST更合适。）</p>
+<p>​	<strong>"POST"方法常用于HTML表单</strong>。它在请求主体中包含额外数据（表单数据）且这些数据常存储到服务器上的数据库中（副作用）。相同URL的重复POST请求从服务器得到的响应可能不同，同时不应该缓存使用这个方法的请求。</p>
 <p>3.调用send()函数</p>
 <p>4.监听load事件</p>
 <hr>
 同步响应
 由于其本身的性质，异步处理HTTP响应是最好的方式。然而，XMLHttpRequest也支持同步响应。如果把false作为第3个参数传递给open()，那么send()方法将阻塞直到请求完成。在这种情况下，不需要使用事件处理程序：一旦send()返回，仅需要检查XMLHttpRequest对象的status和responseText属性.
-
 <p>同步请求是吸引人的，但应该避免使用它们。客户端JavaScript是单线程的，当send()方法阻塞时，它通常会导致整个浏览器UI冻结。如果连接的服务器响应慢，那么用户的浏览器将冻结</p>
 <hr>
-
 <p>ES7中 在createds生命周期中利用axios发送ajax请求</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
 axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL<span class="token operator">=</span><span class="token string">'http://...:....'</span>
 <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$ajax<span class="token operator">=</span>axios<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token punctuation">{</span>data<span class="token operator">:</span>res<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
         url<span class="token operator">:</span><span class="token string">''</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token operator">=</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1835,7 +1837,7 @@ axios<span class="token punctuation">.</span>defaults<span class="token punctuat
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">184.1k</span>&nbsp;字
+                class="white-color">185k</span>&nbsp;字
             
             
             

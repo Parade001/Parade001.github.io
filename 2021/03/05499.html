@@ -737,7 +737,8 @@
 <li><a target="_blank" rel="noopener" href="https://reactrouter.com/docs/en/v6/getting-started/concepts#url">将URL</a>与您的<a target="_blank" rel="noopener" href="https://reactrouter.com/docs/en/v6/getting-started/concepts#route-config">路线</a>匹配</li>
 <li>从<a target="_blank" rel="noopener" href="https://reactrouter.com/docs/en/v6/getting-started/concepts#matches">路由匹配中渲染嵌套 UI</a></li>
 </ol>
-<h2 id="一、是什么"><a href="#一、是什么" class="headerlink" title="一、是什么"></a>一、是什么</h2><p><code>react-router</code>等前端路由的原理大致相同，可以实现无刷新的条件下切换显示不同的页面</p>
+<h2 id="一、是什么"><a class="header-anchor" href="#一、是什么">¶</a>一、是什么</h2>
+<p><code>react-router</code>等前端路由的原理大致相同，可以实现无刷新的条件下切换显示不同的页面</p>
 <p>路由的本质就是页面的<code>URL</code>发生改变时，页面的显示结果可以根据<code>URL</code>的变化而变化，但是页面不会刷新</p>
 <p>因此，可以通过前端路由可以实现单页(SPA)应用</p>
 <p><code>react-router</code>主要分成了几个不同的包：</p>
@@ -747,7 +748,8 @@
 <li>react-router-native：基于 react-router，加入了 react-native 运行环境下的一些功能</li>
 <li>react-router-config: 用于配置静态路由的工具库</li>
 </ul>
-<h2 id="二、有哪些"><a href="#二、有哪些" class="headerlink" title="二、有哪些"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#%E4%BA%8C%E3%80%81%E6%9C%89%E5%93%AA%E4%BA%9B">二、有哪些</a></h2><p>这里主要讲述的是<code>react-router-dom</code>的常用<code>API</code>，主要是提供了一些组件：</p>
+<h2 id="二、有哪些"><a class="header-anchor" href="#二、有哪些">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#%E4%BA%8C%E3%80%81%E6%9C%89%E5%93%AA%E4%BA%9B">二、有哪些</a></h2>
+<p>这里主要讲述的是<code>react-router-dom</code>的常用<code>API</code>，主要是提供了一些组件：</p>
 <ul>
 <li>BrowserRouter、HashRouter</li>
 <li>Route</li>
@@ -755,7 +757,8 @@
 <li>switch</li>
 <li>redirect</li>
 </ul>
-<h3 id="BrowserRouter、HashRouter"><a href="#BrowserRouter、HashRouter" class="headerlink" title="BrowserRouter、HashRouter"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#browserrouter%E3%80%81hashrouter">BrowserRouter、HashRouter</a></h3><p><code>Router</code>中包含了对路径改变的监听，并且会将相应的路径传递给子组件</p>
+<h3 id="BrowserRouter、HashRouter"><a class="header-anchor" href="#BrowserRouter、HashRouter">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#browserrouter%E3%80%81hashrouter">BrowserRouter、HashRouter</a></h3>
+<p><code>Router</code>中包含了对路径改变的监听，并且会将相应的路径传递给子组件</p>
 <p><code>BrowserRouter</code>是<code>history</code>模式，<code>HashRouter</code>模式</p>
 <p>使用两者作为最顶层组件包裹其他组件</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserRouter <span class="token keyword">as</span> Router <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span><span class="token punctuation">;</span>
@@ -780,8 +783,8 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Router</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Route"><a href="#Route" class="headerlink" title="Route"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#route">Route</a></h3><p><code>Route</code>用于路径的匹配，然后进行组件的渲染，对应的属性如下：</p>
+<h3 id="Route"><a class="header-anchor" href="#Route">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#route">Route</a></h3>
+<p><code>Route</code>用于路径的匹配，然后进行组件的渲染，对应的属性如下：</p>
 <ul>
 <li>path 属性：用于设置匹配到的路径</li>
 <li>component 属性：设置匹配到路径后，渲染的组件</li>
@@ -812,8 +815,8 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Router</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Link、NavLink"><a href="#Link、NavLink" class="headerlink" title="Link、NavLink"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#link%E3%80%81navlink">Link、NavLink</a></h3><p>通常路径的跳转是使用<code>Link</code>组件，最终会被渲染成<code>a</code>元素，其中属性<code>to</code>代替<code>a</code>标题的<code>href</code>属性</p>
+<h3 id="Link、NavLink"><a class="header-anchor" href="#Link、NavLink">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#link%E3%80%81navlink">Link、NavLink</a></h3>
+<p>通常路径的跳转是使用<code>Link</code>组件，最终会被渲染成<code>a</code>元素，其中属性<code>to</code>代替<code>a</code>标题的<code>href</code>属性</p>
 <p><code>NavLink</code>是在<code>Link</code>基础之上增加了一些样式属性，例如组件被选中时，发生样式变化，则可以设置<code>NavLink</code>的一下属性：</p>
 <ul>
 <li>activeStyle：活跃时（匹配时）的样式</li>
@@ -823,7 +826,6 @@
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>NavLink to<span class="token operator">=</span><span class="token string">"/"</span> exact activeStyle<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>color<span class="token operator">:</span> <span class="token string">"red"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>首页<span class="token operator">&lt;</span><span class="token operator">/</span>NavLink<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span>NavLink to<span class="token operator">=</span><span class="token string">"/about"</span> activeStyle<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>color<span class="token operator">:</span> <span class="token string">"red"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>关于<span class="token operator">&lt;</span><span class="token operator">/</span>NavLink<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span>NavLink to<span class="token operator">=</span><span class="token string">"/profile"</span> activeStyle<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>color<span class="token operator">:</span> <span class="token string">"red"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>我的<span class="token operator">&lt;</span><span class="token operator">/</span>NavLink<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>如果需要实现<code>js</code>实现页面的跳转，那么可以通过下面的形式：</p>
 <p>通过<code>Route</code>作为顶层组件包裹其他组件后,页面组件就可以接收到一些路由相关的东西，比如<code>props.history</code></p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token function-variable function">Contact</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> history <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
@@ -833,12 +835,9 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">FakeText</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Fragment</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-none"><code class="language-none">props`中接收到的`history`对象具有一些方便的方法，如`goBack`，`goForward`,`push<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="redirect"><a href="#redirect" class="headerlink" title="redirect"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#redirect">redirect</a></h3><p>用于路由的重定向，当这个组件出现时，就会执行跳转到对应的<code>to</code>路径中，如下例子：</p>
+<h3 id="redirect"><a class="header-anchor" href="#redirect">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#redirect">redirect</a></h3>
+<p>用于路由的重定向，当这个组件出现时，就会执行跳转到对应的<code>to</code>路径中，如下例子：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">About</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>
   match<span class="token operator">:</span> <span class="token punctuation">{</span>
     params<span class="token operator">:</span> <span class="token punctuation">{</span> name <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -851,9 +850,9 @@
     <span class="token operator">&lt;</span>FakeText <span class="token operator">/</span><span class="token operator">&gt;</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>Fragment<span class="token operator">&gt;</span>
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>上述组件当接收到的路由参数<code>name</code> 不等于 <code>tom</code> 的时候，将会自动重定向到首页</p>
-<h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#switch">switch</a></h3><p><code>swich</code>组件的作用适用于当匹配到第一个组件的时候，后面的组件就不应该继续匹配</p>
+<h3 id="switch"><a class="header-anchor" href="#switch">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#switch">switch</a></h3>
+<p><code>swich</code>组件的作用适用于当匹配到第一个组件的时候，后面的组件就不应该继续匹配</p>
 <p>如下例子：</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Switch</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">exact</span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>Home<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
@@ -862,7 +861,6 @@
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/:userid<span class="token punctuation">"</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>User<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>NoMatch<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Switch</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>如果不使用<code>switch</code>组件进行包裹</p>
 <p>除了一些路由相关的组件之外，<code>react-router</code>还提供一些<code>hooks</code>，如下：</p>
 <ul>
@@ -870,7 +868,8 @@
 <li>useParams</li>
 <li>useLocation</li>
 </ul>
-<h3 id="useHistory"><a href="#useHistory" class="headerlink" title="useHistory"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#usehistory">useHistory</a></h3><p><code>useHistory</code>可以让组件内部直接访问<code>history</code>，无须通过<code>props</code>获取</p>
+<h3 id="useHistory"><a class="header-anchor" href="#useHistory">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#usehistory">useHistory</a></h3>
+<p><code>useHistory</code>可以让组件内部直接访问<code>history</code>，无须通过<code>props</code>获取</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> useHistory <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">Contact</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -882,8 +881,8 @@
     <span class="token operator">&lt;</span><span class="token operator">/</span>Fragment<span class="token operator">&gt;</span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="useParams"><a href="#useParams" class="headerlink" title="useParams"></a>useParams</h3><p>useParams 动态参数列表的引用对象，用于获取<code>&lt;Route&gt;</code>中的 match.params (动态参数)</p>
+<h3 id="useParams"><a class="header-anchor" href="#useParams">¶</a>useParams</h3>
+<p>useParams 动态参数列表的引用对象，用于获取<code>&lt;Route&gt;</code>中的 match.params (动态参数)</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token function-variable function">About</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> <span class="token punctuation">{</span> name <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -895,8 +894,8 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Fragment</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="useLocation"><a href="#useLocation" class="headerlink" title="useLocation"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#uselocation">useLocation</a></h3><p><code>useLocation</code> 会返回当前 <code>URL</code>的 <code>location</code>对象</p>
+<h3 id="useLocation"><a class="header-anchor" href="#useLocation">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#uselocation">useLocation</a></h3>
+<p><code>useLocation</code> 会返回当前 <code>URL</code>的 <code>location</code>对象</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useLocation <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react-router-dom"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">Contact</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -909,14 +908,15 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Fragment</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#%E4%B8%89%E3%80%81%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">参数传递</a></h2><p>这些路由传递参数主要分成了三种形式：</p>
+<h2 id="参数传递"><a class="header-anchor" href="#参数传递">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#%E4%B8%89%E3%80%81%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">参数传递</a></h2>
+<p>这些路由传递参数主要分成了三种形式：</p>
 <ul>
 <li>动态路由的方式</li>
 <li>search传递参数</li>
 <li>to传入对象</li>
 </ul>
-<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1">动态路由</a></h3><p>动态路由的概念指的是路由中的路径并不会固定</p>
+<h3 id="动态路由"><a class="header-anchor" href="#动态路由">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1">动态路由</a></h3>
+<p>动态路由的概念指的是路由中的路径并不会固定</p>
 <p>例如将<code>path</code>在<code>Route</code>匹配时写成<code>/detail/:id</code>，那么 <code>/detail/abc</code>、<code>/detail/123</code>都可以匹配到该<code>Route</code></p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NavLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/detail/abc123<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">详情</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NavLink</span></span><span class="token punctuation">&gt;</span></span>
 
@@ -925,21 +925,19 @@
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/detail/:id<span class="token punctuation">"</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>Detail<span class="token punctuation">}</span></span><span class="token punctuation">/&gt;</span></span><span class="token plain-text">
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>NoMatch<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Switch</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>获取参数方式如下：</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>match<span class="token punctuation">.</span>params<span class="token punctuation">.</span>xxx<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="search传递参数"><a href="#search传递参数" class="headerlink" title="search传递参数"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#search%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0">search传递参数</a></h3><p>在跳转的路径中添加了一些query参数；</p>
+<h3 id="search传递参数"><a class="header-anchor" href="#search传递参数">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#search%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0">search传递参数</a></h3>
+<p>在跳转的路径中添加了一些query参数；</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NavLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/detail2?name=why&amp;age=18<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">详情2</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NavLink</span></span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Switch</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/detail2<span class="token punctuation">"</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>Detail2<span class="token punctuation">}</span></span><span class="token punctuation">/&gt;</span></span><span class="token plain-text">
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Switch</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>获取形式如下：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>location<span class="token punctuation">.</span>search<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="to传入对象"><a href="#to传入对象" class="headerlink" title="to传入对象"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#to%E4%BC%A0%E5%85%A5%E5%AF%B9%E8%B1%A1">to传入对象</a></h3><p>传递方式如下：</p>
+<h3 id="to传入对象"><a class="header-anchor" href="#to传入对象">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#to%E4%BC%A0%E5%85%A5%E5%AF%B9%E8%B1%A1">to传入对象</a></h3>
+<p>传递方式如下：</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NavLink</span></span> <span class="token attr-name">to</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
     pathname<span class="token operator">:</span> <span class="token string">"/detail2"</span><span class="token punctuation">,</span> 
     query<span class="token operator">:</span> <span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">"kobe"</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -948,13 +946,11 @@
   <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
   详情2
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NavLink</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>获取参数的形式如下：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>location<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <hr>
-
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></h2><ul>
+<h2 id="参考文献"><a class="header-anchor" href="#参考文献">¶</a><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/React/React%20Router.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></h2>
+<ul>
 <li><a target="_blank" rel="noopener" href="http://react-guide.github.io/react-router-cn/docs/API.html#route">http://react-guide.github.io/react-router-cn/docs/API.html#route</a></li>
 </ul>
 
@@ -1518,7 +1514,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">184.1k</span>&nbsp;字
+                class="white-color">185k</span>&nbsp;字
             
             
             

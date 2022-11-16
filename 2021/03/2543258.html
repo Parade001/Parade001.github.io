@@ -736,23 +736,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="浏览器环境下js引擎的事件循环机制"><a href="#浏览器环境下js引擎的事件循环机制" class="headerlink" title="浏览器环境下js引擎的事件循环机制"></a><strong>浏览器环境下js引擎的事件循环机制</strong></h2><p>javascript代码执行的时候会将不同的变量存于内存中的不同位置：</p>
+                <h2 id="浏览器环境下js引擎的事件循环机制"><a class="header-anchor" href="#浏览器环境下js引擎的事件循环机制">¶</a><strong>浏览器环境下js引擎的事件循环机制</strong></h2>
+<p>javascript代码执行的时候会将不同的变量存于内存中的不同位置：</p>
 <p>堆（heap）和栈（stack）中来加以区分。</p>
-<p>堆里存放着一些对象,栈中则存放着一些基础类型变量以及对象的指针。 </p>
+<p>堆里存放着一些对象,栈中则存放着一些基础类型变量以及对象的指针。</p>
 <p>但是我们这里说的执行栈和上面这个栈的意义却有些不同。</p>
 <hr>
-
 <p>当我们调用一个方法的时候，JS会生成一个与这个方法对应的执行环境（context），又叫执行上下文。</p>
 <p>这个执行环境中存在着这个方法的私有作用域，上层作用域的指向，方法的参数，</p>
-<p>这个作用域中定义的变量以及这个作用域的this对象。 </p>
+<p>这个作用域中定义的变量以及这个作用域的this对象。</p>
 <p>而当一系列方法被依次调用的时候，因为JS是单线程的，</p>
 <p>同一时间只能执行一个方法，于是这些方法被排队在一个单独的地方。这个地方被称为执行栈。</p>
 <p>当一个脚本第一次执行的时候，JS引擎会解析这段代码，并将其中的同步代码按照执行顺序加入执行栈中，然后从头开始执行。</p>
 <p>如果当前执行的是一个方法，那么JS会向执行栈中添加这个方法的执行环境，然后进入这个执行环境继续执行其中的代码。</p>
 <p>当这个执行环境中的代码 执行完毕并返回结果后，JS会退出这个执行环境并把这个执行环境销毁，回到上一个方法的执行环境。这个过程反复进行，直到执行栈中的代码全部执行完毕。</p>
-<p>​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </p>
+<p>​</p>
 <img src="https://pic2.zhimg.com/v2-2f761eb83b50f53d741e6aa1f15a9db1_b.webp">
-
 <p>从图片可知，一个方法执行会向执行栈中加入这个方法的执行环境，在这个执行环境中还可以调用其他方法，甚至是自己，其结果不过是在执行栈中再添加一个执行环境。</p>
 <p>这个过程可以是无限进行下去的，除非发生了栈溢出，即超过了所能使用内存的最大值。</p>
 <p>以上的过程说的都是同步代码的执行。那么当一个异步代码（如发送ajax请求数据）执行后会如何呢？</p>
@@ -761,14 +760,18 @@
 <p>被放入事件队列不会立刻执行其回调，而是等待当前执行栈中的所有任务都执行完毕， 主线程处于闲置状态时，主线程会去查找事件队列是否有任务。</p>
 <p>如果有，那么主线程会从中取出排在第一位的事件，并把这个事件对应的回调放入执行栈中，然后执行其中的同步代码…，如此反复，这样就形成了一个无限的循环。这就是这个过程被称为“事件循环（Event Loop）”的原因。</p>
 <hr>
-
-<h2 id="node环境下的事件循环机制"><a href="#node环境下的事件循环机制" class="headerlink" title="node环境下的事件循环机制"></a><strong>node环境下的事件循环机制</strong></h2><h4 id="1-与浏览器环境有何不同"><a href="#1-与浏览器环境有何不同" class="headerlink" title="1.与浏览器环境有何不同?"></a><em>1.与浏览器环境有何不同?</em></h4><p>在node中，事件循环表现出的状态与浏览器中大致相同。</p>
+<h2 id="node环境下的事件循环机制"><a class="header-anchor" href="#node环境下的事件循环机制">¶</a><strong>node环境下的事件循环机制</strong></h2>
+<h4 id="1-与浏览器环境有何不同"><a class="header-anchor" href="#1-与浏览器环境有何不同">¶</a><em>1.与浏览器环境有何不同?</em></h4>
+<p>在node中，事件循环表现出的状态与浏览器中大致相同。</p>
 <p>不同的是node中有一套自己的模型。node中事件循环的实现是依靠的libuv引擎。</p>
 <p>我们知道node选择chrome v8引擎作为js解释器，v8引擎将js代码分析后去调用对应的node api，</p>
 <p>而这些api最后则由libuv引擎驱动，执行对应的任务，并把不同的事件放在不同的队列中等待主线程执行。</p>
-<p> 因此实际上node中的事件循环存在于libuv引擎中。</p>
+<p>因此实际上node中的事件循环存在于libuv引擎中。</p>
 <p>待更…</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>[为什么要读node.js源码](为什么要读nodejs源码？ - the gc的文章 - 知乎<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/350625461">https://zhuanlan.zhihu.com/p/350625461</a>)</p>
+<h2 id=""><a class="header-anchor" href="#">¶</a></h2>
+<h1>参考</h1>
+<p>[为什么要读node.js源码](为什么要读nodejs源码？ - the gc的文章 - 知乎<br>
+<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/350625461">https://zhuanlan.zhihu.com/p/350625461</a>)</p>
 
                 
             </div>
@@ -1334,7 +1337,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">184.1k</span>&nbsp;字
+                class="white-color">185k</span>&nbsp;字
             
             
             

@@ -701,7 +701,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    882
+                    883
                 </div>
                 
 
@@ -736,15 +736,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><p><em>Browser Object Model</em>（浏览器对象模型）由对象</p>
+                <h1>BOM</h1>
+<p><em>Browser Object Model</em>（浏览器对象模型）由对象</p>
 <ul>
-<li><p><code>navigator</code></p>
+<li>
+<p><code>navigator</code></p>
 </li>
-<li><p><code>history</code></p>
+<li>
+<p><code>history</code></p>
 </li>
-<li><p><code>screen</code></p>
+<li>
+<p><code>screen</code></p>
 </li>
-<li><p><code>location</code>的<code>document</code>子级组成<code>window</code>。</p>
+<li>
+<p><code>location</code>的<code>document</code>子级组成<code>window</code>。</p>
 </li>
 </ul>
 <p>节点中<code>document</code>是DOM（Document Object Model），文档对象模型，代表页面的内容。</p>
@@ -752,7 +757,7 @@
 <p>所有全局 JavaScript 对象、函数和变量都自动成为window对象的成员。</p>
 <p>全局变量是 window 对象的属性。</p>
 <p>全局函数是 window 对象的方法。</p>
-<p>您可以使用 javascript 操作它使 JavaScript 有能力与浏览器”对话”</p>
+<p>您可以使用 javascript 操作它使 JavaScript 有能力与浏览器"对话"</p>
 <p>location.assign方法</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>跳转<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
   <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
@@ -762,14 +767,12 @@
           location<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token string">'http://cn.bing.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>以及前文写过的打开一个视口,还记得吗popUp这个方法,他也是BOM中的一种方法</p>
 <p>页面跳转传递参数demo</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>13-index.html<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>get<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
      用户名: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>uname<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>提交<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
   <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>search<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//?name = andy</span>
@@ -780,10 +783,8 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
       div<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;span style = 'color:'&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/span&gt;,欢迎您</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="demo-利用定时器写一个倒计时的效果"><a href="#demo-利用定时器写一个倒计时的效果" class="headerlink" title="demo 利用定时器写一个倒计时的效果"></a>demo 利用定时器写一个倒计时的效果</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+<h2 id="demo-利用定时器写一个倒计时的效果"><a class="header-anchor" href="#demo-利用定时器写一个倒计时的效果">¶</a>demo 利用定时器写一个倒计时的效果</h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         div <span class="token punctuation">{</span>
             margin<span class="token operator">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
@@ -824,7 +825,6 @@
         <span class="token punctuation">}</span>
         <span class="token function">setInterval</span><span class="token punctuation">(</span>countDown<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>利用定时器实现页面跳转(setInterval方法)</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>点我<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">""</span><span class="token operator">&gt;</span><span class="token number">233333</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
@@ -845,7 +845,6 @@
 
         <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>利用Dom请求当前地理位置</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
        <span class="token comment">// console.log(windows.navigator);</span>
@@ -853,14 +852,12 @@
            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
        <span class="token punctuation">}</span><span class="token punctuation">)</span>
    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>window.onresize获取或者设置当前的resize事件的处理函数</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
       window<span class="token punctuation">.</span><span class="token function-variable function">onresize</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
           console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'窗口改变了'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>window.confirm弹窗</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
         <span class="token keyword">var</span> str <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">'输入值Z'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -868,7 +865,6 @@
         <span class="token keyword">var</span> res <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">confirm</span><span class="token punctuation">(</span><span class="token string">'确定?'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>倒计时的demo</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">   div <span class="token punctuation">{</span>
             text<span class="token operator">-</span>align<span class="token operator">:</span> center<span class="token punctuation">;</span>
@@ -911,7 +907,6 @@
         <span class="token punctuation">}</span>
         <span class="token function">setInterval</span><span class="token punctuation">(</span>countDown<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>页面文本时钟</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">    <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         #nowtime <span class="token punctuation">{</span>
@@ -1499,7 +1494,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">184.1k</span>&nbsp;字
+                class="white-color">185k</span>&nbsp;字
             
             
             

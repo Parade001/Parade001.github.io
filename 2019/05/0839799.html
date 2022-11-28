@@ -736,9 +736,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>DOM常见的方法</h1>
-<h2 id="demo1通过声明数组变量生成表格"><a class="header-anchor" href="#demo1通过声明数组变量生成表格">¶</a>demo1通过声明数组变量生成表格</h2>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> datas <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+                <h1 id="DOM常见的方法"><a href="#DOM常见的方法" class="headerlink" title="DOM常见的方法"></a>DOM常见的方法</h1><h2 id="demo1通过声明数组变量生成表格"><a href="#demo1通过声明数组变量生成表格" class="headerlink" title="demo1通过声明数组变量生成表格"></a>demo1通过声明数组变量生成表格</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> datas <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
                name<span class="token operator">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span>
                subject<span class="token operator">:</span> <span class="token string">'Java'</span><span class="token punctuation">,</span>
                score<span class="token operator">:</span> <span class="token number">68</span>
@@ -780,8 +778,8 @@
                <span class="token punctuation">}</span>
            <span class="token punctuation">}</span>
        <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="demo2克隆节点"><a class="header-anchor" href="#demo2克隆节点">¶</a>demo2克隆节点</h2>
-<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+
+<h2 id="demo2克隆节点"><a href="#demo2克隆节点" class="headerlink" title="demo2克隆节点"></a>demo2克隆节点</h2><pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
        &lt;li&gt;1&lt;/li&gt;
        &lt;li&gt;12&lt;/li&gt;
        &lt;li&gt;123&lt;/li&gt;
@@ -791,8 +789,8 @@
        var lily = ul.children[1].cloneNode(true); //.cloneNode() 不赋值就是浅拷贝,只拷贝实参不拷贝子元素;赋true则深拷贝;
        ul.append(lily);
    &lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="demo3DOM节点元素移除"><a class="header-anchor" href="#demo3DOM节点元素移除">¶</a>demo3DOM节点元素移除</h2>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+
+<h2 id="demo3DOM节点元素移除"><a href="#demo3DOM节点元素移除" class="headerlink" title="demo3DOM节点元素移除"></a>demo3DOM节点元素移除</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
      <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>Jack<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
      <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>Jerry<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
      <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>Tom<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
@@ -806,8 +804,8 @@
      ul<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>lee<span class="token punctuation">)</span><span class="token punctuation">;</span>
      lee<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="demo4删除事件"><a class="header-anchor" href="#demo4删除事件">¶</a>demo4删除事件</h2>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+
+<h2 id="demo4删除事件"><a href="#demo4删除事件" class="headerlink" title="demo4删除事件"></a>demo4删除事件</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         div <span class="token punctuation">{</span>
             width<span class="token operator">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
             height<span class="token operator">:</span> <span class="token number">150</span>px<span class="token punctuation">;</span>
@@ -828,8 +826,8 @@
             <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> arguments<span class="token punctuation">.</span>callee<span class="token punctuation">)</span> <span class="token comment">//指向被调用者 移除click监听事件</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="demo5留言发布"><a class="header-anchor" href="#demo5留言发布">¶</a>demo5留言发布</h2>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+
+<h2 id="demo5留言发布"><a href="#demo5留言发布" class="headerlink" title="demo5留言发布"></a>demo5留言发布</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"> <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         <span class="token operator">*</span> <span class="token punctuation">{</span>
             margin<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
             padding<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -886,16 +884,19 @@
             <span class="token punctuation">}</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <p>注册事件和监听事件</p>
 <p>传统注册事件：</p>
 <p>利用on开头的事件 如onclick</p>
 <p>特点：注册事件的唯一性，同一个元素只能设置一个处理函数最后注册的处理函数将会覆盖前面注册的所有处理函数</p>
 <hr> 
+
 <p>方法监听事件注册方式 ：</p>
 <p>addEventListener() 是一个方法</p>
 <p>特点：同一个元素，同一个事件可以注册多个监听器 ，多个事件处理程序</p>
-<p>用法 addEventListener（type,listener[useCapture])<br>
-参数</p>
+<p>用法 addEventListener（type,listener[useCapture])<br>参数</p>
 <p>type:需要监听的事件类型，如click, mouseover, 注意这里是不需要加 on</p>
 <p>listener：事件处理函数，事件发生时，会调用的函数</p>
 <p>useCapture：可选参数，布尔值，默认为false，表示在事件冒泡阶段调用事件处理程序（从最外层到最内层）；如果为true，则表示在事件捕获阶段调用事件处理程序（从最内层到最外层）</p>
@@ -912,6 +913,7 @@
         <span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>demo新浪下拉单</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
         <span class="token operator">*</span> <span class="token punctuation">{</span>
@@ -1043,6 +1045,7 @@
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>demo节点操作</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
        <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>爪巴啊<span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
@@ -1065,6 +1068,7 @@
 
        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ul<span class="token punctuation">.</span>nextElementSibling<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&lt;div&gt;...&lt;/div&gt;</span>
    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
       <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token number">2044</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
       <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token number">2044</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
@@ -1083,6 +1087,7 @@
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ul<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&lt;li&gt;...&lt;/li&gt;</span>
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ul<span class="token punctuation">.</span>children<span class="token punctuation">[</span>ul<span class="token punctuation">.</span>children<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&lt;li&gt;...&lt;/li&gt;</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -1648,7 +1653,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">185k</span>&nbsp;字
+                class="white-color">185.1k</span>&nbsp;字
             
             
             

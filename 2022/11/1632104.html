@@ -701,7 +701,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    779
+                    777
                 </div>
                 
 
@@ -738,25 +738,13 @@
             <div id="articleContent">
                 <p>一、Map的实现类的结构：</p>
 <ul>
-<li>
-<p>Map:双列数据，存储key-value对的数据   —类似于高中的函数：y = f(x)</p>
-</li>
-<li>
-<p>HashMap:作为Map的主要实现类；线程不安全的，效率高；存储null的key和value</p>
-</li>
-<li>
-<p>LinkedHashMap:保证在遍历map元素时，可以按照添加的顺序实现遍历。<br>
-原因：在原有的HashMap底层结构基础上，添加了一对指针，指向前一个和后一个元素。<br>
-对于频繁的遍历操作，此类执行效率高于HashMap。<br>
-TreeMap:保证按照添加的key-value对进行排序，实现排序遍历。此时考虑key的自然排序或定制排序<br>
-底层使用红黑树<br>
-Hashtable:作为古老的实现类；线程安全的，效率低；不能存储null的key和value<br>
-Properties:常用来处理配置文件。key和value都是String类型</p>
-<pre><code>HashMap的底层：数组+链表  （jdk7及之前）
-              数组+链表+红黑树 （jdk 8）
-</code></pre>
-</li>
+<li>Map:双列数据，存储key-value对的数据   —类似于高中的函数：y = f(x)</li>
+<li>HashMap:作为Map的主要实现类；线程不安全的，效率高；存储null的key和value</li>
+<li>LinkedHashMap:保证在遍历map元素时，可以按照添加的顺序实现遍历。<br>原因：在原有的HashMap底层结构基础上，添加了一对指针，指向前一个和后一个元素。<br>对于频繁的遍历操作，此类执行效率高于HashMap。<br>TreeMap:保证按照添加的key-value对进行排序，实现排序遍历。此时考虑key的自然排序或定制排序<br>底层使用红黑树<br>Hashtable:作为古老的实现类；线程安全的，效率低；不能存储null的key和value<br>Properties:常用来处理配置文件。key和value都是String类型</li>
 </ul>
+<pre><code>  HashMap的底层：数组+链表  （jdk7及之前）
+                数组+链表+红黑树 （jdk 8）
+</code></pre>
 <pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class MapTest {
 
 
@@ -1176,30 +1164,29 @@ map.put(null,123);
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上篇</div>
             <div class="card">
-                <a href="/2022/11/1632104.html">
+                <a href="/2022/11/289564.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://tva1.sinaimg.cn/large/006aANDQly1gya2k4fdopj31la0widm1.jpg" class="responsive-img" alt="集合-map接口及多个实现类">
+                        <img src="https://tva4.sinaimg.cn/large/005BYqpggy1fwre3t28fhj31hc0u0tr1.jpg" class="responsive-img" alt="IO流原理及分类">
                         
-                        <span class="card-title">集合-map接口及多个实现类</span>
+                        <span class="card-title">IO流原理及分类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本篇介绍map数据结构，如Hashmap的底层的实现，LinkedHashmap底层实现，Hashmap与Hashtable区别...
+                            
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1212,12 +1199,11 @@ map.put(null,123);
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9B%86%E5%90%88/">
-                        <span class="chip bg-color">集合</span>
+                    <a href="/tags/IO%E6%B5%81/">
+                        <span class="chip bg-color">IO流</span>
                     </a>
                     
                 </div>
@@ -1465,7 +1451,7 @@ map.put(null,123);
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">185k</span>&nbsp;字
+                class="white-color">185.1k</span>&nbsp;字
             
             
             

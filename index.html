@@ -864,14 +864,13 @@
                             <div class="description center-align">
                                 
                                     基本用法
-ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
-以前，为变量赋值，只能直接指定值。
+ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。以前，为变量赋值，只能直接指定值。
 
-¶数组的解构赋值
-var a = 1
+数组的解构赋值var a = 1
 var b = 2
 var c = 3
-ES6
+
+ES6允许
                                 
                             </div>
                             <div class="cover-btns">
@@ -998,6 +997,58 @@ ES6
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/11/289564.html">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://tva4.sinaimg.cn/large/005BYqpggy1fwre3t28fhj31hc0u0tr1.jpg" class="responsive-img" alt="IO流原理及分类">
+                            
+                            <span class="card-title">IO流原理及分类</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                IO流原理：输入input：读取外部数据磁盘等存储设备的数据到程序内存。输出output： 将程序内存数据输出到磁盘等存储设备中。
+
+流的分类：
+
+按操作数据单位不同：字节流(8 bit)，字符流(16bit);
+按数据流的流向分：输入流，
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-28
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/IO%E6%B5%81/">
+                            <span class="chip bg-color">IO流</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1672,19 +1723,15 @@ ES6
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                ¶死锁
-
-不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁.
-出现死锁后，不会出现异常，不会出现提示，只是所有的线程都处于阻塞状态，无法继续
+                                死锁
+不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁.出现死锁后，不会出现异常，不会出现提示，只是所有的线程都处于阻塞状态，无法继续
 
 
 解决办法:
 
-
 专门的算法、原则
 
-
-尽量减
+尽量减少同步资源
                             
                         </div>
                         <div class="publish-info">
@@ -1802,53 +1849,6 @@ ES6
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/08/2021989.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://tva3.sinaimg.cn/large/9bd9b167gy1fwrhuuh8ikj21hc0u0wqx.jpg" class="responsive-img" alt="hexo 免密部署">
-                            
-                            <span class="card-title">hexo 免密部署</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                迁移数据提示要求输入密码否则鉴权失败？
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/git/" class="post-category">
-                                    git
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/blog/">
-                            <span class="chip bg-color">blog</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1946,7 +1946,7 @@ ES6
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">185k</span>&nbsp;字
+                class="white-color">185.1k</span>&nbsp;字
             
             
             

@@ -736,16 +736,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1-react-什么时候使用状态管理器"><a class="header-anchor" href="#1-react-什么时候使用状态管理器">¶</a>1.react 什么时候使用状态管理器?</h4>
-<p>从组件角度看<br>
-1.某个组件的状态，需要共享<br>
-2.某个状态需要在任何地方都可以拿到<br>
-3.一个组件需要改变全局状态<br>
-4.一个组件需要改变另一个组件的状态</p>
+                <h4 id="1-react-什么时候使用状态管理器"><a href="#1-react-什么时候使用状态管理器" class="headerlink" title="1.react 什么时候使用状态管理器?"></a>1.react 什么时候使用状态管理器?</h4><p>从组件角度看<br>1.某个组件的状态，需要共享<br>2.某个状态需要在任何地方都可以拿到<br>3.一个组件需要改变全局状态<br>4.一个组件需要改变另一个组件的状态</p>
 <p>当程序中出现大量不相干组件需要互相通信而现有的组件间通信技术（</p>
 <p>状态提升、context、storage等）不能很好的解决时，一个状态管理器作为中间者，可以降低组件间通信的复杂度。（购房者、买房者、中介）一样的场景。</p>
-<h4 id="2-render函数中return如果没有使用-会有什么问题？"><a class="header-anchor" href="#2-render函数中return如果没有使用-会有什么问题？">¶</a>2.render函数中return如果没有使用()会有什么问题？</h4>
-<p>在使用JSX语法书写react代码时，babel会将JSX语法编译成js，同时会在每行自动添加<strong>分号</strong>（；），如果<code>return</code>后换行了，那么就会变成 <code>return；</code> 一般情况下会报错：</p>
+<h4 id="2-render函数中return如果没有使用-会有什么问题？"><a href="#2-render函数中return如果没有使用-会有什么问题？" class="headerlink" title="2.render函数中return如果没有使用()会有什么问题？"></a>2.render函数中return如果没有使用()会有什么问题？</h4><p>在使用JSX语法书写react代码时，babel会将JSX语法编译成js，同时会在每行自动添加<strong>分号</strong>（；），如果<code>return</code>后换行了，那么就会变成 <code>return；</code> 一般情况下会报错：</p>
 <ul>
 <li><strong>Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null.</strong></li>
 </ul>
@@ -768,6 +762,7 @@
     </span><span class="token punctuation">{</span> some jsx magic here <span class="token punctuation">}</span><span class="token plain-text">
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>错误的写法：</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token function-variable function">Nav</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span>
@@ -775,13 +770,13 @@
       </span><span class="token punctuation">{</span> some jsx magic here <span class="token punctuation">}</span><span class="token plain-text">
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>[<a target="_blank" rel="noopener" href="https://github.com/haizlin/fe-interview/issues/951#">react] componentWillUpdate可以直接修改state的值吗？</a></p>
 <p>react组件在每次需要重新渲染时候都会调用<code>componentWillUpdate()</code>,</p>
 <p>例如，我们调用 <code>this.setState()</code>时候</p>
 <p>在这个函数中我们之所以不调用<code>this.setState()</code>是因为该方法会触发另一个<code>componentWillUpdate()</code>,如果我们<code>componentWillUpdate()</code>中触发状态更改,将会以无限循环结束.</p>
 <p>引用<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html">文档原文</a>：“你也可以在 componentDidUpdate() 中直接调用 setState()，但请注意它必须被包裹在一个条件语句里，正如上述的例子那样进行处理，否则会导致死循环。它还会导致额外的重新渲染，虽然用户不可见，但会影响组件性能。”</p>
-<h4 id="3-React-严格模式的用处"><a class="header-anchor" href="#3-React-严格模式的用处">¶</a>3.React 严格模式的用处</h4>
-<p>react的strictMode 是一个突出显示应用程序中潜在问题的工具，与Fragment一样，strictMode 不会渲染任何的可见UI，它为其后代元素触发额外的检查和警告。</p>
+<h4 id="3-React-严格模式的用处"><a href="#3-React-严格模式的用处" class="headerlink" title="3.React 严格模式的用处"></a>3.React 严格模式的用处</h4><p>react的strictMode 是一个突出显示应用程序中潜在问题的工具，与Fragment一样，strictMode 不会渲染任何的可见UI，它为其后代元素触发额外的检查和警告。</p>
 <p>注意：严格模式仅在开发模式下运行，它们不会影响生产构建</p>
 <p>可以为程序的任何部分使用严格模式</p>
 <p>有助于：</p>
@@ -794,8 +789,7 @@
 </ul>
 <p>4.除了实例的属性可以获取Context外哪些地方还能直接获取Context呢？</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/context.html#api">API</a>
-<ul>
+<li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/context.html#api">API</a><ul>
 <li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/context.html#reactcreatecontext">React.createContext</a></li>
 <li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/context.html#contextprovider">Context.Provider</a></li>
 <li><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/context.html#classcontexttype">Class.contextType</a></li>
@@ -804,17 +798,9 @@
 </ul>
 </li>
 </ul>
-<h4 id="4-React如何进行代码拆分？拆分的原则是什么？"><a class="header-anchor" href="#4-React如何进行代码拆分？拆分的原则是什么？">¶</a>4.React如何进行代码拆分？拆分的原则是什么？</h4>
-<p>我认为react的拆分前提是代码目录设计规范，模块定义规范，代码设计规范，符合程序设计的一般原则，例如高内聚、低耦合等等。</p>
-<p>在我们的react项目中：<br>
-1、在 api 层面我们单独封装，对外暴露http请求的结果。<br>
-2、数据层我们使用的react-redux 异步中间件使用的是redux-thunk 分装处理异步请求，合业务逻辑处理。<br>
-3、视图层，尽量使用 redux 层面的传递过来的数据，修改逻辑 也是重新触发action 更改props。<br>
-4、静态类型的资源单独放置<br>
-5、公共组件、高阶组件、插件单独放置<br>
-6、工具类文件单独放置</p>
-<h4 id="5-React组件的构造函数有什么作用？"><a class="header-anchor" href="#5-React组件的构造函数有什么作用？">¶</a>5.React组件的构造函数有什么作用？</h4>
-<p>通常，在 React 中，构造函数仅用于以下两种情况：</p>
+<h4 id="4-React如何进行代码拆分？拆分的原则是什么？"><a href="#4-React如何进行代码拆分？拆分的原则是什么？" class="headerlink" title="4.React如何进行代码拆分？拆分的原则是什么？"></a>4.React如何进行代码拆分？拆分的原则是什么？</h4><p>我认为react的拆分前提是代码目录设计规范，模块定义规范，代码设计规范，符合程序设计的一般原则，例如高内聚、低耦合等等。</p>
+<p>在我们的react项目中：<br>1、在 api 层面我们单独封装，对外暴露http请求的结果。<br>2、数据层我们使用的react-redux 异步中间件使用的是redux-thunk 分装处理异步请求，合业务逻辑处理。<br>3、视图层，尽量使用 redux 层面的传递过来的数据，修改逻辑 也是重新触发action 更改props。<br>4、静态类型的资源单独放置<br>5、公共组件、高阶组件、插件单独放置<br>6、工具类文件单独放置</p>
+<h4 id="5-React组件的构造函数有什么作用？"><a href="#5-React组件的构造函数有什么作用？" class="headerlink" title="5.React组件的构造函数有什么作用？"></a>5.React组件的构造函数有什么作用？</h4><p>通常，在 React 中，构造函数仅用于以下两种情况：</p>
 <ul>
 <li>通过给 <code>this.state</code> 赋值对象来初始化<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/state-and-lifecycle.html">内部 state</a>。</li>
 <li>为<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/handling-events.html">事件处理函数</a>绑定实例</li>
@@ -826,10 +812,10 @@
   <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> counter<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>handleClick <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleClick</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
        <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>只能在构造函数中直接为 <code>this.state</code> 赋值。如需在其他方法中赋值，你应使用 <code>this.setState()</code> 替代。</p>
 <p>要避免在构造函数中引入任何副作用或订阅。如遇到此场景，请将对应的操作放置在 <code>componentDidMount</code> 中。</p>
-<h4 id="6-React中在哪捕获错误？"><a class="header-anchor" href="#6-React中在哪捕获错误？">¶</a>6.React中在哪捕获错误？</h4>
-<p>错误边界组件</p>
+<h4 id="6-React中在哪捕获错误？"><a href="#6-React中在哪捕获错误？" class="headerlink" title="6.React中在哪捕获错误？"></a>6.React中在哪捕获错误？</h4><p>错误边界组件</p>
 <p>官网例子:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">ErrorBoundary</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -920,20 +906,18 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="7-如何给非控组件设置默认的值？"><a class="header-anchor" href="#7-如何给非控组件设置默认的值？">¶</a>7.如何给非控组件设置默认的值？</h4>
-<ul>
-<li>
-<p>表单元素依赖于状态(state)，表单元素需要默认值实时映射到状态的时候，就是受控组件</p>
+
+
+
+<h4 id="7-如何给非控组件设置默认的值？"><a href="#7-如何给非控组件设置默认的值？" class="headerlink" title="7.如何给非控组件设置默认的值？"></a>7.如何给非控组件设置默认的值？</h4><ul>
+<li><p>表单元素依赖于状态(state)，表单元素需要默认值实时映射到状态的时候，就是受控组件</p>
 </li>
-<li>
-<p>不通过state控制表单元素，而是通过ref来控制的表单元素就是非受控组件</p>
+<li><p>不通过state控制表单元素，而是通过ref来控制的表单元素就是非受控组件</p>
 </li>
-<li>
-<p>给非受控组件设置defaultValue属性，给定默认值</p>
+<li><p>给非受控组件设置defaultValue属性，给定默认值</p>
 </li>
 </ul>
-<h3 id="默认值"><a class="header-anchor" href="#默认值">¶</a>默认值</h3>
-<p>在 React 渲染生命周期时，表单元素上的 <code>value</code> 将会覆盖 DOM 节点中的值。在非受控组件中，你经常希望 React 能赋予组件一个初始值，但是不去控制后续的更新。 在这种情况下, 你可以指定一个 <code>defaultValue</code> 属性，而不是 <code>value</code>。在一个组件已经挂载之后去更新 <code>defaultValue</code> 属性的值，不会造成 DOM 上值的任何更新。</p>
+<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><p>在 React 渲染生命周期时，表单元素上的 <code>value</code> 将会覆盖 DOM 节点中的值。在非受控组件中，你经常希望 React 能赋予组件一个初始值，但是不去控制后续的更新。 在这种情况下, 你可以指定一个 <code>defaultValue</code> 属性，而不是 <code>value</code>。在一个组件已经挂载之后去更新 <code>defaultValue</code> 属性的值，不会造成 DOM 上值的任何更新。</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">onSubmit</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleSubmit<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
@@ -947,15 +931,10 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>同样，<code>&lt;input type="checkbox"&gt;</code> 和 <code>&lt;input type="radio"&gt;</code> 支持 <code>defaultChecked</code>，<code>&lt;select&gt;</code> 和 <code>&lt;textarea&gt;</code> 支持 <code>defaultValue</code>。</p>
-<h4 id="8-使用Hooks要遵守哪些原则？"><a class="header-anchor" href="#8-使用Hooks要遵守哪些原则？">¶</a>8.使用Hooks要遵守哪些原则？</h4>
-<p>1，只能在函数式组件中使用<br>
-2，不能在条件判断，循环体中使用<br>
-3，只能放在作用域最外层</p>
-<h4 id=""><a class="header-anchor" href="#">¶</a></h4>
-<h4 id="9-useEffect和useLayoutEffect有什么区别？"><a class="header-anchor" href="#9-useEffect和useLayoutEffect有什么区别？">¶</a>9.useEffect和useLayoutEffect有什么区别？</h4>
-<h4 id="10-怎样使用Hooks获取服务端数据？"><a class="header-anchor" href="#10-怎样使用Hooks获取服务端数据？">¶</a>10.怎样使用Hooks获取服务端数据？</h4>
-<p>要求函数式写法,不能是class写法</p>
+<h4 id="8-使用Hooks要遵守哪些原则？"><a href="#8-使用Hooks要遵守哪些原则？" class="headerlink" title="8.使用Hooks要遵守哪些原则？"></a>8.使用Hooks要遵守哪些原则？</h4><p>1，只能在函数式组件中使用<br>2，不能在条件判断，循环体中使用<br>3，只能放在作用域最外层</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="9-useEffect和useLayoutEffect有什么区别？"><a href="#9-useEffect和useLayoutEffect有什么区别？" class="headerlink" title="9.useEffect和useLayoutEffect有什么区别？"></a>9.useEffect和useLayoutEffect有什么区别？</h4><h4 id="10-怎样使用Hooks获取服务端数据？"><a href="#10-怎样使用Hooks获取服务端数据？" class="headerlink" title="10.怎样使用Hooks获取服务端数据？"></a>10.怎样使用Hooks获取服务端数据？</h4><p>要求函数式写法,不能是class写法</p>
 <pre class="line-numbers language-none"><code class="language-none">///案例一
 const {data,setData} = useState({});//渲染值
 ///页面初始化
@@ -964,6 +943,7 @@ useEffect(()=&gt;{
         setData(res);
     })
 },[]);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-none"><code class="language-none">///案例二
 const {data,setData} = useState({});//渲染值
 ///条件调用
@@ -972,8 +952,8 @@ const getPostData = ({data}) =&gt;{
         setData(res);
     })
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="11-react中修改prop引发的生命周期有哪几个？"><a class="header-anchor" href="#11-react中修改prop引发的生命周期有哪几个？">¶</a>11.react中修改prop引发的生命周期有哪几个？</h4>
-<blockquote>
+
+<h4 id="11-react中修改prop引发的生命周期有哪几个？"><a href="#11-react中修改prop引发的生命周期有哪几个？" class="headerlink" title="11.react中修改prop引发的生命周期有哪几个？"></a>11.react中修改prop引发的生命周期有哪几个？</h4><blockquote>
 <p>React 16.4+</p>
 </blockquote>
 <ol>
@@ -1548,7 +1528,7 @@ const getPostData = ({data}) =&gt;{
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">185k</span>&nbsp;字
+                class="white-color">185.1k</span>&nbsp;字
             
             
             

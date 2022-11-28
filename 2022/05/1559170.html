@@ -736,49 +736,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>1 引言</h1>
-<p>虽然现在 css Module 与 css-in-js 更流行，但使用它们会导致过分依赖 <strong>滥用 class 做唯一定位</strong>，违背了css 选择器的初衷。</p>
+                <h1 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h1><p>虽然现在 css Module 与 css-in-js 更流行，但使用它们会导致过分依赖 <strong>滥用 class 做唯一定位</strong>，违背了css 选择器的初衷。</p>
 <p>本期精读的文章是：<a target="_blank" rel="noopener" href="https://www.smashingmagazine.com/2018/10/attribute-selectors-splicing-html-dna-css/">attribute-selectors-splicing-html-dna-css</a>，带你重新理解强大的 Css 选择器。</p>
-<h1>2 概要</h1>
-<p>css Module 与 css-in-js 大部分场景使用 className 作为选择器，那么本文以选择器为重点，看看选择器有哪些实用的用法。</p>
-<h2 id="属性选择器"><a class="header-anchor" href="#属性选择器">¶</a>属性选择器</h2>
-<p>如果你想选择包含 <code>title</code> 属性的 <code>div</code>：</p>
+<h1 id="2-概要"><a href="#2-概要" class="headerlink" title="2 概要"></a>2 概要</h1><p>css Module 与 css-in-js 大部分场景使用 className 作为选择器，那么本文以选择器为重点，看看选择器有哪些实用的用法。</p>
+<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p>如果你想选择包含 <code>title</code> 属性的 <code>div</code>：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">div[title]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>选择包含 <code>title</code> 属性的子元素，只需要加个空格：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">div [title]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>选择 <code>title</code> 内容是 <code>dna</code> 的元素：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">div[title=<span class="token string">"dna"</span>]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>选择 <code>title</code> 属性包含 <code>dna</code> 单词的元素：</p>
 <blockquote>
 <p>注意 dna 需要是单词，也就是用空格分割，比如 “my beautiful dna” 或 “mutating dna is fun!”</p>
 </blockquote>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">div[title~=<span class="token string">"dna"</span>]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>和正则类似，选择 <code>title</code> 属性中，以 <code>dna</code> 结尾的元素：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">div[title$=<span class="token string">"dna"</span>]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>以 <code>dna</code> 开头：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">div[title^=<span class="token string">"dna"</span>]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>如果希望选择 <code>dna</code> 或 <code>dna-zh</code>，但不希望匹配 <code>dnaer</code>，可以：</p>
 <blockquote>
 <p>这种场景一般用在国际化，比如 en en-us 就可以用 <code>|="en"</code></p>
 </blockquote>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">div[title|=<span class="token string">"dna"</span>]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>只要包含 <code>dna</code> 这三个字符就选中：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">div[title*=<span class="token string">"dna"</span>]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>真的很像正则，你可以用 <code>i</code> 标识匹配时大小写不敏感：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">div[title*=<span class="token string">"dna"</span> i]
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>如果你想找到一个 <code>a</code> 标签，拥有 <code>title</code> 属性并且 className 以 <code>genes</code> 结尾，可以这样：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">a[title][class$=<span class="token string">"genes"</span>]
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="获取标签的值"><a class="header-anchor" href="#获取标签的值">¶</a>获取标签的值</h2>
-<p>可以用 <code>attr</code> 标识符拿到当前选择器选中元素的属性，比如当 <code>hover</code> 状态时，在文字尾部显示其 <code>title</code> 属性：</p>
+
+<h2 id="获取标签的值"><a href="#获取标签的值" class="headerlink" title="获取标签的值"></a>获取标签的值</h2><p>可以用 <code>attr</code> 标识符拿到当前选择器选中元素的属性，比如当 <code>hover</code> 状态时，在文字尾部显示其 <code>title</code> 属性：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.joke:hover:after</span> <span class="token punctuation">{</span>
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"Answer:"</span> <span class="token function">attr</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="其它用法"><a class="header-anchor" href="#其它用法">¶</a>其它用法</h2>
-<p>本文还介绍了一些实用技巧，比如</p>
+
+<h2 id="其它用法"><a href="#其它用法" class="headerlink" title="其它用法"></a>其它用法</h2><p>本文还介绍了一些实用技巧，比如</p>
 <p><strong>根据输入框类型设置样式</strong></p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">input[type="email"]</span> <span class="token punctuation">{</span>
   <span class="token property">color</span><span class="token punctuation">:</span> papayawhip<span class="token punctuation">;</span>
@@ -787,29 +793,35 @@
   <span class="token property">color</span><span class="token punctuation">:</span> thistle<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>改变下载标签的 icon</strong></p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">a[download][href$="pdf"]:after</span> <span class="token punctuation">{</span>
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>pdf-icon.svg<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>当然也可以选中一些老代码进行样式重写，比如：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">bgcolor</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#000000<span class="token punctuation">"</span></span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#FFFFFF<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Old, holey genes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">div[bgcolor="#000000"]</span> <span class="token punctuation">{</span>
   <span class="token comment">/*override*/</span>
   <span class="token property">background-color</span><span class="token punctuation">:</span> #222222 <span class="token important">!important</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>不过这种用法要谨慎，写的越多越难以维护。</p>
 <p><strong>结合一些新标签功能</strong></p>
 <p>比如 <code>details</code> 标签是 html 原生的手风琴折叠组件：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">&gt;</span></span>List of Genes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">&gt;</span></span> Roddenberry Hackman <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">&gt;</span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>我们可以使用属性选择器，定义其打开时的样式：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">details[open]</span> <span class="token punctuation">{</span>
   <span class="token property">background-color</span><span class="token punctuation">:</span> hotpink<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>为没有 <code>async</code> 标记的 <code>script</code> 标签着色</strong>，算是友情提示哪儿有错误：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">script[src]:not([async])</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
@@ -821,6 +833,7 @@
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>为 JS 事件着色</strong>，比如触发的鼠标事件可以作为选择器：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">[OnMouseOver]</span> <span class="token punctuation">{</span>
   <span class="token property">color</span><span class="token punctuation">:</span> burlywood<span class="token punctuation">;</span>
@@ -829,34 +842,31 @@
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"JS: "</span> <span class="token function">attr</span><span class="token punctuation">(</span>OnMouseOver<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>选中隐藏元素：</strong></p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">[hidden],
 [type="hidden"]</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>还有更多就不一一列举了，感兴趣的读者可以跳转到原文继续阅读。大部分内容其实都写在了 <a target="_blank" rel="noopener" href="http://www.w3school.com.cn/cssref/css_selectors.asp">w3school 选择器参考手册</a>，只是结合一篇文章来读，可以理解得更深刻，同时文章里确实有一些新鲜的选择器，比如 JS 事件选择器，HTML5 属性标签选择器等等。</p>
-<h1>3 精读</h1>
-<p>这篇文章确实说明了 Css 选择器的强大性，但回到 css module 或者 css-in-js 的工程代码里，我们往往难以做太多的实践，有如下几个原因：</p>
-<h2 id="一直在担心的-DOM-结构变动"><a class="header-anchor" href="#一直在担心的-DOM-结构变动">¶</a>一直在担心的 DOM 结构变动</h2>
-<p>业务开发中，大量需求涌入，也许过了一周，DOM 结构就已经面目全非了，而且就算是一个普通的圣杯布局，可能老版本用 Table 布局，后面进来一个年轻小伙子直接用 div + flex 重构了，你会担心之前写的 table 选择器在某一天全部失效。</p>
+<h1 id="3-精读"><a href="#3-精读" class="headerlink" title="3 精读"></a>3 精读</h1><p>这篇文章确实说明了 Css 选择器的强大性，但回到 css module 或者 css-in-js 的工程代码里，我们往往难以做太多的实践，有如下几个原因：</p>
+<h2 id="一直在担心的-DOM-结构变动"><a href="#一直在担心的-DOM-结构变动" class="headerlink" title="一直在担心的 DOM 结构变动"></a>一直在担心的 DOM 结构变动</h2><p>业务开发中，大量需求涌入，也许过了一周，DOM 结构就已经面目全非了，而且就算是一个普通的圣杯布局，可能老版本用 Table 布局，后面进来一个年轻小伙子直接用 div + flex 重构了，你会担心之前写的 table 选择器在某一天全部失效。</p>
 <p>也许今天的 div 选择器，明天因为语义化改造就换成了 article 标签。</p>
 <p>最大原因是 <strong>一种视觉界面对应的实现方式太多</strong>，不仅标签可以各异，css 属性还有 table、block、flex、grid 可选，同时 grid 属性还会导致视觉结构与 DOM 结构不完全对应。</p>
 <p>如果你今天用 css 选择器做了一套完全贴合现在 DOM 结构的 css 文件，这个 css 文件也许是后面 dom 结构改动的噩梦。</p>
-<h2 id="你敢做全局样式覆盖吗"><a class="header-anchor" href="#你敢做全局样式覆盖吗">¶</a>你敢做全局样式覆盖吗</h2>
-<p>我们排除标签，仅对属性做全局覆盖，的确可以部分绕开 DOM 结构的限制，但是这样的全局样式覆盖，不同的人有不同看法。</p>
+<h2 id="你敢做全局样式覆盖吗"><a href="#你敢做全局样式覆盖吗" class="headerlink" title="你敢做全局样式覆盖吗"></a>你敢做全局样式覆盖吗</h2><p>我们排除标签，仅对属性做全局覆盖，的确可以部分绕开 DOM 结构的限制，但是这样的全局样式覆盖，不同的人有不同看法。</p>
 <p>小明的团队非常懂得 css 运用，他们每天都会花一个小时讨论项目的 css 架构，并对通用需求样式做了抽象，并且每个人都很认可这个方案，在他们的团队，一个非常酷炫的按钮与动画效果，通过 <code>&lt;button animate /&gt;</code> 就可以完成，页面间交互非常流畅，用户体验统一，前端代码也非常简洁和优雅。</p>
 <p>小白的团队水平参差不齐，有人永远只使用 table 布局，有人却总想将一些试验阶段 css 属性用在生产环境，小白自己抽象了一个全局样式 css 文件，可团队没什么时间沟通，甚至有人私下也注入了不少全局 css 样式，总有人抱怨自己的样式被全局覆盖了，最后小白甚至不得不在自己页面入口处写上 <code>*: unset</code> 清空各种奇怪的全局样式干扰，他想清空那该死的全局 css 样式文件，但他知道这样做带来的是更大的灾难。</p>
 <p>可以看到，并不是每个团队都适合做全局样式覆盖。</p>
-<h2 id="JS-模块化思维的影响"><a class="header-anchor" href="#JS-模块化思维的影响">¶</a>JS 模块化思维的影响</h2>
-<p>为什么一个项目安装了几百个 npm 三方包，却依然可以正常运行？因为好的三方包都是遵守模块化的，同时也不产生副作用，这样被使用时的效果就可以被预期，试想一下几百个 npm 包里同时定义了不同规范的全局 css 覆盖，你的项目会成为什么样。</p>
+<h2 id="JS-模块化思维的影响"><a href="#JS-模块化思维的影响" class="headerlink" title="JS 模块化思维的影响"></a>JS 模块化思维的影响</h2><p>为什么一个项目安装了几百个 npm 三方包，却依然可以正常运行？因为好的三方包都是遵守模块化的，同时也不产生副作用，这样被使用时的效果就可以被预期，试想一下几百个 npm 包里同时定义了不同规范的全局 css 覆盖，你的项目会成为什么样。</p>
 <p>当然 js 与 css 是不适合放在一起比较的，css 大多是业务级别的，也就是能写 css 只有做业务的你，第三方包一般是不会提供 css 定义干扰你的项目的。</p>
 <p>然而大部分 UI 组件库是自带样式的，他们有自己的设计哲学，但为什么现在你会反感，而当初使用 Bootstrap 不会？</p>
 <p>使用 Bootstrap 的时代，Bootstrap 一般是作为项目第一个依赖安装的，我们明确知道它会注入全局样式。我们会泡在他的官方文档目录，一条条理解他做的全局样式规则，他提供的各种 class。</p>
 <p>然而现在是一个 Css-in-js 的时代，或者至少是 css-in-npm 的时代，什么都用 npm 装，什么都是模块化的，很多时候我们用一个 UI 组件仅仅是为了在某一处地方使用，而不想接受他带来的全局样式污染，视觉设计哲学，更不想看他的 css 文档。所以好的组件库往往 css 使用的很收敛，尽量不要对用户项目环境造成影响。</p>
 <p>如果你项目的样式已经被不得不安装的第三方包全局覆盖得面目全非，每一次对全局样式修改都如履薄冰，可能你会比较反感 css 选择器，你会推崇更安全的 css modules，或甚至是 css-in-js，让每个组件的 className 都唯一，做到标签粒度的隔离。</p>
-<h1>4 总结</h1>
-<p>笔者认为，在一个确定的环境中，比如一个组件，一个独立负责的模块，是比较适合用 css 选择器的，这样可以让样式代码更易读，DOM 结构更清爽。但请一定注意作用域，如果不是大家一起达成的共识，最好不要放到全局样式中。</p>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4 总结"></a>4 总结</h1><p>笔者认为，在一个确定的环境中，比如一个组件，一个独立负责的模块，是比较适合用 css 选择器的，这样可以让样式代码更易读，DOM 结构更清爽。但请一定注意作用域，如果不是大家一起达成的共识，最好不要放到全局样式中。</p>
 <p>就算项目的风格非常明确，<code>a</code> 标签一定要用红色，在把这条规则放到全局样式之前，请思考一下，这样会不会破坏了某个用 <code>a</code> 标签模拟按钮的组件库的样式？</p>
 <p>css 属性选择器的强大功能，需要有良好的项目管理做支撑，或者通过技术手段比如 shadow dom 做支撑。不过 shadow dom 的支持程度 <a target="_blank" rel="noopener" href="https://caniuse.com/#search=shadow%20dom">现在仍然很低</a>，所以使用编译工具做的隔离，在某种程度上模拟了 Css 选择器，承担了 Css 选择器 + shadow dom 的功能。</p>
 <p>一切样式都用 className 控制，也许是 shadow dom 出来前的一种妥协方案，这篇文章更多是在描述 Css 选择器设计之美，但需要我们理性去使用。</p>
@@ -1429,7 +1439,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">185k</span>&nbsp;字
+                class="white-color">185.1k</span>&nbsp;字
             
             
             

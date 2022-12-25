@@ -701,14 +701,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 Min
+                    5 Min
                 </div>
                 
 
@@ -742,9 +742,20 @@
 <p>​                                                                                                    <a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction">谷歌开发者文档</a></p>
 </blockquote>
 <blockquote>
-<p>重绘:当DOM变化影响元素的几何属性(宽高边距等),浏览器会重新绘制受影响的部分属性到屏幕中,这个过程叫’重绘’.</p>
+<p>重绘:当DOM变化影响元素的几何属性(宽高边距等),浏览器会重新绘制受影响的部分属性到屏幕中,这个过程叫 “重绘”.</p>
 <p align="right">JavaScript高性能</p>
 </blockquote>
+<p>浏览器下载完页面中的所有组件-HTML，JS，CSS，图片，之后会生成两个内部数据结构：</p>
+<hr>
+<p>DOM树：表示页面结构</p>
+<p>渲染树：表示DOM节点如何展示</p>
+<hr>
+<p>DOM树中的每个需哟现实的节点在渲染树中至少存在一个对应的节点。</p>
+<p>渲染树中的节点被称为 “帧” 或者 “盒” ，一旦DOM盒渲染树构建完成，浏览器就开始绘制页面元素。</p>
+<hr>
+<p>当DOM变化影响的元素的几何属性（宽和高）-比如改变边框宽度导致行数增加-浏览器需要重新计算元素的几何属性。浏览器会使渲染树中收到影响的部分失效，并重新构造渲染树，这个过程称为 “重排(reflow)”</p>
+<p>完成重排后，浏览器会重新绘制受影响的部分到屏幕中，称为“重绘（repaint）”，并不是所有的DOM变化会影响元素的几何属性。</p>
+<hr>
 <p>重排何时发生:</p>
 <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/%E9%87%8D%E6%8E%92%E4%BD%95%E6%97%B6%E5%8F%91%E7%94%9F.jpg" alt="重排何时发生">
 
@@ -1425,7 +1436,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">185.7k</span>&nbsp;字
+                class="white-color">186k</span>&nbsp;字
             
             
             

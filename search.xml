@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>grub2修复Windows 引导</title>
+      <link href="/2023/01/1813285.html"/>
+      <url>/2023/01/1813285.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>重装win10后，导致双系统引导消失，ubuntu无法进入的解决方法<br>重装完windows导致无法进入ubuntu<br>问题分析<br>解决方法<br>第一步，利用启动盘进入ubuntu桌面<br>第二步，在这个桌面下，通过命令安装boot repair<br>总结<br>重装完windows导致无法进入ubuntu<br>这段时间由于windows的C盘占用太高，乃至于无法装下任何其他东西，清理也清理不了，无奈之下，只能重装windows，但万万没想到，重装完windows之后，直接改变了ubuntu16.04+win10的grub引导界面，变成了直接让windows启动，而ubuntu的进入界面消失。</p><p>问题分析<br>初步判断，是由于装win10的时候，装系统的过程中自动装载了windows的grub引导，破坏了原有的双系统引导。所以导致ubuntu无法进入。此时不要慌，ubuntu系统内部并没有被破环，数据肯定还完好无损，如果此时选择重装ubuntu的话，数据和环境就会被牺牲掉，代价太大，得不偿失。我们只需要修复还原回以前的双系统引导界面即可。</p><p>解决方法<br>第一步，利用启动盘进入ubuntu桌面<br>此时我们首先需要拿出我们以前装系统的启动盘，如果没有可以马上做一个ubuntu启动盘，至于如何制作ubuntu启动盘，网上教程太多了，这里就不赘述了。<br>当启动盘制作完成之后，我们将U盘插上，然后重启电脑，按F7（我的电脑是按F7，不同的电脑可能进入启动选项的方式不一样，可能按F2 F10 F8 F12,回车等等）选择进入U盘启动，然后来到启动盘的grub界面，选择try ubuntu not install ，点击进入，此时来到U盘的ubuntu系统界面，如果发现进入try ubuntu not install 的过程中，在紫屏阶段卡死，或者无法进入ubunut桌面。那么我们直接按长按关机键，选择重启，重复刚刚操作，来到启动盘的grub界面。<br>此时不要立刻点击进入，在光标选中try ubuntu not install的位置时，按下键盘上的E键盘，然后将”quiet splash —“改为 “nomodeset”（没有引号），然后按下F10（F10表示保存），此时肯定就能进去ubuntu的界面了。</p><p>第二步，在这个桌面下，通过命令安装boot repair<br>当我们已经通过u盘来到ubuntu的桌面时，我们就能看到我们之前双系统下的ubuntu里面的内容了，可以发现，数据完好无损，所有东西都在，唯一不在了的就是丢失了双系统的引导界面，相当于我们要进入一个房子，但是门坏了，开不了，但里面的东西还在，我们没有必要把屋子也拆了。重新修一座房子。<br>此时，先连接好网络，然后打开终端，输入</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> add-apt-repository ppa:yannubuntu/boot-repair<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这行命令比较加入一个ppa源，用来一会儿下载boot repair<br>然后我们可以通过使用。如果看到一个密匙被成功导入了，就表示成功了。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>来更新我们的环境，如果更新下载的速度太慢，也可以进入设置，下载资源管理里面，重新选取ppa源，然后点击关闭，等待进度条自动转好，也可以自动加载刚刚写入的ppa源。<br>接下来，再在终端上输入</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y boot-repair<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>此行命令表示下载我们所需要的boot-repair，下载完了之后它会自动安装。<br>等待安装结束之后，继续终端上输入</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">boot-repair<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>打开我们的boot-repair，点击第一个选项</p><p>然后等待它进度条自己慢慢左右滚动，大概几分钟之后，它会显示修复成功，此时你只需要重启，然后就已经恢复到了之前双系统的grub引导界面了。ubunut也就能够再次进入了。</p><p>总结<br>这个方法应该是我尝试的所有方法里面效率最高的一个，之前也试过通过mount命令挂载/ /boot /home的分区到/mnt中，然后通过grub install修复，发现中间会发生很多错误，比如文件路径不存在，某某文件找不到等各种奇葩现象。所以最后选择了这个方法。这个方法也是我找到最简单最实用最快的方法。如果这个方法成功帮到你了，你可以收藏起来，以便下次grub崩了或者重装windows之后可以又用到。</p><hr><p><a href="https://blog.csdn.net/weixin_44403182/article/details/108923220">装载自CSDN</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 引导修复 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu18.04配置clash教程</title>
+      <link href="/2022/12/316099.html"/>
+      <url>/2022/12/316099.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><a href="https://github.com/Dreamacro/clash/releases">下载文件：clash-linux-amd64-v1.12.0.gz</a><br>（也可以下载最新的版本，前缀是clash-linux-amd64即可）进入该文件所在目录，在页面空白处右键在终端打开<br>1.解压gunzip clash-linux-amd64-v1.12.0.gz<br>2.将clash-linux-amd64-v1.12.0文件重命名为clashmv clash-linux-amd64-v1.12.0 clash<br>3.在此目录下创建文件夹（注意这里用大写Clash只是为了和clash区别开）</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> Clash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>4.移动clash文件夹到Clash文件夹</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> clash ./Clash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>5.进入Clash文件夹</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> Clash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>6.下载clash 配置文件config.yaml （注意：这个订阅链接是自己的，替代 [订阅链接]，如果失败了说明订阅链接有问题）</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -O config.yaml <span class="token punctuation">[</span>订阅链接<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>7.下载Country.mmdb</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>注意：如果步骤7失败了也没关系，直接跳过这一步，后面也会自动下载。也可以在网址Country.mmdb下载。<br>8.启动clash.</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/clash -d <span class="token builtin class-name">.</span>//注意：如果提示权限不足则<span class="token function">chmod</span> +x clash//再执行./clash -d <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>出现如下表示成功，并保持此终端打开<br>9.打开配置文件config.yaml ，给它设置一个密码： # RESTful API 的口令 secret: ‘123456’<img src="https://pic1.zhimg.com/v2-0befeb7cc67c64ef034394bdb48aa908_b.jpg" data-caption="" data-size="normal" data-rawwidth="653" data-rawheight="118" class="origin_image zh-lightbox-thumb" width="653" data-original="https://pic1.zhimg.com/v2-0befeb7cc67c64ef034394bdb48aa908_r.jpg"></p><p>10.打开系统设置，选择网络，点击网络代理右边的 ⚙ 按钮，选择手动，<br>填写 HTTP 和 HTTPS 代理为 127.0.0.1:7890，<br>填写 Socks 主机为 127.0.0.1:7891，即可启用系统代理。（不同的ubuntu版本系统设置的位置不一样）<br><img src="https://pic1.zhimg.com/v2-e7a859991cabe136ab116056fa3dc748_b.jpg" data-caption="" data-size="normal" data-rawwidth="778" data-rawheight="579" class="origin_image zh-lightbox-thumb" width="778" data-original="https://pic1.zhimg.com/v2-e7a859991cabe136ab116056fa3dc748_r.jpg"><br>11.访问  <a href="http://clash.razord.top/">http://clash.razord.top/</a> 可以切换节点、测延迟等操作。（这里的代理模式选规则）<br><img src="https://pic2.zhimg.com/v2-4604beda74a7d09714eaaf5695283021_b.jpg" data-caption="" data-size="normal" data-rawwidth="1440" data-rawheight="345" class="origin_image zh-lightbox-thumb" width="1440" data-original="https://pic2.zhimg.com/v2-4604beda74a7d09714eaaf5695283021_r.jpg">优先使用火狐浏览器，如果进到这个网站点确定没有响应，f12看看console里面的报错。如果是The request client is not a secure context and the resource is in more-private address space <code>local</code>，可以在url那一栏输入chrome//:flags，搜索Block insecure private network requests，调整为disabled就可以了。<br>这个页面要求提供，Host,Port,Secret 三个输入：Host: 127.0.0.1<br>Port: 9090<br>Secret: 123456<br><img src="https://pic2.zhimg.com/v2-7039cecea861b9ff5da7708b431b1299_b.jpg" data-caption="" data-size="normal" data-rawwidth="720" data-rawheight="340" class="origin_image zh-lightbox-thumb" width="720" data-original="https://pic2.zhimg.com/v2-7039cecea861b9ff5da7708b431b1299_r.jpg"><br>如下界面可以切换节点并测速 （点蓝色表示选中此节点）<br><img src="https://pic2.zhimg.com/v2-198412c6db3ebf6e374043754747008d_b.jpg" data-caption="" data-size="normal" data-rawwidth="1440" data-rawheight="573" class="origin_image zh-lightbox-thumb" width="1440" data-original="https://pic2.zhimg.com/v2-198412c6db3ebf6e374043754747008d_r.jpg"><br>命令行切换节点：用 curl -X PUT 来访问 clash RESTapi，如：先用 curl 127.0.0.1:9090/proxies查看所有节点，然后 curl -X PUT -H “Content-Type: application/json” -d ‘{“name”:”V2-3515|香港|x2.0”}’127.0.0.1:9090/proxies/来切换节点注意：（1）要访问谷歌，就要时刻打开那个终端（如果发现没法上网了，一般是点了直接连接，查看是不是规则连接，见步骤11）（2）如果这些操作都结束后还是无法访问谷歌，建议重启电脑，重新再Clash文件夹下执行  ./clash -d . ，然后再打开网址Clash Dashboard切换节点。二、配置开机自启动#打开终端，获取权限<br>su<br>#输入密码<br>#创建service文件</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">touch</span> /etc/systemd/system/clash.service<span class="token comment">#编辑service文件</span><span class="token function">vi</span> /etc/systemd/system/clash.service<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-.server" data-language=".server"><code class="language-.server">#编辑如下文本：[Unit]Description=clash daemon[Service]Type=simpleUser=rootExecStart=/home/username/下载/Clash/clash -d /home/username/下载/Clash/Restart=on-failure[Install]WantedBy=multi-user.target<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>设置 Clash 的开机启动项，检查状态，服务启动成功之后，根据信息设置自己客户端的代理协议类型及端口（依次输入）</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> systemctl daemon-reload<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> clash<span class="token function">sudo</span> systemctl start clash<span class="token function">sudo</span> systemctl status clash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><hr><p><a href="https://www.zhihu.com/people/mei-tian-du-yao-nu-li-a-80">已授权,转载自知乎用户@每天都要努力呀</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> clash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java反射机制</title>
       <link href="/2022/12/2630031.html"/>
       <url>/2022/12/2630031.html</url>

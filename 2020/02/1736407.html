@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://api.btstu.cn/sjbz/?lx=meizi')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F87c01ec7gy1frmrrnjpf4j21hc0u0dot.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -744,22 +744,26 @@
 </ul>
 <p>在使用路由的时候去了解SPA:</p>
 <ul>
-<li><p>SPA： <code>Single Page Application</code> 单页面应用程序，整个应用中只有一个页面（index.html）。</p>
+<li>
+<p>SPA： <code>Single Page Application</code> 单页面应用程序，整个应用中只有一个页面（index.html）。</p>
 </li>
-<li><p>MPA : <code>Multiple Page Application</code> 多页面应用程序，整个应用中有很多个页面（*.html）。</p>
+<li>
+<p>MPA : <code>Multiple Page Application</code> 多页面应用程序，整个应用中有很多个页面（*.html）。</p>
 </li>
-<li><p>优势：页面响应速度快，体验好（无刷新），降低了对服务器的压力。</p>
+<li>
+<p>优势：页面响应速度快，体验好（无刷新），降低了对服务器的压力。</p>
 <p>a，传统的多页面应用程序，每次请求服务器返回的都是一整个完整的页面。</p>
 <p>b，单页面应用程序只有第一次会加载完整的页面，以后每次请求仅仅获取必要的数据。</p>
 </li>
-<li><p>缺点：不利于 SEO 搜索引擎优化。</p>
+<li>
+<p>缺点：不利于 SEO 搜索引擎优化。</p>
 <p>a，因为爬虫只爬取 HTML 页面中的文本内容，不会执行 JS 代码。</p>
 <p>b，可以通过 SSR（服务端渲染 Server Side Rendering）来解决 SEO 问题，即先在服务器端把内容渲染出来，返回给浏览器的就是纯 HTML 内容了。</p>
-<hr></li>
+<hr>
+</li>
 </ul>
 <p>安装:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> --save react-router<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>现代的前端应用大多都是 SPA，也就是只有一个 HTML 页面的应用程序，因为它的用户体验更好、对服务器的压力更小，所以更受欢迎。</p>
 <p>为了有效的使用单个页面来管理原来多页面的功能，前端路由应运而生，功能：让用户从一个视图（页面）导航到另一个视图（页面）。</p>
 <ul>
@@ -768,60 +772,64 @@
 </ul>
 <p>路由主要的两种模式:</p>
 <ul>
-<li><h4 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h4></li>
-<li><h4 id="histroy"><a href="#histroy" class="headerlink" title="histroy"></a>histroy</h4></li>
+<li>
+<h4 id="hash"><a class="header-anchor" href="#hash">¶</a>hash</h4>
+</li>
+<li>
+<h4 id="histroy"><a class="header-anchor" href="#histroy">¶</a>histroy</h4>
+</li>
 </ul>
 <p>react-router常用就是2种:</p>
 <p>HashRouter:</p>
 <p>BrowserRouter:</p>
 <p>Readirect,必须放switch里,不然from 会失效,switch性能高,匹配到第一个route需求</p>
 <hr>
-
-<h4 id="Router-详细说明"><a href="#Router-详细说明" class="headerlink" title="Router 详细说明"></a>Router 详细说明</h4><ul>
-<li><p>常用有两种 Router：<code>HashRouter</code> 和 <code>BrowserRouter</code>，用来包<strong>裹整个应用</strong>，一个 React 应用只需要使用一次。</p>
+<h4 id="Router-详细说明"><a class="header-anchor" href="#Router-详细说明">¶</a>Router 详细说明</h4>
+<ul>
+<li>
+<p>常用有两种 Router：<code>HashRouter</code> 和 <code>BrowserRouter</code>，用来包<strong>裹整个应用</strong>，一个 React 应用只需要使用一次。</p>
 </li>
-<li><p>HashRouter：使用 URL 的哈希值实现（<code>http://localhost:3000/#/first</code>）</p>
+<li>
+<p>HashRouter：使用 URL 的哈希值实现（<code>http://localhost:3000/#/first</code>）</p>
 <p>是通过监听 window 的 <code>hashchange</code> 事件来实现的。</p>
 </li>
-<li><p>BrowserRouter：使用 H5 的 history API 实现（<code>http://localhost:3000/first</code>）</p>
+<li>
+<p>BrowserRouter：使用 H5 的 history API 实现（<code>http://localhost:3000/first</code>）</p>
 <p>是通过监听 window 的 <code>popstate</code> 事件来实现的。</p>
 </li>
 </ul>
 <hr>
-
 <p>安装</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">yarn</span> <span class="token function">add</span> react-router-dom@5.3.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>提供核心组件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> <span class="token punctuation">{</span>HashRouter,Route,Link<span class="token punctuation">}</span> from <span class="token string">'react-router-dom'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>包裹整个引用</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">HashRouter</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">App</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">HashRouter</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>指定导航链接</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>nav-link active<span class="token punctuation">'</span></span> <span class="token attr-name">aria-current</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>page<span class="token punctuation">'</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/whertogo<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
     去哪儿
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>使用Route指定路由规则</p>
 <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/wheretogo<span class="token punctuation">'</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>wheretogo<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="路由的执行过程"><a href="#路由的执行过程" class="headerlink" title="路由的执行过程"></a>路由的执行过程</h4><ol>
+<h4 id="路由的执行过程"><a class="header-anchor" href="#路由的执行过程">¶</a>路由的执行过程</h4>
+<ol>
 <li>点击 Link 组件（a 标签），浏览器地址栏中的 url 发生变化。</li>
 <li>ReactRouter 通过 <code>hashchange</code> 或 <code>popState</code> 监听到了地址栏 url 的变化。</li>
 <li>ReactRouter 内部遍历所有 Route 组件，使用路由规则（path）与 pathname（hash）进行匹配。</li>
 <li>当路由规则（path）能够匹配地址栏中的 pathname（hash）时，就展示该 Route 对应的组件。</li>
 </ol>
 <hr>
-
-<h4 id="Link-与-NavLink区别"><a href="#Link-与-NavLink区别" class="headerlink" title="Link 与 NavLink区别"></a>Link 与 NavLink区别</h4><ul>
-<li><p><code>Link</code> 组件最终会渲染成 a 标签，用于指定路由导航。</p>
+<h4 id="Link-与-NavLink区别"><a class="header-anchor" href="#Link-与-NavLink区别">¶</a>Link 与 NavLink区别</h4>
+<ul>
+<li>
+<p><code>Link</code> 组件最终会渲染成 a 标签，用于指定路由导航。</p>
 <p>1，to 属性，将来会渲染成 a 标签的 href 属性。</p>
 <p>2，<code>Link</code> 组件无法实现导航的高亮效果。</p>
 </li>
-<li><p><code>NavLink</code> 组件，一个更特殊的 <code>Link</code> 组件，可以用于指定当前导航高亮。</p>
+<li>
+<p><code>NavLink</code> 组件，一个更特殊的 <code>Link</code> 组件，可以用于指定当前导航高亮。</p>
 <p>1，to：用于指定地址，会渲染成 a 标签的 href 属性。</p>
 <p>2，activeClass：用于指定高亮的类名，默认 <code>active</code>。</p>
 <p>3，exact：精确匹配，表示必须精确匹配类名才会应用 class，默认是模糊模糊匹配。</p>
@@ -1114,7 +1122,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.seovx.com/img/mom-2019%20(96).jpg" class="responsive-img" alt="vue批量注册组件的方法">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F1200px-The_Bubble_Nebula_-_NGC_7635_-_Heic1608a.jpg" class="responsive-img" alt="vue批量注册组件的方法">
                         
                         <span class="card-title">vue批量注册组件的方法</span>
                     </div>
@@ -1163,7 +1171,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F87c01ec7gy1frmrrnjpf4j21hc0u0dot.jpg" class="responsive-img" alt="Vue渲染富文本">
+                        <img src="https://img.btstu.cn/api/images/5a040eb30c055.jpg" class="responsive-img" alt="Vue渲染富文本">
                         
                         <span class="card-title">Vue渲染富文本</span>
                     </div>
@@ -1393,7 +1401,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

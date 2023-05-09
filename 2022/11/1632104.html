@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://api.btstu.cn/sjbz/?lx=m_meizi')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.gstatic.com/prettyearth/assets/full/1026.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -701,7 +701,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    777
+                    785
                 </div>
                 
 
@@ -736,15 +736,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一、Map的实现类的结构：</p>
+                <p>一、Map 的实现类的结构：</p>
 <ul>
-<li>Map:双列数据，存储key-value对的数据   —类似于高中的函数：y = f(x)</li>
-<li>HashMap:作为Map的主要实现类；线程不安全的，效率高；存储null的key和value</li>
-<li>LinkedHashMap:保证在遍历map元素时，可以按照添加的顺序实现遍历。<br>原因：在原有的HashMap底层结构基础上，添加了一对指针，指向前一个和后一个元素。<br>对于频繁的遍历操作，此类执行效率高于HashMap。<br>TreeMap:保证按照添加的key-value对进行排序，实现排序遍历。此时考虑key的自然排序或定制排序<br>底层使用红黑树<br>Hashtable:作为古老的实现类；线程安全的，效率低；不能存储null的key和value<br>Properties:常用来处理配置文件。key和value都是String类型</li>
-</ul>
+<li>
+<p>Map:双列数据，存储 key-value 对的数据 —类似于高中的函数：y = f(x)</p>
+</li>
+<li>
+<p>HashMap:作为 Map 的主要实现类；线程不安全的，效率高；存储 null 的 key 和 value</p>
+</li>
+<li>
+<p>LinkedHashMap:保证在遍历 map 元素时，可以按照添加的顺序实现遍历。<br>
+原因：在原有的 HashMap 底层结构基础上，添加了一对指针，指向前一个和后一个元素。<br>
+对于频繁的遍历操作，此类执行效率高于 HashMap。<br>
+TreeMap:保证按照添加的 key-value 对进行排序，实现排序遍历。此时考虑 key 的自然排序或定制排序<br>
+底层使用红黑树<br>
+Hashtable:作为古老的实现类；线程安全的，效率低；不能存储 null 的 key 和 value<br>
+Properties:常用来处理配置文件。key 和 value 都是 String 类型</p>
 <pre><code>  HashMap的底层：数组+链表  （jdk7及之前）
                 数组+链表+红黑树 （jdk 8）
 </code></pre>
+</li>
+</ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapTest</span> <span class="token punctuation">{</span>
 
 
@@ -1172,7 +1184,7 @@ map.put(null,123);
                     <div class="card-image">
                         
                         
-                        <img src="http://api.btstu.cn/sjbz/?lx=m_meizi" class="responsive-img" alt="IO流原理及分类">
+                        <img src="https://www.gstatic.com/prettyearth/assets/full/1047.jpg" class="responsive-img" alt="IO流原理及分类">
                         
                         <span class="card-title">IO流原理及分类</span>
                     </div>
@@ -1220,8 +1232,7 @@ map.put(null,123);
                 <a href="/2022/11/074849.html">
                     <div class="card-image">
                         
-                        
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1012.jpg" class="responsive-img" alt="多线程的创建">
+                        <img src="https://www.gstatic.com/prettyearth/assets/full/1040.jpg" class="responsive-img" alt="多线程的创建">
                         
                         <span class="card-title">多线程的创建</span>
                     </div>
@@ -1451,7 +1462,7 @@ map.put(null,123);
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

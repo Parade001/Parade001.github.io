@@ -747,7 +747,6 @@ export default class request extends Component {
     )
   }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>如果未使用过ES6,你可以使用create-react-class模块:</p>
 <pre class="line-numbers language-none"><code class="language-none">var createReactClass = require('create-react-class');
 var Greeting = createReactClass({
@@ -755,9 +754,9 @@ var Greeting = createReactClass({
     return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;;
   }
 });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>有以下几个区别值得注意:</p>
-<h2 id="声明默认属性"><a href="#声明默认属性" class="headerlink" title="声明默认属性"></a>声明默认属性</h2><p>无论是函数组件还是 class 组件，都拥有 <code>defaultProps</code> 属性：</p>
+<h2 id="声明默认属性"><a class="header-anchor" href="#声明默认属性">¶</a>声明默认属性</h2>
+<p>无论是函数组件还是 class 组件，都拥有 <code>defaultProps</code> 属性：</p>
 <pre class="line-numbers language-none"><code class="language-none">class Greeting extends React.Component {
   // ...
 }
@@ -765,7 +764,6 @@ var Greeting = createReactClass({
 Greeting.defaultProps = {
   name: 'Mary'
 };<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>如果使用 <code>createReactClass()</code> 方法创建组件，那就需要在组件中定义 <code>getDefaultProps()</code> 函数：</p>
 <pre class="line-numbers language-none"><code class="language-none">var Greeting = createReactClass({
   getDefaultProps: function() {
@@ -775,8 +773,8 @@ Greeting.defaultProps = {
   },
   // ...
 });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="初始化-State"><a href="#初始化-State" class="headerlink" title="初始化 State"></a>初始化 State</h2><p>如果使用 ES6 的 class 关键字创建组件，你可以通过给 <code>this.state</code> 赋值的方式来定义组件的初始 state：</p>
+<h2 id="初始化-State"><a class="header-anchor" href="#初始化-State">¶</a>初始化 State</h2>
+<p>如果使用 ES6 的 class 关键字创建组件，你可以通过给 <code>this.state</code> 赋值的方式来定义组件的初始 state：</p>
 <pre class="line-numbers language-none"><code class="language-none">class Counter extends React.Component {
   constructor(props) {
     super(props);
@@ -784,7 +782,6 @@ Greeting.defaultProps = {
   }
   // ...
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>如果使用 <code>createReactClass()</code> 方法创建组件，你需要提供一个单独的 <code>getInitialState</code> 方法，让其返回初始 state：</p>
 <pre class="line-numbers language-none"><code class="language-none">var Counter = createReactClass({
   getInitialState: function() {
@@ -792,8 +789,8 @@ Greeting.defaultProps = {
   },
   // ...
 });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="自动绑定"><a href="#自动绑定" class="headerlink" title="自动绑定"></a>自动绑定</h2><p>对于使用 ES6 的 class 关键字创建的 React 组件，组件中的方法遵循与常规 ES6 class 相同的语法规则。这意味着这些方法不会自动绑定 <code>this</code> 到这个组件实例。 你需要在 constructor 中显式地调用 <code>.bind(this)</code>：</p>
+<h2 id="自动绑定"><a class="header-anchor" href="#自动绑定">¶</a>自动绑定</h2>
+<p>对于使用 ES6 的 class 关键字创建的 React 组件，组件中的方法遵循与常规 ES6 class 相同的语法规则。这意味着这些方法不会自动绑定 <code>this</code> 到这个组件实例。 你需要在 constructor 中显式地调用 <code>.bind(this)</code>：</p>
 <pre class="line-numbers language-none"><code class="language-none">class SayHello extends React.Component {
   constructor(props) {
     super(props);
@@ -815,7 +812,6 @@ Greeting.defaultProps = {
     );
   }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>如果使用 <code>createReactClass()</code> 方法创建组件，组件中的方法会自动绑定至实例，所以不需要像上面那样做：</p>
 <pre class="line-numbers language-none"><code class="language-none">var SayHello = createReactClass({
   getInitialState: function() {
@@ -834,7 +830,6 @@ Greeting.defaultProps = {
     );
   }
 });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这就意味着，如果使用 ES6 class 关键字创建组件，在处理事件回调时就要多写一部分代码。但对于大型项目来说，这样做可以提升运行效率。</p>
 <p>如果你觉得上述写法很繁琐，那么可以尝试使用<strong>目前还处于试验性阶段</strong>的 Babel 插件 <a target="_blank" rel="noopener" href="https://babeljs.io/docs/plugins/transform-class-properties/">Class Properties</a>。</p>
 <pre class="line-numbers language-none"><code class="language-none">class SayHello extends React.Component {
@@ -856,7 +851,6 @@ Greeting.defaultProps = {
     );
   }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>请注意，上面这种语法<strong>目前还处于试验性阶段</strong>，这意味着语法随时都可能改变，也存在最终不被列入框架标准的可能。</p>
 <p>为了保险起见，以下三种做法都是可以的：</p>
 <ul>
@@ -1199,7 +1193,7 @@ Greeting.defaultProps = {
                     <div class="card-image">
                         
                         
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1012.jpg" class="responsive-img" alt="如何在 React 中发起 AJAX 请求">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F1200px-The_Bubble_Nebula_-_NGC_7635_-_Heic1608a.jpg" class="responsive-img" alt="如何在 React 中发起 AJAX 请求">
                         
                         <span class="card-title">如何在 React 中发起 AJAX 请求</span>
                     </div>
@@ -1429,7 +1423,7 @@ Greeting.defaultProps = {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

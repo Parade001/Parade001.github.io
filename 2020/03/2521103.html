@@ -728,23 +728,24 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>基本用法</p>
-<p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。<br>以前，为变量赋值，只能直接指定值。</p>
+<p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。<br>
+以前，为变量赋值，只能直接指定值。</p>
 <hr>
-<h4 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<h4 id="数组的解构赋值"><a class="header-anchor" href="#数组的解构赋值">¶</a>数组的解构赋值</h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
 <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">2</span>
 <span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>ES6允许写成下面这样。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>上面代码表示，可以从数组中提取值，按照对应位置，对变量赋值。<br>本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。下面是一些使用嵌套数组进行解构的例子。</p>
+<p>上面代码表示，可以从数组中提取值，按照对应位置，对变量赋值。<br>
+本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。下面是一些使用嵌套数组进行解构的例子。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token punctuation">[</span>foo <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 foo <span class="token comment">// true</span>
 <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token string">'b'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span> <span class="token comment">// x='a', y='b' [x, y = 'b'] = ['a', undefined] // x='a', y='b'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>注意，ES6内部使用严格相等运算符（=== ），判断一个位置是否有值。所以，如果一个数组成员不严格等于undefined ，默认值是不会生效的。</p>
 <hr>
-<h4 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h4><p>对象字面量的语法形式是在一个赋值操作符左边放置一个对象字面量；</p>
+<h4 id="对象的解构赋值"><a class="header-anchor" href="#对象的解构赋值">¶</a>对象的解构赋值</h4>
+<p>对象字面量的语法形式是在一个赋值操作符左边放置一个对象字面量；</p>
 <p>对象的解构与数组有一个重要的不同。</p>
 <p>数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token punctuation">{</span> bar<span class="token punctuation">,</span> foo <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">"aaa"</span><span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token string">"bbb"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> 
@@ -752,25 +753,24 @@ foo <span class="token comment">// "aaa"</span>
 bar <span class="token comment">// "bbb"</span>
 <span class="token keyword">var</span> <span class="token punctuation">{</span> baz <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">"aaa"</span><span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token string">"bbb"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 baz <span class="token comment">// undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>上面代码的第一个例子，等号左边的两个变量的次序，与等号右边两个同名属性的次序不一致，但是对取值完全没有影响。第二个例子的变量没有对应的同名属性，导致取不到值，最后等于undefined 。<br>如果变量名与属性名不一致，必须写成下面这样。</p>
+<p>上面代码的第一个例子，等号左边的两个变量的次序，与等号右边两个同名属性的次序不一致，但是对取值完全没有影响。第二个例子的变量没有对应的同名属性，导致取不到值，最后等于undefined 。<br>
+如果变量名与属性名不一致，必须写成下面这样。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> baz <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">"aaa"</span><span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token string">"bbb"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> 
 baz <span class="token comment">// "aaa"</span>
 <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> first<span class="token operator">:</span> <span class="token string">'hello'</span><span class="token punctuation">,</span> last<span class="token operator">:</span> <span class="token string">'world'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> <span class="token punctuation">{</span> first<span class="token operator">:</span> f<span class="token punctuation">,</span> last<span class="token operator">:</span> l <span class="token punctuation">}</span> <span class="token operator">=</span> obj<span class="token punctuation">;</span>
 f <span class="token comment">// 'hello'</span>
 l <span class="token comment">// 'world'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这实际上说明，对象的解构赋值是下面形式的简写</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> foo<span class="token punctuation">,</span> bar<span class="token operator">:</span> bar <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">"aaa"</span><span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token string">"bbb"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>也就是说，对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。</p>
 <hr>
-<h4 id="基本数组结构"><a href="#基本数组结构" class="headerlink" title="基本数组结构"></a><strong>基本数组结构</strong></h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<h4 id="基本数组结构"><a class="header-anchor" href="#基本数组结构">¶</a><strong>基本数组结构</strong></h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token comment">// a = 1 // b = 2 // c = 3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <hr>
-<h4 id="解析一个从函数返回的数组"><a href="#解析一个从函数返回的数组" class="headerlink" title="解析一个从函数返回的数组"></a><strong>解析一个从函数返回的数组</strong></h4><p>从一个函数返回一个数组是十分常见的情况。解构使得处理返回值为数组时更加方便。</p>
+<h4 id="解析一个从函数返回的数组"><a class="header-anchor" href="#解析一个从函数返回的数组">¶</a><strong>解析一个从函数返回的数组</strong></h4>
+<p>从一个函数返回一个数组是十分常见的情况。解构使得处理返回值为数组时更加方便。</p>
 <p>在下面要让 <code>[1, 2]</code> 成为函数的 <code>f()</code> 的输出值，可以使用解构在一行内完成解析。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -780,9 +780,9 @@ l <span class="token comment">// 'world'</span><span aria-hidden="true" class="l
 <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-<h4 id="解构对象时会查找原型链（如果属性不在对象自身，将从原型链中查找）"><a href="#解构对象时会查找原型链（如果属性不在对象自身，将从原型链中查找）" class="headerlink" title="解构对象时会查找原型链（如果属性不在对象自身，将从原型链中查找）"></a><strong>解构对象时会查找原型链（如果属性不在对象自身，将从原型链中查找）</strong></h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 声明对象 和 自身 self 属性</span>
+<h4 id="解构对象时会查找原型链（如果属性不在对象自身，将从原型链中查找）"><a class="header-anchor" href="#解构对象时会查找原型链（如果属性不在对象自身，将从原型链中查找）">¶</a><strong>解构对象时会查找原型链（如果属性不在对象自身，将从原型链中查找）</strong></h4>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 声明对象 和 自身 self 属性</span>
 <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>self<span class="token operator">:</span> <span class="token string">'hello'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token comment">// 在原型链中定义一个属性 prot</span>
 obj<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>prot <span class="token operator">=</span> <span class="token string">'word'</span><span class="token punctuation">;</span>
@@ -790,21 +790,20 @@ obj<span class="token punctuation">.</span>__proto__<span class="token punctuati
 <span class="token keyword">const</span> <span class="token punctuation">{</span>self<span class="token punctuation">,</span> prot<span class="token punctuation">}</span> <span class="token operator">=</span> obj<span class="token punctuation">;</span>
 <span class="token comment">// self "hello"</span>
 <span class="token comment">// prot "word"（访问到了原型链）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-<h4 id="将剩余数组赋值给一个变量"><a href="#将剩余数组赋值给一个变量" class="headerlink" title="将剩余数组赋值给一个变量"></a><strong>将剩余数组赋值给一个变量</strong></h4><p>当解构一个数组时，可以使用剩余模式，将数组剩余部分赋值给一个变量。</p>
+<h4 id="将剩余数组赋值给一个变量"><a class="header-anchor" href="#将剩余数组赋值给一个变量">¶</a><strong>将剩余数组赋值给一个变量</strong></h4>
+<p>当解构一个数组时，可以使用剩余模式，将数组剩余部分赋值给一个变量。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token punctuation">[</span>a5<span class="token punctuation">,</span> <span class="token operator">...</span>b5<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a5<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b5<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [2, 3]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token punctuation">{</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token operator">...</span>res<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span> c<span class="token operator">:</span> <span class="token number">30</span><span class="token punctuation">,</span> d<span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// a = 10 </span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>  <span class="token comment">// res = {c: 30, d: 40};</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-<h4 id="圆括号问题"><a href="#圆括号问题" class="headerlink" title="圆括号问题"></a>圆括号问题</h4><p>解构赋值虽然很方便，但是解析起来并不容易。对于编译器来说，一个式子到底是模式，还是表达式，没有办法从一开始就知道，必须解析到（或解析不到）等号才能知道。<br>由此带来的问题是，如果模式中出现圆括号怎么处理。ES6的规则是，只要有可能导致解构的歧义，就不得使用圆括号。<br>但是，这条规则实际上不那么容易辨别，处理起来相当麻烦。因此，建议只要有可能，就不要在模式中放置圆括号。</p>
+<h4 id="圆括号问题"><a class="header-anchor" href="#圆括号问题">¶</a>圆括号问题</h4>
+<p>解构赋值虽然很方便，但是解析起来并不容易。对于编译器来说，一个式子到底是模式，还是表达式，没有办法从一开始就知道，必须解析到（或解析不到）等号才能知道。<br>
+由此带来的问题是，如果模式中出现圆括号怎么处理。ES6的规则是，只要有可能导致解构的歧义，就不得使用圆括号。<br>
+但是，这条规则实际上不那么容易辨别，处理起来相当麻烦。因此，建议只要有可能，就不要在模式中放置圆括号。</p>
 <p>三种解构赋值不得使用圆括号。</p>
 <ul>
 <li>变量声明语句中，模式不能带有圆括号。</li>
@@ -815,7 +814,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 正确</span>
 <span class="token punctuation">(</span><span class="token punctuation">{</span> p<span class="token operator">:</span> <span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 正确</span>
 <span class="token punctuation">[</span><span class="token punctuation">(</span>parseInt<span class="token punctuation">.</span>prop<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 正确</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>可以使用圆括号的情况只有一种：赋值语句的非模式部分，可以使用圆括号。</p>
 
                 
@@ -1103,7 +1101,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <div class="card-image">
                         
                         
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1012.jpg" class="responsive-img" alt="浅拷贝和深拷贝的方法">
+                        <img src="http://api.btstu.cn/sjbz/?lx=meizi" class="responsive-img" alt="浅拷贝和深拷贝的方法">
                         
                         <span class="card-title">浅拷贝和深拷贝的方法</span>
                     </div>
@@ -1152,7 +1150,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <div class="card-image">
                         
                         
-                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg" class="responsive-img" alt="混入(mixin)全局注册与局部注册的用法">
+                        <img src="https://www.gstatic.com/prettyearth/assets/full/1012.jpg" class="responsive-img" alt="混入(mixin)全局注册与局部注册的用法">
                         
                         <span class="card-title">混入(mixin)全局注册与局部注册的用法</span>
                     </div>
@@ -1382,7 +1380,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

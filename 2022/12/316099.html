@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.seovx.com/img/mom-2019%20(147).jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.seovx.com/img/seovx%20(1).jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -701,7 +701,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    850
+                    859
                 </div>
                 
 
@@ -736,25 +736,37 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash/releases">下载文件：clash-linux-amd64-v1.12.0.gz</a><br>（也可以下载最新的版本，前缀是clash-linux-amd64即可）进入该文件所在目录，在页面空白处右键在终端打开<br>1.解压gunzip clash-linux-amd64-v1.12.0.gz<br>2.将clash-linux-amd64-v1.12.0文件重命名为clash mv clash-linux-amd64-v1.12.0 clash<br>3.在此目录下创建文件夹（注意这里用大写Clash只是为了和clash区别开）</p>
+                <p><a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash/releases">下载文件：clash-linux-amd64-v1.12.0.gz</a><br>
+（也可以下载最新的版本，前缀是 clash-linux-amd64 即可）进入该文件所在目录，在页面空白处右键在终端打开 1.解压 gunzip clash-linux-amd64-v1.12.0.gz 2.将 clash-linux-amd64-v1.12.0 文件重命名为 clash mv clash-linux-amd64-v1.12.0 clash 3.在此目录下创建文件夹（注意这里用大写 Clash 只是为了和 clash 区别开）</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> Clash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>4.移动clash文件夹到Clash文件夹</p>
+<p>4.移动 clash 文件夹到 Clash 文件夹</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> clash ./Clash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>5.进入Clash文件夹</p>
+<p>5.进入 Clash 文件夹</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> Clash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>6.下载clash 配置文件config.yaml （注意：这个订阅链接是自己的，替代 [订阅链接]，如果失败了说明订阅链接有问题）</p>
+<p>6.下载 clash 配置文件 config.yaml （注意：这个订阅链接是自己的，替代 [订阅链接]，如果失败了说明订阅链接有问题）</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -O config.yaml <span class="token punctuation">[</span>订阅链接<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>7.下载Country.mmdb</p>
+<p>7.下载 Country.mmdb</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -O Country.mmdb https://www.sub-speeder.com/client-download/Country.mmdb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>注意：如果步骤7失败了也没关系，直接跳过这一步，后面也会自动下载。也可以在网址Country.mmdb下载。<br>8.启动clash.</p>
+<p>注意：如果步骤 7 失败了也没关系，直接跳过这一步，后面也会自动下载。也可以在网址 Country.mmdb 下载。 8.启动 clash.</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/clash -d <span class="token builtin class-name">.</span>
 //注意：如果提示权限不足则
 <span class="token function">chmod</span> +x Clash
 //再执行
 ./clash -d <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>出现如下表示成功，并保持此终端打开<br>9.打开配置文件config.yaml ，给它设置一个密码： # RESTful API 的口令 secret: ‘123456’<img src="https://pic1.zhimg.com/v2-0befeb7cc67c64ef034394bdb48aa908_b.jpg" data-caption="" data-size="normal" data-rawwidth="653" data-rawheight="118" class="origin_image zh-lightbox-thumb" width="653" data-original="https://pic1.zhimg.com/v2-0befeb7cc67c64ef034394bdb48aa908_r.jpg"></p>
-<p>10.打开系统设置，选择网络，点击网络代理右边的 ⚙ 按钮，选择手动，<br>填写 HTTP 和 HTTPS 代理为 127.0.0.1:7890，<br>填写 Socks 主机为 127.0.0.1:7891，即可启用系统代理。（不同的ubuntu版本系统设置的位置不一样）<br><img src="https://pic1.zhimg.com/v2-e7a859991cabe136ab116056fa3dc748_b.jpg" data-caption="" data-size="normal" data-rawwidth="778" data-rawheight="579" class="origin_image zh-lightbox-thumb" width="778" data-original="https://pic1.zhimg.com/v2-e7a859991cabe136ab116056fa3dc748_r.jpg"><br>11.访问  <a target="_blank" rel="noopener" href="http://clash.razord.top/">http://clash.razord.top/</a> 可以切换节点、测延迟等操作。（这里的代理模式选规则）<br><img src="https://pic2.zhimg.com/v2-4604beda74a7d09714eaaf5695283021_b.jpg" data-caption="" data-size="normal" data-rawwidth="1440" data-rawheight="345" class="origin_image zh-lightbox-thumb" width="1440" data-original="https://pic2.zhimg.com/v2-4604beda74a7d09714eaaf5695283021_r.jpg">优先使用火狐浏览器，如果进到这个网站点确定没有响应，f12看看console里面的报错。如果是The request client is not a secure context and the resource is in more-private address space <code>local</code>，可以在url那一栏输入chrome//:flags，搜索Block insecure private network requests，调整为disabled就可以了。<br>这个页面要求提供，Host,Port,Secret 三个输入：Host: 127.0.0.1<br>Port: 9090<br>Secret: 123456<br><img src="https://pic2.zhimg.com/v2-7039cecea861b9ff5da7708b431b1299_b.jpg" data-caption="" data-size="normal" data-rawwidth="720" data-rawheight="340" class="origin_image zh-lightbox-thumb" width="720" data-original="https://pic2.zhimg.com/v2-7039cecea861b9ff5da7708b431b1299_r.jpg"><br>如下界面可以切换节点并测速 （点蓝色表示选中此节点）<br><img src="https://pic2.zhimg.com/v2-198412c6db3ebf6e374043754747008d_b.jpg" data-caption="" data-size="normal" data-rawwidth="1440" data-rawheight="573" class="origin_image zh-lightbox-thumb" width="1440" data-original="https://pic2.zhimg.com/v2-198412c6db3ebf6e374043754747008d_r.jpg"><br>命令行切换节点：用 curl -X PUT 来访问 clash RESTapi，如：先用 curl 127.0.0.1:9090/proxies查看所有节点，然后 curl -X PUT -H “Content-Type: application/json” -d ‘{“name”:”V2-3515|香港|x2.0”}’127.0.0.1:9090/proxies/来切换节点注意：（1）要访问谷歌，就要时刻打开那个终端（如果发现没法上网了，一般是点了直接连接，查看是不是规则连接，见步骤11）（2）如果这些操作都结束后还是无法访问谷歌，建议重启电脑，重新再Clash文件夹下执行  ./clash -d . ，然后再打开网址Clash Dashboard切换节点。二、配置开机自启动#打开终端，获取权限<br>su<br>#输入密码<br>#创建service文件</p>
+<p>出现如下表示成功，并保持此终端打开 9.打开配置文件 config.yaml ，给它设置一个密码： # RESTful API 的口令 secret: ‘123456’<img src="https://pic1.zhimg.com/v2-0befeb7cc67c64ef034394bdb48aa908_b.jpg" data-caption="" data-size="normal" data-rawwidth="653" data-rawheight="118" class="origin_image zh-lightbox-thumb" width="653" data-original="https://pic1.zhimg.com/v2-0befeb7cc67c64ef034394bdb48aa908_r.jpg"></p>
+<p>10.打开系统设置，选择网络，点击网络代理右边的 ⚙ 按钮，选择手动，<br>
+填写 HTTP 和 HTTPS 代理为 127.0.0.1:7890，<br>
+填写 Socks 主机为 127.0.0.1:7891，即可启用系统代理。（不同的 ubuntu 版本系统设置的位置不一样）<br>
+<img src="https://pic1.zhimg.com/v2-e7a859991cabe136ab116056fa3dc748_b.jpg" data-caption="" data-size="normal" data-rawwidth="778" data-rawheight="579" class="origin_image zh-lightbox-thumb" width="778" data-original="https://pic1.zhimg.com/v2-e7a859991cabe136ab116056fa3dc748_r.jpg"> 11.访问 <a target="_blank" rel="noopener" href="http://clash.razord.top/">http://clash.razord.top/</a> 可以切换节点、测延迟等操作。（这里的代理模式选规则）<br>
+<img src="https://pic2.zhimg.com/v2-4604beda74a7d09714eaaf5695283021_b.jpg" data-caption="" data-size="normal" data-rawwidth="1440" data-rawheight="345" class="origin_image zh-lightbox-thumb" width="1440" data-original="https://pic2.zhimg.com/v2-4604beda74a7d09714eaaf5695283021_r.jpg">优先使用火狐浏览器，如果进到这个网站点确定没有响应，f12 看看 console 里面的报错。如果是 The request client is not a secure context and the resource is in more-private address space <code>local</code>，可以在 url 那一栏输入 chrome//:flags，搜索 Block insecure private network requests，调整为 disabled 就可以了。<br>
+这个页面要求提供，Host,Port,Secret 三个输入：Host: 127.0.0.1<br>
+Port: 9090<br>
+Secret: 123456<br>
+<img src="https://pic2.zhimg.com/v2-7039cecea861b9ff5da7708b431b1299_b.jpg" data-caption="" data-size="normal" data-rawwidth="720" data-rawheight="340" class="origin_image zh-lightbox-thumb" width="720" data-original="https://pic2.zhimg.com/v2-7039cecea861b9ff5da7708b431b1299_r.jpg"><br>
+如下界面可以切换节点并测速 （点蓝色表示选中此节点）<br>
+<img src="https://pic2.zhimg.com/v2-198412c6db3ebf6e374043754747008d_b.jpg" data-caption="" data-size="normal" data-rawwidth="1440" data-rawheight="573" class="origin_image zh-lightbox-thumb" width="1440" data-original="https://pic2.zhimg.com/v2-198412c6db3ebf6e374043754747008d_r.jpg"><br>
+命令行切换节点：用 curl -X PUT 来访问 clash RESTapi，如：先用 curl 127.0.0.1:9090/proxies 查看所有节点，然后 curl -X PUT -H “Content-Type: application/json” -d '{“name”:“V2-3515|香港|x2.0”}'127.0.0.1:9090/proxies/来切换节点注意：（1）要访问谷歌，就要时刻打开那个终端（如果发现没法上网了，一般是点了直接连接，查看是不是规则连接，见步骤 11）（2）如果这些操作都结束后还是无法访问谷歌，建议重启电脑，重新再 Clash 文件夹下执行 ./clash -d . ，然后再打开网址 Clash Dashboard 切换节点。二、配置开机自启动#打开终端，获取权限<br>
+su #输入密码 #创建 service 文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">touch</span> /etc/systemd/system/clash.service
 <span class="token comment">#编辑service文件</span>
 <span class="token function">vi</span> /etc/systemd/system/clash.service<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -773,7 +785,6 @@ WantedBy=multi-user.target<span aria-hidden="true" class="line-numbers-rows"><sp
 <span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> clash
 <span class="token function">sudo</span> systemctl start clash
 <span class="token function">sudo</span> systemctl status clash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/mei-tian-du-yao-nu-li-a-80">已授权,转载自知乎用户@每天都要努力呀</a></p>
 
@@ -1061,8 +1072,7 @@ WantedBy=multi-user.target<span aria-hidden="true" class="line-numbers-rows"><sp
                 <a href="/2023/01/1813285.html">
                     <div class="card-image">
                         
-                        
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1047.jpg" class="responsive-img" alt="grub2修复Windows 引导">
+                        <img src="https://www.gstatic.com/prettyearth/assets/full/1036.jpg" class="responsive-img" alt="grub2修复Windows 引导">
                         
                         <span class="card-title">grub2修复Windows 引导</span>
                     </div>
@@ -1110,8 +1120,7 @@ WantedBy=multi-user.target<span aria-hidden="true" class="line-numbers-rows"><sp
                 <a href="/2022/12/2630031.html">
                     <div class="card-image">
                         
-                        
-                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/joshua-%20tree.jpg" class="responsive-img" alt="Java反射机制">
+                        <img src="https://www.gstatic.com/prettyearth/assets/full/1037.jpg" class="responsive-img" alt="Java反射机制">
                         
                         <span class="card-title">Java反射机制</span>
                     </div>
@@ -1341,7 +1350,7 @@ WantedBy=multi-user.target<span aria-hidden="true" class="line-numbers-rows"><sp
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

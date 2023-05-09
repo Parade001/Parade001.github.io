@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Fhubble_birthofstars_0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://api.isoyu.com/bing_images.php')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -701,7 +701,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    939
+                    941
                 </div>
                 
 
@@ -748,36 +748,33 @@
 <li><strong>beforeRouteLeave</strong></li>
 </ul>
 <hr>
-
 <p>每个守卫方法接收三个参数:</p>
 <p>to:要去哪个页面;</p>
 <p>from:从哪里来(当前导航正要离开的路由)</p>
 <p>next:它是一个函数。</p>
 <hr>
-
-<h1 id="全局前置守卫router-beforeEach"><a href="#全局前置守卫router-beforeEach" class="headerlink" title="全局前置守卫router.beforeEach"></a>全局前置守卫router.beforeEach</h1><p>当一个导航触发时，全局前置守卫按照创建顺序调用,守卫是异步解析执行，此时导航在所有守卫 resolve 完之前一直处于 <strong>等待中</strong>。</p>
+<h1>全局前置守卫router.beforeEach</h1>
+<p>当一个导航触发时，全局前置守卫按照创建顺序调用,守卫是异步解析执行，此时导航在所有守卫 resolve 完之前一直处于 <strong>等待中</strong>。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
 router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>next():如果要放行,进行下一个钩子</p>
 <p>next(其他页):跳转其他页面</p>
 <p>守卫函数中,一定要调用next();</p>
 <p>to.path:是一个路由对象,path即路径,是他的一个属性.</p>
 <hr>
-
-<h1 id="全局解析守卫router-beforeResolve"><a href="#全局解析守卫router-beforeResolve" class="headerlink" title="全局解析守卫router.beforeResolve"></a>全局解析守卫router.beforeResolve</h1><p>和router.beforeEach不同的是:</p>
+<h1>全局解析守卫router.beforeResolve</h1>
+<p>和router.beforeEach不同的是:</p>
 <p>导航被确认之前,同时在所有组件内守卫和异步路由组件被解析之后，解析守卫就被调用。</p>
 <hr>
-
-<h1 id="全局后置router-afterEach"><a href="#全局后置router-afterEach" class="headerlink" title="全局后置router.afterEach"></a><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E5%85%A8%E5%B1%80%E5%90%8E%E7%BD%AE%E9%92%A9%E5%AD%90">全局后置</a>router.afterEach</h1><p>这些钩子不会接收next函数,也不会改变导航本身:</p>
+<h1><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E5%85%A8%E5%B1%80%E5%90%8E%E7%BD%AE%E9%92%A9%E5%AD%90">全局后置</a>router.afterEach</h1>
+<p>这些钩子不会接收next函数,也不会改变导航本身:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token comment">// ...</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
-<h1 id="路由独享的守卫"><a href="#路由独享的守卫" class="headerlink" title="路由独享的守卫"></a>路由独享的守卫</h1><p>可以直接在路由配置上定义beforeEnter守卫:</p>
+<h1>路由独享的守卫</h1>
+<p>可以直接在路由配置上定义beforeEnter守卫:</p>
 <pre class="line-numbers language-none"><code class="language-none">const router = new VueRouter({
   routes: [
     {
@@ -789,10 +786,9 @@ router<span class="token punctuation">.</span><span class="token function">befor
     }
   ]
 })<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
-
-<h1 id="组件内的守卫"><a href="#组件内的守卫" class="headerlink" title="组件内的守卫"></a>组件内的守卫</h1><p>最后，你可以在路由组件内直接定义以下路由导航守卫：</p>
+<h1>组件内的守卫</h1>
+<p>最后，你可以在路由组件内直接定义以下路由导航守卫：</p>
 <ul>
 <li><code>beforeRouteEnter</code></li>
 <li><code>beforeRouteUpdate</code> (2.2 新增)</li>
@@ -816,7 +812,6 @@ router<span class="token punctuation">.</span><span class="token function">befor
     <span class="token comment">// 可以访问组件实例 `this`</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>beforeRouteEnter</code> 守卫 <strong>不能</strong> 访问 <code>this</code>，因为守卫在导航确认前被调用，因此即将登场的新组件还没被创建。</p>
 <p>不过，你可以通过传一个回调给 <code>next</code>来访问组件实例。在导航被确认的时候执行回调，并且把组件实例作为回调方法的参数。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">beforeRouteEnter</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -824,14 +819,12 @@ router<span class="token punctuation">.</span><span class="token function">befor
     <span class="token comment">// 通过 `vm` 访问组件实例</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>注意 <code>beforeRouteEnter</code> 是支持给 <code>next</code> 传递回调的唯一守卫。对于 <code>beforeRouteUpdate</code> 和 <code>beforeRouteLeave</code> 来说，<code>this</code> 已经可用了，所以<strong>不支持</strong>传递回调，因为没有必要了。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">beforeRouteUpdate</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// just use `this`</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> to<span class="token punctuation">.</span>params<span class="token punctuation">.</span>name
   <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这个离开守卫通常用来禁止用户在还未保存修改前突然离开。该导航可以通过 <code>next(false)</code> 来取消。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">beforeRouteLeave</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> answer <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">confirm</span><span class="token punctuation">(</span><span class="token string">'Do you really want to leave? you have unsaved changes!'</span><span class="token punctuation">)</span>
@@ -841,8 +834,8 @@ router<span class="token punctuation">.</span><span class="token function">befor
     <span class="token function">next</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="完整的导航解析流程"><a href="#完整的导航解析流程" class="headerlink" title="完整的导航解析流程"></a><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E5%AE%8C%E6%95%B4%E7%9A%84%E5%AF%BC%E8%88%AA%E8%A7%A3%E6%9E%90%E6%B5%81%E7%A8%8B">完整的导航解析流程</a></h2><ol>
+<h2 id="完整的导航解析流程"><a class="header-anchor" href="#完整的导航解析流程">¶</a><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E5%AE%8C%E6%95%B4%E7%9A%84%E5%AF%BC%E8%88%AA%E8%A7%A3%E6%9E%90%E6%B5%81%E7%A8%8B">完整的导航解析流程</a></h2>
+<ol>
 <li>导航被触发。</li>
 <li>在失活的组件里调用 <code>beforeRouteLeave</code> 守卫。</li>
 <li>调用全局的 <code>beforeEach</code> 守卫。</li>
@@ -1142,7 +1135,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
                     <div class="card-image">
                         
                         
-                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220319165159.png" class="responsive-img" alt="一些Vue及原生js问题">
+                        <img src="https://cdn.seovx.com/img/mom-2019%20(147).jpg" class="responsive-img" alt="一些Vue及原生js问题">
                         
                         <span class="card-title">一些Vue及原生js问题</span>
                     </div>
@@ -1191,7 +1184,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
                     <div class="card-image">
                         
                         
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1012.jpg" class="responsive-img" alt="浅拷贝和深拷贝的方法">
+                        <img src="http://api.btstu.cn/sjbz/?lx=meizi" class="responsive-img" alt="浅拷贝和深拷贝的方法">
                         
                         <span class="card-title">浅拷贝和深拷贝的方法</span>
                     </div>
@@ -1421,7 +1414,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

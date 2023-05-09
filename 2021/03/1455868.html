@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://api.isoyu.com/bing_images.php')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://open.saintic.com/api/bingPic/')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -740,7 +740,8 @@
 <p>什么是模块化?</p>
 </blockquote>
 <p>随着代码复杂程度的提高, 项目也变得越来越难维护, <code>JavaScript模块化</code> 也因此油然而生, 本文主要介绍 <code>JavaScript模块化</code> 的一些发展历程。</p>
-<h2 id="传统的开发"><a href="#传统的开发" class="headerlink" title="传统的开发"></a>传统的开发</h2><blockquote>
+<h2 id="传统的开发"><a class="header-anchor" href="#传统的开发">¶</a>传统的开发</h2>
+<blockquote>
 <p>这应该是大家最熟悉的一种加载方式, 但是缺点也比较明显</p>
 </blockquote>
 <ul>
@@ -751,8 +752,8 @@
 &lt;script src="jquery_scroller.js"&gt;&lt;/script&gt;
 &lt;script src="bootstarp.js"&gt;&lt;/script&gt;
 &lt;script src="main.js"&gt;&lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="CommonJs"><a href="#CommonJs" class="headerlink" title="CommonJs"></a>CommonJs</h2><blockquote>
+<h2 id="CommonJs"><a class="header-anchor" href="#CommonJs">¶</a>CommonJs</h2>
+<blockquote>
 <p>一个文件就是一个模块, 其内部定义的变量, 方法都处于该模块内, 不会对外暴露.</p>
 </blockquote>
 <p>主要语法:</p>
@@ -760,13 +761,15 @@
 <li>使用 <code>require</code> 来加载模块</li>
 <li>使用 <code>exports</code> 或者 <code>module.exports</code> 暴露模块中的内容</li>
 </ul>
-<h4 id="CommonJS的特点"><a href="#CommonJS的特点" class="headerlink" title="CommonJS的特点"></a>CommonJS的特点</h4><ul>
+<h4 id="CommonJS的特点"><a class="header-anchor" href="#CommonJS的特点">¶</a>CommonJS的特点</h4>
+<ul>
 <li>所有代码都运行在模块作用域，不会污染全局作用域；</li>
 <li>模块是同步加载的，即只有加载完成，才能执行后面的操作；</li>
 <li>模块在首次执行后就会缓存，再次加载只返回缓存结果，如果想要再次执行，可清除缓存；</li>
 <li>CommonJS输出是值的拷贝(即，<code>require</code>返回的值是被输出的值的拷贝，模块内部的变化也不会影响这个值)。</li>
 </ul>
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><ol>
+<h3 id="demo"><a class="header-anchor" href="#demo">¶</a>demo</h3>
+<ol>
 <li>新建 <code>a.js</code>, 导出 <code>name</code> 和 <code>sayHello</code></li>
 </ol>
 <pre class="line-numbers language-none"><code class="language-none">// a.js
@@ -776,7 +779,6 @@ function sayHello(name) {
 }
 module.exports.name = name
 module.exports.sayHello = sayHello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ol>
 <li>在 <code>b.js</code> 中引入 <code>a</code> 并调用</li>
 </ol>
@@ -785,20 +787,22 @@ const a = require('./a')
 const name = a.name
 console.log(name) // Bob
 a.sayHello(name) // Hello Bob<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>由于 <code>CommonJs</code> 是同步加载的模块的, 在服务端(node), 文件都在硬盘上, 所以同步加载也无所谓, 但是在浏览器端, 同步加载就体验不好了. 所以 <code>CommonJs</code> 主要使用于 <code>node</code> 环境下.</p>
 </blockquote>
-<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><blockquote>
+<h2 id="AMD"><a class="header-anchor" href="#AMD">¶</a>AMD</h2>
+<blockquote>
 <p><code>AMD</code> 全称为 <code>Asynchromous Module Definition(异步模块定义)</code>, 实现了异步加载模块. <code>require.js</code> 实现了 <code>AMD</code> 规范</p>
 </blockquote>
-<h4 id="RequireJS的基本用法"><a href="#RequireJS的基本用法" class="headerlink" title="RequireJS的基本用法"></a>RequireJS的基本用法</h4><p>通过<code>define</code>来定义一个模块，使用<code>require</code>可以导入定义的模块。</p>
-<h4 id="RequireJS的特点"><a href="#RequireJS的特点" class="headerlink" title="RequireJS的特点"></a>RequireJS的特点</h4><p>对于依赖的模块，AMD推崇<strong>依赖前置，提前执行</strong>。也就是说，在<code>define</code>方法里传入的依赖模块(数组)，会在一开始就下载并执行。</p>
+<h4 id="RequireJS的基本用法"><a class="header-anchor" href="#RequireJS的基本用法">¶</a>RequireJS的基本用法</h4>
+<p>通过<code>define</code>来定义一个模块，使用<code>require</code>可以导入定义的模块。</p>
+<h4 id="RequireJS的特点"><a class="header-anchor" href="#RequireJS的特点">¶</a>RequireJS的特点</h4>
+<p>对于依赖的模块，AMD推崇<strong>依赖前置，提前执行</strong>。也就是说，在<code>define</code>方法里传入的依赖模块(数组)，会在一开始就下载并执行。</p>
 <pre class="line-numbers language-none"><code class="language-none">require([module], callback) // 导入
 
 define(id, [depends], callback) // 导出模块<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="demo-1"><a href="#demo-1" class="headerlink" title="demo"></a>demo</h3><ol>
+<h3 id="demo-v2"><a class="header-anchor" href="#demo-v2">¶</a>demo</h3>
+<ol>
 <li>新建 <code>a.js</code>, 输入以下内容</li>
 </ol>
 <pre class="line-numbers language-none"><code class="language-none">define(function() {
@@ -813,7 +817,6 @@ define(id, [depends], callback) // 导出模块<span aria-hidden="true" class="l
     alertAge: alertAge
   }
 })<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ol>
 <li>在 <code>test.html</code> 中调用 <code>a</code> 模块</li>
 </ol>
@@ -838,9 +841,9 @@ define(id, [depends], callback) // 导出模块<span aria-hidden="true" class="l
 &lt;/body&gt;
 
 &lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>能够异步加载模块, 适合在浏览器中运行, 但是不能够按需加载, 必须提前加载模块</p>
-<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><blockquote>
+<h2 id="CMD"><a class="header-anchor" href="#CMD">¶</a>CMD</h2>
+<blockquote>
 <p><code>CMD规范</code> 是阿里的玉伯提出, <code>sea.js</code> 实现。 实现了按需加载</p>
 </blockquote>
 <p>与 <code>AMD</code> 的区别:</p>
@@ -860,8 +863,8 @@ define(function(require, exports, module) {
   var b = require('./b')
   b.doSomething()
 })<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h2><blockquote>
+<h2 id="ES6"><a class="header-anchor" href="#ES6">¶</a>ES6</h2>
+<blockquote>
 <p><code>ES6</code> 模块化方案是最规范的方案, 未来也是主流, 对于我们来说也是经常使用与熟悉的. 不过现在的浏览器还不兼容, 使用需要 <code>babel</code> 转码</p>
 </blockquote>
 <ul>
@@ -877,15 +880,16 @@ export default {
     console.log('Hello World')
   }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="ES6-Module的特点-对比CommonJS"><a href="#ES6-Module的特点-对比CommonJS" class="headerlink" title="ES6 Module的特点(对比CommonJS)"></a>ES6 Module的特点(对比CommonJS)</h4><ul>
+<h4 id="ES6-Module的特点-对比CommonJS"><a class="header-anchor" href="#ES6-Module的特点-对比CommonJS">¶</a>ES6 Module的特点(对比CommonJS)</h4>
+<ul>
 <li>CommonJS模块是运行时加载，ES6 Module是编译时输出接口；</li>
 <li>CommonJS加载的是整个模块，将所有的接口全部加载进来，ES6 Module可以单独加载其中的某个接口；</li>
 <li>CommonJS输出是值的拷贝，ES6 Module输出的是值的引用，被输出模块的内部的改变会影响引用的改变；</li>
 <li>CommonJS <code>this</code>指向当前模块，ES6 Module <code>this</code>指向<code>undefined</code>;</li>
 </ul>
 <p>目前浏览器对ES6 Module兼容还不太好，我们平时在webpack中使用的<code>export</code>/<code>import</code>，会转译为webpack自身的模块加载机制。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="http://www.hangge.com/blog/cache/detail_1686.html">http://www.hangge.com/blog/cache/detail_1686.html</a></p>
+<h2 id="参考"><a class="header-anchor" href="#参考">¶</a>参考</h2>
+<p><a target="_blank" rel="noopener" href="http://www.hangge.com/blog/cache/detail_1686.html">http://www.hangge.com/blog/cache/detail_1686.html</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.imooc.com/article/20057">https://www.imooc.com/article/20057</a></p>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903983987834888">https://juejin.cn/post/6844903983987834888</a></p>
 
@@ -1174,7 +1178,7 @@ export default {
                     <div class="card-image">
                         
                         
-                        <img src="https://img.btstu.cn/api/images/5a040eb30c055.jpg" class="responsive-img" alt="JS 那些情况下会返回undefined ?">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F87c01ec7gy1frmrrnjpf4j21hc0u0dot.jpg" class="responsive-img" alt="JS 那些情况下会返回undefined ?">
                         
                         <span class="card-title">JS 那些情况下会返回undefined ?</span>
                     </div>
@@ -1223,7 +1227,7 @@ export default {
                     <div class="card-image">
                         
                         
-                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg" class="responsive-img" alt="React-router原理">
+                        <img src="https://cdn.seovx.com/img/mom-2019%20(147).jpg" class="responsive-img" alt="React-router原理">
                         
                         <span class="card-title">React-router原理</span>
                     </div>
@@ -1445,7 +1449,7 @@ export default {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

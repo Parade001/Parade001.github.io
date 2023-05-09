@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://api.btstu.cn/sjbz/?lx=meizi')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/joshua-%20tree.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -736,17 +736,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="什么时候需要使用全局状态管理"><a href="#什么时候需要使用全局状态管理" class="headerlink" title="什么时候需要使用全局状态管理?"></a>什么时候需要使用全局状态管理?</h3><p>当状态提升提升不能够满足开发需求，状态树并不总是以一种线性的，单向的方式流动。就需要使用状态管理器。</p>
-<h3 id="Redux状态管理器的核心思想"><a href="#Redux状态管理器的核心思想" class="headerlink" title="Redux状态管理器的核心思想:"></a>Redux状态管理器的核心思想:</h3><ul>
-<li><p><code>store</code>状态树</p>
+                <h3 id="什么时候需要使用全局状态管理"><a class="header-anchor" href="#什么时候需要使用全局状态管理">¶</a>什么时候需要使用全局状态管理?</h3>
+<p>当状态提升提升不能够满足开发需求，状态树并不总是以一种线性的，单向的方式流动。就需要使用状态管理器。</p>
+<h3 id="Redux状态管理器的核心思想"><a class="header-anchor" href="#Redux状态管理器的核心思想">¶</a>Redux状态管理器的核心思想:</h3>
+<ul>
+<li>
+<p><code>store</code>状态树</p>
 </li>
-<li><p><code>action</code>行为状态对象</p>
+<li>
+<p><code>action</code>行为状态对象</p>
 </li>
-<li><p><code>reducer</code>行为状态的处理</p>
+<li>
+<p><code>reducer</code>行为状态的处理</p>
 <hr>
 </li>
 </ul>
-<h3 id="Redux三大原则"><a href="#Redux三大原则" class="headerlink" title="Redux三大原则:"></a>Redux三大原则:</h3><ul>
+<h3 id="Redux三大原则"><a class="header-anchor" href="#Redux三大原则">¶</a>Redux三大原则:</h3>
+<ul>
 <li>单一数据源</li>
 <li>状态是只读的</li>
 <li>状态修改均由纯函数完成</li>
@@ -770,40 +776,52 @@
 <li>replaceReducer(nextReducer):更新当前的store里的reducer,一般只会在开发模式中调用该方法</li>
 </ul>
 <p>常用的是getState(),和dispatch()这两个方法.至于另外两个方法,一般会在Redux与某个系统(如React)做桥接的时候使用</p>
-<h3 id="Redux执行机制"><a href="#Redux执行机制" class="headerlink" title="Redux执行机制:"></a>Redux执行机制:</h3><p><img src="https://redux.js.org/assets/images/ReduxDataFlowDiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif" alt="img"></p>
+<h3 id="Redux执行机制"><a class="header-anchor" href="#Redux执行机制">¶</a>Redux执行机制:</h3>
+<p><img src="https://redux.js.org/assets/images/ReduxDataFlowDiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif" alt="img"></p>
 <hr>
-<h4 id="1-视图层-view-通过store对象里的dispactch方法派发给action对象执行特定的修改State的操纵"><a href="#1-视图层-view-通过store对象里的dispactch方法派发给action对象执行特定的修改State的操纵" class="headerlink" title="1.视图层 view 通过store对象里的dispactch方法派发给action对象执行特定的修改State的操纵"></a>1.视图层 view 通过store对象里的dispactch方法派发给action对象执行特定的修改State的操纵</h4><h4 id="action返回状态给store再传递给reducer"><a href="#action返回状态给store再传递给reducer" class="headerlink" title="action返回状态给store再传递给reducer"></a>action返回状态给store再传递给reducer</h4><p><strong>更新状态的唯一方法是调用store.dispatch()并传入一个动作对象</strong></p>
+<h4 id="1-视图层-view-通过store对象里的dispactch方法派发给action对象执行特定的修改State的操纵"><a class="header-anchor" href="#1-视图层-view-通过store对象里的dispactch方法派发给action对象执行特定的修改State的操纵">¶</a>1.视图层 view 通过store对象里的dispactch方法派发给action对象执行特定的修改State的操纵</h4>
+<h4 id="action返回状态给store再传递给reducer"><a class="header-anchor" href="#action返回状态给store再传递给reducer">¶</a>action返回状态给store再传递给reducer</h4>
+<p><strong>更新状态的唯一方法是调用store.dispatch()并传入一个动作对象</strong></p>
 <p>action:是个 want to do 的过程 (计划要做一个什么样的操作)通常做逻辑处理操纵</p>
-<h4 id="2-store会将2个参数传递给reduers-即state-和action"><a href="#2-store会将2个参数传递给reduers-即state-和action" class="headerlink" title="2.store会将2个参数传递给reduers,即state,和action"></a>2.store会将2个参数传递给reduers,即state,和action</h4><p>store包裹了action和reducer,是个中间桥梁,将二者钩起来</p>
-<h4 id="3-reducer-去加工处理数据-返回store生成-新的state-树"><a href="#3-reducer-去加工处理数据-返回store生成-新的state-树" class="headerlink" title="3.reducer 去加工处理数据,返回store生成 新的state 树"></a>3.reducer 去加工处理数据,返回store生成 新的state 树</h4><p>store 将运行它的 reducer 函数并将新的 state 值保存在里面，state是store是store某一个时间点的快照集合.</p>
+<h4 id="2-store会将2个参数传递给reduers-即state-和action"><a class="header-anchor" href="#2-store会将2个参数传递给reduers-即state-和action">¶</a>2.store会将2个参数传递给reduers,即state,和action</h4>
+<p>store包裹了action和reducer,是个中间桥梁,将二者钩起来</p>
+<h4 id="3-reducer-去加工处理数据-返回store生成-新的state-树"><a class="header-anchor" href="#3-reducer-去加工处理数据-返回store生成-新的state-树">¶</a>3.reducer 去加工处理数据,返回store生成 新的state 树</h4>
+<p>store 将运行它的 reducer 函数并将新的 state 值保存在里面，state是store是store某一个时间点的快照集合.</p>
 <p>我们可以调用<code>getState()</code>来检索更新的值,</p>
-<h4 id="4-通知视图层状态改变"><a href="#4-通知视图层状态改变" class="headerlink" title="4.通知视图层状态改变"></a>4.通知视图层状态改变</h4><p>state树发生变化后.store会调用监听函数render 更新UI</p>
+<h4 id="4-通知视图层状态改变"><a class="header-anchor" href="#4-通知视图层状态改变">¶</a>4.通知视图层状态改变</h4>
+<p>state树发生变化后.store会调用监听函数render 更新UI</p>
 <hr>
-<h4 id="使用actionCreator-生成action"><a href="#使用actionCreator-生成action" class="headerlink" title="使用actionCreator 生成action"></a>使用actionCreator 生成action</h4><p>action 对象中必须拥有 type 字段，redux主要是根据该字段选择对应的 reducer 进行处理</p>
+<h4 id="使用actionCreator-生成action"><a class="header-anchor" href="#使用actionCreator-生成action">¶</a>使用actionCreator 生成action</h4>
+<p>action 对象中必须拥有 type 字段，redux主要是根据该字段选择对应的 reducer 进行处理</p>
 <hr>
-
-<h3 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h3><p>reducer 处理函数必须 <a href="https://link.juejin.cn/?target=https://zh.wikipedia.org/wiki/%25E7%25BA%25AF%25E5%2587%25BD%25E6%2595%25B0">纯函数</a>， reducer 接收相应的<code>state</code>，经过处理后返回新的<code>state</code>。不允许返回<code>undefined</code>或者<code>null</code></p>
+<h3 id="要点"><a class="header-anchor" href="#要点">¶</a>要点</h3>
+<p>reducer 处理函数必须 <a href="https://link.juejin.cn/?target=https://zh.wikipedia.org/wiki/%25E7%25BA%25AF%25E5%2587%25BD%25E6%2595%25B0">纯函数</a>， reducer 接收相应的<code>state</code>，经过处理后返回新的<code>state</code>。不允许返回<code>undefined</code>或者<code>null</code></p>
 <p>数组中有一个reduce方法，其作用就是遍历数组，<strong>将上一次迭代的结果</strong>和<strong>数组中的元素</strong>作为参数传入，<strong>返回一个新的结果</strong>，并且<strong>将这个新的结果作为作为参数和数组的下一个元素进行下一次迭代</strong>。</p>
 <p>我们可以把<strong>进行reduce操作的函数叫做reducer</strong>。</p>
 <p>只不过，<strong>redux迭代的是一次又一次的action，每次action执行完成后都会返回一个新的状态，并且将这个新的状态和下一次action用于下一次迭代</strong>。</p>
 <ul>
-<li><p>reducer 第一次被调用的时候，state 的值是 undefined,可以用es6的默认参数的方式解决。</p>
+<li>
+<p>reducer 第一次被调用的时候，state 的值是 undefined,可以用es6的默认参数的方式解决。</p>
 </li>
-<li><p>reducer 需要在 action 传入之前提供一个默认的 state 来处理这种情况。</p>
+<li>
+<p>reducer 需要在 action 传入之前提供一个默认的 state 来处理这种情况。</p>
 </li>
-<li><p>reducer 需要当前的 state 和 dispatch 的 action 来决定需要做什么事。</p>
+<li>
+<p>reducer 需要当前的 state 和 dispatch 的 action 来决定需要做什么事。</p>
 </li>
-<li><p>假设需要更改数据，应该用更新后的数据创建新的对象或数组并返回它们，及所谓的<code>纯函数</code>，不对传入的state做任何修改。</p>
+<li>
+<p>假设需要更改数据，应该用更新后的数据创建新的对象或数组并返回它们，及所谓的<code>纯函数</code>，不对传入的state做任何修改。</p>
 </li>
-<li><p>如果没有什么更改，应该返回当前存在的 state 本身。</p>
+<li>
+<p>如果没有什么更改，应该返回当前存在的 state 本身。</p>
 </li>
 </ul>
 <p>当需要触发行为变更相关的状态树信息时，必须调用<code>dispatch</code>方法触发更新操作</p>
 <p>决定状态树中内容的是 reducer 的返回值，并非 action 行为对象，因此如果没有对 action 进行 reducer 处理，即便使用<code>dispatch</code>触发更新，状态树也不会发生任何的变化</p>
 <p><code>redux</code>是同步进行的，因此创建 action 行为、触发更新操作<code>dispatch</code>等方法都必须是同步操作，若需要支持异步操作时，需要增加中间件的支持，比如 <a href="https://link.juejin.cn/?target=https://github.com/redux-utilities/redux-promise">redux-promise</a>、<a href="https://link.juejin.cn/?target=https://github.com/reduxjs/redux-thunk">redux-thunk</a> 等</p>
 <hr>
-
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="http://cn.redux.js.org/"><strong>Redux 中文官网</strong></a></p>
+<h3 id="参考"><a class="header-anchor" href="#参考">¶</a>参考</h3>
+<p><a target="_blank" rel="noopener" href="http://cn.redux.js.org/"><strong>Redux 中文官网</strong></a></p>
 <p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022200527">从零实现redux和react-redux</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/69c36de6dba7">Reducer函数</a></p>
 
@@ -1092,7 +1110,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="http://api.btstu.cn/sjbz/?lx=meizi" class="responsive-img" alt="React Hooks 入门">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg" class="responsive-img" alt="React Hooks 入门">
                         
                         <span class="card-title">React Hooks 入门</span>
                     </div>
@@ -1141,7 +1159,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F87c01ec7gy1frmrrnjpf4j21hc0u0dot.jpg" class="responsive-img" alt="React组件通讯">
+                        <img src="http://api.btstu.cn/sjbz/?lx=meizi" class="responsive-img" alt="React组件通讯">
                         
                         <span class="card-title">React组件通讯</span>
                     </div>
@@ -1371,7 +1389,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

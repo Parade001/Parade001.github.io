@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.seovx.com/?mom=302')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.gstatic.com/prettyearth/assets/full/1012.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -737,7 +737,8 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>在深入理解中间件之前，我们先来看一个很关键的概念。</p>
-<h4 id="复合函数-函数组合（function-composition）"><a href="#复合函数-函数组合（function-composition）" class="headerlink" title="复合函数/函数组合（function composition）"></a>复合函数/函数组合（function composition）</h4><blockquote>
+<h4 id="复合函数-函数组合（function-composition）"><a class="header-anchor" href="#复合函数-函数组合（function-composition）">¶</a>复合函数/函数组合（function composition）</h4>
+<blockquote>
 <p>在数学中，复合函数是指逐点地把一个函数作用于另一个函数的结果，所得到的第三个函数。</p>
 <p>直观地说，复合两个函数是把两个函数链接在一起的过程，内函数的输出就是外函数的输入。</p>
 <p>– 维基百科</p>
@@ -747,7 +748,6 @@
 <span class="token function">g</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token function">x</span>
 
 <span class="token punctuation">(</span>f ∘ g<span class="token punctuation">)</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token function">g</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">2</span>x<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">4</span>x<span class="token operator">^</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">6</span>x <span class="token operator">+</span> <span class="token number">1</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>其实编程上的复合函数和数学上的概念很相似：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">greet</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> x <span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> <span class="token function-variable function">emote</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>x<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> :)</span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -758,27 +758,28 @@
 <span class="token punctuation">}</span>
 <span class="token keyword">var</span> happyGreeting <span class="token operator">=</span> <span class="token function">compose</span><span class="token punctuation">(</span>greet<span class="token punctuation">,</span> emote<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// happyGreeting(“Mark”) -&gt; Hello, Mark :)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这个写法可能需要你花点时间去理解。如果理解了，那么恭喜你，因为redux的compose写法基本就是这样。但是如果一下子无法理解也没关系，我们只要先记住：</p>
 <ol>
 <li><strong>compose(A, B, C)的返回值是：(arg)=&gt;A(B(C(arg)))，</strong></li>
 <li><strong>内函数的输出就是外函数的输入</strong></li>
 </ol>
 <hr>
-<h4 id="Redux-middleware"><a href="#Redux-middleware" class="headerlink" title="Redux middleware"></a>Redux middleware</h4><p>“It provides a third-party extension point between dispatching an action, and the moment it reaches the reducer.”<br>这是 Dan Abramov 对 middleware 的描述。它提供了一个分类处理 action 的机会。在 middleware 中，你可以检阅每一个流过的 action，挑选出特定类型的 action 进行相应操作，给你一次改变 action 的机会。</p>
+<h4 id="Redux-middleware"><a class="header-anchor" href="#Redux-middleware">¶</a>Redux middleware</h4>
+<p>“It provides a third-party extension point between dispatching an action, and the moment it reaches the reducer.”<br>
+这是 Dan Abramov 对 middleware 的描述。它提供了一个分类处理 action 的机会。在 middleware 中，你可以检阅每一个流过的 action，挑选出特定类型的 action 进行相应操作，给你一次改变 action 的机会。</p>
 <hr>
-<h4 id="middleware-的由来"><a href="#middleware-的由来" class="headerlink" title="middleware 的由来"></a><strong>middleware</strong> 的由来</h4><p>图 5-2 表达的是 Redux 中一个简单的同步数据流动场景，点击 button 后，在回调中分发一个 action， reducer 收到 action 后，更新 state 并通知 view 重新渲染。单向数据流，看着没什么问题。但是，如果需要打印每一个 action 信息来调试，就得去改 dispatch 或者 reducer 实现，使其具有打印日志的功能。又比如，点击 button 后，需要先去服务端请求数据，只有等数据返回后，才能重新渲染 view，此时我们希望 dispatch 或 reducer 拥有异步请求的功能。再比如，需要异步请求<br>数据返回后，打印一条日志，再请求数据，再打印日志，再渲染。</p>
+<h4 id="middleware-的由来"><a class="header-anchor" href="#middleware-的由来">¶</a><strong>middleware</strong> 的由来</h4>
+<p>图 5-2 表达的是 Redux 中一个简单的同步数据流动场景，点击 button 后，在回调中分发一个 action， reducer 收到 action 后，更新 state 并通知 view 重新渲染。单向数据流，看着没什么问题。但是，如果需要打印每一个 action 信息来调试，就得去改 dispatch 或者 reducer 实现，使其具有打印日志的功能。又比如，点击 button 后，需要先去服务端请求数据，只有等数据返回后，才能重新渲染 view，此时我们希望 dispatch 或 reducer 拥有异步请求的功能。再比如，需要异步请求<br>
+数据返回后，打印一条日志，再请求数据，再打印日志，再渲染。</p>
 <p><strong>Redux同步数据流动</strong></p>
-<p>面对多样的业务场景，单纯地修改 dispatch 或 reducer 的代码显然不具有普适性，我们需要的是可以组合的、自由插拔的插件机制，这一点 Redux 借鉴了 Koa （它是用于构建 Web 应用的 Node.js 框架）里 middleware 的思想，详情可查阅附录 A。另外，Redux 中 reducer 更关心的是数据的转化逻辑，所以 middleware 就是为了增强 dispatch 而出现的。<br>图 5-3 展示了应用 middleware 后 Redux 处理事件的逻辑，每一个 middleware 处理一个相对独立的业务需求，通过串联不同的 middleware 实现变化多样的功能。那么，后续我们就来讨论 middleware 是怎么写的，以及 Redux 是如何让 middleware 串联起来的。</p>
+<p>面对多样的业务场景，单纯地修改 dispatch 或 reducer 的代码显然不具有普适性，我们需要的是可以组合的、自由插拔的插件机制，这一点 Redux 借鉴了 Koa （它是用于构建 Web 应用的 Node.js 框架）里 middleware 的思想，详情可查阅附录 A。另外，Redux 中 reducer 更关心的是数据的转化逻辑，所以 middleware 就是为了增强 dispatch 而出现的。<br>
+图 5-3 展示了应用 middleware 后 Redux 处理事件的逻辑，每一个 middleware 处理一个相对独立的业务需求，通过串联不同的 middleware 实现变化多样的功能。那么，后续我们就来讨论 middleware 是怎么写的，以及 Redux 是如何让 middleware 串联起来的。</p>
 <img src="https://tva1.sinaimg.cn/large/006aANDQgy1h09k94e5buj30fe03g3z1.jpg" alt="应用中间件后的处理逻辑">
-
 <hr>
 <hr>
 <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/sp20220316_184550_438.png" alt="分析middleware运行原理">
-
-
-
-<h4 id="中间件的作用"><a href="#中间件的作用" class="headerlink" title="中间件的作用:"></a>中间件的作用:</h4><p>Redux 自身只能处理同步数据流，但是在实际项目开发中，状态的更新、获取，通常是使用异步操作来实现。</p>
+<h4 id="中间件的作用"><a class="header-anchor" href="#中间件的作用">¶</a>中间件的作用:</h4>
+<p>Redux 自身只能处理同步数据流，但是在实际项目开发中，状态的更新、获取，通常是使用异步操作来实现。</p>
 <ul>
 <li>问题：如何在 Redux 中进行异步操作呢?</li>
 <li>回答：通过 Redux 中间件机制来实现。</li>
@@ -787,8 +788,8 @@
 <p>触发时机:dispatching action 和到达reducer之间</p>
 <hr>
 <p>常见的中间间函数:</p>
-<h5 id="Thunk-函数实现上就是针对多参数的-currying-以实现对函数的惰性求值。任何函数，只要参数有回调函数，就能写成-Thunk-函数的形式。"><a href="#Thunk-函数实现上就是针对多参数的-currying-以实现对函数的惰性求值。任何函数，只要参数有回调函数，就能写成-Thunk-函数的形式。" class="headerlink" title="Thunk 函数实现上就是针对多参数的 currying 以实现对函数的惰性求值。任何函数，只要参数有回调函数，就能写成 Thunk 函数的形式。"></a>Thunk 函数实现上就是针对多参数的 currying 以实现对函数的惰性求值。任何函数，只要参数有回调函数，就能写成 Thunk 函数的形式。</h5><img src="https://tva1.sinaimg.cn/large/006aANDQgy1h09llmmsagj30i7072jui.jpg" alt="redux-thunk源码">
-
+<h5 id="Thunk-函数实现上就是针对多参数的-currying-以实现对函数的惰性求值。任何函数，只要参数有回调函数，就能写成-Thunk-函数的形式。"><a class="header-anchor" href="#Thunk-函数实现上就是针对多参数的-currying-以实现对函数的惰性求值。任何函数，只要参数有回调函数，就能写成-Thunk-函数的形式。">¶</a>Thunk 函数实现上就是针对多参数的 currying 以实现对函数的惰性求值。任何函数，只要参数有回调函数，就能写成 Thunk 函数的形式。</h5>
+<img src="https://tva1.sinaimg.cn/large/006aANDQgy1h09llmmsagj30i7072jui.jpg" alt="redux-thunk源码">
 <hr>
 <hr>
 <p>参考:</p>
@@ -1080,7 +1081,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1047.jpg" class="responsive-img" alt="TS 中 type 与 Interface 区别">
+                        <img src="https://www.gstatic.com/prettyearth/assets/full/1048.jpg" class="responsive-img" alt="TS 中 type 与 Interface 区别">
                         
                         <span class="card-title">TS 中 type 与 Interface 区别</span>
                     </div>
@@ -1129,7 +1130,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1012.jpg" class="responsive-img" alt="TypeScript 与面向对象">
+                        <img src="https://img.btstu.cn/api/images/5a040eb30c055.jpg" class="responsive-img" alt="TypeScript 与面向对象">
                         
                         <span class="card-title">TypeScript 与面向对象</span>
                     </div>
@@ -1359,7 +1360,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

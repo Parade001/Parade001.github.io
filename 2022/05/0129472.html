@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://open.saintic.com/api/bingPic/')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -737,26 +737,29 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><a target="_blank" rel="noopener" href="https://developers.google.com/web/updates/2018/09/inside-browser-part4">Inside look at modern web browser</a> 是介绍浏览器实现原理的系列文章，共 4 篇，本次精读介绍第四篇。</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>前几章介绍了浏览器的基础进程、线程以及它们之间协同的关系，并重点说到了渲染进程是如何处理页面绘制的，那么最后一章也就深入到了浏览器是如何处理页面中事件的。</p>
+<h2 id="概述"><a class="header-anchor" href="#概述">¶</a>概述</h2>
+<p>前几章介绍了浏览器的基础进程、线程以及它们之间协同的关系，并重点说到了渲染进程是如何处理页面绘制的，那么最后一章也就深入到了浏览器是如何处理页面中事件的。</p>
 <p>全篇站在浏览器实现的视角思考问题，非常有趣。</p>
-<h3 id="输入进入合成器"><a href="#输入进入合成器" class="headerlink" title="输入进入合成器"></a>输入进入合成器</h3><p>这是第一小节的标题。乍一看可能不明白在说什么，但这句话就是本文的核心知识点。为了更好的理解这句话，先要解释输入与合成器是什么：</p>
+<h3 id="输入进入合成器"><a class="header-anchor" href="#输入进入合成器">¶</a>输入进入合成器</h3>
+<p>这是第一小节的标题。乍一看可能不明白在说什么，但这句话就是本文的核心知识点。为了更好的理解这句话，先要解释输入与合成器是什么：</p>
 <ul>
 <li>输入：不仅包括输入框的输入，其实所有用户操作在浏览器眼中都是输入，比如滚动、点击、鼠标移动等等。</li>
 <li>合成器：第三节说过的，渲染的最后一步，这一步在 GPU 进行光栅化绘图，如果与浏览器主线程解耦的化效率会非常高。</li>
 </ul>
 <p>所以输入进入合成器的意思是指，在浏览器实际运行的环境中，合成器不得不响应输入，这可能会导致合成器本身渲染被阻塞，导致页面卡顿。</p>
-<h3 id="“non-fast”-滚动区域"><a href="#“non-fast”-滚动区域" class="headerlink" title="“non-fast” 滚动区域"></a>“non-fast” 滚动区域</h3><p>由于 js 代码可以绑定事件监听，而且事件监听中存在一种 <code>preventDefault()</code> 的 API 可以阻止事件的原生效果比如滚动，所以在一个页面中，浏览器会对所有创建了此监听的区块标记为 “non-fast” 滚动区域。</p>
+<h3 id="“non-fast”-滚动区域"><a class="header-anchor" href="#“non-fast”-滚动区域">¶</a>“non-fast” 滚动区域</h3>
+<p>由于 js 代码可以绑定事件监听，而且事件监听中存在一种 <code>preventDefault()</code> 的 API 可以阻止事件的原生效果比如滚动，所以在一个页面中，浏览器会对所有创建了此监听的区块标记为 “non-fast” 滚动区域。</p>
 <p>注意，只要创建了 <code>onwheel</code> 事件监听就会标记，而不是说调用了 <code>preventDefault()</code> 才会标记，因为浏览器不可能知道业务什么时候调用，所以只能一刀切。</p>
 <p>为什么这种区域被称为 “non-fast”？因为在这个区域触发事件时，合成器必须与渲染进程通信，让渲染进程执行 js 事件监听代码并获得用户指令，比如是否调用了 <code>preventDefault()</code> 来阻止滚动？如果阻止了就终止滚动，如果没有阻止才会继续滚动，如果最终结果是不阻止，但这个等待时间消耗是巨大的，在低性能设备比如手机上，滚动延迟甚至有 10～100ms。</p>
 <p>然而这并不是设备性能差导致的，因为滚动是在合成器发生的，如果它可以不与渲染进程通信，那么即便是 500 元的安卓机也可以流畅的滚动。</p>
-<h3 id="注意事件委托"><a href="#注意事件委托" class="headerlink" title="注意事件委托"></a>注意事件委托</h3><p>更有意思的是，浏览器支持一种事件委托的 API，它可以将事件委托到其父节点一并监听。</p>
+<h3 id="注意事件委托"><a class="header-anchor" href="#注意事件委托">¶</a>注意事件委托</h3>
+<p>更有意思的是，浏览器支持一种事件委托的 API，它可以将事件委托到其父节点一并监听。</p>
 <p>这本是一个非常方便的 API，但对浏览器实现可能是一个灾难：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>target <span class="token operator">===</span> area<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>如果浏览器解析到上面的代码，只能用无语来形容。因为这意味着必须对全页面都进行 “non-fast” 标记，因为代码委托的是整个 document！这会导致滚动非常慢，因为在页面任何地方滚动都要发生一次合成器与渲染进程的通信。</p>
 <p>所以最好的办法就是不要写这种监听。但还有一种方案是，告诉浏览器你不会 <code>preventDefault()</code>，这是因为 chrome 通过对应用源码统计后发现，大约 80% 的事件监听没有 <code>preventDefault()</code>，而仅仅是做别的事情，所以合成器应该可以与渲染进程的事件处理并行进行，这样既不卡顿，逻辑也不会丢失。所以添加了一种 <code>passive: true</code> 的标记，标识当前事件可以并行处理：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -764,21 +767,20 @@
     event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>passive<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这样就不会卡顿了，但 <code>preventDefault()</code> 也会失效。</p>
-<h3 id="检查事件是否可取消"><a href="#检查事件是否可取消" class="headerlink" title="检查事件是否可取消"></a>检查事件是否可取消</h3><p>对于 <code>passive: true</code> 的情况，事件就实际上变得不可取消了，所以我们最好在代码里做一层判断：</p>
+<h3 id="检查事件是否可取消"><a class="header-anchor" href="#检查事件是否可取消">¶</a>检查事件是否可取消</h3>
+<p>对于 <code>passive: true</code> 的情况，事件就实际上变得不可取消了，所以我们最好在代码里做一层判断：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'touchstart'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>cancelable <span class="token operator">&amp;&amp;</span> event<span class="token punctuation">.</span>target <span class="token operator">===</span> area<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>passive<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>然而这仅仅是阻止执行没有意义的 <code>preventDefault()</code>，并不能阻止滚动。这种情况下，最好的办法是通过 css 申明来阻止横向移动，因为这个判断不会发生在渲染进程，所以不会导致合成器与渲染进程的通信：</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">#area</span> <span class="token punctuation">{</span>
   <span class="token property">touch-action</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="事件合并"><a href="#事件合并" class="headerlink" title="事件合并"></a>事件合并</h3><p>由于事件触发频率可能比浏览器帧率还要高（1 秒 120 次），如果浏览器坚持对每个事件都进行响应，而一次事件都必须在 js 里响应一次的话，会导致大量事件阻塞，因为当 FPS 为 60 时，一秒也仅能执行 60 次事件响应，所以事件积压是无法避免的。</p>
+<h3 id="事件合并"><a class="header-anchor" href="#事件合并">¶</a>事件合并</h3>
+<p>由于事件触发频率可能比浏览器帧率还要高（1 秒 120 次），如果浏览器坚持对每个事件都进行响应，而一次事件都必须在 js 里响应一次的话，会导致大量事件阻塞，因为当 FPS 为 60 时，一秒也仅能执行 60 次事件响应，所以事件积压是无法避免的。</p>
 <p>为了解决这个问题，浏览器在针对可能导致积压的事件，比如滚动事件时，将多个事件合并到一次 js 中，仅保留最终状态。</p>
 <p>如果不希望丢掉事件中间过程，可以使用 <code>getCoalescedEvents</code> 从合并事件中找回每一步事件的状态：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'pointermove'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -789,8 +791,8 @@
     <span class="token comment">// draw a line using x and y coordinates.</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="精读"><a href="#精读" class="headerlink" title="精读"></a>精读</h2><p>只要我们认识到事件监听必须运行在渲染进程，而现代浏览器许多高性能 “渲染” 其实都在合成层采用 GPU 做，所以看上去方便的事件监听肯定会拖慢页面流畅度。</p>
+<h2 id="精读"><a class="header-anchor" href="#精读">¶</a>精读</h2>
+<p>只要我们认识到事件监听必须运行在渲染进程，而现代浏览器许多高性能 “渲染” 其实都在合成层采用 GPU 做，所以看上去方便的事件监听肯定会拖慢页面流畅度。</p>
 <p>但就这件事在 React 17 中有过一次讨论 <a target="_blank" rel="noopener" href="https://github.com/facebook/react/issues/19651">Touch/Wheel Event Passiveness in React 17</a>（实际上在即将到来的 18 该问题还在讨论中 <a target="_blank" rel="noopener" href="https://github.com/facebook/react/issues/22794">React 18 not passive wheel / touch event listeners support</a>），因为 React 可以直接在元素上监听 Touch、Wheel 事件，但其实框架采用了委托的方式在 document（后在 app 根节点）统一监听，这就导致了用户根本无从决定事件是否为 <code>passive</code>，如果框架默认 <code>passive</code>，会导致 <code>preventDefault()</code> 失效，否则性能得不到优化。</p>
 <p>就结论而言，React 目前还是对几个受影响的事件 <code>touchstart</code> <code>touchmove</code> <code>wheel</code> 采用 <code>passive</code> 模式，即：</p>
 <pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">const</span> <span class="token function-variable function">Test</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
@@ -801,7 +803,6 @@
     ...
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>虽然结论如此而且对性能友好，但并不是一个让所有人都能满意的方案，我们看看当时 Dan 是如何思考，并给了哪些解决方案的。</p>
 <p>首先背景是，React 16 事件委托绑定在 document 上，React 17 事件委托绑定在 App 根节点上，而根据 chrome 的优化，绑定在 document 的事件委托默认是 <code>passive</code> 的，而其它节点的不会，因此对 React 17 来说，如果什么都不做，仅改变绑定节点位置，就会存在一个 Break Change。</p>
 <ol>
@@ -811,7 +812,8 @@
 </ol>
 <p>最终选择了第一个方案，因为暂时不希望在 React API 层面出现行为不一致的 BreakChange。</p>
 <p>然而 React 18 是一次 BreakChange 的时机，目前还没有进一步定论。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从浏览器角度看待问题会让你具备上帝视角而不是开发者视角，你不会再觉得一些奇奇怪怪的优化逻辑是 Hack 了，因为你了解浏览器背后是如何理解与实现的。</p>
+<h2 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h2>
+<p>从浏览器角度看待问题会让你具备上帝视角而不是开发者视角，你不会再觉得一些奇奇怪怪的优化逻辑是 Hack 了，因为你了解浏览器背后是如何理解与实现的。</p>
 <p>不过我们也会看到一些和实现强绑定的无奈，在前端开发框架实现时造成了不可避免的困扰。毕竟作为一个不了解浏览器实现的开发者，自然会认为 <code>preventDefault()</code> 绑定在滚动事件时，一定可以阻止默认滚动行为呀，但为什么因为：</p>
 <ul>
 <li>浏览器分为合成层和渲染进程，通信成本较高导致滚动事件监听会引发滚动卡顿。</li>
@@ -1155,7 +1157,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F87c01ec7gy1frmrrnjpf4j21hc0u0dot.jpg" class="responsive-img" alt="深入了解现代浏览器三">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F1200px-The_Bubble_Nebula_-_NGC_7635_-_Heic1608a.jpg" class="responsive-img" alt="深入了解现代浏览器三">
                         
                         <span class="card-title">深入了解现代浏览器三</span>
                     </div>
@@ -1385,7 +1387,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">189.7k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

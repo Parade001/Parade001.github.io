@@ -1,7 +1,15 @@
-User-agent: * Allow: /
+User-agent: *
+Allow: /
 Allow: /archives/
+Allow: /categories/
+Allow: /about/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
 Disallow: /vendors/
-Disallow: /categories/
+Disallow: /fancybox/
+Disallow: /vendors/
 
 
 Sitemap: http://www.langzi.fun/sitemap.xml

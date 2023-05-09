@@ -1,0 +1,1757 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="AsyncAwait 优越之处, Web,HTML,Python,JavaScript,Vue,Java">
+    <meta name="description" content="熊腾的在线记事本">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>AsyncAwait 优越之处 | 熊言熊语</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/Hexo_js%E6%96%87%E4%BB%B6%2Fstar.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">熊言熊语</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-inbox" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+
+      
+      <i class="fa fa-user-secret" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/HTML/multiverse/index.html">
+          
+          <i class="fa fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+
+      
+      <i class="fa fa-tv" style="zoom: 0.6;"></i>
+      
+      <span>Demo</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/HTML/Meow.html">
+          
+          <i class="fa fa-puzzle-piece" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>抓住小猫</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/HTML/Fireworks.html">
+          
+          <i class="fa fa-puzzle-piece" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>放烟花</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/HTML/shotairplane.html">
+          
+          <i class="fa fa-puzzle-piece" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>打飞机</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/HTML/cutfruits.html">
+          
+          <i class="fa fa-puzzle-piece" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>切水果</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/HTML/dodgebullets.html">
+          
+          <i class="fa fa-puzzle-piece" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>躲子弹</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/HTML/pacman.html">
+          
+          <i class="fa fa-puzzle-piece" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>吃豆人</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/HTML/tennis.html">
+          
+          <i class="fa fa-puzzle-piece" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>打网球</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/HTML/buildbridge.html">
+          
+          <i class="fa fa-puzzle-piece" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>搭桥</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/music" class="waves-effect waves-light">
+      
+      <i class="fas fa-music" style="zoom: 0.6;"></i>
+      
+      <span>我的歌单</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fa fa-asl-interpreting" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">熊言熊语</div>
+        <div class="logo-desc">
+            
+            熊腾的在线记事本
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-inbox"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fa fa-user-secret"></i>
+			
+			关于
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  >
+              
+                <li>
+
+                  <a href="/HTML/multiverse/index.html " style="margin-left:50px">
+				  
+				   <i class="fa fa fa-image" style="position: absolute;left:28px" ></i>
+			      
+		          <span>相册</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fa fa-tv"></i>
+			
+			Demo
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  >
+              
+                <li>
+
+                  <a href="/HTML/Meow.html " style="margin-left:50px">
+				  
+				   <i class="fa fa fa-puzzle-piece" style="position: absolute;left:28px" ></i>
+			      
+		          <span>抓住小猫</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/HTML/Fireworks.html " style="margin-left:50px">
+				  
+				   <i class="fa fa fa-puzzle-piece" style="position: absolute;left:28px" ></i>
+			      
+		          <span>放烟花</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/HTML/shotairplane.html " style="margin-left:50px">
+				  
+				   <i class="fa fa fa-puzzle-piece" style="position: absolute;left:28px" ></i>
+			      
+		          <span>打飞机</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/HTML/cutfruits.html " style="margin-left:50px">
+				  
+				   <i class="fa fa fa-puzzle-piece" style="position: absolute;left:28px" ></i>
+			      
+		          <span>切水果</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/HTML/dodgebullets.html " style="margin-left:50px">
+				  
+				   <i class="fa fa fa-puzzle-piece" style="position: absolute;left:28px" ></i>
+			      
+		          <span>躲子弹</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/HTML/pacman.html " style="margin-left:50px">
+				  
+				   <i class="fa fa fa-puzzle-piece" style="position: absolute;left:28px" ></i>
+			      
+		          <span>吃豆人</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/HTML/tennis.html " style="margin-left:50px">
+				  
+				   <i class="fa fa fa-puzzle-piece" style="position: absolute;left:28px" ></i>
+			      
+		          <span>打网球</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/HTML/buildbridge.html " style="margin-left:50px">
+				  
+				   <i class="fa fa fa-puzzle-piece" style="position: absolute;left:28px" ></i>
+			      
+		          <span>搭桥</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/music" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-music"></i>
+			
+			我的歌单
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-asl-interpreting"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Fhubble_birthofstars_0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">AsyncAwait 优越之处</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/async-await/">
+                                <span class="chip bg-color">async await</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaScript/" class="post-category">
+                                JavaScript
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-10
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读量:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本期精读的文章是：<a target="_blank" rel="noopener" href="https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9">6 Reasons Why JavaScript’s Async/Await Blows Promises Away</a></p>
+<h1 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h1><img src="https://img.alicdn.com/imgextra/i4/O1CN01HcU2pR1XbTts6EZS5_!!6000000002942-2-tps-594-288.png" alt="logo" width="500">
+
+<p>我为什么要选这篇文章呢？</p>
+<p>前端异步问题处理一直是一个老大难的问题，前有 Callback Hell 的绝望，后有 Promise/Deferred 的规范混战，从 Generator 配合 co 所向披靡，到如今 Async/Await 改变世界。为什么异步问题如此难处理，Async/Await 又能在多大程度上解决我们开发和调试过程中遇到的难点呢？希望这篇文章能给我们带来一些启发。</p>
+<p>当然，本文不是一篇针对前端异步问题综合概要性的文章，更多的是从 Async/Await 的优越性谈起。但这并不妨碍我们从 Async/Await 的特点出发，结合自己在工作、开发过程中的经验教训，认真的思考和总结如何更优雅、更高效的处理异步问题。</p>
+<h1 id="2-内容概要"><a href="#2-内容概要" class="headerlink" title="2 内容概要"></a>2 内容概要</h1><p>Async/Await 的优点：</p>
+<ul>
+<li>语法简洁清晰，节省了很多不必要的匿名函数</li>
+<li>直接使用 try…catch… 进行异常处理</li>
+<li>添加条件判断更符合直觉</li>
+<li>减少不必要的中间变量</li>
+<li>更清晰明确的错误堆栈</li>
+<li>调试时可以轻松给每个异步调用加断点</li>
+</ul>
+<p>Async/Await 的局限：</p>
+<ul>
+<li>降低了我们阅读理解代码的速度，此前看到 <code>.then()</code> 就知道是异步，现在需要识别 <code>async</code> 和 <code>await</code> 关键字</li>
+<li>目前支持 Async/Await 的 Node.js 版本（Node 7）并非 LTS 版本，但是下一个 LTS 版本很快将会发布</li>
+</ul>
+<p>可以看出，文中提到 Async/Await 的优势大部分都是从开发调试效率提升层面来讲的，提到的问题或者说局限也只有不痛不痒的两点。</p>
+<p>让我们来看看参与精读的同学都提出了哪些深度观点：</p>
+<h1 id="3-精读"><a href="#3-精读" class="headerlink" title="3 精读"></a>3 精读</h1><p>本次提出独到观点的同学有：<a href="http://link.zhihu.com/?target=https://github.com/javie007">@javie007</a>  <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/6c772f9726a914ed4a4b90c88010461c">@流形</a> <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/078cc0fb15845759ad8295b0f0e50099">@camsong</a> <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/turbe-xue">@Turbe Xue</a> <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/5ac53c9c0484e83672e1c1716bdf0ff9">@淡苍</a> <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/38c3c75795824de1bc5d99cff904a832">@留影</a>  <a target="_blank" rel="noopener" href="https://www.zhihu.com/people/3ec85a04bc9eaa35b1830874cc463a52">@黄子毅</a> 精读由此归纳。</p>
+<h3 id="Async-Await-并不是什么新鲜概念"><a href="#Async-Await-并不是什么新鲜概念" class="headerlink" title="Async/Await 并不是什么新鲜概念"></a>Async/Await 并不是什么新鲜概念</h3><p>参与精读的很多同学都提出来，Async/Await 并不是什么新鲜的概念，事实的确如此。</p>
+<p>早在 2012 年微软的 C# 语言发布 5.0 版本时，就正式推出了 Async/Await 的概念，随后在 Python 和 Scala 中也相继出现了 Async/Await 的身影。再之后，才是我们今天讨论的主角，ES 2016 中正式提出了 Async/Await 规范。</p>
+<p>以下是一个在 C# 中使用 Async/Await 的示例代码：</p>
+<pre class="line-numbers language-c-sharp" data-language="c-sharp"><code class="language-c-sharp">public async Task&lt;int&gt; SumPageSizesAsync(IList&lt;Uri&gt; uris) 
+{
+    int total = 0;
+    foreach (var uri in uris) {
+        statusText.Text = string.Format("Found {0} bytes ...", total);
+        var data = await new WebClient().DownloadDataTaskAsync(uri);
+        total += data.Length;
+    }
+    statusText.Text = string.Format("Found {0} bytes total", total);
+    return total;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再看看在 JavaScript 中的使用方法：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">createNewDoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> response <span class="token operator">=</span> <span class="token keyword">await</span> db<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// post a new doc</span>
+  <span class="token keyword">return</span> <span class="token keyword">await</span> db<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// find by id</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>不难看出两者单纯在异步语法上，并没有太多的差异。这也是为什么 Async/Await 推出后，获得不少赞许和亲切感的原因之一吧。</p>
+<p>其实在前端领域，也有不少类 Async/Await 的实现，其中不得不提到的就是知名网红之一的老赵写的 <a target="_blank" rel="noopener" href="https://github.com/JeffreyZhao/wind">wind.js</a>，站在今天的角度看，windjs 的设计和实现不可谓不超前。</p>
+<h3 id="Async-Await-是如何实现的"><a href="#Async-Await-是如何实现的" class="headerlink" title="Async/Await 是如何实现的"></a>Async/Await 是如何实现的</h3><p>根据 <a target="_blank" rel="noopener" href="https://tc39.github.io/ecmascript-asyncawait/">Async/Await 的规范</a> 中的描述 —— 一个 Async 函数总是会返回一个 Promise —— 不难看出 Async/Await 和 Promise 存在千丝万缕的联系。这也是为什么不少参与精读的同学都说，Async/Await 不过是一个语法糖。</p>
+<p>单谈规范太枯燥，我们还是看看实际的代码。下面是一个最基础的 Async/Await 例子：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> img <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'tiger.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>使用 Babel 转换后：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> <span class="token function-variable function">test</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> _ref <span class="token operator">=</span> <span class="token function">_asyncToGenerator</span><span class="token punctuation">(</span>regeneratorRuntime<span class="token punctuation">.</span><span class="token function">mark</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">_callee</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> img<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> regeneratorRuntime<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">_callee$</span><span class="token punctuation">(</span><span class="token parameter">_context</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">switch</span> <span class="token punctuation">(</span>_context<span class="token punctuation">.</span>prev <span class="token operator">=</span> _context<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">:</span>
+                        _context<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+                        <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'tiger.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+                        img <span class="token operator">=</span> _context<span class="token punctuation">.</span>sent<span class="token punctuation">;</span>
+
+                    <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
+                    <span class="token keyword">case</span> <span class="token string">'end'</span><span class="token operator">:</span>
+                        <span class="token keyword">return</span> _context<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> _callee<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">_ref</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">_asyncToGenerator</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> gen <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">function</span> <span class="token function">step</span><span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> arg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">var</span> info <span class="token operator">=</span> gen<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">var</span> value <span class="token operator">=</span> info<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>info<span class="token punctuation">.</span>done<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">resolve</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token function">step</span><span class="token punctuation">(</span><span class="token string">"next"</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token function">step</span><span class="token punctuation">(</span><span class="token string">"throw"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> <span class="token function">step</span><span class="token punctuation">(</span><span class="token string">"next"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>不难看出，Async/Await 的实现被转换成了基于 Promise 的调用。值得注意的是，原来只需 3 行代码即可解决的问题，居然被转换成了 52 行代码，这还是基于执行环境中已经存在 regenerator 的前提之一。如果要在兼容性尚不是非常理想的 Web 环境下使用，代码 overhead 的成本不得不纳入考虑。</p>
+<h3 id="Async-Await-真的是更优秀的替代方案吗"><a href="#Async-Await-真的是更优秀的替代方案吗" class="headerlink" title="Async/Await 真的是更优秀的替代方案吗"></a>Async/Await 真的是更优秀的替代方案吗</h3><p>不知道是个人观察偏差，还是大家普遍都有这样的看法。在国内前端圈子里，并没有对 Async/Await 的出现表现出多么大的兴趣，几种常见的观点是：「还不是基于 Promise 的语法糖，没什么意思」、「现在使用 co 已经能完美解决异步问题，不需要再引入什么新的概念」、「浏览器兼容性这么差，用 Babel 编译又需要引入不少依赖，使用成本太高」等等。</p>
+<p>在本次精读中，也有不少同学指出了使用 Async/Await 的局限性。</p>
+<p>比如，使用 Async/Await 并不能很好的支持异步并发。考虑下面这种情况，一个模块需要发送 3 个请求并在获得结果后才能进行渲染，3 个请求之间没有依赖关系。如果使用 Async/Await，写法如下：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">mount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> result1 <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'a.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> result2 <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'b.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> result3 <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'c.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span>result1<span class="token punctuation">,</span> result2<span class="token punctuation">,</span> result3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这样的写法在异步上确实简洁不少，但是 3 个异步请求是顺序执行的，并没有充分利用到异步的优势。要想实现真正的异步，还是需要依赖 <code>Promise.all</code> 封装一层：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">mount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'a.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'b.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'c.json'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">...</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>此外，正如在上文中提到的，async 函数默认会返回一个 Promise，这也意味着 Promise 中存在的问题 async 函数也会遇到，那就是 —— 默认会静默的吞掉异常。</p>
+<p>所以，虽然 Async/Await 能够使用 try…catch… 这种符合同步习惯的方式进行异常捕获，你依然不得不手动给每个 await 调用添加 try…catch… 语句，否则，async 函数返回的只是一个 reject 掉的 Promise 而已。</p>
+<h3 id="异步还有哪些问题需要解决"><a href="#异步还有哪些问题需要解决" class="headerlink" title="异步还有哪些问题需要解决"></a>异步还有哪些问题需要解决</h3><p>虽然处理异步问题的技术一直在进步，但是在实际工程实践中，我们对异步操作的需求也在不断扩展加深，这也是为什么各种 flow control 的库一直兴盛不衰的原因之一。</p>
+<p>在本次精读中，大家肯定了 Async/Await 在处理异步问题的优越性，但也提到了其在异步问题处理上的一些不足：</p>
+<ul>
+<li>缺少复杂的控制流程，如 always、progress、pause、resume 等</li>
+<li>缺少中断的方法，无法 abort</li>
+</ul>
+<p>当然，站在 EMCA 规范的角度来看，有些需求可能比较少见，但是如果纳入规范中，也可以减少前端程序员在挑选异步流程控制库时的纠结了。</p>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3 总结"></a>3 总结</h1><p>Async/Await 的确是更优越的异步处理方案，但我们相信这一定不是终极处理方案。随着前端工程化的深入，一定有更多、更复杂、更精细的异步问题出现，同时也会有迎合这些问题的解决方案出现，比如精读中很多同学提到的 RxJS 和 js-csp。</p>
+<blockquote>
+<p>讨论地址是：<a href="http://link.zhihu.com/?target=https://github.com/dt-fe/weekly/issues/6">那些年我们处理过的异步问题 · Issue #6 · dt-fe/weekly</a></p>
+</blockquote>
+<blockquote>
+<p>如果你想参与讨论，请<a target="_blank" rel="noopener" href="https://github.com/dt-fe/weekly">点击这里</a>，每周都有新的主题，每周五发布。</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">xt_xiong</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://xiongteng.cc/38372.html">https://xiongteng.cc/38372.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        转载要求:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    如有转载请注明出处 :根据
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    告知来自
+                    <a href="/about" target="_blank">xt_xiong</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/async-await/">
+                                    <span class="chip bg-color">async await</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link
+  rel="stylesheet"
+  href="/libs/gitalk/gitalk.css"
+/>
+<link
+  rel="stylesheet"
+  href="/css/my-gitalk.css"
+/>
+
+<div class="card gitalk-card" data-aos="fade-up">
+  <div
+    class="comment_headling"
+    style="
+      font-size: 20px;
+      font-weight: 700;
+      position: relative;
+      padding-left: 20px;
+      top: 15px;
+      padding-bottom: 5px;
+    "
+  >
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+  let gitalk = new Gitalk({
+      clientID: '08cb8efd61d2c27103a2',
+      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
+      repo: 'Parade001.github.io',
+      owner: 'Parade001',
+      admin: "Parade001",
+      id: '2022-05-10T22-37-36',
+      distractionFreeMode: false  // Facebook-like distraction free mode
+  });
+
+  gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上篇</div>
+            <div class="card">
+                <a href="/59170.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://www.gstatic.com/prettyearth/assets/full/1012.jpg" class="responsive-img" alt="使用css属性选择器">
+                        
+                        <span class="card-title">使用css属性选择器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/css/" class="post-category">
+                                    css
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/css%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8/">
+                        <span class="chip bg-color">css属性选择器</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/16920.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://www.gstatic.com/prettyearth/assets/full/1047.jpg" class="responsive-img" alt="精通cosole.log">
+                        
+                        <span class="card-title">精通cosole.log</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            通过本篇文件来全面认识下console.log
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/tips/" class="post-category">
+                                    tips
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;标题</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="938208922"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.5'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2018-2023</span>
+            
+            <span id="year">2018</span>
+            <a href="/about" target="_blank">xt_xiong</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">189.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis"> 
+<a
+  href="mailto:xiongteng.red@gmail.com"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="邮件联系我"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fas fa-envelope-open"></i>
+</a>
+   
+<a
+  href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=965202772"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="QQ联系我: 965202772"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-qq"></i>
+</a>
+ 
+<a
+  href="https://weibo.com/"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="关注我的微博: https://weibo.com/"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-weibo"></i>
+</a>
+<a
+  href="https://instagram.com/xiongteng.cc?r=nametag"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="关注我的IG: https://instagram.com/xiongteng.cc?r=nametag"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-instagram"></i>
+</a>
+<a
+  href="https://b23.tv/WNuyUW1"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="关注我的B站: https://b23.tv/WNuyUW1"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-bilibili"></i>
+</a>
+<a
+  href="https://steamcommunity.com/id/xiongteng/"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="我的Steam: https://steamcommunity.com/id/xiongteng/"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-steam-symbol"></i>
+  <!-- <i class="fab fa-steam"></i> -->
+</a>
+<a
+  href="https://&#39;暂未入坑&#39;"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="我的xbox: https://&#39;暂未入坑&#39;"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fa-brands fa-xbox"></i>
+  <!-- <i class="fab fa-steam"></i> -->
+</a>
+<a
+  href="https://&#39;SW-6512-6988-8778&#39;"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="我的Switch: https://&#39;SW-6512-6988-8778&#39;"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fa-solid fa-gamepad"></i>
+  <!-- <i class="fab fa-steam"></i> -->
+</a>
+ 
+<a
+  href="https://www.zhihu.com/people/hurricane.net"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="关注我的知乎: https://www.zhihu.com/people/hurricane.net"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fa-brands fa-zhihu"></i>
+</a>
+<a
+  href="https://&#39;15623449201&#39;"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="我的微信: https://&#39;15623449201&#39;"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fa-brands fa-weixin"></i>
+</a>
+ 
+<a
+  href="/atom.xml"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="RSS 订阅"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fas fa-rss"></i>
+</a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+	    <div style="position:fixed;bottom:125px;right:9px;cursor: pointer;">
+	        <a title="兔小巢" target="_blank" rel="noopener" href="https://support.qq.com/products/374160"><img src="/medias/contact.png"></a>
+	    </div>
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

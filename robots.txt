@@ -3,6 +3,9 @@ Allow: /
 Allow: /archives/
 Allow: /categories/
 Allow: /about/
+Allow: /tags/
+Allow: /music/
+
 
 Disallow: /js/
 Disallow: /css/

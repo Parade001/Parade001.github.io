@@ -15,5 +15,5 @@ Disallow: /fancybox/
 Disallow: /vendors/
 
 
-Sitemap: http://www.langzi.fun/sitemap.xml
-Sitemap: http://www.langzi.fun/baidusitemap.xml
+Sitemap: http://Parade001.github.io/sitemap.xml
+Sitemap: http://Parade001.github.io/baidusitemap.xml

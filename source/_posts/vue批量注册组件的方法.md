@@ -1,7 +1,7 @@
 ---
 title: vue批量注册组件的方法
 tags: Vue批量组件的注册方法
-categories: 'Vue,js'
+categories: 'Vue.js'
 summary: Vue批量注册组件
 abbrlink: 22900
 date: 2020-03-03 23:14:39

@@ -321,7 +321,7 @@
 			关于
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul  >
               
                 <li>
 
@@ -346,7 +346,7 @@
 			Demo
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul  >
               
                 <li>
 
@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tva4.sinaimg.cn/large/87c01ec7gy1frmrqzc5woj21hc0u0k07.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://api.btstu.cn/sjbz/?lx=m_meizi')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -701,14 +701,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 Min
+                    6 Min
                 </div>
                 
 
@@ -728,22 +728,45 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>回流:</p>
+<p>重排(回流):</p>
 <p>构造完渲染树后,会将DOM节点与对应的CSS结合,同时我们要进入布局阶段,还需要计算他们在设备视口ViewPort内的确切位置的大小,这个阶段就是回流</p>
 <p>​                                                                                                    <a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction">谷歌开发者文档</a></p>
 </blockquote>
 <blockquote>
-<p>重绘:当DOM变化影响元素的几何属性(宽高边距等),浏览器会重新绘制受影响的部分属性到屏幕中,这个过程叫’重绘’.</p>
+<p>重绘:当DOM变化影响元素的几何属性(宽高边距等),浏览器会重新绘制受影响的部分属性到屏幕中,这个过程叫 “重绘”.</p>
 <p align="right">JavaScript高性能</p>
 </blockquote>
-<p>重排何时发生:</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">特性	       <span class="token function">重排</span><span class="token punctuation">(</span>Reflow<span class="token punctuation">)</span>	        <span class="token function">重绘</span><span class="token punctuation">(</span>Repaint<span class="token punctuation">)</span>
+影响范围	  影响部分或整个渲染树	      只影响元素外观
+性能消耗   高（需要重新计算布局）	      低（只需重新绘制）
+触发条件	  几何属性变化                  外观属性变化
+必然关系	  重排必定引起重绘	      重绘不一定引起重排
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>浏览器下载完页面中的所有组件-HTML，JS，CSS，图片，之后会生成两个内部数据结构：</p>
+<hr>
+<p>DOM树：表示页面结构</p>
+<p>渲染树：表示DOM节点如何展示</p>
+<hr>
+<p>DOM树中的每个需要现实的节点在渲染树中至少存在一个对应的节点。</p>
+<p>渲染树中的节点被称为 “帧” 或者 “盒” ，一旦DOM盒渲染树构建完成，浏览器就开始绘制页面元素。</p>
+<hr>
+<p>当DOM变化影响的元素的几何属性（宽和高）-比如改变边框宽度导致行数增加-浏览器需要重新计算元素的几何属性。浏览器会使渲染树中收到影响的部分失效，并重新构造渲染树，这个过程称为 “重排(reflow)”</p>
+<p>完成重排后，浏览器会重新绘制受影响的部分到屏幕中，称为“重绘（repaint）”，并不是所有的DOM变化会影响元素的几何属性。</p>
+<hr>
+<p>重排(回流)何时发生:</p>
 <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/%E9%87%8D%E6%8E%92%E4%BD%95%E6%97%B6%E5%8F%91%E7%94%9F.jpg" alt="重排何时发生">
 
-<p>最小化重绘和重排:</p>
+<p>最小化重绘和重排(回流):</p>
 <ul>
 <li>延迟访问布局信息:合并多次改变,一次修改class而不是内联</li>
 <li>适当使用display</li>
@@ -753,9 +776,26 @@
 <li>脱标</li>
 <li>减少使用:hover伪选择器</li>
 <li>事件委托</li>
+<li>使用CSS优化</li>
+<li>避免table布局：table需要多次计算才能确定其元素在渲染树中的属性</li>
 </ul>
 <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/%E6%80%BB%E7%BB%93.jpg" alt="总结">
 
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 不好 - 会触发重排 */</span>
+<span class="token selector">.animate</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 好 - 只触发重绘，使用GPU加速 */</span>
+<span class="token selector">.animate</span> <span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>100px<span class="token punctuation">,</span> 100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>当需要GPU重新排列布局时就是回流（重排）。<br>重排是浏览器必须重新计算页面布局的过程，而重绘只是将已经计算好的布局重新绘制到屏幕上。<br>优化时应优先减少重排，因为它的性能代价更高。</p>
 <p>什么影响布局/回流?</p>
 <p>以下所有属性或方法，当在 JavaScript 中请求/调用时，将触发浏览器同步计算样式和布局*。这也称为回流或<a target="_blank" rel="noopener" href="http://www.kellegous.com/j/2013/01/26/layout-performance/">布局抖动</a>，是常见的性能瓶颈。</p>
 <p>一般所有同步提供布局指标的API都会触发强制回流/布局。继续阅读以了解更多案例和详细信息。</p>
@@ -1072,6 +1112,49 @@
     </div>
 
     
+        <link
+  rel="stylesheet"
+  href="/libs/gitalk/gitalk.css"
+/>
+<link
+  rel="stylesheet"
+  href="/css/my-gitalk.css"
+/>
+
+<div class="card gitalk-card" data-aos="fade-up">
+  <div
+    class="comment_headling"
+    style="
+      font-size: 20px;
+      font-weight: 700;
+      position: relative;
+      padding-left: 20px;
+      top: 15px;
+      padding-bottom: 5px;
+    "
+  >
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+  let gitalk = new Gitalk({
+      clientID: '08cb8efd61d2c27103a2',
+      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
+      repo: 'Parade001.github.io',
+      owner: 'Parade001',
+      admin: "Parade001",
+      id: '2020-03-14T19-12-29',
+      distractionFreeMode: false  // Facebook-like distraction free mode
+  });
+
+  gitalk.render('gitalk-container');
+</script>
+
+    
 
     
 
@@ -1098,7 +1181,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://tva4.sinaimg.cn/large/005BYqpggy1fwrey0mn2wj31hc0u0k28.jpg" class="responsive-img" alt="箭头函数的特点">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/joshua-%20tree.jpg" class="responsive-img" alt="箭头函数的特点">
                         
                         <span class="card-title">箭头函数的特点</span>
                     </div>
@@ -1147,7 +1230,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://tva1.sinaimg.cn/large/87c01ec7gy1frmrpcifo0j21hc0u0wn2.jpg" class="responsive-img" alt="webpack 工作原理">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Fhubble_birthofstars_0.jpg" class="responsive-img" alt="webpack 工作原理">
                         
                         <span class="card-title">webpack 工作原理</span>
                     </div>
@@ -1368,16 +1451,16 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2017-2022</span>
+                <span id="year">2018-2025</span>
             
-            <span id="year">2017</span>
+            <span id="year">2018</span>
             <a href="/about" target="_blank">xt_xiong</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

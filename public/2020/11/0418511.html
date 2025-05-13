@@ -321,7 +321,7 @@
 			关于
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul  >
               
                 <li>
 
@@ -346,7 +346,7 @@
 			Demo
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul  style="background:  ;" >
+            <ul  >
               
                 <li>
 
@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tva1.sinaimg.cn/large/005BYqpggy1fwrfai4233j31hc0u04gl.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -727,6 +727,11 @@
         <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
         
 
         <div class="card-content article-card-content">
@@ -1052,6 +1057,49 @@ class MyComponent extends React.Component {
     </div>
 
     
+        <link
+  rel="stylesheet"
+  href="/libs/gitalk/gitalk.css"
+/>
+<link
+  rel="stylesheet"
+  href="/css/my-gitalk.css"
+/>
+
+<div class="card gitalk-card" data-aos="fade-up">
+  <div
+    class="comment_headling"
+    style="
+      font-size: 20px;
+      font-weight: 700;
+      position: relative;
+      padding-left: 20px;
+      top: 15px;
+      padding-bottom: 5px;
+    "
+  >
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+  let gitalk = new Gitalk({
+      clientID: '08cb8efd61d2c27103a2',
+      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
+      repo: 'Parade001.github.io',
+      owner: 'Parade001',
+      admin: "Parade001",
+      id: '2020-11-04T00-32-33',
+      distractionFreeMode: false  // Facebook-like distraction free mode
+  });
+
+  gitalk.render('gitalk-container');
+</script>
+
+    
 
     
 
@@ -1078,7 +1126,7 @@ class MyComponent extends React.Component {
                     <div class="card-image">
                         
                         
-                        <img src="https://api.sunweihu.com/api/bing1/api.php" class="responsive-img" alt="React类组件">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220319165159.png" class="responsive-img" alt="React类组件">
                         
                         <span class="card-title">React类组件</span>
                     </div>
@@ -1127,7 +1175,7 @@ class MyComponent extends React.Component {
                     <div class="card-image">
                         
                         
-                        <img src="https://tva2.sinaimg.cn/large/9bd9b167gy1fwrhu0ouhhj21hc0u0kai.jpg" class="responsive-img" alt="React 里使用refs">
+                        <img src="https://cdn.seovx.com/img/mom2018%20(925).jpg" class="responsive-img" alt="React 里使用refs">
                         
                         <span class="card-title">React 里使用refs</span>
                     </div>
@@ -1336,16 +1384,16 @@ class MyComponent extends React.Component {
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2017-2022</span>
+                <span id="year">2018-2025</span>
             
-            <span id="year">2017</span>
+            <span id="year">2018</span>
             <a href="/about" target="_blank">xt_xiong</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">168k</span>&nbsp;字
+                class="white-color">189.9k</span>&nbsp;字
             
             
             

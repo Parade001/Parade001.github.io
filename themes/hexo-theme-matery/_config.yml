@@ -76,7 +76,7 @@ menu:
 
 time:
   enable: false
-  year: 2017 # 年份
+  year: 2018 # 年份
   month: 05 # 月份
   date: 12 # 日期
   hour: 00 # 小时
@@ -208,7 +208,7 @@ code:
   lang: true # 代码块是否显示名称
   copy: true # 代码块是否可复制
   shrink: true # 代码块是否可以收缩
-  break: false # 代码是否折行
+  break: true # 代码是否折行
 
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
@@ -222,7 +222,7 @@ reward:
 # 是否激活复制文章时追加博客和作者的版权信息.
 copyright:
   enable: false
-  minCharNumber: 120 # 至少复制多少个字符就追加版权信息.
+  minCharNumber: 200 # 至少复制多少个字符就追加版权信息.
   description: 本文章著作权归作者所有，任何形式的转载都请注明出处。
 
 # Whether to activate the mathjax, this is a global configuration, but the post still does not open the mathjax rendering.
@@ -263,7 +263,7 @@ profile:
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的项目"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myProjects:
-  enable: true
+  enable: false
   data:
     hexo-theme-matery:
       icon: fas fa-file-alt
@@ -293,10 +293,10 @@ mySkills:
     JavaScript:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
       percent: 80%
-    HTML5:
+    Python:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 80%
-    C:
+    GO:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
       percent: 70%
     Vue:
@@ -320,7 +320,7 @@ myGallery:
 # 设置在归档页面中是否显示'文章日历'控件
 postCalendar: true
 
-# 不建议使用gittalk,gitment这样权限过高的oauth app,因为它们能够 读写 授权者 所有的公共仓库 ，也就是说拿到你的授权 Token 的人，可以将你的 GitHub 公共仓库删空（这是github权限分的不够细的锅），如果恶意攻击者想获取使用者的 AccessToken，只需要在代码中加上一个 ajax 请求即可。原贴地址:https://www.v2ex.com/t/535608。建议大家看完。（我没有在用gittalk/gitment的网站上评论过，但根据v2ex网友的提示，如果网站自行修改了 gitalk.js 脚本 或者反代了 github api，就很容易拿到你的 Token ）
+# 不建议使用gitbash,gitment这样权限过高的oauth app,因为它们能够 读写 授权者 所有的公共仓库 ，也就是说拿到你的授权 Token 的人，可以将你的 GitHub 公共仓库删空（这是github权限分的不够细的锅），如果恶意攻击者想获取使用者的 AccessToken，只需要在代码中加上一个 ajax 请求即可。原贴地址:https://www.v2ex.com/t/535608。建议大家看完。（我没有在用gittalk/gitment的网站上评论过，但根据v2ex网友的提示，如果网站自行修改了 gitalk.js 脚本 或者反代了 github api，就很容易拿到你的 Token ）
 
 # https://github.com/utterance/utterances 是个 GitHub App，它的权限仅限于某个仓库。像 hugo hexo 这种静态页面类型的博客，clientID/clientSecret 泄露是不可避免的。我认为较好的解决方式是像 utteras 这种 GitHubApp，只有一个仓库的读写权限，将破坏降到最小。
 
@@ -335,13 +335,13 @@ postCalendar: true
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
-  enable: false
-  owner: 'Parade001'
-  repo: 'Parade001.github.io'
+  enable: true
+  owner: Parade001
+  repo: Parade001.github.io
   oauth:
-    clientId: '6d74b24b8d49da232128'
-    clientSecret: 'c43a503dd38bf66db8bbb36a2edfc2860f5d3e12'
-  admin: ['Parade001']
+    clientId: 08cb8efd61d2c27103a2
+    clientSecret: 5a2cb78fe45a079b772fc565e7f4b758d09bc07f
+  admin: Parade001
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
 gitment:
@@ -516,130 +516,22 @@ libs:
 # 无文章特色图片时需要显示的文章特色图片.
 featureImages:
   - http://api.btstu.cn/sjbz/?lx=meizi
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2l6qdvwj30k00dcmyi.jpg
-  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrds66wnvj21hc0u0khj.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrerxsu1hj31hc0xcq8r.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpgly1fwrfzbrlbtj31hc0u01kx.jpg
-  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrhuuh8ikj21hc0u0wqx.jpg
-  - https://tva2.sinaimg.cn/large/005BYqpggy1fwre36xr2mj31hc0u0199.jpg
-  - https://tva2.sinaimg.cn/large/9bd9b167ly1fwrh8y1nfpj21hc0xcjuv.jpg
-  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrhtumermj21hc0u0ty2.jpg
-  - https://api.sunweihu.com/api/bing1/api.php
-  - https://tva1.sinaimg.cn/mw690/006aANDQly1gya2o3gekvj34lh32bnpm.jpg
-  - http://api.btstu.cn/sjbz/?m_lx=suiji
-  - https://tva2.sinaimg.cn/large/9bd9b167gy1fwrhu0ouhhj21hc0u0kai.jpg
   - https://api.ixiaowai.cn/gqapi/gqapi.php
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kdfbrpj31z41e2b29.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrclluxllj31hc0u0wru.jpg
-  - https://tva1.sinaimg.cn/large/0060lm7Tly1ftg6wuhgywj31hc0u0wjr.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2ly4asmj31aj1kw1kx.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrdy18glaj31hc0u0wls.jpg
-  - https://tva4.sinaimg.cn/large/87c01ec7gy1frmmyljiepj21kw0w0qvf.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrezhete3j31hc0xc4ex.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrenhgd46j31hc0xcn1v.jpg
-  - https://tva2.sinaimg.cn/large/005BYqpggy1fwre2b3fzij31hc0u0qog.jpg
-  - https://tva1.sinaimg.cn/large/0060lm7Tly1ftg6owkw9lj31hc0u0tt9.jpg
-  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmro0m82gj21hc0u0do7.jpg
-  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmrsyggapj21hc0u0n69.jpg
-  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmn0empcsj21kw0w0e87.jpg
-  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmmmr8twvj21hc0u0x6q.jpg
   - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/joshua-%20tree.jpg
-  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmrpcifo0j21hc0u0wn2.jpg
-  - https://tva4.sinaimg.cn/large/87c01ec7gy1frmmmwb3anj21hc0u0b2a.jpg
-  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmr2kh3xkj21kw0w0e8e.jpg
-  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmrx49dasj21hc0u0wnm.jpg
-  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmmxmp6wqj21kw0w01lc.jpg
-  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmmlso9rgj21hc0u0kjn.jpg
-  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmr3hgu9hj21hc0xcb2b.jpg
-  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmrz8e3ytj21hc0u0wnn.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2l8nx99j31z41bh4qp.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kuqiklj30lc0sgaba.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrfai4233j31hc0u04gl.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2l8aq8oj31z415e7t3.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2l48o5yj31z417v4nd.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kt48tlj31z40tuh78.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kquccuj31z41hc7wh.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kppagdj30m80etgmi.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2ko54o0j31kw1kw1kx.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kmjyg9j32yo1uokjl.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kdfbrpj31z41e2b29.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2kbhircj31z41bfkbb.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2k9d1rej31z41407wh.jpg
   - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220319165159.png
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2k4fdopj31la0widm1.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2k0a86kj30m80enabi.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jztnu1j318g0p01dw.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jy3n9lj31la0wijy5.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jwnq1ij318g0rstgb.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jhma19j318g0p0q7l.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jij4lvj31hc0u0q81.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2ju5e4kj318g0rs4lp.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jegnu9j30hs0aomy0.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jirn6vj31kw0zkdix.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jqwldoj31kw16o19t.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2je4v70j30hs0bu766.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jfg907j30k00b9gn5.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jfhhxxj31be0zj3z9.jpg
-  - https://tva1.sinaimg.cn/large/006aANDQly1gya2jre9txj318g0p040s.jpg
+  - https://cdn.seovx.com/img/mom-2019%20(147).jpg
+  - https://cdn.seovx.com/img/mom2018%20(925).jpg
   - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrfyg41rwj31hc0u011h.jpg
   - http://api.btstu.cn/sjbz/?lx=meizi
-  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrgnoxm4wj31hc0u0jw0.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpggy1fwretwl1n5j31hc0u0dqm.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrfbchq9ij31hc0u0whg.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpggy1fwre3vw89qj31hc0u04ka.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrf16epe4j31hc0u01kx.jpg
-  - https://tva2.sinaimg.cn/large/005BYqpggy1fwremac6xkj31hc0xcjxr.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpggy1fwreudu9j2j31hc0u0ana.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpggy1fwre1g4q3bj31hc0u0wx6.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrffl14f4j31hc0xcwof.jpg
-  - https://tva1.sinaimg.cn/large/9bd9b167gy1fwrhzppjf7j21hc0xch0b.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpgly1fwrfvhzyhrj31hc0u0x4u.jpg
   - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F87c01ec7gy1frmrrnjpf4j21hc0u0dot.jpg
-  - https://tva1.sinaimg.cn/large/9bd9b167gy1fwrh9mca7ej21hc0u0437.jpg
-  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmru22eeej21hc0u0aj6.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpggy1fwre79402hj31hc0u07i4.jpg
-  - https://tva2.sinaimg.cn/large/9bd9b167gy1fwrdyr5suzj21hc0u045d.jpg
-  - https://tva2.sinaimg.cn/large/005BYqpggy1fwre7nuagnj31hc0u0qhw.jpg
-  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmmmaptjmj21hc0u0npf.jpg
-  - https://tva3.sinaimg.cn/large/0060lm7Tly1ftg6xaqdu6j31hc0u0x4k.jpg
-  - https://tva1.sinaimg.cn/large/0060lm7Tly1ftg6omnqa4j31hc0u010z.jpg
-  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmru22eeej21hc0u0aj6.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpggy1fwre3t28fhj31hc0u0tr1.jpg
-  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmrpcifo0j21hc0u0wn2.jpg
-  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmrr7y6u3j21hc0u0k0c.jpg
-  - https://tva4.sinaimg.cn/large/9bd9b167ly1fwrhzl9w5xj21hc0xc4e7.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrcmtmbgqj31hc0u014s.jpg
-  - https://tva2.sinaimg.cn/large/87c01ec7gy1frmryu38jij21hc0u0thv.jpg
-  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmrsc1lktj21hc0u07dd.jpg
-  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmry165k5j21hc0u0n6b.jpg
-  - https://tva2.sinaimg.cn/large/0060lm7Tly1ftg6xehevfj31hc0u0b29.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrel25jwaj31hc0u0njq.jpg
-  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrh8zm4qaj21hc0xc0w6.jpg
-  - https://tva1.sinaimg.cn/large/87c01ec7gy1frmmxmp6wqj21kw0w01lc.jpg
+  - https://cdn.seovx.com/?mom=302
+  - https://img.btstu.cn/api/images/5a040eb30c055.jpg
   - https://api.isoyu.com/bing_images.php
-  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrgpzwrpdj21hc0u0tbr.jpg
-  - https://tva2.sinaimg.cn/large/005BYqpgly1fwrg0daz54j31hc0u0aib.jpg
-  - https://tva2.sinaimg.cn/large/005BYqpggy1fwrfce8bi9j31hc0u0ncc.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpgly1fwrgkvn2f0j31hc0u01kx.jpg
-  - https://tva4.sinaimg.cn/large/005BYqpggy1fwrey0mn2wj31hc0u0k28.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrfe59efij31hc0xc7c9.jpg
-  - https://tva4.sinaimg.cn/large/87c01ec7gy1frmrqzc5woj21hc0u0k07.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrgn7vxgdj31hc0u0nnw.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpggy1fwre2b3fzij31hc0u0qog.jpg
-  - https://tva4.sinaimg.cn/large/9bd9b167gy1fwri874ygcj21hc0u0ncj.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpgly1fwrfbzjskhj31hc0u0dyo.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpggy1fwrfervrpgj31hc0u01kx.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpgly1fwrf0jr143j31hc0u0143.jpg
-  - https://tva3.sinaimg.cn/large/005BYqpgly1fwrem2kqgpj31hc0xcn44.jpg
-  - https://tva2.sinaimg.cn/large/9bd9b167ly1fwrh9h9rpqj21hc0xc0xq.jpg
-  - https://tva3.sinaimg.cn/large/9bd9b167gy1fwrhch2kdhj21hc0u0x0m.jpg
-  - https://tva4.sinaimg.cn/large/9bd9b167gy1fwrdybea96j21hc0u0h5g.jpg
-  - https://tva1.sinaimg.cn/large/005BYqpggy1fwrfe3txymj31hc0xcjz8.jpg
-  - https://tva3.sinaimg.cn/large/0060lm7Tly1ftg6onkf2aj318g0p0wmo.jpg
+  - https://source.unsplash.com/random
+  - https://api.isoyu.com/mm_images.php
+  - http://api.btstu.cn/sjbz/?lx=m_meizi
   - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F1200px-The_Bubble_Nebula_-_NGC_7635_-_Heic1608a.jpg
   - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Fhubble_birthofstars_0.jpg
-  - https://tva3.sinaimg.cn/large/87c01ec7gy1frmrz8e3ytj21hc0u0wnn.jpg
 # default configs that the default policy for every articles/posts
 # default 配置文章的默认转载规则
 
@@ -724,7 +616,7 @@ subtitle:
 # 手机二级菜单.
 navMenu:
   mleft: true # 二级侧栏子菜单是否对齐左边
-  bgColor: ' ' # 二级侧栏子菜单背景颜色,留空即为全局背景色
+  bgColor: '' # 二级侧栏子菜单背景颜色,留空即为全局背景色
 
 # 网页预加载.
 instantpage:

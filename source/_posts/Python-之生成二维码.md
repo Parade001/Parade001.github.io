@@ -4,7 +4,7 @@ title: Python 之生成二维码
 abbrlink: 29287
 date: 2022-08-12 00:42:10
 tags: qrcode,
-categories: python
+categories: Python
 summary: 一个比较简单又实用的二维码生成程序
 ---
 

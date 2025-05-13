@@ -4,7 +4,7 @@ title: element-input 自定义最值
 abbrlink: 35681
 date: 2022-04-15 19:51:44
 tags: $nextTick
-categories: Vue
+categories: Vue.js
 summary: input 框是需要进行自定义限制数字大小，记录下在使用element ui 的问题，输入超过边界值的数会显示在DOM，打印却是正确的，这个时候配合，$nextTick 使用即可。
 ---
 

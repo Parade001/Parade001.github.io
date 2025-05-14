@@ -4,3 +4,7 @@ db.json
 *.log
 node_modules/
 .idea
+public/
+.deploy*/
+.deploy_git*/
+themes/hexo-theme-matery

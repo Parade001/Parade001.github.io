@@ -5,13 +5,12 @@ abbrlink: 21103
 date:  2020-03-25 19:06:10
 tags: 解构赋值
 categories:
-summary: 
+summary:
 cover: true
 ---
 
-基本用法
 
-ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
+ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）
 以前，为变量赋值，只能直接指定值。
 
 ------
@@ -52,7 +51,7 @@ foo // true
 数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。
 
 ```javascript
-var { bar, foo } = { foo: "aaa", bar: "bbb" }; 
+var { bar, foo } = { foo: "aaa", bar: "bbb" };
 foo // "aaa"
 bar // "bbb"
 var { baz } = { foo: "aaa", bar: "bbb" };
@@ -63,7 +62,7 @@ baz // undefined
 如果变量名与属性名不一致，必须写成下面这样。
 
 ```javascript
-var { foo: baz } = { foo: "aaa", bar: "bbb" }; 
+var { foo: baz } = { foo: "aaa", bar: "bbb" };
 baz // "aaa"
 let obj = { first: 'hello', last: 'world' };
 let { first: f, last: l } = obj;
@@ -138,7 +137,7 @@ console.log(b5); // [2, 3]
 
 ```javascript
 let {a, b, ...res} = {a: 10, b: 20, c: 30, d: 40};
-console.log(a) // a = 10 
+console.log(a) // a = 10
 console.log(res)  // res = {c: 30, d: 40};
 ```
 

@@ -723,14 +723,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近接到了一个需求关于elementui的合计行的需求，<br>需求如下：合计行某些列需要动态判定是否可以点击且要有自定义高亮.</p>
-<p>@cell-click 事件只能监控到单元格事件，因此想到方法如下，推荐采用方案2，原生即可，从dom上获取，注册对应方法，或者自定义类方法即可；<br>方案1：双table+插槽实现，具体就不展示代码了。<br>缺点：页面在小屏幕状态下会很丑，会出3个x-轴滚动条，但是我们可以通过css方案去掉多余滚动条，</p>
+                <p>最近接到了一个需求关于elementui的合计行的需求，<br>
+需求如下：合计行某些列需要动态判定是否可以点击且要有自定义高亮.</p>
+<p>@cell-click 事件只能监控到单元格事件，因此想到方法如下，推荐采用方案2，原生即可，从dom上获取，注册对应方法，或者自定义类方法即可；<br>
+方案1：双table+插槽实现，具体就不展示代码了。<br>
+缺点：页面在小屏幕状态下会很丑，会出3个x-轴滚动条，但是我们可以通过css方案去掉多余滚动条，</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.el-table__body-wrapper::-webkit-scrollbar</span> <span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>但是依旧还有一个缺点就是table滚动的时候合计行与表格数据不对齐的效果</p>
-<p>因此方案2：通过获取合计行的dom事件，然后通过js实现，<br>优点：美观，<br>缺点：开发代码量大，维护性差。<br>实现过程如下</p>
+<p>因此方案2：通过获取合计行的dom事件，然后通过js实现，<br>
+优点：美观，<br>
+缺点：开发代码量大，维护性差。<br>
+实现过程如下</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">关键点1：
 
 sum方法return前加上:
@@ -872,7 +878,6 @@ color: #5a9cf8 !important;
 font-weight: bold;
 font-size: 12px;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1147,18 +1152,17 @@ font-size: 12px;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上篇</div>
             <div class="card">
-                <a href="/2025/09/1125729.html">
+                <a href="/2025/09/1135719.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://source.unsplash.com/random" class="responsive-img" alt="elementui-合计行自定事件及样式">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg" class="responsive-img" alt="将elementui table迁移至vxe-table3.9.0踩雷记录">
                         
-                        <span class="card-title">elementui-合计行自定事件及样式</span>
+                        <span class="card-title">将elementui table迁移至vxe-table3.9.0踩雷记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1168,9 +1172,9 @@ font-size: 12px;
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-09-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-09-11
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1179,7 +1183,14 @@ font-size: 12px;
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vxe-table-%E8%B8%A9%E9%9B%B7%E8%AE%B0%E5%BD%95/">
+                        <span class="chip bg-color">vxe-table 踩雷记录</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1424,7 +1435,7 @@ font-size: 12px;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">171.1k</span>&nbsp;字
+                class="white-color">176k</span>&nbsp;字
             
             
             

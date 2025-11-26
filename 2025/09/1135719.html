@@ -727,14 +727,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>业务背景：项目中的table报表面向的人群类型较多，如财务，后勤，运营，业务，业务总，boss等，table 列过多怎么办？<br>
-期望实现根据账户角色，去记录下改用户对该表单自定义报表table的设置，<br>
-因此这种业务场景下，将现有项目的报表从elementui table 迁移到vxe-table3.9.0，实现服务端自定义列的功能就很好。<br>
-记一下踩坑记录<br>
-1、vxe-table 尽可能用最新的版本我最后用的是3.9.0 因为项目采用vue2.7版本。<br>
-结合你的项目vue版本，因为低版本的api ，在高版本api大概率被遗弃了，甚至功能不全，重新阅读文档也很费事件，因此建议采用高版本，功能全，文档全<br>
-2、i18n配置，这一块很坑，在elementui table中，i18n配置，是table组件内部处理，table组件内部会调用i8n，因此i8n配置，必须放在table组件内部，不能放在table组件外部，<br>
-因为项目需求覆盖部分的vxe-table ui 中重写部分的i18内容，这块也很坑因此直接放我就直接下面贴上我的i18n配置代码</p>
+                <p>业务背景：项目中的table报表面向的人群类型较多，如财务，后勤，运营，业务，业务总，boss等，table 列过多怎么办？<br>期望实现根据账户角色，去记录下改用户对该表单自定义报表table的设置，<br>因此这种业务场景下，将现有项目的报表从elementui table 迁移到vxe-table3.9.0，实现服务端自定义列的功能就很好。<br>记一下踩坑记录<br>1、vxe-table 尽可能用最新的版本我最后用的是3.9.0 因为项目采用vue2.7版本。<br>结合你的项目vue版本，因为低版本的api ，在高版本api大概率被遗弃了，甚至功能不全，重新阅读文档也很费事件，因此建议采用高版本，功能全，文档全<br>2、i18n配置，这一块很坑，在elementui table中，i18n配置，是table组件内部处理，table组件内部会调用i8n，因此i8n配置，必须放在table组件内部，不能放在table组件外部，<br>因为项目需求覆盖部分的vxe-table ui 中重写部分的i18内容，这块也很坑因此直接放我就直接下面贴上我的i18n配置代码</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// main.js文件</span>
 <span class="token comment">// Vue</span>
 <span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
@@ -837,6 +830,8 @@ pinia<span class="token punctuation">.</span><span class="token function">use</s
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">"#app"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 <p>i18 部分重写vxe-table 内容</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> VueI18n <span class="token keyword">from</span> <span class="token string">"vue-i18n"</span><span class="token punctuation">;</span>
@@ -925,10 +920,10 @@ VxeUI<span class="token punctuation">.</span><span class="token function">setLan
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> i18n<span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 <p>基于vxe-table封装的table,</p>
-<p>1、封装了配合服务端设置列的功能见init方法中的update与restoreStore方法<br>
-2、handleScroll 也就是滚动加载，文档有写的，很简单的，根本不要自己手写了，官方文档就叫滚动事件吧？(不要问我为什么，写了半天自己触底加载，因为在文档搜触底加载没找到，当时没转过来，就自己手写，结果…)<br>
-3、列宽记得给最小值minWidth,因为不设置列宽话默认百分比渲染，不会自适应容器的宽度</p>
+<p>1、封装了配合服务端设置列的功能见init方法中的update与restoreStore方法<br>2、handleScroll 也就是滚动加载，文档有写的，很简单的，根本不要自己手写了，官方文档就叫滚动事件吧？(不要问我为什么，写了半天自己触底加载，因为在文档搜触底加载没找到，当时没转过来，就自己手写，结果….)<br>3、列宽记得给最小值minWidth,因为不设置列宽话默认百分比渲染，不会自适应容器的宽度</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
   &lt;div&gt;
     &lt;vxe-toolbar ref="toolbarRef" custom&gt;
@@ -2314,18 +2309,17 @@ export default {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上篇</div>
             <div class="card">
-                <a href="/2025/09/1135719.html">
+                <a href="/2025/11/2649594.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg" class="responsive-img" alt="将elementui table迁移至vxe-table3.9.0踩雷记录">
+                        <img src="https://img.btstu.cn/api/images/5a040eb30c055.jpg" class="responsive-img" alt="Cloudflare CDN加速 国内访问Github Pages服务">
                         
-                        <span class="card-title">将elementui table迁移至vxe-table3.9.0踩雷记录</span>
+                        <span class="card-title">Cloudflare CDN加速 国内访问Github Pages服务</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -2335,23 +2329,26 @@ export default {
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-09-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-26
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            xt_xiong
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/dns/" class="post-category">
+                                    dns
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vxe-table-%E8%B8%A9%E9%9B%B7%E8%AE%B0%E5%BD%95/">
-                        <span class="chip bg-color">vxe-table 踩雷记录</span>
+                    <a href="/tags/CloudFlare-CDN%E5%8A%A0%E9%80%9F/">
+                        <span class="chip bg-color">CloudFlare CDN加速</span>
                     </a>
                     
                 </div>
@@ -2587,7 +2584,7 @@ export default {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">176k</span>&nbsp;字
+                class="white-color">176.2k</span>&nbsp;字
             
             
             

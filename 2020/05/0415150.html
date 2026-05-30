@@ -546,7 +546,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://api.ixiaowai.cn/gqapi/gqapi.php')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://bing.ioliu.cn/v1/rand?w=1920&h=1080')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -739,14 +739,11 @@
                 <p>js数据类型</p>
 <ul>
 <li><em>基本数据类型(存放在栈空间)</em></li>
-<li><em>引用数据类型(存放在堆空间)</em><br>
-js里面的对象是引用类型，我们在把变量a赋值给变量b的时候，赋值过去的其实是a的引用地址，b有了相同的引用地址，那a跟b指向的都是同一块内存空间，操作b的属性，其实就是操作了这块内存，因为a也指向这块内存，所以a的属性也变了。这其实就是一个浅拷贝。</li>
+<li><em>引用数据类型(存放在堆空间)</em><br>js里面的对象是引用类型，我们在把变量a赋值给变量b的时候，赋值过去的其实是a的引用地址，b有了相同的引用地址，那a跟b指向的都是同一块内存空间，操作b的属性，其实就是操作了这块内存，因为a也指向这块内存，所以a的属性也变了。这其实就是一个浅拷贝。</li>
 <li>拷贝的栈中的地址。修改拷贝后的数据，原数据会改变</li>
-<li>拷贝的是堆中的数据。</li>
+<li>拷贝的是堆中的数据。<hr></li>
 </ul>
-<hr>
-<h1>浅拷贝</h1>
-<p>方式1: 遍历</p>
+<h1 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h1><p>方式1: 遍历</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> target <span class="token operator">=</span> <span class="token punctuation">{</span>
   name<span class="token operator">:</span> <span class="token string">'John'</span><span class="token punctuation">,</span>
   age<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
@@ -772,8 +769,11 @@ js里面的对象是引用类型，我们在把变量a赋值给变量b的时候�
 <span class="token keyword">let</span> newObj <span class="token operator">=</span> <span class="token function">shallowCopy</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
 newObj<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>target<span class="token punctuation">.</span>age<span class="token punctuation">,</span> newObj<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//20, 50</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 <hr>
 方式2:
+
 <p>ES6: Object.assign()</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> target <span class="token operator">=</span> <span class="token punctuation">{</span>
   name<span class="token operator">:</span> <span class="token string">'John'</span><span class="token punctuation">,</span>
@@ -786,9 +786,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">const</span> newObj<span class="token operator">=</span>Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>target<span class="token punctuation">)</span>
 newObj<span class="token punctuation">.</span>friend<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'baba'</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newObj<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//{ name: 'John', age: 20, friend: { name: 'baba', age: 30 } }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
 方式3:
 扩展运算符...
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> target <span class="token operator">=</span> <span class="token punctuation">{</span>
   name<span class="token operator">:</span> <span class="token string">'John'</span><span class="token punctuation">,</span>
   age<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
@@ -800,9 +802,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">let</span> newObj <span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">...</span>target<span class="token punctuation">}</span>
 newObj<span class="token punctuation">.</span>friend<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">18</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newObj<span class="token punctuation">)</span> <span class="token comment">//{ name: 'John', age: 20, friend: { name: 'lee', age: 18 } }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1>深拷贝</h1>
-<p>方式1:<br>
-序列化与反序列化</p>
+
+
+<h1 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h1><p>方式1:<br>序列化与反序列化</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
            name<span class="token operator">:</span> <span class="token string">"jack"</span><span class="token punctuation">,</span>
            age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
@@ -814,8 +816,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
      o<span class="token punctuation">.</span>hobby<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'code'</span>
      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//{ name: 'jack', age: 18, hobby: [ 'code', 'dance' ] }</span>
      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//{ name: 'jack', age: 18, hobby: [ 'sing', 'dance' ] }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>方式2:<br>
-引入<a target="_blank" rel="noopener" href="https://www.bootcdn.cn/lodash.js/">loadsh.js</a></p>
+
+
+<p>方式2:<br>引入<a target="_blank" rel="noopener" href="https://www.bootcdn.cn/lodash.js/">loadsh.js</a></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -828,10 +831,11 @@ o<span class="token punctuation">.</span>hobby<span class="token punctuation">[<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="https://tva1.sinaimg.cn/large/006aANDQly1gy1qlj54y6j309y05bgn2.jpg">
+
 <hr>
+
 <p>方式3:</p>
-<p><a target="_blank" rel="noopener" href="https://cdn.bootcdn.net/ajax/libs/underscore.js/1.13.2/underscore-min.js/">引入underscore.js</a>,这个库里有一个pick函数<br>
-可以实现深拷贝</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.bootcdn.net/ajax/libs/underscore.js/1.13.2/underscore-min.js/">引入underscore.js</a>,这个库里有一个pick函数<br>可以实现深拷贝</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.bootcdn.net/ajax/libs/underscore.js/1.13.2/underscore-min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
 name<span class="token operator">:</span> <span class="token string">'Jhon'</span><span class="token punctuation">,</span>
@@ -843,6 +847,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <img src="https://tva1.sinaimg.cn/large/006aANDQly1gy2hi9ueplj308z01jgln.jpg">
 方式4:
 递归遍历
+
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> oldObj <span class="token operator">=</span> <span class="token punctuation">{</span>
   name<span class="token operator">:</span> <span class="token string">"Baba"</span><span class="token punctuation">,</span>
   age<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
@@ -1163,7 +1168,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <div class="card-image">
                         
                         
-                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Fhubble_birthofstars_0.jpg" class="responsive-img" alt="闭包">
+                        <img src="https://loremflickr.com/1600/900" class="responsive-img" alt="闭包">
                         
                         <span class="card-title">闭包</span>
                     </div>
@@ -1212,7 +1217,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.seovx.com/img/mom2018%20(925).jpg" class="responsive-img" alt="解析ES6数组的解构赋值">
+                        <img src="https://loremflickr.com/1600/900/nature" class="responsive-img" alt="解析ES6数组的解构赋值">
                         
                         <span class="card-title">解析ES6数组的解构赋值</span>
                     </div>
@@ -1438,7 +1443,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">176.3k</span>&nbsp;字
+                class="white-color">176.2k</span>&nbsp;字
             
             
             

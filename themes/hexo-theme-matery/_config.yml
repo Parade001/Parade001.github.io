@@ -515,15 +515,33 @@ libs:
 # The post featured images that needs to be displayed when there is no image.
 # 无文章特色图片时需要显示的文章特色图片.
 featureImages:
-  # Unsplash 随机图片 API（国际知名，稳定可靠）
   # Picsum Photos 随机图片（开源项目，长期维护）
   - https://picsum.photos/1600/900?random=1
   - https://picsum.photos/1600/900?random=2
   - https://picsum.photos/1600/900?random=3
   - https://picsum.photos/1600/900?random=4
   - https://picsum.photos/1600/900?random=5
-  # 必应每日壁纸（稳定）
+  # 必应每日壁纸（多个不同域名）
   - https://api.dujin.org/bing/1920.php
+  - https://bing.ioliu.cn/v1/rand?w=1920&h=1080
+  - https://api.oick.cn/random/api.php
+  # Lorem Flickr（基于 Flickr 的随机图片）
+  - https://loremflickr.com/1600/900
+  - https://loremflickr.com/1600/900/nature
+  - https://loremflickr.com/1600/900/city
+  - https://loremflickr.com/1600/900/landscape
+  # PlaceIMG 占位图片服务
+  - https://placeimg.com/1600/900/nature
+  - https://placeimg.com/1600/900/arch
+  - https://placeimg.com/1600/900/tech
+  # Unsplash 随机图片（高质量，可能较慢）
+  - https://source.unsplash.com/random/1600x900/?nature
+  - https://source.unsplash.com/random/1600x900/?landscape
+  - https://source.unsplash.com/random/1600x900/?city
+  # 其他随机图片 API
+  - https://picsum.photos/1600/900?random=6
+  - https://picsum.photos/1600/900?random=7
+  - https://loremflickr.com/1600/900/mountain
 # default configs that the default policy for every articles/posts
 # default 配置文章的默认转载规则
 

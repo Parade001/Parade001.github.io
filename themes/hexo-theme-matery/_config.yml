@@ -531,13 +531,7 @@ featureImages:
   - https://loremflickr.com/1600/900/city
   - https://loremflickr.com/1600/900/landscape
   # PlaceIMG 占位图片服务
-  - https://placeimg.com/1600/900/nature
-  - https://placeimg.com/1600/900/arch
   - https://placeimg.com/1600/900/tech
-  # Unsplash 随机图片（高质量，可能较慢）
-  - https://source.unsplash.com/random/1600x900/?nature
-  - https://source.unsplash.com/random/1600x900/?landscape
-  - https://source.unsplash.com/random/1600x900/?city
   # 其他随机图片 API
   - https://picsum.photos/1600/900?random=6
   - https://picsum.photos/1600/900?random=7

@@ -10,7 +10,7 @@
     "build:prod": "hexo clean && hexo generate && gulp"
   },
   "hexo": {
-    "version": "5.4.2"
+    "version": "5.4.0"
   },
   "dependencies": {
     "gitalk": "^1.7.2",

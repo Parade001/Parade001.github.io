@@ -516,14 +516,6 @@ libs:
 # 无文章特色图片时需要显示的文章特色图片.
 featureImages:
   # Unsplash 随机图片 API（国际知名，稳定可靠）
-  - https://source.unsplash.com/random/1600x900/?nature
-  - https://source.unsplash.com/random/1600x900/?landscape
-  - https://source.unsplash.com/random/1600x900/?city
-  - https://source.unsplash.com/random/1600x900/?architecture
-  - https://source.unsplash.com/random/1600x900/?travel
-  - https://source.unsplash.com/random/1600x900/?mountain
-  - https://source.unsplash.com/random/1600x900/?ocean
-  - https://source.unsplash.com/random/1600x900/?sky
   # Picsum Photos 随机图片（开源项目，长期维护）
   - https://picsum.photos/1600/900?random=1
   - https://picsum.photos/1600/900?random=2

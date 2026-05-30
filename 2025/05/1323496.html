@@ -779,7 +779,6 @@ gem sources -l
 <span class="token number">3</span>. 安装cocoapods
 cocoapods安装好后
 pod <span class="token function">install</span> 安装项目第三方依赖包<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a3d0e09a6802">ios_app上架教程_证书篇 _ 简书文档</a></p>
 <pre class="line-numbers language-none"><code class="language-none">用于保护输出项目的密码
 
@@ -789,27 +788,33 @@ ManwahCrm0731.
 
 npx react-native run-ios
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
-<li><p><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases"> apple_developer上架流程文档-分发_官方文档</a></p>
+<li>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases"> apple_developer上架流程文档-分发_官方文档</a></p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.apple.com/cn/help/account/manage-your-team/locate-your-team-id/">apple_developer管理你的团队_官方文档</a></p>
+<li>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/cn/help/account/manage-your-team/locate-your-team-id/">apple_developer管理你的团队_官方文档</a></p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.apple.com/help/app-store-connect/create-an-app-record/remove-an-app">如何删除你的app_ 关于app名称被占用_官方文档</a></p>
+<li>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/help/app-store-connect/create-an-app-record/remove-an-app">如何删除你的app_ 关于app名称被占用_官方文档</a></p>
 </li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://reactnative.cn/docs/publishing-to-app-store">React navtive 中文_上架文档_官方文档</a></p>
 <p>appIcon 就是你的项目图标（建议采用1024*1024 无alpha通道的，否则在transporter 被驳回，用mac自带 图片 另存为png即可删除alpha通道）</p>
 <p><a target="_blank" rel="noopener" href="https://erhutime.gitbooks.io/react-native/content/di-wu-pian-app-fa-bu-he-geng-xin/12-da-bao-ios.html">上架文档_社区 个人文档</a></p>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7388825339987279935?searchId=20240731161843BF56AED5BA1CFD68E641">IOS应用上架Appstore_掘金文档</a>:以下是对该链接的备份: 个人认为比较详细</p>
-<h2 id="打开苹果开发者中心网站：developer-apple-com，点击右上角-Account-进行开发者账号的申请。"><a href="#打开苹果开发者中心网站：developer-apple-com，点击右上角-Account-进行开发者账号的申请。" class="headerlink" title="打开苹果开发者中心网站：developer.apple.com，点击右上角 Account 进行开发者账号的申请。"></a>打开苹果开发者中心网站：<a href="https://link.juejin.cn/?target=">developer.apple.com</a>，点击右上角 Account 进行开发者账号的申请。</h2><blockquote>
+<h2 id="打开苹果开发者中心网站：developer-apple-com，点击右上角-Account-进行开发者账号的申请。"><a class="header-anchor" href="#打开苹果开发者中心网站：developer-apple-com，点击右上角-Account-进行开发者账号的申请。">¶</a>打开苹果开发者中心网站：<a href="https://link.juejin.cn?target=">developer.apple.com</a>，点击右上角 Account 进行开发者账号的申请。</h2>
+<blockquote>
 <p>1.申请开发者-&gt;(个人账号、公司账号、企业账号)</p>
 <p>2.创建AppID、Bundle ID、certificates证书、Profiles配置文件</p>
 <p>3.生成Profiles证书、密钥证书</p>
 <p>4.创建APP</p>
 <p>5.打包发布</p>
 </blockquote>
-<h1 id="流程实现"><a href="#流程实现" class="headerlink" title="流程实现"></a>流程实现</h1><h2 id="1-因为我的账号已经申请好了，这里就没法再演示一遍了。"><a href="#1-因为我的账号已经申请好了，这里就没法再演示一遍了。" class="headerlink" title="1.因为我的账号已经申请好了，这里就没法再演示一遍了。"></a>1.因为我的账号已经申请好了，这里就没法再演示一遍了。</h2><h2 id="2-创建AppID、Bundle-ID"><a href="#2-创建AppID、Bundle-ID" class="headerlink" title="2.创建AppID、Bundle ID"></a>2.创建AppID、Bundle ID</h2><blockquote>
+<h1>流程实现</h1>
+<h2 id="1-因为我的账号已经申请好了，这里就没法再演示一遍了。"><a class="header-anchor" href="#1-因为我的账号已经申请好了，这里就没法再演示一遍了。">¶</a>1.因为我的账号已经申请好了，这里就没法再演示一遍了。</h2>
+<h2 id="2-创建AppID、Bundle-ID"><a class="header-anchor" href="#2-创建AppID、Bundle-ID">¶</a>2.创建AppID、Bundle ID</h2>
+<blockquote>
 <p>①滚动到底部点击Certificates</p>
 </blockquote>
 <blockquote>
@@ -830,60 +835,64 @@ npx react-native run-ios
 <blockquote>
 <p>⑦点击右上角Continue后确认信息无误后，点击register进行注册</p>
 </blockquote>
-<h2 id="3-生成certSigningRequest文件"><a href="#3-生成certSigningRequest文件" class="headerlink" title="3.生成certSigningRequest文件"></a>3.生成certSigningRequest文件</h2><blockquote>
+<h2 id="3-生成certSigningRequest文件"><a class="header-anchor" href="#3-生成certSigningRequest文件">¶</a>3.生成certSigningRequest文件</h2>
+<blockquote>
 <p>①如图，打开应用程序-&gt;实用工具-&gt;钥匙串访问</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/keyrings.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/keyrings.png" alt=""></p>
 <blockquote>
 <p>②选择从证书颁发机构请求证书</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/keyring2.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/keyring2.png" alt=""></p>
 <blockquote>
 <p>③接下来填写邮件地址，选择存储到磁盘，点击继续</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring3.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring3.png" alt=""></p>
 <blockquote>
 <p>④保存到桌面</p>
 </blockquote>
-<h2 id="4-创建发布证书"><a href="#4-创建发布证书" class="headerlink" title="4.创建发布证书"></a>4.创建发布证书</h2><blockquote>
+<h2 id="4-创建发布证书"><a class="header-anchor" href="#4-创建发布证书">¶</a>4.创建发布证书</h2>
+<blockquote>
 <p>①侧边栏找到Certificates进行创建</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring4.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring4.png" alt=""></p>
 <blockquote>
 <p>②选择IOS Distribution (App Store Connect and Ad Hoc)</p>
 </blockquote>
 <blockquote>
 <p>③上传刚才保存到本地的certSigningRequest文件，点击Continue</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring6.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring6.png" alt=""></p>
 <blockquote>
 <p>④然后点击Download下载cer证书</p>
 </blockquote>
 <blockquote>
 <p>⑤双击证书添加到钥匙串访问</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring8.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring8.png" alt=""></p>
 <blockquote>
 <p>⑥右键导出证书</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring9.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring9.png" alt=""></p>
 <blockquote>
 <p>⑦选择导出的格式，为个人信息交换(.p12)</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring10.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring10.png" alt=""></p>
 <blockquote>
 <p>⑧导出证书要设置密码</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring11.png"></p>
-<h2 id="5-创建APP"><a href="#5-创建APP" class="headerlink" title="5.创建APP"></a>5.创建APP</h2><blockquote>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/ring11.png" alt=""></p>
+<h2 id="5-创建APP"><a class="header-anchor" href="#5-创建APP">¶</a>5.创建APP</h2>
+<blockquote>
 <p>①选择添加APP</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/app1.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/app1.png" alt=""></p>
 <blockquote>
 <p>②填写app信息，app名称不区分大小写，如果名称被占用，可以先用其他替代，后面可以二次修改，等名称空出后，只需要在提交审核前修改好即可</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/app2.png"></p>
-<h2 id="6-打包发布"><a href="#6-打包发布" class="headerlink" title="6.打包发布"></a>6.打包发布</h2><blockquote>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/app2.png" alt=""></p>
+<h2 id="6-打包发布"><a class="header-anchor" href="#6-打包发布">¶</a>6.打包发布</h2>
+<blockquote>
 <p>进行打包之前要进行项目配置，如果你的APP有支付/跳转功能的话，首先按照上述讲到的勾选Associated Domains，因为IOS的微信支付需要iOS通用链接</p>
 </blockquote>
 <blockquote>
@@ -895,7 +904,8 @@ npx react-native run-ios
 <blockquote>
 <p>简单来说就是以前你的APP要打开其他APP是通过URLScheme实现，后来苹果提出用Https链接来启动，手机上对应的app（已安装），更方便与web-app的无缝对接。微信响应了这个方案。所以大家开发的APP无论是微信登录、微信支付，还是微信分享等一切会跳转到微信，再跳回来的场景，需要提供这个链接。要不然你的应用打开了微信，微信就打不开你的应用。</p>
 </blockquote>
-<h3 id="那么问题来了，这个iOS通用链接改如何获取呢？官方给出的流程是这样的："><a href="#那么问题来了，这个iOS通用链接改如何获取呢？官方给出的流程是这样的：" class="headerlink" title="那么问题来了，这个iOS通用链接改如何获取呢？官方给出的流程是这样的："></a>那么问题来了，这个iOS通用链接改如何获取呢？官方给出的流程是这样的：</h3><blockquote>
+<h3 id="那么问题来了，这个iOS通用链接改如何获取呢？官方给出的流程是这样的："><a class="header-anchor" href="#那么问题来了，这个iOS通用链接改如何获取呢？官方给出的流程是这样的：">¶</a>那么问题来了，这个iOS通用链接改如何获取呢？官方给出的流程是这样的：</h3>
+<blockquote>
 <p>在苹果开发者中心：开启Associated Domains服务 获取相关参数，手动创建apple-app-site-association文件 部署apple-app-site-association文件到自己的云服务器，配置SSL证书解析域名 然后手动在manifest.json中配置Associated Domains（域名） 粘贴通用链接到对应权限模块 在微信开放平台配置通用链接</p>
 </blockquote>
 <blockquote>
@@ -924,19 +934,18 @@ npx react-native run-ios
     <span class="token punctuation">}</span>
 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
 <p>随后将你的该文件的访问链接(不包括该文件名)填到前端项目的manifest.json-&gt;app模块配置-&gt;Payment(支付)-&gt;IOS通用链接即可</p>
 </blockquote>
 <blockquote>
 <p>然后点击HbuilderX的发行-&gt;原生APP云打包-&gt;ios(ipa包)-&gt;选择证书，输入导出证书时设置的密码，然后点击发布即可</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/app3.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/app3.png" alt=""></p>
 <blockquote>
 <p>发布工具的话，我自己用的是AppStore的Transporter工具，直接登录苹果开发者账号，然后选择刚才云打包生成的ipa包进行上传即可，如果你没有xcode的话，会提示你下载，如不需要选择暂不下载即可。</p>
 <p>Transporter:适合用H5套壳进行app上传，因为核心代码就下面这一行</p>
 </blockquote>
-<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_868a5b79-b878-4ad3-be95-4fbb536f66f9.png"></p>
+<p><img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_868a5b79-b878-4ad3-be95-4fbb536f66f9.png" alt=""></p>
 <p>下面再次回顾下，</p>
 <p>BundleId： 创建应用到时候的com.你的app唯一标识，</p>
 <p>私匙证书：即我们的 p.12 文件，由cer 导出。</p>
@@ -1232,7 +1241,7 @@ npx react-native run-ios
                     <div class="card-image">
                         
                         
-                        <img src="http://api.btstu.cn/sjbz/?lx=m_meizi" class="responsive-img" alt="什么是重绘与重排">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Fhubble_birthofstars_0.jpg" class="responsive-img" alt="什么是重绘与重排">
                         
                         <span class="card-title">什么是重绘与重排</span>
                     </div>
@@ -1281,7 +1290,7 @@ npx react-native run-ios
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.seovx.com/img/mom2018%20(925).jpg" class="responsive-img" alt="Python数值类型与运算">
+                        <img src="https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220319165159.png" class="responsive-img" alt="Python数值类型与运算">
                         
                         <span class="card-title">Python数值类型与运算</span>
                     </div>
@@ -1511,7 +1520,7 @@ npx react-native run-ios
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">176.2k</span>&nbsp;字
+                class="white-color">176.3k</span>&nbsp;字
             
             
             

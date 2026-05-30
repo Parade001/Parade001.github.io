@@ -1,8 +1,14 @@
-User-agent: * Allow: /
+User-agent: *
+Allow: /
 Allow: /archives/
-Disallow: /vendors/
-Disallow: /categories/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/
 
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /libs/
 
-Sitemap: http://www.langzi.fun/sitemap.xml
-Sitemap: http://www.langzi.fun/baidusitemap.xml
+Sitemap: https://xiongteng.cc/sitemap.xml
+Sitemap: https://xiongteng.cc/baidusitemap.xml

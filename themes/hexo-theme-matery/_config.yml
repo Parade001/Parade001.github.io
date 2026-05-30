@@ -515,23 +515,23 @@ libs:
 # The post featured images that needs to be displayed when there is no image.
 # 无文章特色图片时需要显示的文章特色图片.
 featureImages:
-  - http://api.btstu.cn/sjbz/?lx=meizi
-  - https://api.ixiaowai.cn/gqapi/gqapi.php
-  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/joshua-%20tree.jpg
-  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220319165159.png
-  - https://cdn.seovx.com/img/mom-2019%20(147).jpg
-  - https://cdn.seovx.com/img/mom2018%20(925).jpg
-  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs/by.jpg
-  - http://api.btstu.cn/sjbz/?lx=meizi
-  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F87c01ec7gy1frmrrnjpf4j21hc0u0dot.jpg
-  - https://cdn.seovx.com/?mom=302
-  - https://img.btstu.cn/api/images/5a040eb30c055.jpg
-  - https://api.isoyu.com/bing_images.php
-  - https://source.unsplash.com/random
-  - https://api.isoyu.com/mm_images.php
-  - http://api.btstu.cn/sjbz/?lx=m_meizi
-  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2F1200px-The_Bubble_Nebula_-_NGC_7635_-_Heic1608a.jpg
-  - https://babayetu-1309205424.cos.ap-shanghai.myqcloud.com/blogimgs%2Fhubble_birthofstars_0.jpg
+  # Unsplash 随机图片 API（国际知名，稳定可靠）
+  - https://source.unsplash.com/random/1600x900/?nature
+  - https://source.unsplash.com/random/1600x900/?landscape
+  - https://source.unsplash.com/random/1600x900/?city
+  - https://source.unsplash.com/random/1600x900/?architecture
+  - https://source.unsplash.com/random/1600x900/?travel
+  - https://source.unsplash.com/random/1600x900/?mountain
+  - https://source.unsplash.com/random/1600x900/?ocean
+  - https://source.unsplash.com/random/1600x900/?sky
+  # Picsum Photos 随机图片（开源项目，长期维护）
+  - https://picsum.photos/1600/900?random=1
+  - https://picsum.photos/1600/900?random=2
+  - https://picsum.photos/1600/900?random=3
+  - https://picsum.photos/1600/900?random=4
+  - https://picsum.photos/1600/900?random=5
+  # 必应每日壁纸（稳定）
+  - https://api.dujin.org/bing/1920.php
 # default configs that the default policy for every articles/posts
 # default 配置文章的默认转载规则
 

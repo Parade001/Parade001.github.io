@@ -8,7 +8,7 @@ subtitle: '人生的真谛需要用自己一生去领悟'
 description: '熊腾的在线记事本'
 keywords: '熊腾的在线记事本'
 author: xt_xiong
-language: en
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -39,6 +39,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - "HTML/**"
+  - "robots.txt"
 
 
 
@@ -91,7 +92,7 @@ tag_map:
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
-meta_generator: true
+meta_generator: false
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date

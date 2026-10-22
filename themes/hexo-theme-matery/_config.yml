@@ -255,9 +255,9 @@ clicklove:
 # profile in about page, including avatars, career, and personal introductions.
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
-  avatar: /medias/avatar.jpg
-  career: 前端开发工程师
-  introduction: 成功取决于很多个不同因素.
+  avatar: https://xiongteng-bucket-1309205424.cos.ap-shanghai.myqcloud.com/Amaze_life/2018_12_2_wuhan_19.jpg
+  career: 开发工程师
+  introduction: Success depends on many different factors.
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.

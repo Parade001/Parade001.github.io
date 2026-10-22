@@ -5,6 +5,7 @@ abbrlink: 23496
 date: 2025-05-13 23:39:43
 tags: app 上架App Store
 categories: Apple 应用上架流程
+password: 2ef389f56038a587de404a546e9c07312d5bf0ff6f400958f714431b534faeb8
 summary: 众所周知,上架app到applestore,首先你需要一台mac,当然也可以找找第三方.本文详细介绍证书，凭证，描述文件相关的生成，上传，以及后续的打包操作等...
 ---
 

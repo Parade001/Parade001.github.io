@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="设计模式-抽象工厂方法, 熊腾的在线记事本">
-    <meta name="description" content="熊腾的在线记事本">
+    <meta name="keywords" content="抽象工厂方法, 设计模式, 设计模式-抽象工厂方法">
+    <meta name="description" content="抽象工厂模式:通过对类的工厂抽象使其业务对产品的类族的创建,而不负责创建某一类产品的实例">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,13 +13,37 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="canonical" href="https://xiongteng.cc/2022/06/016267.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="设计模式-抽象工厂方法 | 熊言熊语">
+    <meta property="og:description" content="抽象工厂模式:通过对类的工厂抽象使其业务对产品的类族的创建,而不负责创建某一类产品的实例">
+    <meta property="og:url" content="https://xiongteng.cc/2022/06/016267.html">
+    <meta property="og:site_name" content="熊言熊语">
+    <meta property="og:locale" content="zh-CN">
+    <meta property="og:image" content="https://xiongteng.cc/medias/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="设计模式-抽象工厂方法 | 熊言熊语">
+    <meta name="twitter:description" content="抽象工厂模式:通过对类的工厂抽象使其业务对产品的类族的创建,而不负责创建某一类产品的实例">
+    <meta name="twitter:image" content="https://xiongteng.cc/medias/logo.png">
+    
+    <meta property="article:published_time" content="2022-06-01T14:18:46.000Z">
+    
+    <meta property="article:modified_time" content="2026-11-26T15:41:18.508Z">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"设计模式-抽象工厂方法","description":"抽象工厂模式:通过对类的工厂抽象使其业务对产品的类族的创建,而不负责创建某一类产品的实例","image":["https://xiongteng.cc/medias/logo.png"],"datePublished":"2022-06-01T14:18:46.000Z","dateModified":"2026-11-26T15:41:18.508Z","author":{"@type":"Person","name":"xt_xiong"},"publisher":{"@type":"Organization","name":"熊言熊语","logo":{"@type":"ImageObject","url":"https://xiongteng.cc/medias/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xiongteng.cc/2022/06/016267.html"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"熊言熊语","item":"https://xiongteng.cc/"},{"@type":"ListItem","position":2,"name":"设计模式-抽象工厂方法","item":"https://xiongteng.cc/2022/06/016267.html"}]}
+    </script>
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
     <title>设计模式-抽象工厂方法 | 熊言熊语</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -457,7 +481,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/Parade001" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -514,7 +538,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/Parade001" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -546,7 +570,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.gstatic.com/prettyearth/assets/full/1014.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/03.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -736,19 +760,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>Abstract Factory（抽象工厂）</h1>
+                <h2 id="Abstract-Factory（抽象工厂）"><a class="header-anchor" href="#Abstract-Factory（抽象工厂）">¶</a>Abstract Factory（抽象工厂）</h2>
 <p>Abstract Factory（抽象工厂）属于创建型模式，工厂类模式抽象程度从低到高分为：简单工厂模式 -&gt; 工厂模式 -&gt; 抽象工厂模式。</p>
 <p><strong>意图：提供一个接口以创建一系列相关或相互依赖的对象，而无须指定它们具体的类。</strong></p>
-<h2 id="举例子"><a class="header-anchor" href="#举例子">¶</a>举例子</h2>
+<h3 id="举例子"><a class="header-anchor" href="#举例子">¶</a>举例子</h3>
 <p>如果看不懂上面的意图介绍，没有关系，设计模式需要在日常工作里用起来，结合例子可以加深你的理解，下面我准备了三个例子，让你体会什么场景下会用到这种设计模式。</p>
-<h3 id="汽车工厂"><a class="header-anchor" href="#汽车工厂">¶</a>汽车工厂</h3>
+<h4 id="汽车工厂"><a class="header-anchor" href="#汽车工厂">¶</a>汽车工厂</h4>
 <p>我们都知道汽车有很多零部件，随着工业革命带来的分工，很多零件都可以被轻松替换。但实际生活中我们消费者不愿意这样，我们希望买来的宝马车所包含的零部件都是同一系列的，以保证最大的匹配度，从而带来更好的性能与舒适度。</p>
 <p>所以消费者不愿意到轮胎工厂、方向盘工厂、车窗工厂去一个个采购，而是将需求提给了宝马工厂这家抽象工厂，由这家工厂负责组装。那你是这家工厂的老板，已知汽车的组成部件是固定的，只是不同配件有不同的型号，分别来自不同的制造厂商，你需要推出几款不同组合的车型来满足不同价位的消费者，你会怎么设计？</p>
-<h3 id="迷宫游戏"><a class="header-anchor" href="#迷宫游戏">¶</a>迷宫游戏</h3>
+<h4 id="迷宫游戏"><a class="header-anchor" href="#迷宫游戏">¶</a>迷宫游戏</h4>
 <p>你做一款迷宫游戏，已知元素有房间、门、墙，他们之间的组合关系是固定的，你通过一套算法生成随机迷宫，这套算法调用房间、门、墙的工厂生成对应的实例。但随着新资料片的放出，你需要生成具有新功能的房间（可以回复体力）、新功能的门（需要魔法钥匙才能打开）、新功能的墙（可以被炸弹破坏），但修改已有的迷宫生成算法违背了开闭原则（需要在已有对象进行修改），如果你希望生成迷宫的算法完全不感知新材料的存在，你会怎么设计？</p>
-<h3 id="事件联动"><a class="header-anchor" href="#事件联动">¶</a>事件联动</h3>
+<h4 id="事件联动"><a class="header-anchor" href="#事件联动">¶</a>事件联动</h4>
 <p>假设我们做一个前端搭建引擎，现在希望做一套关联机制，以实现点击表格组件单元格，可以弹出一个模态框，内部展示一个折线图。已知业务方存在定制表格组件、模态框组件、折线图组件的需求，但组件之间联动关系是确定的，你会怎么设计？</p>
-<h2 id="意图解释"><a class="header-anchor" href="#意图解释">¶</a>意图解释</h2>
+<h3 id="意图解释"><a class="header-anchor" href="#意图解释">¶</a>意图解释</h3>
 <p>在汽车工厂的例子中，我们已知车子的构成部件，<strong>为了组装成一辆车子，需要以一定方式拼装部件，而具体用什么部件是需要可拓展的</strong>。</p>
 <p>在迷宫游戏的例子中，我们已知迷宫的组成部分是房间、门、墙，<strong>为了生成一个迷宫，需要以某种算法生成许多房间、门、墙的实例，而具体用哪种房间、哪种门、哪种墙是这个算法不关心的，是需要可被拓展的</strong>。</p>
 <p>在事件联动的例子中，我们已知这个表格弹出趋势图的交互场景基本组成元素是表格组件、模态框组件、折线图组件，<strong>需要以某种联动机制让这三者间产生联动关系，而具体是什么表格、什么模态框组件、什么折线图组件是这个事件联动所不关心的，是需要可以被拓展的</strong>，表格可以被替换为任意业务方注册的表格，只要满足点击 <code>onClick</code> 机制就可以。</p>
@@ -756,13 +780,13 @@
 <p><strong>意图：提供一个接口以创建一系列相关或相互依赖的对象，而无须指定它们具体的类。</strong></p>
 </blockquote>
 <p>这三个例子不正是符合上面的意图吗？我们要设计的抽象工厂就是要 <strong>创建一系列相关或相互依赖的对象</strong>，在上面的例子中分别是汽车的组成配件、迷宫游戏的素材、事件联动的组件。<strong>而无须指定它们具体的类</strong>，也就说明了我们不关心车子方向盘用的是什么牌子，迷宫的房间是不是普通房间，联动机制的折线图是不是用 <code>Echarts</code> 画的，我们只要描述好他们之间的关系即可，<strong>这带来的好处是，未来我们拓展新的方向盘、新的房间、新的折线图时，不需要修改抽象工厂。</strong></p>
-<h2 id="结构图"><a class="header-anchor" href="#结构图">¶</a>结构图</h2>
-<img width="800" src="https://img.alicdn.com/tfs/TB1k8DVVkT2gK0jSZFkXXcIQFXa-1472-658.png">
+<h3 id="结构图"><a class="header-anchor" href="#结构图">¶</a>结构图</h3>
+<img loading="lazy" width="800" src="https://img.alicdn.com/tfs/TB1k8DVVkT2gK0jSZFkXXcIQFXa-1472-658.png">
 <p><code>AbstractFactory</code> 就是我们要的抽象工厂，描述了创建产品的抽象关系，比如描述迷宫如何生成，表格和趋势图怎么联动。</p>
 <p>至于具体用什么方向盘、用什么房间，是由 <code>ConcreteFactory</code> 实现的，所以我们可能有多个 <code>ConcreteFactory</code>，比如 <code>ConcreteFactory1</code> 实例化的墙壁是普通墙壁，<code>ConcreteFactory2</code> 实例化的墙壁是魔法墙壁，但其对 <code>AbstractFactory</code> 的接口是一致的，所以 <code>AbstractFactory</code> 不需要关心具体调用的是哪一个工厂。</p>
 <p><code>AbstractProduct</code> 是产品抽象类，描述了比如方向盘、墙壁、折线图的创建方法，而 <code>ConcreteProduct</code> 是具体实现产品的方法，比如 <code>ConcreteProduct1</code> 创建的表格是用 <code>canvas</code> 画的，折线图是用 <code>G2</code> 画的，而 <code>ConcreteProduct2</code> 创建的表格是用 <code>div</code> 画的，折线图是用 <code>Echarts</code> 画的。</p>
 <p>这样，当我们要拓展一个用 <code>Echarts</code> 画的折线图，用 <code>svg</code> 画的表格，用 <code>div</code> 画的模态框组成的事件机制时，只需要再创建一个 <code>ConcreteFactory3</code> 做相应的实现即可，再将这个 <code>ConcreteFactory3</code> 传递给 <code>AbstractFactory</code>，并不需要修改 <code>AbstractFactory</code> 方法本身。</p>
-<h2 id="代码例子"><a class="header-anchor" href="#代码例子">¶</a>代码例子</h2>
+<h3 id="代码例子"><a class="header-anchor" href="#代码例子">¶</a>代码例子</h3>
 <p>下面例子使用 javascript 编写。</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">AbstractFactory</span> <span class="token punctuation">{</span>
   <span class="token function">createProducts</span><span class="token punctuation">(</span>concreteFactory<span class="token operator">:</span> ConcreteFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -782,7 +806,7 @@
 <p>假设我们的迷宫有两套素材，分别是普通素材与魔法素材，只要在分别创建普通素材工厂 <code>ConcreteFactoryA</code>，与魔法素材工厂 <code>ConcreteFactoryB</code>，调用 <code>createProducts</code> 时传入的是普通素材，则产出的就是普通素材搭建的迷宫，传入的是魔法素材，则产出的就是用魔法素材搭建的迷宫。</p>
 <p>当我们要创建一套新迷宫材料，比如熔岩迷宫，我们只要创建一套熔岩素材（熔岩房间、熔岩门、熔岩墙壁），再组装一个 <code>ConcreteFactoryC</code> 熔岩素材生成工厂传递给 <code>AbstractFactory.createProducts</code> 即可。</p>
 <p>我们可以发现，使用抽象工厂模式，我们可以轻松拓展新的素材，比如拓展一套新的汽车配件，拓展一套新的迷宫素材，拓展一套新的事件联动组件，<strong>这个过程只需要新建类即可，不需要修改任何类，符合开闭原则</strong>。</p>
-<h2 id="弊端"><a class="header-anchor" href="#弊端">¶</a>弊端</h2>
+<h3 id="弊端"><a class="header-anchor" href="#弊端">¶</a>弊端</h3>
 <p>任何设计模式都有其适用场景，反过来也说明了在某些场景下不适用。</p>
 <p>还是上面的例子，如果我们的需求不是拓展一个新轮子、新墙壁、新折线图，而是：</p>
 <ul>
@@ -792,11 +816,11 @@
 </ul>
 <p>你看，这种情况不是为已有元素新增一套实现，而是实现一些新元素，就会非常复杂，因为我们不仅要为所有 <code>ConcreteFactory</code> 新增每一个元素，还要修改抽象工厂，以将新元素与旧元素间建立联系，违背了开闭原则。</p>
 <p>因此，对于已有元素固定的系统，适合使用抽象工厂，反之不然。</p>
-<h2 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h2>
+<h3 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h3>
 <p>抽象工厂对新增已有产品的实现适用，对新增一个产品种类不适用，可以参考结合了例子的下图加深理解：</p>
-<img width="800" src="https://img.alicdn.com/tfs/TB1Fbn7Vlr0gK0jSZFnXXbRRXXa-1416-852.png">
+<img loading="lazy" width="800" src="https://img.alicdn.com/tfs/TB1Fbn7Vlr0gK0jSZFnXXbRRXXa-1416-852.png">
 <p>拓展一个熔岩素材包是 <strong>增加一种产品风格</strong>，适合使用抽象工厂设计模式；拓展一个陷阱是 <strong>增加一个产品种类</strong>，不适合使用抽象工厂设计模式。为什么呢？看下图：</p>
-<img width="800" src="https://img.alicdn.com/tfs/TB12fL8VeL2gK0jSZFmXXc7iXXa-1696-640.png">
+<img loading="lazy" width="800" src="https://img.alicdn.com/tfs/TB12fL8VeL2gK0jSZFmXXc7iXXa-1696-640.png">
 <p>创建迷宫这个抽象工厂做的事情，<strong>是把已有的房间、门、墙壁建立关联</strong>，因为操作的是抽象类，所以拓展一套具体实现（熔岩素材包）对这个抽象工厂没有感知，这样做很容易。</p>
 <p>但如果新增一个产品种类 - 陷阱，可以看到，抽象工厂必须将陷阱与前三者重新建立关联，这就要修改抽象工厂，不符合开闭原则。同时，如果我们已有素材包 1 ～素材包 999，就需要同时增加 999 个对应的陷阱实现（普通陷阱、魔法陷阱、熔岩陷阱），其工作量会非常大。</p>
 <p>因此，只有产品种类稳定时，需要频繁拓展产品风格时才适合用抽象工厂设计模式。</p>
@@ -1024,16 +1048,27 @@
     </div>
 
     
-        <link
-  rel="stylesheet"
-  href="/libs/gitalk/gitalk.css"
-/>
-<link
-  rel="stylesheet"
-  href="/css/my-gitalk.css"
-/>
 
-<div class="card gitalk-card" data-aos="fade-up">
+    
+        <style>
+  .utterances-card {
+    margin: 1.25rem auto;
+  }
+
+  .utterances-card .card-content {
+    padding: 10px 20px 20px 20px;
+  }
+
+  .utterances {
+    max-width: 100% !important;
+  }
+
+  body.DarkMode .utterances-card .comment_headling {
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>
+
+<div class="card utterances-card" data-aos="fade-up">
   <div
     class="comment_headling"
     style="
@@ -1048,23 +1083,20 @@
     <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
     <span>评论</span>
   </div>
-  <div id="gitalk-container" class="card-content"></div>
+  <div id="utterances-container" class="card-content">
+    <script
+      src="https://utteranc.es/client.js"
+      repo="Parade001/Parade001.github.io"
+      issue-term="title"
+      
+      theme="github-light"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-  let gitalk = new Gitalk({
-      clientID: '08cb8efd61d2c27103a2',
-      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
-      repo: 'Parade001.github.io',
-      owner: 'Parade001',
-      admin: "Parade001",
-      id: '2022-06-01T22-18-46',
-      distractionFreeMode: false  // Facebook-like distraction free mode
-  });
-
-  gitalk.render('gitalk-container');
-</script>
+    
 
     
 
@@ -1093,7 +1125,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://picsum.photos/seed/matery14/1600/900" class="responsive-img" alt="纯css文字截断">
+                        <img src="/medias/images/01.jpg" class="responsive-img" alt="纯css文字截断">
                         
                         <span class="card-title">纯css文字截断</span>
                     </div>
@@ -1101,7 +1133,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            最近在做响应式系统设计的时候遇到需要对标题进行多行文字截取的效果，如下图： 看似十分简单的标题截断效果，但是竟然没有一个统一 CSS 属性实现标准，需要用到一些奇淫妙计来实现，一般来说，在做这样文字截
                         
                     </div>
                     <div class="publish-info">
@@ -1142,7 +1174,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://bing.biturl.top/?resolution=1920&format=image&index=3&mkt=zh-CN" class="responsive-img" alt="设计模式-工厂方法">
+                        <img src="/medias/images/03.jpg" class="responsive-img" alt="设计模式-工厂方法">
                         
                         <span class="card-title">设计模式-工厂方法</span>
                     </div>
@@ -1347,7 +1379,7 @@
                    theme='#42b983'
                    loop='all'
                    order='random'
-                   preload='auto'
+                   preload='none'
                    volume='0.5'
                    list-folded='false'
         >
@@ -1356,7 +1388,7 @@
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
@@ -1395,7 +1427,18 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis"> 
+        <div class="col s12 m4 l4 social-link social-statis">
+<a
+  href="https://github.com/Parade001"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="访问我的GitHub"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-github"></i>
+</a>
+ 
 <a
   href="mailto:xiongteng.red@gmail.com"
   class="tooltipped"
@@ -1428,6 +1471,7 @@
 >
   <i class="fab fa-weibo"></i>
 </a>
+ 
 <a
   href="https://instagram.com/xiongteng.cc?r=nametag"
   class="tooltipped"
@@ -1438,6 +1482,7 @@
 >
   <i class="fab fa-instagram"></i>
 </a>
+ 
 <a
   href="https://b23.tv/WNuyUW1"
   class="tooltipped"
@@ -1448,6 +1493,7 @@
 >
   <i class="fab fa-bilibili"></i>
 </a>
+ 
 <a
   href="https://steamcommunity.com/id/xiongteng/"
   class="tooltipped"
@@ -1457,31 +1503,8 @@
   data-delay="50"
 >
   <i class="fab fa-steam-symbol"></i>
-  <!-- <i class="fab fa-steam"></i> -->
 </a>
-<a
-  href="https://&#39;暂未入坑&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的xbox: https://&#39;暂未入坑&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-xbox"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
-<a
-  href="https://&#39;SW-6512-6988-8778&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的Switch: https://&#39;SW-6512-6988-8778&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-solid fa-gamepad"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
- 
+   
 <a
   href="https://www.zhihu.com/people/hurricane.net"
   class="tooltipped"
@@ -1492,17 +1515,7 @@
 >
   <i class="fa-brands fa-zhihu"></i>
 </a>
-<a
-  href="https://&#39;15623449201&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的微信: https://&#39;15623449201&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-weixin"></i>
-</a>
- 
+  
 <a
   href="/atom.xml"
   class="tooltipped"
@@ -1535,93 +1548,124 @@
 
 <script type="text/javascript">
 $(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
+    var searchPath = '/search.xml';
+    var searchLoaded = false;
+    var searchLoading = false;
+    var cachedDatas = null;
+
+    var renderSearchResults = function (keywordStr, datas, $resultContent) {
+        var str = '<ul class="search-result-list">';
+        var keywords = keywordStr.trim().toLowerCase().split(/[\s\-]+/);
+        $resultContent.innerHTML = "";
+        if (keywordStr.trim().length <= 0) {
+            return;
+        }
+        datas.forEach(function (data) {
+            var isMatch = true;
+            var data_title = data.title.trim().toLowerCase();
+            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+            var data_url = data.url;
+            data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+            var index_title = -1;
+            var index_content = -1;
+            var first_occur = -1;
+            if (data_title !== '' && data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if (index_title < 0 && index_content < 0) {
+                        isMatch = false;
+                    } else {
+                        if (index_content < 0) {
+                            index_content = 0;
+                        }
+                        if (i === 0) {
+                            first_occur = index_content;
+                        }
+                    }
+                });
+            }
+            if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                if (first_occur >= 0) {
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if (start < 0) {
+                        start = 0;
+                    }
+                    if (start === 0) {
+                        end = 100;
+                    }
+                    if (end > content.length) {
+                        end = content.length;
+                    }
+                    var match_content = content.substr(start, end);
+                    keywords.forEach(function (keyword) {
+                        var regS = new RegExp(keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), "gi");
+                        match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+            }
+        });
+        str += "</ul>";
+        $resultContent.innerHTML = str;
+    };
+
+    var loadSearchData = function () {
+        if (searchLoaded || searchLoading) {
+            return;
+        }
+        searchLoading = true;
+        var $input = document.getElementById('searchInput');
+        var $resultContent = document.getElementById('searchResult');
+        if ($resultContent && !$resultContent.innerHTML) {
+            $resultContent.innerHTML = '<p style="text-align:center;color:#999;">正在加载搜索索引...</p>';
+        }
         $.ajax({
-            url: path,
+            url: searchPath,
             dataType: "xml",
             success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
+                cachedDatas = $("entry", xmlResponse).map(function () {
                     return {
                         title: $("title", this).text(),
                         content: $("content", this).text(),
                         url: $("url", this).text()
                     };
                 }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
+                searchLoaded = true;
+                searchLoading = false;
+                if ($input && $input.value.trim().length > 0) {
+                    renderSearchResults($input.value, cachedDatas, $resultContent);
+                } else if ($resultContent) {
+                    $resultContent.innerHTML = '';
+                }
+            },
+            error: function () {
+                searchLoading = false;
+                if ($resultContent) {
+                    $resultContent.innerHTML = '<p style="text-align:center;color:#e53935;">搜索索引加载失败，请重试。</p>';
+                }
             }
         });
     };
 
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
+    var $inputEl = document.getElementById('searchInput');
+    var $resultEl = document.getElementById('searchResult');
+    if ($inputEl) {
+        $inputEl.addEventListener('focus', loadSearchData);
+        $inputEl.addEventListener('input', function () {
+            if (searchLoaded && cachedDatas) {
+                renderSearchResults(this.value, cachedDatas, $resultEl);
+            } else {
+                loadSearchData();
+            }
+        });
+    }
+    $(document).on('click', 'a[href="#searchModal"]', loadSearchData);
 });
 </script>
 
@@ -1643,20 +1687,6 @@ $(function () {
     <!-- Baidu Analytics -->
 
     <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 
     
     <script src="/libs/others/clicklove.js" async="async"></script>

@@ -5,10 +5,5 @@ Allow: /categories/
 Allow: /tags/
 Allow: /about/
 
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
-Disallow: /libs/
-
 Sitemap: https://xiongteng.cc/sitemap.xml
 Sitemap: https://xiongteng.cc/baidusitemap.xml

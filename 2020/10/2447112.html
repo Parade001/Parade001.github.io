@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="React 里使用refs, 熊腾的在线记事本">
-    <meta name="description" content="熊腾的在线记事本">
+    <meta name="keywords" content="React 里使用refs">
+    <meta name="description" content="有时我们要对render后的组件实例对象进行操纵,在组件内的JSX并不会返回一个组件的实例,他只是一个ReactElement,只告诉React被挂载的组件长什么样,refs就为此而生,他是一个特殊的prop,可以附加在任何一个组件上">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,13 +13,37 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="canonical" href="https://xiongteng.cc/2020/10/2447112.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="React 里使用refs | 熊言熊语">
+    <meta property="og:description" content="有时我们要对render后的组件实例对象进行操纵,在组件内的JSX并不会返回一个组件的实例,他只是一个ReactElement,只告诉React被挂载的组件长什么样,refs就为此而生,他是一个特殊的prop,可以附加在任何一个组件上">
+    <meta property="og:url" content="https://xiongteng.cc/2020/10/2447112.html">
+    <meta property="og:site_name" content="熊言熊语">
+    <meta property="og:locale" content="zh-CN">
+    <meta property="og:image" content="https://xiongteng.cc/medias/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="React 里使用refs | 熊言熊语">
+    <meta name="twitter:description" content="有时我们要对render后的组件实例对象进行操纵,在组件内的JSX并不会返回一个组件的实例,他只是一个ReactElement,只告诉React被挂载的组件长什么样,refs就为此而生,他是一个特殊的prop,可以附加在任何一个组件上">
+    <meta name="twitter:image" content="https://xiongteng.cc/medias/logo.png">
+    
+    <meta property="article:published_time" content="2020-10-23T16:20:39.000Z">
+    
+    <meta property="article:modified_time" content="2026-11-26T15:41:18.416Z">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"React 里使用refs","description":"有时我们要对render后的组件实例对象进行操纵,在组件内的JSX并不会返回一个组件的实例,他只是一个ReactElement,只告诉React被挂载的组件长什么样,refs就为此而生,他是一个特殊的prop,可以附加在任何一个组件上","image":["https://xiongteng.cc/medias/logo.png"],"datePublished":"2020-10-23T16:20:39.000Z","dateModified":"2026-11-26T15:41:18.416Z","author":{"@type":"Person","name":"xt_xiong"},"publisher":{"@type":"Organization","name":"熊言熊语","logo":{"@type":"ImageObject","url":"https://xiongteng.cc/medias/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xiongteng.cc/2020/10/2447112.html"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"熊言熊语","item":"https://xiongteng.cc/"},{"@type":"ListItem","position":2,"name":"React 里使用refs","item":"https://xiongteng.cc/2020/10/2447112.html"}]}
+    </script>
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
     <title>React 里使用refs | 熊言熊语</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -457,7 +481,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/Parade001" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -514,7 +538,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/Parade001" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -546,7 +570,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=ja-JP')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/02.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -725,9 +749,9 @@
             <div id="articleContent">
                 <p>字面上来说:ref 即reference(参考),组件被调用时会新建一个该组件的实例,而refs就会只想这个实例.</p>
 <p>它可以是一个回调函数,这个回调函数会在组件被挂载后立即执行</p>
-<h1>Refs 转发</h1>
+<h2 id="Refs-转发"><a class="header-anchor" href="#Refs-转发">¶</a>Refs 转发</h2>
 <p>Ref 转发是一项将 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/refs-and-the-dom.html">ref</a> 自动地通过组件传递到其一子组件的技巧。对于大多数应用中的组件来说，这通常不是必需的。但其对某些组件，尤其是可重用的组件库是很有用的。最常见的案例如下所述。</p>
-<h2 id="转发-refs-到-DOM-组件"><a class="header-anchor" href="#转发-refs-到-DOM-组件">¶</a>转发 refs 到 DOM 组件</h2>
+<h3 id="转发-refs-到-DOM-组件"><a class="header-anchor" href="#转发-refs-到-DOM-组件">¶</a>转发 refs 到 DOM 组件</h3>
 <p>考虑这个渲染原生 DOM 元素 <code>button</code> 的 <code>FancyButton</code> 组件：</p>
 <pre class="line-numbers language-none"><code class="language-none">function FancyButton(props) {
   return (
@@ -761,10 +785,10 @@ const ref = React.createRef();
 <p>第二个参数 <code>ref</code> 只在使用 <code>React.forwardRef</code> 定义组件时存在。常规函数和 class 组件不接收 <code>ref</code> 参数，且 props 中也不存在 <code>ref</code>。</p>
 <p>Ref 转发不仅限于 DOM 组件，你也可以转发 refs 到 class 组件实例中。</p>
 </blockquote>
-<h2 id="组件库维护者的注意事项"><a class="header-anchor" href="#组件库维护者的注意事项">¶</a>组件库维护者的注意事项</h2>
+<h3 id="组件库维护者的注意事项"><a class="header-anchor" href="#组件库维护者的注意事项">¶</a>组件库维护者的注意事项</h3>
 <p><strong>当你开始在组件库中使用 forwardRef 时，你应当将其视为一个破坏性更改，并发布库的一个新的主版本。</strong> 这是因为你的库可能会有明显不同的行为（例如 refs 被分配给了谁，以及导出了什么类型），并且这样可能会导致依赖旧行为的应用和其他库崩溃。</p>
 <p>出于同样的原因，当 <code>React.forwardRef</code> 存在时有条件地使用它也是不推荐的：它改变了你的库的行为，并在升级 React 自身时破坏用户的应用。</p>
-<h2 id="在高阶组件中转发-refs"><a class="header-anchor" href="#在高阶组件中转发-refs">¶</a>在高阶组件中转发 refs</h2>
+<h3 id="在高阶组件中转发-refs"><a class="header-anchor" href="#在高阶组件中转发-refs">¶</a>在高阶组件中转发 refs</h3>
 <p>这个技巧对<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/higher-order-components.html">高阶组件</a>（也被称为 HOC）特别有用。让我们从一个输出组件 props 到控制台的 HOC 示例开始：</p>
 <pre class="line-numbers language-none"><code class="language-none">function logProps(WrappedComponent) {  class LogProps extends React.Component {
     componentDidUpdate(prevProps) {
@@ -821,7 +845,7 @@ const ref = React.createRef();
   // 我们可以将其作为常规 prop 属性传递给 LogProps，例如 “forwardedRef”
   // 然后它就可以被挂载到被 LogProps 包裹的子组件上。
   return React.forwardRef((props, ref) =&gt; {    return &lt;LogProps {...props} forwardedRef={ref} /&gt;;  });}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="在-DevTools-中显示自定义名称"><a class="header-anchor" href="#在-DevTools-中显示自定义名称">¶</a>在 DevTools 中显示自定义名称</h2>
+<h3 id="在-DevTools-中显示自定义名称"><a class="header-anchor" href="#在-DevTools-中显示自定义名称">¶</a>在 DevTools 中显示自定义名称</h3>
 <p><code>React.forwardRef</code> 接受一个渲染函数。React DevTools 使用该函数来决定为 ref 转发组件显示的内容。</p>
 <p>例如，以下组件将在 DevTools 中显示为 “<em>ForwardRef</em>”：</p>
 <pre class="line-numbers language-none"><code class="language-none">const WrappedComponent = React.forwardRef((props, ref) =&gt; {
@@ -1060,16 +1084,27 @@ const ref = React.createRef();
     </div>
 
     
-        <link
-  rel="stylesheet"
-  href="/libs/gitalk/gitalk.css"
-/>
-<link
-  rel="stylesheet"
-  href="/css/my-gitalk.css"
-/>
 
-<div class="card gitalk-card" data-aos="fade-up">
+    
+        <style>
+  .utterances-card {
+    margin: 1.25rem auto;
+  }
+
+  .utterances-card .card-content {
+    padding: 10px 20px 20px 20px;
+  }
+
+  .utterances {
+    max-width: 100% !important;
+  }
+
+  body.DarkMode .utterances-card .comment_headling {
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>
+
+<div class="card utterances-card" data-aos="fade-up">
   <div
     class="comment_headling"
     style="
@@ -1084,23 +1119,20 @@ const ref = React.createRef();
     <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
     <span>评论</span>
   </div>
-  <div id="gitalk-container" class="card-content"></div>
+  <div id="utterances-container" class="card-content">
+    <script
+      src="https://utteranc.es/client.js"
+      repo="Parade001/Parade001.github.io"
+      issue-term="title"
+      
+      theme="github-light"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-  let gitalk = new Gitalk({
-      clientID: '08cb8efd61d2c27103a2',
-      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
-      repo: 'Parade001.github.io',
-      owner: 'Parade001',
-      admin: "Parade001",
-      id: '2020-10-24T00-20-39',
-      distractionFreeMode: false  // Facebook-like distraction free mode
-  });
-
-  gitalk.render('gitalk-container');
-</script>
+    
 
     
 
@@ -1129,7 +1161,7 @@ const ref = React.createRef();
                     <div class="card-image">
                         
                         
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1024.jpg" class="responsive-img" alt="如何在 React 中发起 AJAX 请求">
+                        <img src="/medias/banner/4.jpg" class="responsive-img" alt="如何在 React 中发起 AJAX 请求">
                         
                         <span class="card-title">如何在 React 中发起 AJAX 请求</span>
                     </div>
@@ -1178,7 +1210,7 @@ const ref = React.createRef();
                     <div class="card-image">
                         
                         
-                        <img src="https://picsum.photos/seed/matery04/1600/900" class="responsive-img" alt="React什么是渲染劫持">
+                        <img src="https://bing.biturl.top/?resolution=1920&format=image&index=1&mkt=zh-CN" class="responsive-img" alt="React什么是渲染劫持">
                         
                         <span class="card-title">React什么是渲染劫持</span>
                     </div>
@@ -1186,7 +1218,7 @@ const ref = React.createRef();
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在 React 中什么是渲染劫持? 渲染劫持的概念是控制一个组件将从另一个组件输出什么的能力。实际上，这意味着你可以通过将组件包装成高阶组件来装饰组件。通过包装，你可以注入额外的属性或产生其他变化，这
                         
                     </div>
                     <div class="publish-info">
@@ -1383,7 +1415,7 @@ const ref = React.createRef();
                    theme='#42b983'
                    loop='all'
                    order='random'
-                   preload='auto'
+                   preload='none'
                    volume='0.5'
                    list-folded='false'
         >
@@ -1392,7 +1424,7 @@ const ref = React.createRef();
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
@@ -1431,7 +1463,18 @@ const ref = React.createRef();
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis"> 
+        <div class="col s12 m4 l4 social-link social-statis">
+<a
+  href="https://github.com/Parade001"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="访问我的GitHub"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-github"></i>
+</a>
+ 
 <a
   href="mailto:xiongteng.red@gmail.com"
   class="tooltipped"
@@ -1464,6 +1507,7 @@ const ref = React.createRef();
 >
   <i class="fab fa-weibo"></i>
 </a>
+ 
 <a
   href="https://instagram.com/xiongteng.cc?r=nametag"
   class="tooltipped"
@@ -1474,6 +1518,7 @@ const ref = React.createRef();
 >
   <i class="fab fa-instagram"></i>
 </a>
+ 
 <a
   href="https://b23.tv/WNuyUW1"
   class="tooltipped"
@@ -1484,6 +1529,7 @@ const ref = React.createRef();
 >
   <i class="fab fa-bilibili"></i>
 </a>
+ 
 <a
   href="https://steamcommunity.com/id/xiongteng/"
   class="tooltipped"
@@ -1493,31 +1539,8 @@ const ref = React.createRef();
   data-delay="50"
 >
   <i class="fab fa-steam-symbol"></i>
-  <!-- <i class="fab fa-steam"></i> -->
 </a>
-<a
-  href="https://&#39;暂未入坑&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的xbox: https://&#39;暂未入坑&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-xbox"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
-<a
-  href="https://&#39;SW-6512-6988-8778&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的Switch: https://&#39;SW-6512-6988-8778&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-solid fa-gamepad"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
- 
+   
 <a
   href="https://www.zhihu.com/people/hurricane.net"
   class="tooltipped"
@@ -1528,17 +1551,7 @@ const ref = React.createRef();
 >
   <i class="fa-brands fa-zhihu"></i>
 </a>
-<a
-  href="https://&#39;15623449201&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的微信: https://&#39;15623449201&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-weixin"></i>
-</a>
- 
+  
 <a
   href="/atom.xml"
   class="tooltipped"
@@ -1571,93 +1584,124 @@ const ref = React.createRef();
 
 <script type="text/javascript">
 $(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
+    var searchPath = '/search.xml';
+    var searchLoaded = false;
+    var searchLoading = false;
+    var cachedDatas = null;
+
+    var renderSearchResults = function (keywordStr, datas, $resultContent) {
+        var str = '<ul class="search-result-list">';
+        var keywords = keywordStr.trim().toLowerCase().split(/[\s\-]+/);
+        $resultContent.innerHTML = "";
+        if (keywordStr.trim().length <= 0) {
+            return;
+        }
+        datas.forEach(function (data) {
+            var isMatch = true;
+            var data_title = data.title.trim().toLowerCase();
+            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+            var data_url = data.url;
+            data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+            var index_title = -1;
+            var index_content = -1;
+            var first_occur = -1;
+            if (data_title !== '' && data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if (index_title < 0 && index_content < 0) {
+                        isMatch = false;
+                    } else {
+                        if (index_content < 0) {
+                            index_content = 0;
+                        }
+                        if (i === 0) {
+                            first_occur = index_content;
+                        }
+                    }
+                });
+            }
+            if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                if (first_occur >= 0) {
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if (start < 0) {
+                        start = 0;
+                    }
+                    if (start === 0) {
+                        end = 100;
+                    }
+                    if (end > content.length) {
+                        end = content.length;
+                    }
+                    var match_content = content.substr(start, end);
+                    keywords.forEach(function (keyword) {
+                        var regS = new RegExp(keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), "gi");
+                        match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+            }
+        });
+        str += "</ul>";
+        $resultContent.innerHTML = str;
+    };
+
+    var loadSearchData = function () {
+        if (searchLoaded || searchLoading) {
+            return;
+        }
+        searchLoading = true;
+        var $input = document.getElementById('searchInput');
+        var $resultContent = document.getElementById('searchResult');
+        if ($resultContent && !$resultContent.innerHTML) {
+            $resultContent.innerHTML = '<p style="text-align:center;color:#999;">正在加载搜索索引...</p>';
+        }
         $.ajax({
-            url: path,
+            url: searchPath,
             dataType: "xml",
             success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
+                cachedDatas = $("entry", xmlResponse).map(function () {
                     return {
                         title: $("title", this).text(),
                         content: $("content", this).text(),
                         url: $("url", this).text()
                     };
                 }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
+                searchLoaded = true;
+                searchLoading = false;
+                if ($input && $input.value.trim().length > 0) {
+                    renderSearchResults($input.value, cachedDatas, $resultContent);
+                } else if ($resultContent) {
+                    $resultContent.innerHTML = '';
+                }
+            },
+            error: function () {
+                searchLoading = false;
+                if ($resultContent) {
+                    $resultContent.innerHTML = '<p style="text-align:center;color:#e53935;">搜索索引加载失败，请重试。</p>';
+                }
             }
         });
     };
 
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
+    var $inputEl = document.getElementById('searchInput');
+    var $resultEl = document.getElementById('searchResult');
+    if ($inputEl) {
+        $inputEl.addEventListener('focus', loadSearchData);
+        $inputEl.addEventListener('input', function () {
+            if (searchLoaded && cachedDatas) {
+                renderSearchResults(this.value, cachedDatas, $resultEl);
+            } else {
+                loadSearchData();
+            }
+        });
+    }
+    $(document).on('click', 'a[href="#searchModal"]', loadSearchData);
 });
 </script>
 
@@ -1679,20 +1723,6 @@ $(function () {
     <!-- Baidu Analytics -->
 
     <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 
     
     <script src="/libs/others/clicklove.js" async="async"></script>

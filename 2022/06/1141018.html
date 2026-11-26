@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="设计模式-原型模式, 熊腾的在线记事本">
-    <meta name="description" content="熊腾的在线记事本">
+    <meta name="keywords" content="原型模式, 设计模式, 设计模式-原型模式">
+    <meta name="description" content="原型模式:用原型实例指向创建对象的类,使用于创建新的对象的类共享原型对象的属性以及方法">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,13 +13,37 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="canonical" href="https://xiongteng.cc/2022/06/1141018.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="设计模式-原型模式 | 熊言熊语">
+    <meta property="og:description" content="原型模式:用原型实例指向创建对象的类,使用于创建新的对象的类共享原型对象的属性以及方法">
+    <meta property="og:url" content="https://xiongteng.cc/2022/06/1141018.html">
+    <meta property="og:site_name" content="熊言熊语">
+    <meta property="og:locale" content="zh-CN">
+    <meta property="og:image" content="https://xiongteng.cc/medias/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="设计模式-原型模式 | 熊言熊语">
+    <meta name="twitter:description" content="原型模式:用原型实例指向创建对象的类,使用于创建新的对象的类共享原型对象的属性以及方法">
+    <meta name="twitter:image" content="https://xiongteng.cc/medias/logo.png">
+    
+    <meta property="article:published_time" content="2022-06-11T12:50:31.000Z">
+    
+    <meta property="article:modified_time" content="2026-11-26T15:41:18.506Z">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"设计模式-原型模式","description":"原型模式:用原型实例指向创建对象的类,使用于创建新的对象的类共享原型对象的属性以及方法","image":["https://xiongteng.cc/medias/logo.png"],"datePublished":"2022-06-11T12:50:31.000Z","dateModified":"2026-11-26T15:41:18.506Z","author":{"@type":"Person","name":"xt_xiong"},"publisher":{"@type":"Organization","name":"熊言熊语","logo":{"@type":"ImageObject","url":"https://xiongteng.cc/medias/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xiongteng.cc/2022/06/1141018.html"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"熊言熊语","item":"https://xiongteng.cc/"},{"@type":"ListItem","position":2,"name":"设计模式-原型模式","item":"https://xiongteng.cc/2022/06/1141018.html"}]}
+    </script>
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
     <title>设计模式-原型模式 | 熊言熊语</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -457,7 +481,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/Parade001" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -514,7 +538,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/Parade001" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -546,7 +570,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://picsum.photos/seed/matery01/1600/900')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -736,14 +760,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>Prototype（原型模式）</h1>
+                <h2 id="Prototype（原型模式）"><a class="header-anchor" href="#Prototype（原型模式）">¶</a>Prototype（原型模式）</h2>
 <p>Prototype（原型模式）属于创建型模式，既不是工厂也不是直接 New，而是以拷贝的方式创建对象。</p>
 <p><strong>意图：用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。</strong></p>
-<h2 id="举例子"><a class="header-anchor" href="#举例子">¶</a>举例子</h2>
+<h3 id="举例子"><a class="header-anchor" href="#举例子">¶</a>举例子</h3>
 <p>如果看不懂上面的意图介绍，没有关系，设计模式需要在日常工作里用起来，结合例子可以加深你的理解，下面我准备了三个例子，让你体会什么场景下会用到这种设计模式。</p>
-<h3 id="做钥匙"><a class="header-anchor" href="#做钥匙">¶</a>做钥匙</h3>
+<h4 id="做钥匙"><a class="header-anchor" href="#做钥匙">¶</a>做钥匙</h4>
 <p>很显然，为了房屋安全，要尽量做到一把钥匙只能开一扇门，每把钥匙结构都多多少少不一样，却又很相似，做钥匙的人按照你给的钥匙一模一样做一个新的，这属于什么模式呢？</p>
-<h3 id="两种状态表"><a class="header-anchor" href="#两种状态表">¶</a>两种状态表</h3>
+<h4 id="两种状态表"><a class="header-anchor" href="#两种状态表">¶</a>两种状态表</h4>
 <p>当网站做不停机维护时，假设维护内容是给每个高级会员账户多打 100 元现金，现在需要改数据库表。已知：</p>
 <ol>
 <li>数据库表有几千万条数据，其中高级会员有几千位，为了方便调用已经缓存在中间层了，且数据库对应 ID 更新后对应缓存也会更新。</li>
@@ -751,9 +775,9 @@
 </ol>
 <p>一种常见的做法是，我们生成一份高级会员列表的拷贝，代替数据库缓存的结果，数据库只要读到对应会员 ID 就从拷贝列表中获取，数据表新增一列状态标志，操作完后这个拷贝移除，更新高级会员缓存。</p>
 <p>但是如何生成高级会员列表拷贝呢？如果直接从几千万条用户数据中重新查询，会有较高的数据库查询成本。</p>
-<h3 id="模版组件"><a class="header-anchor" href="#模版组件">¶</a>模版组件</h3>
+<h4 id="模版组件"><a class="header-anchor" href="#模版组件">¶</a>模版组件</h4>
 <p>通用搭建系统中，我们可以将某个拖拽到页面的区块设置为 “模版”，这个模版可以作为一个新组件被重新拖拽到任意位置，实例化任意次。实际上，这是一种分段式复制粘贴，你会如何实现这个功能呢？</p>
-<h2 id="意图解释"><a class="header-anchor" href="#意图解释">¶</a>意图解释</h2>
+<h3 id="意图解释"><a class="header-anchor" href="#意图解释">¶</a>意图解释</h3>
 <p>解决上面问题的办法都很简单，就是基于已有对象进行复制即可，效率比 New 一个，或者工厂模式都要高。</p>
 <p><strong>意图：用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。</strong></p>
 <p>所谓原型实例，就是被选为拷贝模版的那个对象，比如做钥匙例子中，你给老板的样板钥匙；两种状态表中的已有缓存高级会员列表；模版组件中选中的那个组件。然后，通过拷贝这些原型创建你想要的对象即可。</p>
@@ -762,10 +786,10 @@
 <p>模版组件更是如此，我们根本没有定义那么多组件实例的基类，只要每个组件提供一个 <code>clone()</code> 函数，就可以立即复制任意组件实例，这无疑是最经济实惠的方案。</p>
 <p>看到这里，你应该知道了，原型模式的精髓是对象要提供 <code>clone()</code> 方法，而这个 <code>clone()</code> 方法实现难度有高有低。</p>
 <p>一般来说，原型模式的拷贝建议用深拷贝，毕竟新对象最好不要影响到旧对象，<strong>但是在深拷贝性能问题较大的情况下，可以考虑深浅拷贝结合，也就是将在新对象中，不会修改的数据使用浅拷贝，可能被修改的数据使用深拷贝。</strong></p>
-<h2 id="结构图"><a class="header-anchor" href="#结构图">¶</a>结构图</h2>
-<img width="800" src="https://img.alicdn.com/tfs/TB1roQlZWL7gK0jSZFBXXXZZpXa-1328-596.png">
+<h3 id="结构图"><a class="header-anchor" href="#结构图">¶</a>结构图</h3>
+<img loading="lazy" width="800" src="https://img.alicdn.com/tfs/TB1roQlZWL7gK0jSZFBXXXZZpXa-1328-596.png">
 <p><code>Client</code> 是发出指令的客户端，<code>Prototype</code> 是一个接口，描述了一个对象如何克隆自身，比如必须拥有 <code>clone()</code> 方法，而 <code>ConcretePrototype</code> 就是克隆具体的实现，不同对象有不同的实现来拷贝自身。</p>
-<h2 id="代码例子"><a class="header-anchor" href="#代码例子">¶</a>代码例子</h2>
+<h3 id="代码例子"><a class="header-anchor" href="#代码例子">¶</a>代码例子</h3>
 <p>下面例子使用 typescript 编写。</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Component</span> <span class="token keyword">implements</span> <span class="token class-name">Prototype</span> <span class="token punctuation">{</span>
   <span class="token comment">/**
@@ -790,19 +814,19 @@
 <p>使用的时候，我们就可以这样创建一个新对象：</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> newComponent <span class="token operator">=</span> oldComponent<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这里有两个注意点：一般来说，<strong>如果要二次修改生成的对象，不建议给 <code>clone</code> 函数加参数，因为这样会导致接口的不一致。</strong> 我们可以为对象实例提供一些 <code>set</code> 函数进行二次修改。另外，<code>clone</code> 函数要考虑性能，就像前面说过的，可以考虑深浅拷贝结合的方式，同时要注意当对象存在引用关系甚至循环引用时，甚至不一定能实现拷贝函数。</p>
-<h2 id="弊端"><a class="header-anchor" href="#弊端">¶</a>弊端</h2>
+<h3 id="弊端"><a class="header-anchor" href="#弊端">¶</a>弊端</h3>
 <p>每个设计模式必有弊端，但就像每一期都说的，有弊端不代表设计模式不好用，而是指在某种场景喜爱存在问题，我们只要规避这些场景，在合理的场景使用对应设计模式即可。</p>
 <p>原型模式的弊端：</p>
 <ol>
 <li>每个类都要实现 <code>clone</code> 方法，对类的实现是有一定入侵的，要修改已有类时，违背了开闭原则。</li>
 <li>当类又调用了其他对象时，如果要实现深拷贝，需要对应对象也实现 <code>clone</code> 方法，整体链路可能会特别长，实现起来比较麻烦。</li>
 </ol>
-<h2 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h2>
+<h3 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h3>
 <p><strong>原型模式一般与工厂模式搭配使用，一般工厂方法接收一个符合原型模式的实例，就可以调用它的 <code>clone</code> 函数创建返回新对象啦。</strong> 代码大概是这样：</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// buildComponentFactory 内部通过 targetComponent.clone() 创建对象，而不是 New 或者调用其他工厂函数。</span>
 <span class="token keyword">const</span> newComponent <span class="token operator">=</span> <span class="token function">buildComponentFactory</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Component</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>最后来一张图快速理解原型模式：</p>
-<img width="600" src="https://img.alicdn.com/tfs/TB1hBIdm6MZ7e4jSZFOXXX7epXa-982-486.png">
+<img loading="lazy" width="600" src="https://img.alicdn.com/tfs/TB1hBIdm6MZ7e4jSZFOXXX7epXa-982-486.png">
 <blockquote>
 <p>讨论地址是：<a target="_blank" rel="noopener" href="https://github.com/dt-fe/weekly/issues/277">精读《设计模式 - Prototype 原型模式》· Issue #277 · dt-fe/weekly</a></p>
 </blockquote>
@@ -1027,16 +1051,27 @@
     </div>
 
     
-        <link
-  rel="stylesheet"
-  href="/libs/gitalk/gitalk.css"
-/>
-<link
-  rel="stylesheet"
-  href="/css/my-gitalk.css"
-/>
 
-<div class="card gitalk-card" data-aos="fade-up">
+    
+        <style>
+  .utterances-card {
+    margin: 1.25rem auto;
+  }
+
+  .utterances-card .card-content {
+    padding: 10px 20px 20px 20px;
+  }
+
+  .utterances {
+    max-width: 100% !important;
+  }
+
+  body.DarkMode .utterances-card .comment_headling {
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>
+
+<div class="card utterances-card" data-aos="fade-up">
   <div
     class="comment_headling"
     style="
@@ -1051,23 +1086,20 @@
     <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
     <span>评论</span>
   </div>
-  <div id="gitalk-container" class="card-content"></div>
+  <div id="utterances-container" class="card-content">
+    <script
+      src="https://utteranc.es/client.js"
+      repo="Parade001/Parade001.github.io"
+      issue-term="title"
+      
+      theme="github-light"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-  let gitalk = new Gitalk({
-      clientID: '08cb8efd61d2c27103a2',
-      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
-      repo: 'Parade001.github.io',
-      owner: 'Parade001',
-      admin: "Parade001",
-      id: '2022-06-11T20-50-31',
-      distractionFreeMode: false  // Facebook-like distraction free mode
-  });
-
-  gitalk.render('gitalk-container');
-</script>
+    
 
     
 
@@ -1096,7 +1128,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1037.jpg" class="responsive-img" alt="设计模式-解释器模式">
+                        <img src="https://bing.biturl.top/?resolution=1920&format=image&index=1&mkt=en-US" class="responsive-img" alt="设计模式-解释器模式">
                         
                         <span class="card-title">设计模式-解释器模式</span>
                     </div>
@@ -1145,7 +1177,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://picsum.photos/seed/matery14/1600/900" class="responsive-img" alt="纯css文字截断">
+                        <img src="/medias/images/01.jpg" class="responsive-img" alt="纯css文字截断">
                         
                         <span class="card-title">纯css文字截断</span>
                     </div>
@@ -1153,7 +1185,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            最近在做响应式系统设计的时候遇到需要对标题进行多行文字截取的效果，如下图： 看似十分简单的标题截断效果，但是竟然没有一个统一 CSS 属性实现标准，需要用到一些奇淫妙计来实现，一般来说，在做这样文字截
                         
                     </div>
                     <div class="publish-info">
@@ -1350,7 +1382,7 @@
                    theme='#42b983'
                    loop='all'
                    order='random'
-                   preload='auto'
+                   preload='none'
                    volume='0.5'
                    list-folded='false'
         >
@@ -1359,7 +1391,7 @@
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
@@ -1398,7 +1430,18 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis"> 
+        <div class="col s12 m4 l4 social-link social-statis">
+<a
+  href="https://github.com/Parade001"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="访问我的GitHub"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-github"></i>
+</a>
+ 
 <a
   href="mailto:xiongteng.red@gmail.com"
   class="tooltipped"
@@ -1431,6 +1474,7 @@
 >
   <i class="fab fa-weibo"></i>
 </a>
+ 
 <a
   href="https://instagram.com/xiongteng.cc?r=nametag"
   class="tooltipped"
@@ -1441,6 +1485,7 @@
 >
   <i class="fab fa-instagram"></i>
 </a>
+ 
 <a
   href="https://b23.tv/WNuyUW1"
   class="tooltipped"
@@ -1451,6 +1496,7 @@
 >
   <i class="fab fa-bilibili"></i>
 </a>
+ 
 <a
   href="https://steamcommunity.com/id/xiongteng/"
   class="tooltipped"
@@ -1460,31 +1506,8 @@
   data-delay="50"
 >
   <i class="fab fa-steam-symbol"></i>
-  <!-- <i class="fab fa-steam"></i> -->
 </a>
-<a
-  href="https://&#39;暂未入坑&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的xbox: https://&#39;暂未入坑&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-xbox"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
-<a
-  href="https://&#39;SW-6512-6988-8778&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的Switch: https://&#39;SW-6512-6988-8778&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-solid fa-gamepad"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
- 
+   
 <a
   href="https://www.zhihu.com/people/hurricane.net"
   class="tooltipped"
@@ -1495,17 +1518,7 @@
 >
   <i class="fa-brands fa-zhihu"></i>
 </a>
-<a
-  href="https://&#39;15623449201&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的微信: https://&#39;15623449201&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-weixin"></i>
-</a>
- 
+  
 <a
   href="/atom.xml"
   class="tooltipped"
@@ -1538,93 +1551,124 @@
 
 <script type="text/javascript">
 $(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
+    var searchPath = '/search.xml';
+    var searchLoaded = false;
+    var searchLoading = false;
+    var cachedDatas = null;
+
+    var renderSearchResults = function (keywordStr, datas, $resultContent) {
+        var str = '<ul class="search-result-list">';
+        var keywords = keywordStr.trim().toLowerCase().split(/[\s\-]+/);
+        $resultContent.innerHTML = "";
+        if (keywordStr.trim().length <= 0) {
+            return;
+        }
+        datas.forEach(function (data) {
+            var isMatch = true;
+            var data_title = data.title.trim().toLowerCase();
+            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+            var data_url = data.url;
+            data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+            var index_title = -1;
+            var index_content = -1;
+            var first_occur = -1;
+            if (data_title !== '' && data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if (index_title < 0 && index_content < 0) {
+                        isMatch = false;
+                    } else {
+                        if (index_content < 0) {
+                            index_content = 0;
+                        }
+                        if (i === 0) {
+                            first_occur = index_content;
+                        }
+                    }
+                });
+            }
+            if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                if (first_occur >= 0) {
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if (start < 0) {
+                        start = 0;
+                    }
+                    if (start === 0) {
+                        end = 100;
+                    }
+                    if (end > content.length) {
+                        end = content.length;
+                    }
+                    var match_content = content.substr(start, end);
+                    keywords.forEach(function (keyword) {
+                        var regS = new RegExp(keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), "gi");
+                        match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+            }
+        });
+        str += "</ul>";
+        $resultContent.innerHTML = str;
+    };
+
+    var loadSearchData = function () {
+        if (searchLoaded || searchLoading) {
+            return;
+        }
+        searchLoading = true;
+        var $input = document.getElementById('searchInput');
+        var $resultContent = document.getElementById('searchResult');
+        if ($resultContent && !$resultContent.innerHTML) {
+            $resultContent.innerHTML = '<p style="text-align:center;color:#999;">正在加载搜索索引...</p>';
+        }
         $.ajax({
-            url: path,
+            url: searchPath,
             dataType: "xml",
             success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
+                cachedDatas = $("entry", xmlResponse).map(function () {
                     return {
                         title: $("title", this).text(),
                         content: $("content", this).text(),
                         url: $("url", this).text()
                     };
                 }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
+                searchLoaded = true;
+                searchLoading = false;
+                if ($input && $input.value.trim().length > 0) {
+                    renderSearchResults($input.value, cachedDatas, $resultContent);
+                } else if ($resultContent) {
+                    $resultContent.innerHTML = '';
+                }
+            },
+            error: function () {
+                searchLoading = false;
+                if ($resultContent) {
+                    $resultContent.innerHTML = '<p style="text-align:center;color:#e53935;">搜索索引加载失败，请重试。</p>';
+                }
             }
         });
     };
 
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
+    var $inputEl = document.getElementById('searchInput');
+    var $resultEl = document.getElementById('searchResult');
+    if ($inputEl) {
+        $inputEl.addEventListener('focus', loadSearchData);
+        $inputEl.addEventListener('input', function () {
+            if (searchLoaded && cachedDatas) {
+                renderSearchResults(this.value, cachedDatas, $resultEl);
+            } else {
+                loadSearchData();
+            }
+        });
+    }
+    $(document).on('click', 'a[href="#searchModal"]', loadSearchData);
 });
 </script>
 
@@ -1646,20 +1690,6 @@ $(function () {
     <!-- Baidu Analytics -->
 
     <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 
     
     <script src="/libs/others/clicklove.js" async="async"></script>

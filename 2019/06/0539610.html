@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="深入理解什么是Promise, 熊腾的在线记事本">
-    <meta name="description" content="熊腾的在线记事本">
+    <meta name="keywords" content="ES6, JavaScript, 深入理解什么是Promise">
+    <meta name="description" content="是一个对象,用于传递异步操作的消息">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,13 +13,37 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="canonical" href="https://xiongteng.cc/2019/06/0539610.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="深入理解什么是Promise | 熊言熊语">
+    <meta property="og:description" content="是一个对象,用于传递异步操作的消息">
+    <meta property="og:url" content="https://xiongteng.cc/2019/06/0539610.html">
+    <meta property="og:site_name" content="熊言熊语">
+    <meta property="og:locale" content="zh-CN">
+    <meta property="og:image" content="https://xiongteng.cc/medias/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="深入理解什么是Promise | 熊言熊语">
+    <meta name="twitter:description" content="是一个对象,用于传递异步操作的消息">
+    <meta name="twitter:image" content="https://xiongteng.cc/medias/logo.png">
+    
+    <meta property="article:published_time" content="2019-06-05T01:35:54.000Z">
+    
+    <meta property="article:modified_time" content="2026-11-26T15:41:18.500Z">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"深入理解什么是Promise","description":"是一个对象,用于传递异步操作的消息","image":["https://xiongteng.cc/medias/logo.png"],"datePublished":"2019-06-05T01:35:54.000Z","dateModified":"2026-11-26T15:41:18.500Z","author":{"@type":"Person","name":"xt_xiong"},"publisher":{"@type":"Organization","name":"熊言熊语","logo":{"@type":"ImageObject","url":"https://xiongteng.cc/medias/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xiongteng.cc/2019/06/0539610.html"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"熊言熊语","item":"https://xiongteng.cc/"},{"@type":"ListItem","position":2,"name":"深入理解什么是Promise","item":"https://xiongteng.cc/2019/06/0539610.html"}]}
+    </script>
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
     <title>深入理解什么是Promise | 熊言熊语</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -457,7 +481,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/Parade001" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -514,7 +538,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/Parade001" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -546,7 +570,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.gstatic.com/prettyearth/assets/full/1356.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -759,7 +783,7 @@
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我是new Promise 的立即指向代码块"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="/2019/06/0539610/1639788794110.png" class="" width="1639788794110">
+<img loading="lazy" src="/2019/06/0539610/1639788794110.png" class="" width="1639788794110">
 <p>示例2:</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我是setTimeout代码块"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -775,14 +799,14 @@ p1<span class="token punctuation">.</span><span class="token function">then</spa
      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
      <span class="token punctuation">}</span>
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="/2019/06/0539610/callback.png" class="" title="Promise">
+<img loading="lazy" src="/2019/06/0539610/callback.png" class="" title="Promise">
 <hr>
-<h1>Promise.prototype.then()</h1>
+<h2 id="Promise-prototype-then"><a class="header-anchor" href="#Promise-prototype-then">¶</a>Promise.prototype.then()</h2>
 <p>Promise 实例具有 then 方法,即 then 方法是定义在原型对象 Promise.prototype 上的.</p>
 <p>作用是为 Promise 实例添加状态改变时的回调函数</p>
 <p>then 方法可以接受两个回调函数作为参数,第二个参数就是可以选的.</p>
 <p>then方法返回的是一个新的Promise实例(不是原来的那个Promise).因此可以采用链式写法,即then方法后面调用另一个then方法.采用链式的then,可以指定一组按照次序调用的回调函数,后面的回调函数,需等待该Promise对象状态的改变,才会被调用</p>
-<h1><strong>Promise.prototype.cath()</strong></h1>
+<h2 id="Promise-prototype-cath"><a class="header-anchor" href="#Promise-prototype-cath">¶</a><strong>Promise.prototype.cath()</strong></h2>
 <p>一般来说,不要在then定义Reject状态的回调函数,即then的第二个参数,总是使用catch方法</p>
 <p>Promise.prototype.cath方法是.then(null,rejection)的别名</p>
 <p>当异步操作throw err时,状态会变成Rejected的,就会调用catch方法处理错误</p>
@@ -804,7 +828,7 @@ JavaScript 是单线程语言,而现代游览器是支持多线程的,单线程�
 <p><strong>并发运行</strong>:一个进程的指令和另一个进程的指令是交错执行的,通过处理器在进程简切换,操纵系统这种交错执行的机制称为上下文切换.进程间的转换是由操纵系统的内核(kernel)管理,内核是系统管理全部进程所用代码和数据结构的集合</p>
 <p><strong>上下文</strong>:操纵系统保持跟踪进程运行所需的所有状态信息,这种状态,就是上下文,包括许多信息.比如PC和寄存器文件的当前值,以及贮存的内容.</p>
 <p><strong>线程</strong>:一个进程实际上可以由多个称为显参的执行单元组成.每个线程都运行在进程的上下文中,并共享同样的全局代码和全局数据.一般来说多线程比多进程更容易共享数据,因为线程一般比进程高效</p>
-<img src="https://tva1.sinaimg.cn/large/006aANDQgy1h03g5beevnj30dw05rjsl.jpg">
+<img loading="lazy" src="https://tva1.sinaimg.cn/large/006aANDQgy1h03g5beevnj30dw05rjsl.jpg">
 <p align="center">深入理解计算机系统
 </p>
 <ul>
@@ -855,7 +879,7 @@ JavaScript 是单线程语言,而现代游览器是支持多线程的,单线程�
 </ul>
 </li>
 </ul>
-<h3 id="总结"><a class="header-anchor" href="#总结">¶</a><a target="_blank" rel="noopener" href="https://zh.javascript.info/event-loop#zong-jie">总结</a></h3>
+<h4 id="总结"><a class="header-anchor" href="#总结">¶</a><a target="_blank" rel="noopener" href="https://zh.javascript.info/event-loop#zong-jie">总结</a></h4>
 <p>更详细的事件循环算法（尽管与 <a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model">规范</a> 相比仍然是简化过的）：</p>
 <ol>
 <li>
@@ -904,7 +928,7 @@ src: url("https://www.cssfontstack.com/monaco#");
 LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none" stroke="none" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 107px; margin-left: 328px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><span style="font-family: &quot;helvetica&quot; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; display: inline ; float: none"><font color="#00ec66">TaskQueue <br>FIFO</font></span></div></div></div></foreignObject><text x="387" y="119" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">TaskQueue...</text></switch></g><path d="M 597 200 L 597 320 Q 597 330 597 340 L 597 430.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 597 435.88 L 593.5 428.88 L 597 430.63 L 600.5 428.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 477 170 L 577 200 L 477 230 L 377 200 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 198px; height: 1px; padding-top: 200px; margin-left: 378px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">判断Queue中的Event type</div></div></div></foreignObject><text x="477" y="204" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">判断Queue中的Event type</text></switch></g><path d="M 146 110 L 246 140 L 146 170 L 46 140 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 198px; height: 1px; padding-top: 140px; margin-left: 47px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><span>JS引擎解析JS任务类型</span></div></div></div></foreignObject><text x="146" y="144" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">JS引擎解析JS任务类型</text></switch></g><path d="M 347 200 L 346.51 438.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 346.5 443.88 L 343.02 436.87 L 346.51 438.63 L 350.02 436.89 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><rect x="287" y="440" width="120" height="40" fill="#ffffff" stroke="#000000" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 460px; margin-left: 288px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">MicroTask</div></div></div></foreignObject><text x="347" y="464" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">MicroTask</text></switch></g><rect x="527" y="440" width="120" height="40" fill="#ffffff" stroke="#000000" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 460px; margin-left: 528px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">MacroTask</div></div></div></foreignObject><text x="587" y="464" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">MacroTask</text></switch></g><path d="M 146 170 L 146.48 293.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 146.5 298.88 L 142.97 291.9 L 146.48 293.63 L 149.97 291.87 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 146.5 350 L 146.5 423.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 146.5 428.88 L 143 421.88 L 146.5 423.63 L 150 421.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 46.5 460 L 17 460 Q 7 460 7 450 L 7 335 Q 7 325 17 325 L 80.63 325" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 85.88 325 L 78.88 328.5 L 80.63 325 L 78.88 321.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 146.5 430 L 246.5 460 L 146.5 490 L 46.5 460 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 198px; height: 1px; padding-top: 460px; margin-left: 48px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">执行栈空?</div></div></div></foreignObject><text x="147" y="464" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">执行栈空?</text></switch></g><rect x="86.5" y="690" width="120" height="50" rx="7.5" ry="7.5" fill="#ffffff" stroke="#000000" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 715px; margin-left: 88px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">结束</div></div></div></foreignObject><text x="147" y="719" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">结束</text></switch></g><rect x="86" y="0" width="120" height="50" rx="7.5" ry="7.5" fill="#ffffff" stroke="#000000" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 25px; margin-left: 87px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">JS任务开始</div></div></div></foreignObject><text x="146" y="29" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">JS任务开始</text></switch></g><path d="M 387 610 L 257 610 Q 247 610 237 610 L 213.37 610" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 208.12 610 L 215.12 606.5 L 213.37 610 L 215.12 613.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><rect x="697" y="370" width="280" height="170" fill="none" stroke="none" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 278px; height: 1px; padding-top: 455px; margin-left: 699px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; max-height: 166px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #00ec66; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><ul><li><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">setTimeout</font></b></li><li><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">setInterval</font></b></li><li><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">MessageChanel</font></b></li><li><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">IO事件队列</font></b></li><li><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">setImmediate(Node环境)</font></b></li><li><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">Script(优先执行此宏任务,存在异步代码才执行微任务</font></b></li></ul></div></div></div></foreignObject><text x="699" y="459" fill="#00ec66" font-family="Helvetica" font-size="12px">setTimeoutsetIntervalMessageChanelIO事件队列setImmedia...</text></switch></g><rect x="737" y="350" width="100" height="40" fill="none" stroke="none" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 370px; margin-left: 787px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 24px; font-family: Helvetica; color: #00EC66; line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap; "><font style="font-size: 18px">MacroTask</font></div></div></div></foreignObject><text x="787" y="377" fill="#00EC66" font-family="Helvetica" font-size="24px" text-anchor="middle" font-weight="bold">MacroTask</text></switch></g><rect x="607" y="590" width="100" height="40" fill="none" stroke="none" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 610px; margin-left: 657px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 24px; font-family: Helvetica; color: #00EC66; line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap; "><font style="font-size: 18px">MicroTask</font></div></div></div></foreignObject><text x="657" y="617" fill="#00EC66" font-family="Helvetica" font-size="24px" text-anchor="middle" font-weight="bold">MicroTask</text></switch></g><rect x="86" y="590" width="120" height="40" fill="#ffffff" stroke="#000000" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 610px; margin-left: 87px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font color="#000000">异步任务执行</font></div></div></div></foreignObject><text x="146" y="614" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">异步任务执行</text></switch></g><path d="M 146.5 490 L 146.03 583.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 146.01 588.88 L 142.54 581.86 L 146.03 583.63 L 149.54 581.9 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><rect x="557" y="600" width="320" height="170" fill="none" stroke="none" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 318px; height: 1px; padding-top: 685px; margin-left: 559px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; max-height: 166px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #00ec66; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><ul><li class="code-line" style="position: relative"><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">Promise.[ then/catch/finally ]</font></b></li><li class="code-line" style="position: relative"><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">Process.nextTick(Node环境)</font></b></li><li class="code-line" style="position: relative"><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">MutationObserve(浏览器环境)</font></b></li><li class="code-line" style="position: relative"><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">Object.observe</font></b></li><li class="code-line" style="position: relative"><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">queueMicrotask</font></b></li><li class="code-line" style="position: relative"><b><font face="monaco" data-font-src="https://www.cssfontstack.com/monaco#">requestAnmationFrame(有争议)</font></b></li></ul></div></div></div></foreignObject><text x="559" y="689" fill="#00ec66" font-family="Helvetica" font-size="12px">Promise.[ then/catch/finally ]Process.nextTick(Node环境)M...</text></switch></g><path d="M 567 610 L 483.37 610" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 478.12 610 L 485.12 606.5 L 483.37 610 L 485.12 613.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><rect x="227" y="320" width="120" height="30" fill="none" stroke="none" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 118px; height: 1px; padding-top: 327px; margin-left: 229px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #00EC66; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><i><b><span style="font-family: &quot;helvetica&quot; ; font-size: 12px ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; display: inline ; float: none">Pending|</span><font face="monospace, monospace" style="font-size: 12px ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px">Resolve</font></b></i></div></div></div></foreignObject><text x="229" y="339" fill="#00EC66" font-family="Helvetica" font-size="12px">Pending|Resolve</text></switch></g><rect x="607" y="320" width="120" height="30" fill="none" stroke="none" pointer-events="all"></rect><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 118px; height: 1px; padding-top: 327px; margin-left: 609px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #00EC66; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><i><b><span style="font-family: &quot;helvetica&quot; ; font-size: 12px ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; display: inline ; float: none">Pending|</span><font face="monospace, monospace" style="font-size: 12px ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px">Resolve</font></b></i></div></div></div></foreignObject><text x="609" y="339" fill="#00EC66" font-family="Helvetica" font-size="12px">Pending|Resolve</text></switch></g><path d="M 487 610 L 472.7 617.15" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 468 619.5 L 472.7 613.24 L 472.7 617.15 L 475.83 619.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 487 580 L 587 610 L 487 640 L 387 610 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 198px; height: 1px; padding-top: 610px; margin-left: 388px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><span style="font-family: &quot;helvetica&quot;">满足条件优先执宏任务</span></div></div></div></foreignObject><text x="487" y="614" fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle">满足条件优先执宏任务</text></switch></g><path d="M 146 630 L 146.45 683.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 146.49 688.88 L 142.93 681.91 L 146.45 683.63 L 149.93 681.85 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 377 520 L 357 520 Q 347 520 347 510 L 347 480" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 377 520 L 477 520 Q 487 520 497 520 L 590 520 Q 600 520 600.02 510 L 600.08 480.32" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 487 520 L 487 573.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 487 578.88 L 483.5 571.88 L 487 573.63 L 490.5 571.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path><path d="M 347 199.83 L 377 199.83" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 577 199.83 L 597 200" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"></g><a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Viewer does not support full SVG 1.1</text></a></switch></svg>
 </div>
 <hr>
-<h4 id="参考"><a class="header-anchor" href="#参考">¶</a>参考:</h4>
+<h5 id="参考"><a class="header-anchor" href="#参考">¶</a>参考:</h5>
 <p>ES6标准入门</p>
 <p>深入计算机系统</p>
 <p><a target="_blank" rel="noopener" href="https://zh.javascript.info/event-loop#zong-jie">事件循环:微任务和宏任务</a></p>
@@ -1126,16 +1150,27 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
     </div>
 
     
-        <link
-  rel="stylesheet"
-  href="/libs/gitalk/gitalk.css"
-/>
-<link
-  rel="stylesheet"
-  href="/css/my-gitalk.css"
-/>
 
-<div class="card gitalk-card" data-aos="fade-up">
+    
+        <style>
+  .utterances-card {
+    margin: 1.25rem auto;
+  }
+
+  .utterances-card .card-content {
+    padding: 10px 20px 20px 20px;
+  }
+
+  .utterances {
+    max-width: 100% !important;
+  }
+
+  body.DarkMode .utterances-card .comment_headling {
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>
+
+<div class="card utterances-card" data-aos="fade-up">
   <div
     class="comment_headling"
     style="
@@ -1150,23 +1185,20 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
     <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
     <span>评论</span>
   </div>
-  <div id="gitalk-container" class="card-content"></div>
+  <div id="utterances-container" class="card-content">
+    <script
+      src="https://utteranc.es/client.js"
+      repo="Parade001/Parade001.github.io"
+      issue-term="title"
+      
+      theme="github-light"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-  let gitalk = new Gitalk({
-      clientID: '08cb8efd61d2c27103a2',
-      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
-      repo: 'Parade001.github.io',
-      owner: 'Parade001',
-      admin: "Parade001",
-      id: '2019-06-05T09-35-54',
-      distractionFreeMode: false  // Facebook-like distraction free mode
-  });
-
-  gitalk.render('gitalk-container');
-</script>
+    
 
     
 
@@ -1195,7 +1227,7 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
                     <div class="card-image">
                         
                         
-                        <img src="https://www.gstatic.com/prettyearth/assets/full/1273.jpg" class="responsive-img" alt="AJAX入门">
+                        <img src="https://bing.biturl.top/?resolution=1920&format=image&index=5&mkt=zh-CN" class="responsive-img" alt="AJAX入门">
                         
                         <span class="card-title">AJAX入门</span>
                     </div>
@@ -1244,7 +1276,7 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
                     <div class="card-image">
                         
                         
-                        <img src="https://picsum.photos/seed/matery08/1600/900" class="responsive-img" alt="call、apply、bind 方法总结">
+                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="call、apply、bind 方法总结">
                         
                         <span class="card-title">call、apply、bind 方法总结</span>
                     </div>
@@ -1449,7 +1481,7 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
                    theme='#42b983'
                    loop='all'
                    order='random'
-                   preload='auto'
+                   preload='none'
                    volume='0.5'
                    list-folded='false'
         >
@@ -1458,7 +1490,7 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
@@ -1497,7 +1529,18 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis"> 
+        <div class="col s12 m4 l4 social-link social-statis">
+<a
+  href="https://github.com/Parade001"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="访问我的GitHub"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-github"></i>
+</a>
+ 
 <a
   href="mailto:xiongteng.red@gmail.com"
   class="tooltipped"
@@ -1530,6 +1573,7 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
 >
   <i class="fab fa-weibo"></i>
 </a>
+ 
 <a
   href="https://instagram.com/xiongteng.cc?r=nametag"
   class="tooltipped"
@@ -1540,6 +1584,7 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
 >
   <i class="fab fa-instagram"></i>
 </a>
+ 
 <a
   href="https://b23.tv/WNuyUW1"
   class="tooltipped"
@@ -1550,6 +1595,7 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
 >
   <i class="fab fa-bilibili"></i>
 </a>
+ 
 <a
   href="https://steamcommunity.com/id/xiongteng/"
   class="tooltipped"
@@ -1559,31 +1605,8 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
   data-delay="50"
 >
   <i class="fab fa-steam-symbol"></i>
-  <!-- <i class="fab fa-steam"></i> -->
 </a>
-<a
-  href="https://&#39;暂未入坑&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的xbox: https://&#39;暂未入坑&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-xbox"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
-<a
-  href="https://&#39;SW-6512-6988-8778&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的Switch: https://&#39;SW-6512-6988-8778&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-solid fa-gamepad"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
- 
+   
 <a
   href="https://www.zhihu.com/people/hurricane.net"
   class="tooltipped"
@@ -1594,17 +1617,7 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
 >
   <i class="fa-brands fa-zhihu"></i>
 </a>
-<a
-  href="https://&#39;15623449201&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的微信: https://&#39;15623449201&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-weixin"></i>
-</a>
- 
+  
 <a
   href="/atom.xml"
   class="tooltipped"
@@ -1637,93 +1650,124 @@ LIFO</text></switch></g><rect x="327" y="100" width="120" height="30" fill="none
 
 <script type="text/javascript">
 $(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
+    var searchPath = '/search.xml';
+    var searchLoaded = false;
+    var searchLoading = false;
+    var cachedDatas = null;
+
+    var renderSearchResults = function (keywordStr, datas, $resultContent) {
+        var str = '<ul class="search-result-list">';
+        var keywords = keywordStr.trim().toLowerCase().split(/[\s\-]+/);
+        $resultContent.innerHTML = "";
+        if (keywordStr.trim().length <= 0) {
+            return;
+        }
+        datas.forEach(function (data) {
+            var isMatch = true;
+            var data_title = data.title.trim().toLowerCase();
+            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+            var data_url = data.url;
+            data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+            var index_title = -1;
+            var index_content = -1;
+            var first_occur = -1;
+            if (data_title !== '' && data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if (index_title < 0 && index_content < 0) {
+                        isMatch = false;
+                    } else {
+                        if (index_content < 0) {
+                            index_content = 0;
+                        }
+                        if (i === 0) {
+                            first_occur = index_content;
+                        }
+                    }
+                });
+            }
+            if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                if (first_occur >= 0) {
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if (start < 0) {
+                        start = 0;
+                    }
+                    if (start === 0) {
+                        end = 100;
+                    }
+                    if (end > content.length) {
+                        end = content.length;
+                    }
+                    var match_content = content.substr(start, end);
+                    keywords.forEach(function (keyword) {
+                        var regS = new RegExp(keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), "gi");
+                        match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+            }
+        });
+        str += "</ul>";
+        $resultContent.innerHTML = str;
+    };
+
+    var loadSearchData = function () {
+        if (searchLoaded || searchLoading) {
+            return;
+        }
+        searchLoading = true;
+        var $input = document.getElementById('searchInput');
+        var $resultContent = document.getElementById('searchResult');
+        if ($resultContent && !$resultContent.innerHTML) {
+            $resultContent.innerHTML = '<p style="text-align:center;color:#999;">正在加载搜索索引...</p>';
+        }
         $.ajax({
-            url: path,
+            url: searchPath,
             dataType: "xml",
             success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
+                cachedDatas = $("entry", xmlResponse).map(function () {
                     return {
                         title: $("title", this).text(),
                         content: $("content", this).text(),
                         url: $("url", this).text()
                     };
                 }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
+                searchLoaded = true;
+                searchLoading = false;
+                if ($input && $input.value.trim().length > 0) {
+                    renderSearchResults($input.value, cachedDatas, $resultContent);
+                } else if ($resultContent) {
+                    $resultContent.innerHTML = '';
+                }
+            },
+            error: function () {
+                searchLoading = false;
+                if ($resultContent) {
+                    $resultContent.innerHTML = '<p style="text-align:center;color:#e53935;">搜索索引加载失败，请重试。</p>';
+                }
             }
         });
     };
 
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
+    var $inputEl = document.getElementById('searchInput');
+    var $resultEl = document.getElementById('searchResult');
+    if ($inputEl) {
+        $inputEl.addEventListener('focus', loadSearchData);
+        $inputEl.addEventListener('input', function () {
+            if (searchLoaded && cachedDatas) {
+                renderSearchResults(this.value, cachedDatas, $resultEl);
+            } else {
+                loadSearchData();
+            }
+        });
+    }
+    $(document).on('click', 'a[href="#searchModal"]', loadSearchData);
 });
 </script>
 
@@ -1745,20 +1789,6 @@ $(function () {
     <!-- Baidu Analytics -->
 
     <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 
     
     <script src="/libs/others/clicklove.js" async="async"></script>

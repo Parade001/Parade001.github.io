@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="精通cosole.log, 熊腾的在线记事本">
-    <meta name="description" content="熊腾的在线记事本">
+    <meta name="keywords" content="categories: tips, tips, 精通cosole.log">
+    <meta name="description" content="通过本篇文件来全面认识下console.log">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,13 +13,37 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="canonical" href="https://xiongteng.cc/2022/05/0616920.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="精通cosole.log | 熊言熊语">
+    <meta property="og:description" content="通过本篇文件来全面认识下console.log">
+    <meta property="og:url" content="https://xiongteng.cc/2022/05/0616920.html">
+    <meta property="og:site_name" content="熊言熊语">
+    <meta property="og:locale" content="zh-CN">
+    <meta property="og:image" content="https://xiongteng.cc/medias/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="精通cosole.log | 熊言熊语">
+    <meta name="twitter:description" content="通过本篇文件来全面认识下console.log">
+    <meta name="twitter:image" content="https://xiongteng.cc/medias/logo.png">
+    
+    <meta property="article:published_time" content="2022-05-06T13:26:53.000Z">
+    
+    <meta property="article:modified_time" content="2026-11-26T15:41:18.503Z">
+    
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"精通cosole.log","description":"通过本篇文件来全面认识下console.log","image":["https://xiongteng.cc/medias/logo.png"],"datePublished":"2022-05-06T13:26:53.000Z","dateModified":"2026-11-26T15:41:18.503Z","author":{"@type":"Person","name":"xt_xiong"},"publisher":{"@type":"Organization","name":"熊言熊语","logo":{"@type":"ImageObject","url":"https://xiongteng.cc/medias/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xiongteng.cc/2022/05/0616920.html"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"熊言熊语","item":"https://xiongteng.cc/"},{"@type":"ListItem","position":2,"name":"精通cosole.log","item":"https://xiongteng.cc/2022/05/0616920.html"}]}
+    </script>
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
     <title>精通cosole.log | 熊言熊语</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
@@ -457,7 +481,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/Parade001" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -514,7 +538,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/Parade001" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -546,7 +570,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://www.gstatic.com/prettyearth/assets/full/1066.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://bing.biturl.top/?resolution=1920&format=image&index=1&mkt=en-US')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -738,9 +762,9 @@
 <p>console 的功能主要在于控制台打印，它可以打印任何字符、对象、甚至 DOM 元素和系统信息，下面一一介绍。</p>
 <h3 id="console-log-info-debug-warn-error"><a class="header-anchor" href="#console-log-info-debug-warn-error">¶</a>console.log( ) | info( ) | debug( ) | warn( ) | error( )</h3>
 <p>直接打印字符，区别在于展示形态的不同：</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1xZ_WveH2gK0jSZFEXXcqMpXa-1492-566.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1xZ_WveH2gK0jSZFEXXcqMpXa-1492-566.png">
 <p>新版 chrome 控制台可以将打印信息分类：</p>
-<img width="200" src="https://img.alicdn.com/tfs/TB1fZ2Vvhn1gK0jSZKPXXXvUXXa-420-446.png">
+<img loading="lazy" width="200" src="https://img.alicdn.com/tfs/TB1fZ2Vvhn1gK0jSZKPXXXvUXXa-420-446.png">
 <p><code>log()</code> 与 <code>info()</code> 都对应 <code>info</code>，<code>warn()</code> 对应 <code>warnings</code>，<code>error()</code> 对应 <code>errors</code>，而 <code>debug()</code> 对应 <code>verbose</code>，因此建议在合适的场景使用合适的打印习惯，这样排查问题时也可以有针对性的筛选。</p>
 <p>比如调试信息可以用 <code>console.debug</code> 仅在调试环境下输出，调试者即便开启了调试参数也不会影响正常 <code>info</code> 的查看，因为调试信息都输出在 <code>verbose</code> 中。</p>
 <h3 id="使用占位符"><a class="header-anchor" href="#使用占位符">¶</a>使用占位符</h3>
@@ -750,43 +774,43 @@
 <li>%d — 数字</li>
 </ul>
 <p>如下所示，可通过占位符在一行中插入不同类型的值：</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1GtL3vlr0gK0jSZFnXXbRRXXa-1840-504.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1GtL3vlr0gK0jSZFnXXbRRXXa-1840-504.png">
 <h3 id="添加-CSS-样式"><a class="header-anchor" href="#添加-CSS-样式">¶</a>添加 CSS 样式</h3>
 <ul>
 <li>%c - 样式</li>
 </ul>
-<img width="400" src="https://img.alicdn.com/tfs/TB1eK23vlr0gK0jSZFnXXbRRXXa-1832-978.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1eK23vlr0gK0jSZFnXXbRRXXa-1832-978.png">
 <p>可以总结出，<strong>console 支持输出复杂的内容，其输出能力堪比 HTML，但输入能力太弱，仅为字符串，因此采用了占位符 + 多入参修饰的设计模式解决这个问题。</strong></p>
 <h3 id="console-dir"><a class="header-anchor" href="#console-dir">¶</a>console.dir( )</h3>
 <p>按 JSON 模式输出。笔者在这里也补充一句：<code>console.log()</code> 会自动判断类型，如果内容是 DOM 属性，则输出 DOM 树，但 <code>console.dir</code> 会强制以 JSON 模式输出，用在 DOM 对象时可强制转换为 JSON 输出。</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1KQY1vbj1gK0jSZFuXXcrHpXa-922-302.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1KQY1vbj1gK0jSZFuXXcrHpXa-922-302.png">
 <h3 id="输出-HTML-元素"><a class="header-anchor" href="#输出-HTML-元素">¶</a>输出 HTML 元素</h3>
 <p>按照 HTML ELements 结构输出：</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1mZ61va61gK0jSZFlXXXDKFXa-920-255.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1mZ61va61gK0jSZFlXXXDKFXa-920-255.png">
 <p>这种输出结构和 Elements 打印形式是一致的，如果要看详细属性，可以使用 <code>console.dir()</code>。</p>
 <h3 id="console-table"><a class="header-anchor" href="#console-table">¶</a>console.table</h3>
 <p>在控制台打印一个表格，属于功能增强。虽然仅文本也可以在控制台打印出漂亮的表格，但浏览器调试控制台的功能更强大，<code>console.table</code> 只是其富文本能力的一个体现。</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1WldouKbviK0jSZFNXXaApXXa-928-742.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1WldouKbviK0jSZFNXXaApXXa-928-742.png">
 <h3 id="console-group-console-groupEnd"><a class="header-anchor" href="#console-group-console-groupEnd">¶</a>console.group( ) &amp; console.groupEnd( )</h3>
 <p>接下来是另一个富文本能力，按分组输出：</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1UV6UvXY7gK0jSZKzXXaikpXa-919-377.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1UV6UvXY7gK0jSZKzXXaikpXa-919-377.png">
 <p>这种带有副作用的 API 显然是为方便阅读而设计的，然而在需要输出大量动态结构化数据的场景下，还需要进行结构转换，是比较麻烦的地方。</p>
 <h3 id="console-count"><a class="header-anchor" href="#console-count">¶</a>console.count( )</h3>
 <p><code>count()</code> 用来打印调用次数，一般用在循环或递归函数中。接收一个 <code>label</code> 参数以定制输出，默认直接输出 <code>1 2 3</code> 数字。</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1ELLVveL2gK0jSZPhXXahvXXa-917-500.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1ELLVveL2gK0jSZPhXXahvXXa-917-500.png">
 <h3 id="console-assert"><a class="header-anchor" href="#console-assert">¶</a>console.assert( )</h3>
 <p><code>console</code> 版断言工具，当且仅当第一个参数值为 <code>false</code> 时才打印第二个参数作为输出。</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1HEDUvfb2gK0jSZK9XXaEgFXa-1842-548.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1HEDUvfb2gK0jSZK9XXaEgFXa-1842-548.png">
 <p>这种输出结果为 error，所以也可被 <code>console.error</code> + 代码级别断言所取代。</p>
 <h3 id="console-trace"><a class="header-anchor" href="#console-trace">¶</a>console.trace( )</h3>
 <p>打印此时的调用栈，在打印辅助调试信息时非常有用。</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1Jh_YvkL0gK0jSZFAXXcA9pXa-1840-1096.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1Jh_YvkL0gK0jSZFAXXcA9pXa-1840-1096.png">
 <h3 id="console-time"><a class="header-anchor" href="#console-time">¶</a>console.time( )</h3>
 <p>打印代码执行时间，性能优化和监控场景比较常见。</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1wAT2vbj1gK0jSZFuXXcrHpXa-1612-524.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1wAT2vbj1gK0jSZFuXXcrHpXa-1612-524.png">
 <h3 id="console-memory"><a class="header-anchor" href="#console-memory">¶</a>console.memory</h3>
 <p>打印内存使用情况。</p>
-<img width="400" src="https://img.alicdn.com/tfs/TB1tPHYvkL0gK0jSZFAXXcA9pXa-1842-440.png">
+<img loading="lazy" width="400" src="https://img.alicdn.com/tfs/TB1tPHYvkL0gK0jSZFAXXcA9pXa-1842-440.png">
 <h3 id="console-clear"><a class="header-anchor" href="#console-clear">¶</a>console.clear( )</h3>
 <p>清空控制台输出。</p>
 <h2 id="3-总结"><a class="header-anchor" href="#3-总结">¶</a>3 总结</h2>
@@ -1013,16 +1037,27 @@
     </div>
 
     
-        <link
-  rel="stylesheet"
-  href="/libs/gitalk/gitalk.css"
-/>
-<link
-  rel="stylesheet"
-  href="/css/my-gitalk.css"
-/>
 
-<div class="card gitalk-card" data-aos="fade-up">
+    
+        <style>
+  .utterances-card {
+    margin: 1.25rem auto;
+  }
+
+  .utterances-card .card-content {
+    padding: 10px 20px 20px 20px;
+  }
+
+  .utterances {
+    max-width: 100% !important;
+  }
+
+  body.DarkMode .utterances-card .comment_headling {
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>
+
+<div class="card utterances-card" data-aos="fade-up">
   <div
     class="comment_headling"
     style="
@@ -1037,23 +1072,20 @@
     <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
     <span>评论</span>
   </div>
-  <div id="gitalk-container" class="card-content"></div>
+  <div id="utterances-container" class="card-content">
+    <script
+      src="https://utteranc.es/client.js"
+      repo="Parade001/Parade001.github.io"
+      issue-term="title"
+      
+      theme="github-light"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-  let gitalk = new Gitalk({
-      clientID: '08cb8efd61d2c27103a2',
-      clientSecret: '5a2cb78fe45a079b772fc565e7f4b758d09bc07f',
-      repo: 'Parade001.github.io',
-      owner: 'Parade001',
-      admin: "Parade001",
-      id: '2022-05-06T21-26-53',
-      distractionFreeMode: false  // Facebook-like distraction free mode
-  });
-
-  gitalk.render('gitalk-container');
-</script>
+    
 
     
 
@@ -1082,7 +1114,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://picsum.photos/seed/matery08/1600/900" class="responsive-img" alt="AsyncAwait 优越之处">
+                        <img src="/medias/images/01.jpg" class="responsive-img" alt="AsyncAwait 优越之处">
                         
                         <span class="card-title">AsyncAwait 优越之处</span>
                     </div>
@@ -1131,7 +1163,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://picsum.photos/seed/matery15/1600/900" class="responsive-img" alt="深入了解现代浏览器四">
+                        <img src="/medias/banner/4.jpg" class="responsive-img" alt="深入了解现代浏览器四">
                         
                         <span class="card-title">深入了解现代浏览器四</span>
                     </div>
@@ -1139,7 +1171,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Inside look at modern web browser 是介绍浏览器实现原理的系列文章，共 4 篇，本次精读介绍第四篇。 概述 前几章介绍了浏览器的基础进程、线程以及它们之间协同的关系，并
                         
                     </div>
                     <div class="publish-info">
@@ -1336,7 +1368,7 @@
                    theme='#42b983'
                    loop='all'
                    order='random'
-                   preload='auto'
+                   preload='none'
                    volume='0.5'
                    list-folded='false'
         >
@@ -1345,7 +1377,7 @@
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
@@ -1384,7 +1416,18 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis"> 
+        <div class="col s12 m4 l4 social-link social-statis">
+<a
+  href="https://github.com/Parade001"
+  class="tooltipped"
+  target="_blank"
+  data-tooltip="访问我的GitHub"
+  data-position="top"
+  data-delay="50"
+>
+  <i class="fab fa-github"></i>
+</a>
+ 
 <a
   href="mailto:xiongteng.red@gmail.com"
   class="tooltipped"
@@ -1417,6 +1460,7 @@
 >
   <i class="fab fa-weibo"></i>
 </a>
+ 
 <a
   href="https://instagram.com/xiongteng.cc?r=nametag"
   class="tooltipped"
@@ -1427,6 +1471,7 @@
 >
   <i class="fab fa-instagram"></i>
 </a>
+ 
 <a
   href="https://b23.tv/WNuyUW1"
   class="tooltipped"
@@ -1437,6 +1482,7 @@
 >
   <i class="fab fa-bilibili"></i>
 </a>
+ 
 <a
   href="https://steamcommunity.com/id/xiongteng/"
   class="tooltipped"
@@ -1446,31 +1492,8 @@
   data-delay="50"
 >
   <i class="fab fa-steam-symbol"></i>
-  <!-- <i class="fab fa-steam"></i> -->
 </a>
-<a
-  href="https://&#39;暂未入坑&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的xbox: https://&#39;暂未入坑&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-xbox"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
-<a
-  href="https://&#39;SW-6512-6988-8778&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的Switch: https://&#39;SW-6512-6988-8778&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-solid fa-gamepad"></i>
-  <!-- <i class="fab fa-steam"></i> -->
-</a>
- 
+   
 <a
   href="https://www.zhihu.com/people/hurricane.net"
   class="tooltipped"
@@ -1481,17 +1504,7 @@
 >
   <i class="fa-brands fa-zhihu"></i>
 </a>
-<a
-  href="https://&#39;15623449201&#39;"
-  class="tooltipped"
-  target="_blank"
-  data-tooltip="我的微信: https://&#39;15623449201&#39;"
-  data-position="top"
-  data-delay="50"
->
-  <i class="fa-brands fa-weixin"></i>
-</a>
- 
+  
 <a
   href="/atom.xml"
   class="tooltipped"
@@ -1524,93 +1537,124 @@
 
 <script type="text/javascript">
 $(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
+    var searchPath = '/search.xml';
+    var searchLoaded = false;
+    var searchLoading = false;
+    var cachedDatas = null;
+
+    var renderSearchResults = function (keywordStr, datas, $resultContent) {
+        var str = '<ul class="search-result-list">';
+        var keywords = keywordStr.trim().toLowerCase().split(/[\s\-]+/);
+        $resultContent.innerHTML = "";
+        if (keywordStr.trim().length <= 0) {
+            return;
+        }
+        datas.forEach(function (data) {
+            var isMatch = true;
+            var data_title = data.title.trim().toLowerCase();
+            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+            var data_url = data.url;
+            data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+            var index_title = -1;
+            var index_content = -1;
+            var first_occur = -1;
+            if (data_title !== '' && data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if (index_title < 0 && index_content < 0) {
+                        isMatch = false;
+                    } else {
+                        if (index_content < 0) {
+                            index_content = 0;
+                        }
+                        if (i === 0) {
+                            first_occur = index_content;
+                        }
+                    }
+                });
+            }
+            if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                if (first_occur >= 0) {
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if (start < 0) {
+                        start = 0;
+                    }
+                    if (start === 0) {
+                        end = 100;
+                    }
+                    if (end > content.length) {
+                        end = content.length;
+                    }
+                    var match_content = content.substr(start, end);
+                    keywords.forEach(function (keyword) {
+                        var regS = new RegExp(keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), "gi");
+                        match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+            }
+        });
+        str += "</ul>";
+        $resultContent.innerHTML = str;
+    };
+
+    var loadSearchData = function () {
+        if (searchLoaded || searchLoading) {
+            return;
+        }
+        searchLoading = true;
+        var $input = document.getElementById('searchInput');
+        var $resultContent = document.getElementById('searchResult');
+        if ($resultContent && !$resultContent.innerHTML) {
+            $resultContent.innerHTML = '<p style="text-align:center;color:#999;">正在加载搜索索引...</p>';
+        }
         $.ajax({
-            url: path,
+            url: searchPath,
             dataType: "xml",
             success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
+                cachedDatas = $("entry", xmlResponse).map(function () {
                     return {
                         title: $("title", this).text(),
                         content: $("content", this).text(),
                         url: $("url", this).text()
                     };
                 }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
+                searchLoaded = true;
+                searchLoading = false;
+                if ($input && $input.value.trim().length > 0) {
+                    renderSearchResults($input.value, cachedDatas, $resultContent);
+                } else if ($resultContent) {
+                    $resultContent.innerHTML = '';
+                }
+            },
+            error: function () {
+                searchLoading = false;
+                if ($resultContent) {
+                    $resultContent.innerHTML = '<p style="text-align:center;color:#e53935;">搜索索引加载失败，请重试。</p>';
+                }
             }
         });
     };
 
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
+    var $inputEl = document.getElementById('searchInput');
+    var $resultEl = document.getElementById('searchResult');
+    if ($inputEl) {
+        $inputEl.addEventListener('focus', loadSearchData);
+        $inputEl.addEventListener('input', function () {
+            if (searchLoaded && cachedDatas) {
+                renderSearchResults(this.value, cachedDatas, $resultEl);
+            } else {
+                loadSearchData();
+            }
+        });
+    }
+    $(document).on('click', 'a[href="#searchModal"]', loadSearchData);
 });
 </script>
 
@@ -1632,20 +1676,6 @@ $(function () {
     <!-- Baidu Analytics -->
 
     <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 
     
     <script src="/libs/others/clicklove.js" async="async"></script>

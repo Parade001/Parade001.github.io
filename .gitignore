@@ -1,11 +1,21 @@
 .DS_Store
 Thumbs.db
+desktop.ini
 db.json
+db*.json
 *.log
 node_modules/
-.idea
+.idea/
 public/
 .deploy*/
 .deploy_git*/
 themes/hexo-theme-matery
 .env
+
+# Hexo 生成物（不入库）
+search.xml
+search-template.xml
+
+# 锁文件（个人博客无需同步）
+yarn.lock
+package-lock.json
